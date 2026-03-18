@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>김만민 건축사 — 대성건축사사무소</title>
+<meta name="description" content="건축사 김만민 — 건축·기계설비·소방·토목 복합 기술역량. 소방 펌프 용량 계산 웹 도구 및 기술자문 포탈.">
+<meta name="theme-color" content="#d4a843">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="KIM MANMIN">
+<meta name="msapplication-TileColor" content="#0c1120">
+<meta name="msapplication-TileImage" content="./icons/icon-144x144.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="김만민 건축사 — 대성건축사사무소">
+<meta property="og:description" content="건축·기계설비·소방·토목 복합 기술역량 — 소방 펌프 용량 계산 포탈">
+<meta property="og:image" content="./images01/만민로고.png">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<!-- PWA Manifest -->
+<link rel="manifest" href="./manifest.json">
+
+<!-- 폰트: Noto Sans KR (한글 최고가독성) + JetBrains Mono (레이블/코드) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   CSS VARIABLES — Blueprint Engineering Theme
+═══════════════════════════════════════ */
+:root {
+  /* Background */
+  --bg:       #0c1120;
+  --bg-card:  #131c32;
+  --bg-deep:  #090d18;
+
+  /* Borders */
+  --line:     #1e2e50;
+  --line2:    #2a4070;
+
+  /* Text — 가독성 최우선 */
+  --t-high:   #eef2ff;   /* 헤딩 — 최고 밝기 */
+  --t-body:   #b8c8e8;   /* 본문 — 충분한 대비 */
+  --t-sub:    #7090b8;   /* 보조 — 적절한 밝기 */
+  --t-dim:    #3a5070;   /* 희미한 레이블 */
+
+  /* Accent */
+  --gold:     #d4a843;
+  --gold-lt:  #f0c96a;
+  --blue:     #5a9ae8;
+  --blue-dk:  #3070c0;
+  --cyan:     #20d0e8;
+  --red:      #ff4444;
+
+  /* Typography */
+  --f-kr:    'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --f-serif: 'Noto Serif KR', serif;
+  --f-mono:  'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --max:     1120px;
+  --side:    52px;
+}
+
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--t-body);
+  font-family: var(--f-kr);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;     /* 한글 단어 단위 줄바꿈 */
+  word-wrap: break-word;
+}
+
+/* Blueprint grid (subtle) */
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(74,130,220,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74,130,220,0.055) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--side);
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s;
+}
+nav.on {
+  background: rgba(12,17,32,.96);
+  backdrop-filter: blur(18px);
+  border-color: var(--line);
+}
+
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.logo-box {
+  width: 38px; height: 38px;
+  border: 1.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  color: var(--gold); letter-spacing: .01em;
+}
+.logo-kr { font-size: .95rem; font-weight: 700; color: var(--t-high); line-height: 1.2; }
+.logo-en { font-family: var(--f-mono); font-size: .6rem; color: var(--gold); letter-spacing: .1em; }
+
+.nav-ul { display: flex; list-style: none; }
+.nav-ul li { border-left: 1px solid var(--line); }
+.nav-ul li:last-child { border-right: 1px solid var(--line); }
+.nav-ul a {
+  display: flex; align-items: center; gap: 5px;
+  height: 64px; padding: 0 16px;
+  font-family: var(--f-mono); font-size: .68rem; font-weight: 500;
+  color: var(--t-sub); text-decoration: none; letter-spacing: .08em;
+  transition: color .2s, background .2s;
+}
+.nav-ul a .nn { color: var(--t-dim); font-size: .56rem; }
+.nav-ul a:hover { color: var(--gold-lt); background: var(--bg-card); }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  padding: 120px var(--side) 80px;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+
+/* Glow lights */
+.hero::before {
+  content: '';
+  position: absolute; top: -10%; right: 10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(ellipse, rgba(74,130,220,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -5%; left: 5%;
+  width: 400px; height: 400px;
+  background: radial-gradient(ellipse, rgba(212,168,67,.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Corner brackets */
+.hero-br { position: absolute; width: 56px; height: 56px; border-color: var(--gold); border-style: solid; opacity: .2; }
+.hero-br.tl { top: 72px; left: 52px; border-width: 1px 0 0 1px; }
+.hero-br.tr { top: 72px; right: 52px; border-width: 1px 1px 0 0; }
+.hero-br.bl { bottom: 40px; left: 52px; border-width: 0 0 1px 1px; }
+.hero-br.br { bottom: 40px; right: 52px; border-width: 0 1px 1px 0; }
+
+/* Crosshair */
+.ch { position: absolute; width: 28px; height: 28px; opacity: .18; }
+.ch::before, .ch::after { content: ''; position: absolute; background: var(--blue); }
+.ch::before { width: 1px; height: 100%; left: 50%; }
+.ch::after  { height: 1px; width: 100%; top: 50%; }
+.ch.a { top: 22%; right: 18%; }
+.ch.b { bottom: 28%; left: 12%; }
+
+.hero-wrap {
+  position: relative; z-index: 1;
+  max-width: var(--max);
+  display: grid; grid-template-columns: 1fr 260px; gap: 60px; align-items: center;
+  width: 100%;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(32,208,232,.08);
+  border: 1px solid rgba(32,208,232,.25);
+  border-radius: 2px;
+  padding: 5px 14px;
+  font-family: var(--f-mono); font-size: .68rem; color: var(--cyan);
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero-eyebrow {
+  font-family: var(--f-mono); font-size: .78rem;
+  color: var(--gold); letter-spacing: .16em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero-eyebrow::before { content: '// '; color: var(--t-dim); }
+
+/* 이름 — 가장 크고 선명하게 */
+.hero-name {
+  font-family: var(--f-serif);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  color: var(--t-high);
+  line-height: 1.0;
+  letter-spacing: -.02em;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 1.2rem; font-weight: 500;
+  color: var(--gold-lt);
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.hero-title-en {
+  font-family: var(--f-mono); font-size: .8rem;
+  color: var(--t-sub); letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+
+.hero-line {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 28px;
+}
+.hero-line-bar { width: 60px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); }
+.hero-line-text { font-family: var(--f-mono); font-size: .68rem; color: var(--t-dim); letter-spacing: .12em; }
+
+/* 핵심 설명 — 가독성 극대화 */
+.hero-desc {
+  font-size: 1.08rem; font-weight: 400;
+  color: var(--t-body);
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-desc strong { color: var(--t-high); font-weight: 700; }
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px;
+  font-family: var(--f-kr); font-size: .92rem; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: all .22s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+.btn-gold { background: var(--gold); color: #0c1120; }
+.btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,.35); }
+.btn-ghost { background: transparent; color: var(--blue); border: 1px solid var(--line2); }
+.btn-ghost:hover { border-color: var(--blue); background: rgba(90,154,232,.08); transform: translateY(-2px); }
+
+/* Hero spec panel */
+.hero-spec {
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  position: relative;
+}
+.hero-spec::before, .hero-spec::after {
+  content: ''; position: absolute;
+  width: 12px; height: 12px; border-color: var(--gold); border-style: solid;
+}
+.hero-spec::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.hero-spec::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.spec-row {
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-k {
+  font-family: var(--f-mono); font-size: .6rem;
+  color: var(--t-dim); letter-spacing: .1em; text-transform: uppercase;
+}
+.spec-v {
+  font-family: var(--f-mono); font-size: .85rem;
+  color: var(--gold-lt); font-weight: 500;
+}
+.spec-v.cy { color: var(--cyan); }
+
+/* ═══════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════ */
+.stats-bar {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--bg-deep);
+}
+.stats-row {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr);
+}
+.stat-cell {
+  padding: 24px 32px; border-right: 1px solid var(--line);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--f-mono); font-size: 2.4rem; font-weight: 700;
+  color: var(--gold-lt); line-height: 1; display: block;
+  margin-bottom: 4px;
+}
+.stat-lbl {
+  font-family: var(--f-kr); font-size: .8rem; font-weight: 400;
+  color: var(--t-sub); display: block;
+}
+.stat-bar-wrap { margin-top: 10px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.stat-bar-fill {
+  height: 100%; border-radius: 2px;
+  background: linear-gradient(to right, var(--gold), var(--gold-lt));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1.4s cubic-bezier(.16,1,.3,1);
+}
+.stat-cell.vis .stat-bar-fill { transform: scaleX(1); }
+
+/* ═══════════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════════ */
+.sec { padding: 100px var(--side); position: relative; z-index: 1; }
+.sec-alt { background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.sec-hd { max-width: var(--max); margin: 0 auto 56px; }
+.sec-eyebrow {
+  font-family: var(--f-mono); font-size: .72rem;
+  color: var(--gold); letter-spacing: .14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.sec-eyebrow::before { content: '//'; color: var(--t-dim); }
+
+/* 섹션 제목 — 크고 선명 */
+.sec-title {
+  font-family: var(--f-serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700; color: var(--t-high);
+  line-height: 1.25; letter-spacing: -.01em;
+}
+.sec-title .hl { color: var(--gold-lt); }
+.sec-title .bl { color: var(--blue); }
+
+/* 섹션 서브 — 충분히 밝게 */
+.sec-sub {
+  margin-top: 14px;
+  font-size: 1.02rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.85;
+}
+
+/* 내용 wrapper */
+.inner { max-width: var(--max); margin: 0 auto; }
+
+/* ═══════════════════════════════════════
+   EXPERTISE CARDS
+═══════════════════════════════════════ */
+.exp-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--line); gap: 1px; background: var(--line);
+}
+.exp-card {
+  background: var(--bg-card); padding: 36px 30px;
+  border-top: 3px solid transparent;
+  transition: background .25s, border-top-color .25s;
+}
+.exp-card:hover { background: #1a2540; border-top-color: var(--gold); }
+.exp-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+.exp-big {
+  font-family: var(--f-mono); font-size: 2.6rem; font-weight: 700;
+  color: var(--gold-lt); line-height: 1; margin-bottom: 6px;
+}
+/* 카드 제목 */
+.exp-title {
+  font-family: var(--f-kr); font-size: 1.1rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 12px; line-height: 1.4;
+}
+/* 카드 설명 */
+.exp-body {
+  font-size: .95rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.85;
+}
+.exp-tag {
+  display: inline-block; margin-top: 18px;
+  font-family: var(--f-mono); font-size: .65rem; padding: 4px 12px;
+  border: 1px solid var(--gold); color: var(--gold); letter-spacing: .08em; text-transform: uppercase;
+  background: rgba(212,168,67,.07);
+}
+
+/* ═══════════════════════════════════════
+   LICENSES
+═══════════════════════════════════════ */
+.lic-core-row {
+  display: flex; justify-content: center; margin-bottom: 40px;
+}
+.lic-core {
+  width: 150px; height: 150px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 0 50px rgba(212,168,67,.3);
+}
+.lic-core-t { font-family: var(--f-serif); font-size: 1.3rem; font-weight: 700; color: #0c1120; }
+.lic-core-s { font-family: var(--f-mono); font-size: .62rem; color: rgba(12,17,32,.65); margin-top: 3px; }
+
+.lic-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+}
+.lic-item {
+  border: 1px solid var(--line); background: var(--bg-card);
+  padding: 18px 16px; text-align: center;
+  transition: border-color .22s, background .22s;
+}
+.lic-item:hover { border-color: var(--gold); background: #1a2540; }
+.lic-name {
+  font-family: var(--f-kr); font-size: .95rem; font-weight: 600;
+  color: var(--t-high); line-height: 1.4; margin-bottom: 4px;
+}
+.lic-en {
+  font-family: var(--f-mono); font-size: .6rem;
+  color: var(--t-sub); letter-spacing: .04em;
+}
+.lic-special {
+  grid-column: span 2;
+  border: 1px solid var(--gold); background: rgba(212,168,67,.06);
+  display: flex; align-items: center; gap: 18px; padding: 18px 22px;
+}
+.lic-badge {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 1rem; font-weight: 700;
+  color: #0c1120; flex-shrink: 0;
+}
+.lic-sp-title {
+  font-family: var(--f-kr); font-size: 1.02rem; font-weight: 700;
+  color: var(--gold-lt); margin-bottom: 4px;
+}
+.lic-sp-sub {
+  font-family: var(--f-mono); font-size: .68rem;
+  color: var(--t-sub); letter-spacing: .04em;
+}
+
+/* ═══════════════════════════════════════
+   PROJECT SCOPE
+═══════════════════════════════════════ */
+.scope-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.scope-card {
+  border: 1px solid var(--line); background: var(--bg-card);
+  overflow: hidden; transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.scope-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.5); }
+.scope-thumb {
+  aspect-ratio: 16/9; background: var(--bg-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.8rem; border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+}
+.scope-thumb::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,130,220,.014) 3px, rgba(74,130,220,.014) 4px);
+}
+.scope-body { padding: 22px 24px; }
+.scope-en {
+  font-family: var(--f-mono); font-size: .65rem;
+  color: var(--gold); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;
+}
+.scope-title {
+  font-family: var(--f-kr); font-size: 1.08rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 10px; line-height: 1.35;
+}
+.scope-desc {
+  font-size: .92rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.82;
+}
+
+/* ═══════════════════════════════════════
+   WEB DEV SECTION
+═══════════════════════════════════════ */
+.webdev-grid {
+  display: grid; grid-template-columns: repeat(12,1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+}
+.wc { background: var(--bg-card); position: relative; overflow: hidden; transition: background .25s; }
+.wc:hover { background: #1a2540; }
+.wc::before, .wc::after {
+  content: ''; position: absolute;
+  width: 11px; height: 11px; border-color: var(--gold); border-style: solid;
+  opacity: 0; transition: opacity .25s; z-index: 3;
+}
+.wc::before { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+.wc::after  { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+.wc:hover::before, .wc:hover::after { opacity: 1; }
+.wc.lg { grid-column: span 7; }
+.wc.md { grid-column: span 5; }
+.wc.sm { grid-column: span 4; }
+
+.wthumb {
+  aspect-ratio: 16/9; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; font-size: 2.4rem;
+}
+.wthumb::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,130,220,.013) 3px, rgba(74,130,220,.013) 4px);
+  z-index: 1;
+}
+.wthumb-id {
+  position: absolute; top: 11px; left: 13px; z-index: 2;
+  font-family: var(--f-mono); font-size: .58rem; color: var(--t-dim); letter-spacing: .06em;
+}
+.wthumb-badge {
+  position: absolute; bottom: 10px; right: 10px; z-index: 2;
+  font-family: var(--f-mono); font-size: .6rem; padding: 2px 8px;
+  border: 1px solid; letter-spacing: .06em;
+}
+.wthumb-badge.live { color: var(--cyan); border-color: rgba(32,208,232,.3); background: rgba(32,208,232,.07); }
+.wthumb-badge.demo { color: var(--gold); border-color: rgba(212,168,67,.3); background: rgba(212,168,67,.07); }
+.wthumb-badge.ai   { color: #c084fc; border-color: rgba(192,132,252,.3); background: rgba(192,132,252,.07); }
+
+.wbody { padding: 20px 22px; }
+.wtags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.wtag {
+  font-family: var(--f-mono); font-size: .6rem; padding: 2px 8px;
+  border: 1px solid var(--line); color: var(--t-sub);
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.wtag.g { border-color: rgba(212,168,67,.4); color: var(--gold); }
+.wtag.b { border-color: rgba(90,154,232,.4); color: var(--blue); }
+.wtag.c { border-color: rgba(32,208,232,.3); color: var(--cyan); }
+
+/* 웹 카드 제목 */
+.wtitle {
+  font-family: var(--f-kr); font-size: 1.05rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 8px; line-height: 1.35;
+}
+/* 웹 카드 설명 */
+.wdesc {
+  font-size: .9rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.82;
+}
+.wfoot {
+  padding: 13px 22px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.wlink {
+  font-family: var(--f-mono); font-size: .68rem;
+  color: var(--cyan); text-decoration: none; letter-spacing: .08em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 5px; transition: gap .2s;
+}
+.wlink:hover { gap: 9px; }
+.wdate { font-family: var(--f-mono); font-size: .62rem; color: var(--t-dim); }
+
+/* ═══════════════════════════════════════
+   YOUTUBE SECTION
+═══════════════════════════════════════ */
+.yt-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.ytc {
+  border: 1px solid var(--line); background: var(--bg-card);
+  overflow: hidden; transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.ytc:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.5); }
+.ytc.feat { grid-column: span 2; }
+
+.ythumb {
+  aspect-ratio: 16/9; background: var(--bg-deep);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.2rem; border-bottom: 1px solid var(--line);
+}
+.ythumb::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,130,220,.012) 3px, rgba(74,130,220,.012) 4px);
+  z-index: 1;
+}
+.yt-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 54px; height: 54px; z-index: 3;
+  border: 1.5px solid var(--gold); background: rgba(212,168,67,.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.1rem;
+  clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+  transition: all .25s;
+}
+.ytc:hover .yt-play { background: var(--gold); color: #0c1120; box-shadow: 0 0 28px rgba(212,168,67,.45); }
+.yt-dur {
+  position: absolute; bottom: 10px; right: 10px; z-index: 3;
+  font-family: var(--f-mono); font-size: .6rem;
+  background: rgba(9,13,24,.88); color: var(--t-body);
+  padding: 2px 8px; border: 1px solid var(--line); letter-spacing: .04em;
+}
+.yt-views {
+  position: absolute; bottom: 10px; left: 10px; z-index: 3;
+  font-family: var(--f-mono); font-size: .6rem;
+  background: rgba(9,13,24,.8); color: var(--t-sub);
+  padding: 2px 8px; border: 1px solid var(--line);
+}
+.ytbody { padding: 20px 22px; }
+.yt-cat {
+  font-family: var(--f-mono); font-size: .65rem;
+  color: var(--gold); letter-spacing: .1em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+}
+.yt-cat::before { content: '▶'; font-size: .5rem; }
+
+/* 유튜브 카드 제목 */
+.yt-title {
+  font-family: var(--f-kr); font-size: .98rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 8px; line-height: 1.5;
+}
+/* 유튜브 설명 */
+.yt-desc {
+  font-size: .88rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.82; margin-bottom: 14px;
+}
+.yt-meta {
+  display: flex; gap: 12px; align-items: center;
+  font-family: var(--f-mono); font-size: .62rem; color: var(--t-dim);
+  border-top: 1px solid var(--line); padding-top: 12px;
+}
+.yt-meta-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line2); }
+
+/* Channel banner */
+.yt-banner {
+  max-width: var(--max); margin: 32px auto 0;
+  border: 1px solid var(--line2); background: var(--bg-card);
+  padding: 24px 30px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  position: relative;
+}
+.yt-banner::before, .yt-banner::after {
+  content: ''; position: absolute;
+  width: 14px; height: 14px; border-color: var(--gold); border-style: solid;
+}
+.yt-banner::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.yt-banner::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.yt-ch-info { display: flex; align-items: center; gap: 16px; }
+.yt-ch-icon {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; border: 2px solid var(--gold); flex-shrink: 0;
+}
+.yt-ch-name { font-family: var(--f-kr); font-size: 1.02rem; font-weight: 700; color: var(--t-high); }
+.yt-ch-handle { font-family: var(--f-mono); font-size: .65rem; color: var(--t-sub); margin-top: 3px; }
+.yt-sub-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; background: #ff0000; color: #fff;
+  font-family: var(--f-kr); font-size: .9rem; font-weight: 700;
+  text-decoration: none; transition: all .22s; flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+.yt-sub-btn:hover { background: #cc0000; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,0,0,.35); }
+
+/* ═══════════════════════════════════════
+   ADVISORY
+═══════════════════════════════════════ */
+.adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.adv-card {
+  border: 1px solid var(--line2); background: var(--bg-card);
+  padding: 36px; position: relative;
+}
+.adv-card::before, .adv-card::after {
+  content: ''; position: absolute;
+  width: 16px; height: 16px; border-color: var(--gold); border-style: solid;
+}
+.adv-card::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.adv-card::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.adv-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+.adv-region { font-family: var(--f-kr); font-size: 1.2rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 3px; }
+.adv-region-en { font-family: var(--f-mono); font-size: .65rem; color: var(--t-sub); letter-spacing: .08em; margin-bottom: 22px; }
+.adv-items { display: flex; flex-direction: column; gap: 12px; }
+.adv-item {
+  padding: 14px 18px;
+  background: var(--bg-deep); border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+}
+.adv-item-t { font-family: var(--f-kr); font-size: .97rem; font-weight: 600; color: var(--t-high); margin-bottom: 3px; }
+.adv-item-en { font-family: var(--f-mono); font-size: .6rem; color: var(--t-sub); letter-spacing: .04em; }
+
+/* ═══════════════════════════════════════
+   ABOUT / PROFILE
+═══════════════════════════════════════ */
+.about-wrap {
+  display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: start;
+}
+.profile {
+  border: 1px solid var(--line); background: var(--bg-card); position: relative;
+}
+.profile::before, .profile::after {
+  content: ''; position: absolute;
+  width: 16px; height: 16px; border-color: var(--gold); border-style: solid; z-index: 1;
+}
+.profile::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.profile::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.profile-hd {
+  padding: 28px 24px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-card) 100%);
+  text-align: center;
+}
+.profile-av {
+  width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 14px;
+  background: var(--bg-deep); border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; color: var(--t-dim);
+}
+.profile-nm { font-family: var(--f-serif); font-size: 1.6rem; font-weight: 700; color: var(--t-high); }
+.profile-pos { font-family: var(--f-mono); font-size: .68rem; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.profile-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 22px; border-bottom: 1px solid var(--line);
+  font-size: .9rem;
+}
+.profile-row:last-child { border-bottom: none; }
+.pkey { color: var(--t-sub); font-weight: 400; }
+.pval { color: var(--t-high); font-weight: 600; text-align: right; }
+.pval.gd { color: var(--gold-lt); }
+.pval.cy { color: var(--cyan); }
+
+.about-text {}
+.about-tagline {
+  font-family: var(--f-serif); font-size: 1.6rem; font-weight: 700;
+  color: var(--t-high); line-height: 1.4; margin-bottom: 20px; letter-spacing: -.01em;
+}
+.about-tagline span { color: var(--gold-lt); }
+.about-bio {
+  font-size: 1rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.9; margin-bottom: 30px;
+}
+.about-bio strong { color: var(--t-high); font-weight: 700; }
+
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.comp {
+  border: 1px solid var(--line); background: var(--bg-deep);
+  padding: 16px 18px; border-left: 3px solid var(--gold);
+  transition: all .22s;
+}
+.comp:hover { border-color: var(--gold); background: var(--bg-card); }
+.comp-t { font-family: var(--f-kr); font-size: .95rem; font-weight: 700; color: var(--t-high); margin-bottom: 4px; }
+.comp-d { font-size: .85rem; font-weight: 400; color: var(--t-body); line-height: 1.7; }
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+.contact-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.contact-pre { font-family: var(--f-mono); font-size: .72rem; color: var(--t-dim); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px; }
+.contact-title { font-family: var(--f-serif); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--t-high); line-height: 1.25; margin-bottom: 14px; }
+.contact-title .hl { color: var(--gold-lt); }
+.contact-sub { font-size: 1rem; font-weight: 400; color: var(--t-body); line-height: 1.85; margin-bottom: 44px; }
+
+.ccard {
+  border: 1px solid var(--line2); background: var(--bg-card);
+  padding: 32px; text-align: left; position: relative;
+}
+.ccard::before, .ccard::after {
+  content: ''; position: absolute;
+  width: 14px; height: 14px; border-color: var(--gold); border-style: solid;
+}
+.ccard::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.ccard::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.cperson { display: flex; align-items: center; gap: 18px; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+.cperson-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+}
+.cperson-nm { font-family: var(--f-kr); font-size: 1.2rem; font-weight: 700; color: var(--t-high); }
+.cperson-role { font-family: var(--f-mono); font-size: .65rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
+.cinfo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cinfo-key { font-family: var(--f-mono); font-size: .62rem; color: var(--t-dim); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
+.cinfo-val { font-family: var(--f-kr); font-size: .97rem; font-weight: 500; color: var(--t-high); }
+.cinfo-val a { color: var(--blue); text-decoration: none; }
+.cinfo-val a:hover { color: var(--gold-lt); }
+.company-row {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 18px; padding: 16px; background: var(--bg-deep); border: 1px solid var(--line);
+}
+.co-badge {
+  width: 44px; height: 44px; background: var(--blue-dk); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: .5rem; font-weight: 700; color: #fff;
+  text-align: center; line-height: 1.3;
+}
+.co-nm { font-family: var(--f-kr); font-size: .97rem; font-weight: 600; color: var(--t-high); }
+.co-addr { font-family: var(--f-mono); font-size: .65rem; color: var(--t-sub); margin-top: 2px; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  padding: 24px var(--side); border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative; z-index: 1;
+}
+.foot-l, .foot-r { font-family: var(--f-mono); font-size: .68rem; color: var(--t-dim); letter-spacing: .06em; }
+.foot-r .acc { color: var(--gold); }
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   RESPONSIVE — 3-Tier: Desktop / Tablet / Mobile
+   Desktop  : > 1024px  (기본 스타일)
+   Tablet   : 640~1024px
+   Mobile   : < 640px
+═══════════════════════════════════════ */
+
+/* ── 모바일 햄버거 버튼 (JS 없이 체크박스 트릭) ── */
+.nav-toggle { display: none; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 36px; height: 36px; cursor: pointer; z-index: 300;
+  background: none; border: none; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--t-high); border-radius: 2px;
+  transition: all .3s;
+}
+
+/* ── 태블릿 (640px ~ 1024px) ─────────────────── */
+@media (max-width: 1024px) {
+  :root { --side: 32px; }
+
+  /* Nav */
+  nav { padding: 0 32px; }
+  .nav-ul li:nth-child(n+5) { display: none; }  /* 4개만 표시 */
+
+  /* Hero */
+  .hero { padding: 100px var(--side) 60px; }
+  .hero-wrap { grid-template-columns: 1fr 220px; gap: 36px; }
+  .hero-name { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+
+  /* Stats */
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .stat-cell { border-bottom: 1px solid var(--line); }
+  .stat-cell:nth-child(2) { border-right: none; }
+
+  /* Sections */
+  .sec { padding: 72px var(--side); }
+  .sec-hd { margin-bottom: 40px; }
+
+  /* Expertise */
+  .exp-grid { grid-template-columns: repeat(2,1fr); }
+
+  /* Licenses */
+  .lic-grid { grid-template-columns: repeat(3,1fr); }
+  .lic-special { grid-column: span 3; }
+
+  /* Scope */
+  .scope-grid { grid-template-columns: repeat(2,1fr); }
+
+  /* Web Dev cards */
+  .webdev-grid { grid-template-columns: 1fr; background: none; gap: 16px; border: none; }
+  .wc[style*="grid-column:span 12"] { grid-column: span 1 !important; }
+  .wc.lg, .wc.md, .wc.sm { grid-column: span 1; border: 1px solid var(--line); }
+
+  /* 웹카드 내 이미지 — 절대경로 src 대응 */
+  .wc img { width: 100% !important; height: auto !important; max-height: 480px; object-fit: contain; }
+
+  /* 웹카드 헤더 flex → 세로 정렬 */
+  .wc > div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* 우측 상단 고정 버튼 — 태블릿에서 상대 위치 */
+  .wc > a[style*="position:absolute"] {
+    position: static !important;
+    margin: 12px 24px 0 !important;
+    align-self: flex-start;
+  }
+
+  /* 핵심 공식 박스 wrap */
+  .wc div[style*="display:flex;gap:10px"] {
+    flex-direction: column !important;
+  }
+
+  /* YouTube */
+  .yt-grid { grid-template-columns: 1fr 1fr; }
+  .ytc.feat { grid-column: span 2; }
+  .yt-banner { gap: 16px; padding: 20px 24px; }
+
+  /* Advisory */
+  .adv-grid { grid-template-columns: 1fr; }
+
+  /* About */
+  .about-wrap { grid-template-columns: 280px 1fr; gap: 36px; }
+
+  /* Contact */
+  .cinfo-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  footer { padding: 20px var(--side); }
+}
+
+/* ── 모바일 (< 640px) ────────────────────────── */
+@media (max-width: 640px) {
+  :root { --side: 16px; }
+
+  /* Nav — 햄버거 메뉴 */
+  nav { padding: 0 16px; height: 56px; }
+  .nav-hamburger { display: flex; }
+  .nav-ul {
+    display: none;
+    position: fixed; inset: 56px 0 0 0;
+    background: rgba(9,13,24,.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column; align-items: stretch;
+    padding: 12px 0; z-index: 250;
+    border-top: 1px solid var(--line);
+    overflow-y: auto;
+  }
+  .nav-toggle:checked ~ .nav-ul { display: flex; }
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-ul li { border-left: none; border-bottom: 1px solid var(--line); }
+  .nav-ul li:last-child { border-right: none; border-bottom: none; }
+  .nav-ul a { height: 52px; padding: 0 20px; font-size: .78rem; }
+
+  /* Hero */
+  .hero { padding: 80px var(--side) 48px; min-height: auto; }
+  .hero-wrap { grid-template-columns: 1fr; gap: 0; }
+  .hero-spec { display: none; }
+  .hero-name { font-size: clamp(2.4rem, 9vw, 3.6rem); }
+  .hero-desc { font-size: .98rem; }
+  .hero-btns { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; padding: 14px 20px; }
+  .hero-br { display: none; }
+
+  /* Stats */
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .stat-cell { padding: 18px 16px; }
+  .stat-num { font-size: 1.9rem; }
+
+  /* Sections */
+  .sec { padding: 56px var(--side); }
+  .sec-hd { margin-bottom: 28px; }
+  .sec-title { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+
+  /* Expertise */
+  .exp-grid { grid-template-columns: 1fr; gap: 0; }
+  .exp-card { padding: 24px 20px; }
+
+  /* Licenses */
+  .lic-grid { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .lic-special { grid-column: span 2; flex-direction: column; text-align: center; }
+  .lic-core { width: 120px; height: 120px; }
+
+  /* Scope */
+  .scope-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Web Dev */
+  .webdev-grid { grid-template-columns: 1fr; background: none; gap: 12px; border: none; }
+  .wc[style*="grid-column:span 12"] { grid-column: span 1 !important; }
+  .wc.lg, .wc.md, .wc.sm { grid-column: span 1; border: 1px solid var(--line); }
+
+  /* 웹카드 이미지 — 외부 JPG 경로 대응 */
+  .wc img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 340px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* 웹카드 헤더 패딩/버튼 */
+  .wc > div[style*="padding:20px 24px 0"] {
+    padding: 16px 16px 0 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* 우측 상단 고정 버튼 → 모바일에서 인라인 */
+  .wc > a[style*="position:absolute"] {
+    position: static !important;
+    top: auto !important; right: auto !important;
+    margin: 10px 16px 0 !important;
+    font-size: .65rem !important;
+    padding: 7px 12px !important;
+    width: calc(100% - 32px);
+    justify-content: center;
+  }
+
+  /* 핵심 공식 박스 */
+  .wc div[style*="display:flex;gap:10px;flex-wrap:wrap"] {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+  .wc div[style*="border-left:2px solid"] {
+    font-size: .62rem !important;
+    padding: 5px 10px !important;
+    word-break: break-all;
+  }
+
+  /* 웹카드 이미지 갤러리 패딩 */
+  .wc > div[style*="padding:20px 24px;display:grid"] {
+    padding: 12px 16px !important;
+  }
+
+  /* 웹카드 푸터 */
+  .wfoot { flex-direction: column; gap: 6px; align-items: flex-start; padding: 12px 16px; }
+  .wlink { font-size: .6rem; }
+
+  /* MANMIN 배너 */
+  .rv[style*="margin-top:24px"] > div[style*="display:flex"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* YouTube */
+  .yt-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ytc.feat { grid-column: span 1; }
+  .yt-banner { flex-direction: column; text-align: center; padding: 18px 16px; gap: 14px; }
+  .yt-ch-info { flex-direction: column; text-align: center; }
+  .yt-sub-btn { width: 100%; justify-content: center; }
+  .ytbody { padding: 16px; }
+
+  /* Advisory */
+  .adv-grid { grid-template-columns: 1fr; gap: 12px; }
+  .adv-card { padding: 24px 20px; }
+
+  /* About */
+  .about-wrap { grid-template-columns: 1fr; gap: 28px; }
+  .comp-grid { grid-template-columns: 1fr; gap: 8px; }
+
+  /* Contact */
+  .contact-wrap { text-align: left; }
+  .cinfo-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ccard { padding: 20px 16px; }
+  .cperson { gap: 12px; }
+  .cperson-icon { width: 46px; height: 46px; font-size: 1.2rem; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 18px var(--side); }
+  .foot-l, .foot-r { font-size: .6rem; }
+
+  /* wtag 줄바꿈 허용 */
+  .wtags, div[style*="display:flex;gap:6px;flex-wrap:wrap"] { flex-wrap: wrap !important; }
+  .wtag { font-size: .58rem; }
+}
+
+/* ── 초소형 (< 380px, 구형 스마트폰) ─────────── */
+@media (max-width: 380px) {
+  :root { --side: 12px; }
+  .hero-name { font-size: 2.1rem; }
+  .lic-grid { grid-template-columns: 1fr; }
+  .lic-special { grid-column: span 1; }
+  .stat-num { font-size: 1.6rem; }
+  .wc > a[style*="position:absolute"] { font-size: .6rem !important; }
+}
+
+/* ═══════════════════════════════════════
+   LICENSE MODAL
+═══════════════════════════════════════ */
+.lic-item, .lic-core, .lic-special { cursor: pointer; }
+.lic-item { position: relative; transition: border-color .22s, background .22s, transform .22s; }
+.lic-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.lic-item .lic-zoom {
+  position: absolute; bottom: 7px; right: 9px;
+  font-family: var(--f-mono); font-size: .52rem; color: var(--gold);
+  opacity: 0; transition: opacity .2s; letter-spacing: .04em;
+}
+.lic-item:hover .lic-zoom { opacity: 1; }
+
+.lic-modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(6,10,22,.88);
+  backdrop-filter: blur(12px);
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lic-modal-overlay.open { display: flex; }
+
+.lic-modal {
+  position: relative;
+  max-width: min(600px, 92vw);
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--line2);
+  box-shadow: 0 32px 80px rgba(0,0,0,.7);
+  animation: modalIn .28s cubic-bezier(.16,1,.3,1);
+}
+.lic-modal::before, .lic-modal::after {
+  content: ''; position: absolute;
+  width: 16px; height: 16px; border-color: var(--gold); border-style: solid;
+}
+.lic-modal::before { top:-1px; right:-1px; border-width:2px 2px 0 0; }
+.lic-modal::after  { bottom:-1px; left:-1px; border-width:0 0 2px 2px; }
+
+@keyframes modalIn {
+  from { opacity:0; transform: scale(.94) translateY(12px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+
+.lic-modal-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-deep);
+}
+.lic-modal-title {
+  font-family: var(--f-mono); font-size: .72rem;
+  color: var(--gold-lt); letter-spacing: .08em;
+}
+.lic-modal-close {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--line2);
+  color: var(--t-sub); font-size: 1rem; cursor: pointer;
+  transition: all .18s; flex-shrink: 0;
+}
+.lic-modal-close:hover { border-color: var(--gold); color: var(--gold); background: rgba(212,168,67,.08); }
+
+.lic-modal-img-wrap {
+  padding: 16px; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 200px;
+}
+.lic-modal-img-wrap img {
+  max-width: 100%; max-height: 72vh;
+  object-fit: contain; display: block;
+}
+
+.lic-modal-footer {
+  padding: 10px 18px;
+  border-top: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: .62rem;
+  color: var(--t-dim); letter-spacing: .06em;
+  text-align: center;
+}
+
+/* 건축사 원형 코어 — 클릭 힌트 */
+.lic-core { position: relative; }
+.lic-core::after {
+  content: '자격증 보기';
+  position: absolute; bottom: -24px;
+  left: 50%; transform: translateX(-50%);
+  font-family: var(--f-mono); font-size: .58rem;
+  color: var(--gold); letter-spacing: .08em;
+  opacity: 0; transition: opacity .2s; white-space: nowrap;
+}
+.lic-core:hover::after { opacity: 1; }
+
+/* 특별 카드 호버 */
+.lic-special { transition: border-color .22s, background .22s, transform .22s; }
+.lic-special:hover { transform: translateY(-2px); }
+
+
+/* ═══════════════════════════════════════
+   ADVISORY MODAL (위촉장 뷰어)
+═══════════════════════════════════════ */
+.adv-item {
+  cursor: pointer;
+  transition: border-left-color .2s, background .2s, transform .2s;
+}
+.adv-item:hover {
+  border-left-color: var(--gold-lt);
+  background: rgba(212,168,67,.07);
+  transform: translateX(4px);
+}
+.adv-item-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 5px;
+}
+.adv-item-period {
+  font-family: var(--f-mono); font-size: .58rem;
+  color: var(--cyan); letter-spacing: .06em;
+}
+.adv-item-hint {
+  font-family: var(--f-mono); font-size: .56rem;
+  color: var(--gold); letter-spacing: .06em;
+  opacity: 0; transition: opacity .2s;
+  display: flex; align-items: center; gap: 3px;
+}
+.adv-item:hover .adv-item-hint { opacity: 1; }
+
+/* 위촉장 갤러리 버튼 그룹 */
+.adv-cert-btns {
+  display: flex; gap: 7px; flex-wrap: wrap; margin-top: 16px;
+  padding-top: 14px; border-top: 1px solid var(--line);
+}
+.adv-cert-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 11px;
+  background: rgba(32,208,232,.06);
+  border: 1px solid rgba(32,208,232,.25);
+  color: var(--cyan);
+  font-family: var(--f-mono); font-size: .6rem;
+  cursor: pointer; letter-spacing: .05em;
+  transition: all .2s; white-space: nowrap;
+}
+.adv-cert-btn:hover {
+  background: rgba(32,208,232,.14);
+  border-color: var(--cyan);
+  transform: translateY(-1px);
+}
+
+/* 위촉장 모달 (자격증 모달과 독립) */
+#advModal .lic-modal { max-width: min(520px, 92vw); }
+#advModal .lic-modal-img-wrap { background: #f8f6f0; }
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ═══════════════════════════════════════ -->
+<nav id="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+  <a href="#" class="logo">
+    <img src="./images01/만민로고.png" alt="KIM MANMIN" width="44" height="44" style="display:block;object-fit:contain;background:transparent;filter:brightness(0) invert(1);">
+    <div>
+      <div class="logo-kr">김만민 건축사</div>
+      <span class="logo-en">ARCHITECT KIM MANMIN</span>
+    </div>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="#expertise"><span class="nn">01</span>전문분야</a></li>
+    <li><a href="#licenses" ><span class="nn">02</span>자격현황</a></li>
+    <li><a href="#scope"    ><span class="nn">03</span>프로젝트</a></li>
+    <li><a href="#webdev"   ><span class="nn">04</span>개발웹</a></li>
+    <li><a href="#youtube"  ><span class="nn">05</span>유튜브</a></li>
+    <li><a href="#advisory" ><span class="nn">06</span>자문활동</a></li>
+    <li><a href="#contact"  ><span class="nn">07</span>연락처</a></li>
+  </ul>
+  <label for="nav-toggle" class="nav-hamburger" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </label>
+</nav>
+
+<!-- ══ HERO ═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-br tl"></div><div class="hero-br tr"></div>
+  <div class="hero-br bl"></div><div class="hero-br br"></div>
+  <div class="ch a"></div><div class="ch b"></div>
+
+  <div class="hero-wrap">
+    <div>
+      <div class="status-badge">
+        <span class="status-dot"></span>자문 가능 · AVAILABLE
+      </div>
+      <div class="hero-eyebrow">29년 현장 중심 실무 경력</div>
+      <h1 class="hero-name">김만민</h1>
+      <div class="hero-title">건축사 / 이사</div>
+      <div class="hero-title-en">Architect &amp; Director — Daesung Architecture</div>
+      <div class="hero-line">
+        <div class="hero-line-bar"></div>
+        <span class="hero-line-text">EST. 1993 — IKSAN, JEONBUK KR</span>
+      </div>
+      <p class="hero-desc">
+        <strong>건축과 기계설비를 동시에 이해하는 복합 기술 역량.</strong><br>
+        설계부터 시공, 감리, CM, VE까지 — 건설 전 과정을 아우르는<br>
+        29년의 통합 기술 솔루션으로 완벽한 프로젝트를 실현합니다.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact"   class="btn btn-gold">▶ 문의하기</a>
+        <a href="#expertise" class="btn btn-ghost">전문분야 보기 →</a>
+      </div>
+    </div>
+    <div class="hero-spec">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--line);text-align:center;background:rgba(255,255,255,0.04);">
+        <img src="./images01/만민로고.png" alt="ARCHITECT KIM MANMIN" style="width:100%;max-width:180px;height:auto;object-fit:contain;display:inline-block;">
+      </div>
+      <div class="spec-row"><span class="spec-k">Career</span><span class="spec-v">29년 (1993~현재)</span></div>
+      <div class="spec-row"><span class="spec-k">License</span><span class="spec-v">건축사 #20072</span></div>
+      <div class="spec-row"><span class="spec-k">Cert.</span><span class="spec-v">10여 종 보유</span></div>
+      <div class="spec-row"><span class="spec-k">Specialty</span><span class="spec-v">건축 + 기계설비 + 소방[기계+전기] + 토목</span></div>
+      <div class="spec-row"><span class="spec-k">VE</span><span class="spec-v">CVS · VMP</span></div>
+      <div class="spec-row"><span class="spec-k">Status</span><span class="spec-v cy">● 자문 가능</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ═══════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-row">
+    <div class="stat-cell rv"><span class="stat-num" data-n="29">0</span><span class="stat-lbl">년 경력 (1993~)</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:97%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="10">0</span><span class="stat-lbl">여 종 국가자격</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="4">0</span><span class="stat-lbl">개 공공기관 자문</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:80%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="100">0</span><span class="stat-lbl">% 신뢰 기반 실무</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
+  </div>
+</div>
+
+<!-- ══ EXPERTISE ═══════════════════════════════════ -->
+<section id="expertise" class="sec">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Core Competency</div>
+    <h2 class="sec-title">건축과 기계설비를 아우르는 <span class="hl">복합 기술 역량</span></h2>
+    <p class="sec-sub">설계부터 시공, 안전, VE까지 — 완벽을 기하는 마스터 빌더</p>
+  </div>
+  <div class="inner">
+    <div class="exp-grid">
+      <div class="exp-card rv">
+        <span class="exp-icon">🏗️</span>
+        <div class="exp-big">29년</div>
+        <h3 class="exp-title">현장 중심의 실무 노하우</h3>
+        <p class="exp-body">설계, 감리, CM, VE 등 건설 전 과정에서 쌓아온 독보적인 전문성을 보유하고 있습니다. 현장 경험을 바탕으로 한 시공 중심 설계로 실패 없는 프로젝트를 구현합니다.</p>
+        <span class="exp-tag">Architecture & CM</span>
+      </div>
+      <div class="exp-card rv">
+        <span class="exp-icon">⚙️</span>
+        <div class="exp-big" style="font-size:2rem;">통합</div>
+        <h3 class="exp-title">건축 + 기계설비<br>통합 엔지니어링 역량</h3>
+        <p class="exp-body">건축사와 기계·소방·토목 분야 자격의 결합으로 복합 시설물의 품질과 안전을 완벽히 검증합니다. 설계와 설비의 간섭 없는 완벽한 시공성을 확보합니다.</p>
+        <span class="exp-tag">Integrated Engineering</span>
+      </div>
+      <div class="exp-card rv">
+        <span class="exp-icon">📊</span>
+        <div class="exp-big" style="font-size:2rem;">CVS</div>
+        <h3 class="exp-title">가치공학(VE) &amp;<br>경제성 분석</h3>
+        <p class="exp-body">국제공인VE전문가(CVS) 및 VMP(가치혁신전문가) 자격 보유. 설계 타당성 및 경제성 분석, 비용 절감과 품질 향상의 최적 균형을 도출합니다.</p>
+        <span class="exp-tag">Value Engineering</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LICENSES ══════════════════════════════════ -->
+<section id="licenses" class="sec sec-alt">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Qualifications</div>
+    <h2 class="sec-title">10여 종 <span class="hl">전문 국가자격 보유</span></h2>
+    <p class="sec-sub">건축사를 중심으로 기계·소방·토목 분야의 다방면 자격을 갖춘 준비된 기술인</p>
+  </div>
+  <div class="inner">
+    <div class="lic-core-row rv">
+      <div class="lic-core" onclick="openLicModal('건축사')" title="건축사 자격증 보기">
+        <div class="lic-core-t">건축사</div>
+        <div class="lic-core-s">LICENSE #20072</div>
+      </div>
+    </div>
+    <div class="lic-grid rv">
+      <div class="lic-item" onclick="openLicModal('일반기계기사')" title="자격증 보기"><div class="lic-name">일반기계기사</div><div class="lic-en">General Mechanical Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-item" onclick="openLicModal('건설기계설비기사')" title="자격증 보기"><div class="lic-name">건설기계설비기사</div><div class="lic-en">Construction Mechanical Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-item" onclick="openLicModal('공조냉동기계기사')" title="자격증 보기"><div class="lic-name">공조냉동기계기사</div><div class="lic-en">HVAC &amp; Refrigeration Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-item" style="display:flex;flex-direction:column;gap:6px;padding:14px 16px;">
+        <div onclick="openLicModal('소방설비기사_기계')" title="기계분야 자격증 보기" style="cursor:pointer;padding:6px 10px;border:1px solid var(--line);transition:border-color .2s;border-radius:2px;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--line)')"><div class="lic-name" style="font-size:.9rem;">소방설비기사 <small style="color:#f87171;">(기계)</small></div><div class="lic-en">Fire Safety — Mechanical</div></div>
+        <div onclick="openLicModal('소방설비기사_전기')" title="전기분야 자격증 보기" style="cursor:pointer;padding:6px 10px;border:1px solid var(--line);transition:border-color .2s;border-radius:2px;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--line)')"><div class="lic-name" style="font-size:.9rem;">소방설비기사 <small style="color:#60a5fa;">(전기)</small></div><div class="lic-en">Fire Safety — Electrical</div></div>
+      </div>
+      <div class="lic-item" onclick="openLicModal('건축설비기사')" title="자격증 보기"><div class="lic-name">건축설비기사</div><div class="lic-en">Architectural Equipment Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-item" onclick="openLicModal('토목기사')" title="자격증 보기"><div class="lic-name">토목기사</div><div class="lic-en">Civil Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-item" onclick="openLicModal('건축산업기사')" title="자격증 보기"><div class="lic-name">건축산업기사</div><div class="lic-en">Architectural Industrial Engineer</div><span class="lic-zoom">📄 자격증 보기</span></div>
+      <div class="lic-special" style="flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:18px;">
+          <div class="lic-badge">CVS</div>
+          <div>
+            <div class="lic-sp-title">국제공인VE전문가 (CVS)</div>
+            <div class="lic-sp-sub">Certified Value Specialist · VMP 가치혁신전문가</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="openLicModal('CVS')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.4);color:var(--gold-lt);font-family:var(--f-mono);font-size:.62rem;cursor:pointer;letter-spacing:.06em;transition:all .2s;" onmouseover="this.style.background='rgba(212,168,67,.2)'" onmouseout="this.style.background='rgba(212,168,67,.1)'">📄 CVS 자격증</button>
+          <button onclick="openLicModal('VMA')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.4);color:var(--gold-lt);font-family:var(--f-mono);font-size:.62rem;cursor:pointer;letter-spacing:.06em;transition:all .2s;" onmouseover="this.style.background='rgba(212,168,67,.2)'" onmouseout="this.style.background='rgba(212,168,67,.1)'">📄 VMA 자격증</button>
+          <button onclick="openLicModal('VMP')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.4);color:var(--gold-lt);font-family:var(--f-mono);font-size:.62rem;cursor:pointer;letter-spacing:.06em;transition:all .2s;" onmouseover="this.style.background='rgba(212,168,67,.2)'" onmouseout="this.style.background='rgba(212,168,67,.1)'">📄 VMP 자격증</button>
+        </div>
+      </div>
+      <div class="lic-special" style="border-color:var(--line2);background:rgba(90,154,232,.05);">
+        <div class="lic-badge" style="background:linear-gradient(135deg,var(--blue-dk),var(--blue));">공공</div>
+        <div>
+          <div class="lic-sp-title" style="color:var(--blue);">공공기관 신뢰 자문위원</div>
+          <div class="lic-sp-sub">익산시 건축위원회 · 전북특별자치도 기술자문단</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECT SCOPE ══════════════════════════════ -->
+<section id="scope" class="sec">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Project Scope</div>
+    <h2 class="sec-title">건축 설계 &amp; 건설사업관리<br><span class="bl">Architecture &amp; CM Expertise</span></h2>
+    <p class="sec-sub">총괄 설계 및 책임 감리 | 현장 경험을 바탕으로 한 시공 중심 설계</p>
+  </div>
+  <div class="inner">
+    <div class="scope-grid">
+      <div class="scope-card rv">
+        <div class="scope-thumb" style="background:linear-gradient(135deg,#080e1e,#0f1a32);">🏢</div>
+        <div class="scope-body">
+          <div class="scope-en">RESIDENTIAL</div>
+          <h3 class="scope-title">공동주택</h3>
+          <p class="scope-desc">아파트, 연립주택 등 공동주거시설의 건축 설계 및 총괄 감리. 구조·기계·전기 통합 설계로 품질과 안전성을 동시에 확보합니다.</p>
+        </div>
+      </div>
+      <div class="scope-card rv">
+        <div class="scope-thumb" style="background:linear-gradient(135deg,#06100e,#0c1c18);">🏥</div>
+        <div class="scope-body">
+          <div class="scope-en">HOSPITAL · MEDICAL · EDUCATION</div>
+          <h3 class="scope-title">병원·의료시설 / 교육·연구시설</h3>
+          <p class="scope-desc">복합 설비 시스템이 요구되는 의료·교육 시설 특화 설계. 기계설비 전문 지식으로 기능성과 안전성을 완벽히 구현합니다.</p>
+        </div>
+      </div>
+      <div class="scope-card rv">
+        <div class="scope-thumb" style="background:linear-gradient(135deg,#0a0e10,#131e22);">🏭</div>
+        <div class="scope-body">
+          <div class="scope-en">FACTORY · INDUSTRIAL · ENVIRONMENT</div>
+          <h3 class="scope-title">공장·산업시설 / 환경플랜트</h3>
+          <p class="scope-desc">공장, 하수·폐수처리 공정 설비 등 산업·환경 시설 설계. HVAC, 소방, 기계 설비 통합 검토로 운영 효율과 안전성을 극대화합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WEB DEV ═══════════════════════════════════ -->
+<section id="webdev" class="sec sec-alt">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Web Development — MANMIN Series</div>
+    <h2 class="sec-title">소방·건축 실무를 디지털로 구현한 <span class="hl">웹 계산 도구</span></h2>
+    <p class="sec-sub">화재안전기술기준(NFTC) 기반 — 현장 경험 29년을 코드로 담은 엔지니어링 웹 시리즈</p>
+  </div>
+  <div class="inner">
+
+    <!-- 시리즈 진화 타임라인 -->
+    <div class="rv" style="margin-bottom:32px;padding:20px 24px;background:var(--bg-deep);border:1px solid var(--line);display:flex;align-items:center;gap:0;">
+      <div style="flex:1;text-align:center;padding:12px 8px;border-right:1px solid var(--line);">
+        <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--t-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">PHASE 01</div>
+        <div style="font-family:var(--f-mono);font-size:1.1rem;font-weight:700;color:var(--t-sub);">MANMIN</div>
+        <div style="font-family:var(--f-mono);font-size:.75rem;color:var(--gold);margin-top:2px;">Ver 1.0</div>
+        <div style="font-size:.78rem;color:var(--t-sub);margin-top:6px;line-height:1.5;">옥내소화전<br>계산 가이드</div>
+      </div>
+      <div style="padding:0 12px;color:var(--gold);font-size:1rem;">→</div>
+      <div style="flex:1;text-align:center;padding:12px 8px;border-right:1px solid var(--line);">
+        <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--t-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">PHASE 02</div>
+        <div style="font-family:var(--f-mono);font-size:1.1rem;font-weight:700;color:var(--t-sub);">MANMIN</div>
+        <div style="font-family:var(--f-mono);font-size:.75rem;color:var(--gold);margin-top:2px;">Ver 2.0</div>
+        <div style="font-size:.78rem;color:var(--t-sub);margin-top:6px;line-height:1.5;">옥내소화전<br>용량 계산서</div>
+      </div>
+      <div style="padding:0 12px;color:var(--gold);font-size:1rem;">→</div>
+      <div style="flex:1;text-align:center;padding:12px 8px;background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.2);">
+        <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">PHASE 03 ★ LATEST</div>
+        <div style="font-family:var(--f-mono);font-size:1.1rem;font-weight:700;color:var(--gold-lt);">MANMIN</div>
+        <div style="font-family:var(--f-mono);font-size:.75rem;color:var(--cyan);margin-top:2px;">Ver 3.0</div>
+        <div style="font-size:.78rem;color:var(--t-body);margin-top:6px;line-height:1.5;">스프링클러설비<br>PWA 앱</div>
+      </div>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- WEB-002~003: 옥내소화전 통합 — 이미지 갤러리 + GitHub 링크 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(248,113,113,.4);color:#f87171;">옥내소화전</span>
+              <span class="wtag b">React · HTML</span>
+              <span class="wtag">NFTC 102</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">옥내소화전 펌프 전양정(H) 및 용량 계산 — MANMIN Ver1.0 → Ver2.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFPC/NFTC 102) 기반 옥내소화전 펌프 전양정 및 용량 자동 계산 웹 도구 시리즈. 계산 가이드 인포그래픽(Ver1.0)부터 완전 자동화 계산서(Ver2.0)까지 — 수원 용량 산정, Hazen-Williams 배관 마찰손실, 전동기 동력, A4 계산서 출력.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f87171;font-family:var(--f-mono);font-size:.68rem;color:#f87171;">Q = 소화전수(최대2개) × 130 ℓ/min</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H = E(실양정) + F(배관) + G(호스) + H(방수압) + I(안전율)</div>
+            </div>
+          </div>
+          <!-- GitHub 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/fire-hydrant-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [옥내소화전] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지 1: 계산 가이드 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">STEP 01</span>
+              계산 가이드 인포그래픽
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/fire-hydrant-calc/','_blank')">
+              <img src="./images/옥내소화전.jpg"
+                   alt="옥내소화전 펌프 전양정 및 용량 계산 가이드 — MANMIN Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 102 기반 전양정(H) 계산 공식 요약. 1단계 수원산정 → 2단계 전양정 계산 프로세스 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/fire-hydrant-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/fire-hydrant-calc →
+          </a>
+          <span class="wdate">2024~2025 · Ver 1.0 → 2.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-006: 옥외소화전 Ver1.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(251,146,60,.4);color:#fb923c;">옥외소화전</span>
+              <span class="wtag b">React · HTML</span>
+              <span class="wtag">NFPC 109</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">옥외소화전 펌프 용량 및 수원 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전성능기준(NFPC 109) 기반 옥외소화전 펌프 용량 및 수원 산정 웹 가이드. 수원 저수량 산정, 방수량 기준, 펌프 성능(노즐 선단 압력 0.25MPa 이상), 20분 연속 운전 능력 등 실무 핵심 기준을 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">수원 저수량 = N(최대 2개) × 7m³</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">방수량 350 ℓ/min 이상 · 노즐 선단 압력 0.25MPa 이상</div>
+            </div>
+          </div>
+          <!-- GITHUB 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [옥외소화전] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver1.0 옥외소화전 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">STEP 01</span>
+              수원 및 펌프 성능 산정 가이드
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/outdoor-hydrant-calc/','_blank')">
+              <img src="./images/옥외소화전.jpg"
+                   alt="MANMIN Ver1.0 옥외소화전 펌프 용량 및 수원 산정 가이드"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFPC 109 기반 옥외소화전 수원 저수량 산정(N×7m³)과 펌프 성능 기준(방수량·노즐압력·연속운전) 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/outdoor-hydrant-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-007: 스프링클러 Ver1.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(56,189,248,.4);color:#38bdf8;">스프링클러</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFTC 103</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">스프링클러 펌프 용량 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 103) 기반 스프링클러설비 펌프 용량 산정 웹 가이드. 헤드 기준개수 설정(10·20·30개), 수원 용량(기준개수 × 1.6m³), 전양정 구성 요소(실양정·배관마찰손실·헤드선단압력·안전율), 전동기 출력 선정까지 실무 핵심 프로세스를 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #38bdf8;font-family:var(--f-mono);font-size:.68rem;color:#38bdf8;">펌프 토출량(C) = 기준개수(A) × 80 L/min</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">전양정(I) = 실양정 + 배관마찰손실 + 헤드선단압력(10m) + 안전율</div>
+            </div>
+          </div>
+          <!-- GITHUB 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/fire-sprinkler-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [스프링클러] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver1.0 스프링클러 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#38bdf8;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);padding:1px 8px;">STEP 01</span>
+              펌프 용량 산정 가이드
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/fire-sprinkler-calc/','_blank')">
+              <img src="./images/스프링클러.jpg"
+                   alt="MANMIN Ver1.0 스프링클러 펌프 용량 산정 가이드 — NFTC 103"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 103 기반 헤드 기준개수 설정, 수원 용량 산정(기준개수×1.6m³), 전양정 구성 요소, 전동기 출력 선정 프로세스 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/fire-sprinkler-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/fire-sprinkler-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-008: 간이스프링클러 Ver1.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(52,211,153,.4);color:#34d399;">간이스프링클러</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFSC 103A</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">간이스프링클러 펌프 용량 및 압력 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">소방청 고시 제2021-6호 '간이스프링클러설비의 화재안전기준(NFSC 103A)' 기반 펌프 용량 및 압력 산정 웹 가이드. 설비별 기본 성능 기준(방수압 0.1MPa · 방수량 50L/min 이상), 대상물 유형별 동시 개방 헤드 수(2개·5개), 충압펌프 기동용 수입개폐장치, 가압송수장치별 압력 산정 공식까지 실무 핵심 기준을 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #34d399;font-family:var(--f-mono);font-size:.68rem;color:#34d399;">H = h₁ + 10 (m) · 방수압 0.1MPa · 방수량 50L/min 이상</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = p₁ + p₂ + 0.1 (MPa)</div>
+            </div>
+          </div>
+          <!-- GITHUB 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [간이스프링클러] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver1.0 간이스프링클러 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#34d399;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);padding:1px 8px;">STEP 01</span>
+              펌프 용량 및 압력 산정 가이드
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/simple-sprinkler-calc/','_blank')">
+              <img src="./images/간이스프링.jpg"
+                   alt="MANMIN Ver1.0 간이스프링클러 펌프 용량 및 압력 산정 가이드 — NFSC 103A"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFSC 103A 기반 간이스프링클러 설비별 기본 성능(방수압·방수량), 대상물 유형별 동시 개방 헤드 수, 가압송수장치별 압력 산정 공식(H = h₁ + 10, P = p₁ + p₂ + 0.1) 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/simple-sprinkler-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-009: 겸용 펌프 Ver2.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(192,132,252,.4);color:#c084fc;">겸용 펌프</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFTC 102 · 103</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">[옥내소화전 + 스프링클러] 겸용 펌프 용량 계산 가이드 — MANMIN Ver2.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전과 스프링클러를 겸용하는 펌프 용량 산정 웹 가이드. 펌프 및 수원 용량 산정의 3대 원칙(토출량·수원 합산, 전양정 최댓값 채택, 방화벽 구획 시 최대치 적용)을 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³)와 함께 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #c084fc;font-family:var(--f-mono);font-size:.68rem;color:#c084fc;">Q(겸용) = Q(소화전) + Q(스프링클러) · V(겸용) = V(소화전) + V(스프링클러)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(소화전), H(스프링클러) ]</div>
+            </div>
+          </div>
+          <!-- GITHUB 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/combo-pump-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [겸용-옥내+스프링] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver2.0 겸용 펌프 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#c084fc;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(192,132,252,.15);border:1px solid rgba(192,132,252,.3);padding:1px 8px;">STEP 01</span>
+              겸용 펌프 용량 산정 3대 원칙 · 실계산 사례
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/combo-pump-calc/','_blank')">
+              <img src="./images/겸용시스템.jpg"
+                   alt="MANMIN Ver2.0 옥내소화전+스프링클러 겸용 펌프 용량 계산 가이드"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#c084fc;border:1px solid rgba(192,132,252,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">옥내소화전·스프링클러 겸용 펌프 용량 산정 3대 원칙 및 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³) 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/combo-pump-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/combo-pump-calc →
+          </a>
+          <span class="wdate">2025 · Ver 2.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-010: 간이스프링클러+옥내소화전 겸용 Ver1.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(251,191,36,.4);color:#fbbf24;">간이+옥내 겸용</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFSC 103A · NFTC 102</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">간이스프링클러 &amp; 옥내소화전 겸용 시스템 용량 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전과 간이스프링클러가 가압송수장치(펌프)·수원을 공유할 경우의 겸용 용량 산정 웹 가이드. NFSC 103A·NFTC 102 기반으로 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화 구획 시 산정 용량 완화(두 설비 중 최대치 이상만 확보), 배관 연결·송수구 공통 사항(개폐표시형 밸브 설치 필수)을 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fbbf24;font-family:var(--f-mono);font-size:.68rem;color:#fbbf24;">Q(겸용) = Q(옥내소화전) + Q(간이스프링클러) · V(겸용) = V합산</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(옥내소화전), H(간이스프링클러) ]</div>
+            </div>
+          </div>
+          <!-- GITHUB 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/combo-easy-fire-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [겸용-간이+옥내] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver1.0 간이+옥내 겸용 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#fbbf24;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);padding:1px 8px;">STEP 01</span>
+              겸용 시스템 용량 산정 원칙 · 방화구획 완화 · 배관 공통사항
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/combo-easy-fire-calc/','_blank')">
+              <img src="./images/간이_옥내.jpg"
+                   alt="MANMIN Ver1.0 간이스프링클러+옥내소화전 겸용 시스템 용량 산정 가이드"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#fbbf24;border:1px solid rgba(251,191,36,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFSC 103A·NFTC 102 기반 간이스프링클러+옥내소화전 겸용 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화구획 시 완화 기준, 개폐표시형 밸브·송수구 공통사항 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/combo-easy-fire-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/combo-easy-fire-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-011: 옥내+옥외 소화전 겸용 Ver1.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(249,115,22,.4);color:#f97316;">옥내·외 겸용</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFTC 102</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">옥내·외 소화전 겸용 펌프 시스템 설계 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 102) 기반 옥내소화전과 옥외소화전 겸용 펌프의 토출량·양정·동력·수원 산정 웹 가이드. 토출 유량(설치 개수 최대 2개 × 130 ℓ/min), 전양정 계산 요소(실양정·배관호스마찰손실·노즐방수압 0.17MPa), 전동기 출력(P = 0.163 × Q × H × K ÷ 효율), 유효 수원(개수당 2.6m³ 이상), 과압 방지(0.7MPa 초과 시 감압장치), 겸용 시스템 합산 원칙까지 실무 핵심을 인포그래픽으로 정리합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f97316;font-family:var(--f-mono);font-size:.68rem;color:#f97316;">Q = 설치 개수(최대 2개) × 130 ℓ/min · 수원 V = 개수당 2.6m³ 이상</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = (0.163 × Q × H × K) ÷ 효율 · 노즐 방수압 0.17MPa 이상</div>
+            </div>
+          </div>
+        </div>
+        <!-- GITHUB 링크 버튼 — 우측 상단 고정 -->
+        <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/" target="_blank" rel="noopener"
+           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
+                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
+                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
+                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GITHUB [겸용-옥내+옥외] 바로가기
+        </a>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <!-- 이미지: MANMIN Ver1.0 옥내·외 겸용 인포그래픽 -->
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#f97316;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);padding:1px 8px;">STEP 01</span>
+              펌프 성능·토출량 산정 → 동력 산출·수원 확보
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/combo-indoor-outdoor-calc/','_blank')">
+              <img src="./images/옥내_옥외.jpg"
+                   alt="MANMIN Ver1.0 옥내·외 소화전 겸용 펌프 시스템 설계 가이드"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#f97316;border:1px solid rgba(249,115,22,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 102 기반 옥내·외 소화전 겸용 토출량·전양정·전동기 출력·수원 산정, 과압 방지(0.7MPa 감압장치), 겸용 합산 원칙 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/combo-indoor-outdoor-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+      <!-- WEB-012: 소방 펌프 용량 계산서 통합 포탈 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
+        <!-- 우측 상단 고정 버튼 -->
+        <a href="https://manminkim-eng.github.io/portal/" target="_blank" rel="noopener"
+           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
+                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
+                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
+                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GITHUB [통합 포탈] 바로가기
+        </a>
+
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(74,222,128,.4);color:#4ade80;">통합 포탈</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFTC 최신 기준</span>
+              <span class="wtag" style="border-color:rgba(74,222,128,.3);color:#4ade80;">7종 계산서</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전·옥외소화전·스프링클러·간이스프링클러 및 겸용 시스템의 펌프 용량을 NFTC 화재안전기술기준에 따라 정밀 계산하는 통합 웹 포탈. 단독 설비 4종 + 겸용 설비 3종, 총 7종의 계산서를 하나의 포탈에서 제공합니다. NFTC 최신 기준 적용(2026.3.1 시행), H·W(Hazen-Williams) 배관 마찰손실, PWA 오프라인 지원, A4 인쇄 최적화.</p>
+            <!-- 핵심 스펙 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #4ade80;font-family:var(--f-mono);font-size:.68rem;color:#4ade80;">단독 설비 4종 — 옥내소화전 · 옥외소화전 · 스프링클러 · 간이스프링클러</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">겸용 설비 3종 — 옥내+스프링 · 간이+옥내 · 옥내+옥외</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#4ade80;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.3);padding:1px 8px;">PORTAL</span>
+              설비별 NFTC 설계 기준 비교표 · 7종 계산서 통합 대시보드
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/portal/','_blank')">
+              <img src="./images/통합_포털.jpg"
+                   alt="소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
+                          padding:2px 7px;letter-spacing:.06em;">7종 통합</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">단독 설비 4종 + 겸용 설비 3종 총 7종 계산서 통합 포탈. 설비별 NFTC 설계 기준 비교표, NFTC 화재안전기술기준 시행일 안내(2026.3.1 최신 기준), PWA 오프라인 지원.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/portal/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/portal →
+          </a>
+          <span class="wdate">2025~2026 · 7종 통합</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MANMIN 시리즈 요약 배너 -->
+    <div class="rv" style="margin-top:24px;border:1px solid var(--line2);background:var(--bg-card);padding:22px 28px;position:relative;">
+      <div style="position:absolute;top:-1px;right:-1px;width:14px;height:14px;border-color:var(--gold);border-style:solid;border-width:2px 2px 0 0;"></div>
+      <div style="position:absolute;bottom:-1px;left:-1px;width:14px;height:14px;border-color:var(--gold);border-style:solid;border-width:0 0 2px 2px;"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.72rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">// MANMIN Web Series</div>
+          <div style="font-family:var(--f-kr);font-size:1.05rem;font-weight:700;color:var(--t-high);">소방설비 엔지니어링 웹 계산 도구 시리즈</div>
+          <div style="font-size:.88rem;color:var(--t-body);margin-top:4px;">NFTC 기반 · A4 계산서 출력 · PWA 오프라인 지원 · 현장 실무 최적화</div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">3</div>
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Released</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">2</div>
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">In Progress</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:#86efac;">PWA</div>
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Latest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ YOUTUBE ═══════════════════════════════════ -->
+<section id="youtube" class="sec">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">YouTube Channel</div>
+    <h2 class="sec-title">소방·건축 계산 노하우를 공유하는 <span class="hl">유튜브 채널</span></h2>
+    <p class="sec-sub">MANMIN 웹 시리즈 제작 과정 · 소방설비 계산 실무 · 건축 엔지니어링 지식 공유</p>
+  </div>
+  <div class="inner">
+    <div class="yt-grid">
+
+      <!-- Featured: 스프링클러 계산서 Ver3.0 소개 -->
+      <div class="ytc feat rv">
+        <div class="ythumb">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#050c1e,#091828,#071420);"></div>
+          <!-- 스프링클러 SVG 배경 -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.12;" viewBox="0 0 400 225" fill="none">
+            <circle cx="200" cy="112" r="14" fill="#5a9ae8"/>
+            <line x1="200" y1="30" x2="200" y2="98" stroke="#5a9ae8" stroke-width="2"/>
+            <line x1="200" y1="126" x2="200" y2="195" stroke="#5a9ae8" stroke-width="2"/>
+            <line x1="80" y1="112" x2="186" y2="112" stroke="#5a9ae8" stroke-width="2"/>
+            <line x1="214" y1="112" x2="320" y2="112" stroke="#5a9ae8" stroke-width="2"/>
+            <circle cx="200" cy="30" r="6" fill="#20d0e8"/><circle cx="200" cy="195" r="6" fill="#20d0e8"/>
+            <circle cx="80" cy="112" r="6" fill="#20d0e8"/><circle cx="320" cy="112" r="6" fill="#20d0e8"/>
+            <line x1="118" y1="50" x2="189" y2="100" stroke="#5a9ae8" stroke-width="1.5"/>
+            <line x1="282" y1="50" x2="211" y2="100" stroke="#5a9ae8" stroke-width="1.5"/>
+            <line x1="118" y1="174" x2="189" y2="124" stroke="#5a9ae8" stroke-width="1.5"/>
+            <line x1="282" y1="174" x2="211" y2="124" stroke="#5a9ae8" stroke-width="1.5"/>
+            <circle cx="118" cy="50" r="5" fill="#20d0e8"/><circle cx="282" cy="50" r="5" fill="#20d0e8"/>
+            <circle cx="118" cy="174" r="5" fill="#20d0e8"/><circle cx="282" cy="174" r="5" fill="#20d0e8"/>
+          </svg>
+          <div class="yt-play">▶</div>
+          <span class="yt-dur">24:18</span>
+          <span class="yt-views">👁 3,800 views</span>
+          <!-- 챕터 표시 -->
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(32,208,232,.15);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">MANMIN Ver3.0</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);color:var(--blue);">PWA</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">스프링클러설비 · NFTC 103</div>
+          <h3 class="yt-title">스프링클러 펌프 계산서 Ver3.0 완전 공개 — PWA로 오프라인에서도 쓰는 소방계산 앱</h3>
+          <p class="yt-desc">NFTC 103 기반 스프링클러설비 펌프 용량 자동 계산 PWA 앱 전체 사용법. 기준개수 선택부터 배관 마찰손실, 전동기 출력, A4 계산서 인쇄까지 실무 적용 방법을 완전 공개합니다.</p>
+          <div class="yt-meta">
+            <span>2025.03.18</span><span class="yt-meta-sep"></span>
+            <span>24:18</span><span class="yt-meta-sep"></span>
+            <span>3,800 views</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 옥내소화전 Ver2.0 계산서 -->
+      <div class="ytc rv">
+        <div class="ythumb">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#14060a,#200c10);"></div>
+          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">🧯</span>
+          <div class="yt-play">▶</div>
+          <span class="yt-dur">18:42</span>
+          <span class="yt-views">👁 2,400 views</span>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">옥내소화전 · NFTC 102</div>
+          <h3 class="yt-title">옥내소화전 펌프 전양정(H) 계산 완전 정복 — MANMIN Ver2.0 A4 계산서 출력</h3>
+          <p class="yt-desc">NFTC 102 기반 옥내소화전 전양정 5가지 수두 합산 방법. 수원 용량부터 전동기 HP 선정까지 실무 계산서 작성법을 단계별로 설명합니다.</p>
+          <div class="yt-meta">
+            <span>2025.02.10</span><span class="yt-meta-sep"></span>
+            <span>18:42</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hazen-Williams 마찰손실 해설 -->
+      <div class="ytc rv">
+        <div class="ythumb">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#060e14,#0a1828);"></div>
+          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">📐</span>
+          <div class="yt-play">▶</div>
+          <span class="yt-dur">16:05</span>
+          <span class="yt-views">👁 1,920 views</span>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">배관 마찰손실 · Hazen-Williams</div>
+          <h3 class="yt-title">Hazen-Williams 공식 제대로 이해하기 — 소방배관 마찰손실 실전 계산법</h3>
+          <p class="yt-desc">소방설비 배관 마찰손실의 핵심, Hazen-Williams 공식을 건축사 관점에서 쉽게 설명합니다. 관경·유량·C값 선택법과 실무 적용 사례까지 포함합니다.</p>
+          <div class="yt-meta">
+            <span>2025.01.22</span><span class="yt-meta-sep"></span>
+            <span>16:05</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방설비 자격 + 건축사 복합역량 -->
+      <div class="ytc rv">
+        <div class="ythumb">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0c0808,#1e1010);"></div>
+          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">🔥</span>
+          <div class="yt-play">▶</div>
+          <span class="yt-dur">14:30</span>
+          <span class="yt-views">👁 1,540 views</span>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방설비기사 · 복합자격</div>
+          <h3 class="yt-title">건축사 + 소방설비기사 — 복합 자격이 현장에서 만드는 차이</h3>
+          <p class="yt-desc">10여 종 자격증을 보유한 건축사가 말하는 소방설비 통합 지식의 실무적 가치. 설계 단계부터 소방 간섭을 제로화하는 방법을 공유합니다.</p>
+          <div class="yt-meta">
+            <span>2025.01.08</span><span class="yt-meta-sep"></span>
+            <span>14:30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NFTC 개정 해설 -->
+      <div class="ytc rv">
+        <div class="ythumb">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#08080e,#101018);"></div>
+          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">📋</span>
+          <div class="yt-play">▶</div>
+          <span class="yt-dur">20:15</span>
+          <span class="yt-views">👁 1,280 views</span>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">법규 해설 · NFTC 개정</div>
+          <h3 class="yt-title">2026년 NFTC 103 개정 핵심 정리 — 스프링클러 설계자가 꼭 알아야 할 변경사항</h3>
+          <p class="yt-desc">2026년 3월 시행 화재안전기술기준(NFTC 103) 주요 개정 내용 해설. 방수압, 헤드 수량, 고층건축물 NFTC 604 연동 등 실무 변경사항을 정리합니다.</p>
+          <div class="yt-meta">
+            <span>2024.12.15</span><span class="yt-meta-sep"></span>
+            <span>20:15</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Channel Banner -->
+    <div class="yt-banner rv">
+      <div class="yt-ch-info">
+        <div class="yt-ch-icon">▶</div>
+        <div>
+          <div class="yt-ch-name">김만민 건축사 — MANMIN Engineering</div>
+          <div class="yt-ch-handle">소방설비 계산 · 건축 엔지니어링 · NFTC 실무 해설 | 29년 현장 전문가 채널</div>
+        </div>
+      </div>
+      <a href="https://youtube.com/@your-channel" target="_blank" class="yt-sub-btn">▶ 채널 구독하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADVISORY ═══════════════════════════════════ -->
+<section id="advisory" class="sec sec-alt">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Public Advisory</div>
+    <h2 class="sec-title">공공기관이 신뢰하는 <span class="hl">기술자문 전문가</span></h2>
+    <p class="sec-sub">Trusted Technical Advisor for Public Institutions</p>
+  </div>
+  <div class="inner">
+    <div class="adv-grid">
+
+      <!-- 익산시 카드 -->
+      <div class="adv-card rv">
+        <span class="adv-icon">🏛️</span>
+        <div class="adv-region">익산시 (Iksan City)</div>
+        <div class="adv-region-en">Iksan Metropolitan City, Jeollabuk-do</div>
+        <div class="adv-items">
+
+          <div class="adv-item" onclick="openAdvModal('iksan_2021_08')" title="위촉장 보기">
+            <div class="adv-item-t">익산시 건축위원회 위원</div>
+            <div class="adv-item-en">Member, Iksan City Architectural Committee</div>
+            <div class="adv-item-meta">
+              <span class="adv-item-period">2021.08 ~ 2024.07 · 재위촉 2024.08 ~ 2027.07</span>
+              <span class="adv-item-hint">📄 위촉장</span>
+            </div>
+          </div>
+
+          <div class="adv-item" onclick="openAdvModal('iksan_2025_05')" title="위촉장 보기">
+            <div class="adv-item-t">익산시 지역건축안전센터 건축안전자문단 위원</div>
+            <div class="adv-item-en">Advisor, Iksan City Regional Architectural Safety Center</div>
+            <div class="adv-item-meta">
+              <span class="adv-item-period">2025.05 ~ 2027.05</span>
+              <span class="adv-item-hint">📄 위촉장</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- 위촉장 버튼 모음 -->
+        <div class="adv-cert-btns">
+          <button class="adv-cert-btn" onclick="openAdvModal('iksan_2021_08')">📄 건축위원회 2021</button>
+          <button class="adv-cert-btn" onclick="openAdvModal('iksan_2024_08')">📄 건축위원회 2024</button>
+          <button class="adv-cert-btn" onclick="openAdvModal('iksan_2025_05')">📄 안전센터 2025</button>
+        </div>
+      </div>
+
+      <!-- 전라북도 카드 -->
+      <div class="adv-card rv">
+        <span class="adv-icon">🏛️</span>
+        <div class="adv-region">전라북도 (Jeonbuk Province)</div>
+        <div class="adv-region-en">Jeollabuk-do Special Self-Governing Province</div>
+        <div class="adv-items">
+
+          <div class="adv-item" onclick="openAdvModal('jeonbuk_2023_01')" title="위촉장 보기">
+            <div class="adv-item-t">전라북도 공동주택 기술자문단 자문위원</div>
+            <div class="adv-item-en">Jeonbuk Province Multi-Family Housing Technical Advisory</div>
+            <div class="adv-item-meta">
+              <span class="adv-item-period">2023.01 ~ 2025.01</span>
+              <span class="adv-item-hint">📄 위촉장</span>
+            </div>
+          </div>
+
+          <div class="adv-item" onclick="openAdvModal('jeonbuk_2025_01')" title="위촉장 보기">
+            <div class="adv-item-t">전북특별자치도 기술자문단 자문위원</div>
+            <div class="adv-item-en">Jeonbuk Special Self-Governing Province Technical Advisory</div>
+            <div class="adv-item-meta">
+              <span class="adv-item-period">2025.02 ~ 2027.01</span>
+              <span class="adv-item-hint">📄 위촉장</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- 위촉장 버튼 모음 -->
+        <div class="adv-cert-btns">
+          <button class="adv-cert-btn" onclick="openAdvModal('jeonbuk_2023_01')">📄 전라북도 2023</button>
+          <button class="adv-cert-btn" onclick="openAdvModal('jeonbuk_2025_01')">📄 전북특별자치도 2025</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══════════════════════════════════════ -->
+<section id="about" class="sec">
+  <div class="inner">
+    <div class="about-wrap">
+      <div class="profile rv">
+        <div class="profile-hd">
+          <div class="profile-av">👤</div>
+          <div class="profile-nm">김만민</div>
+          <div class="profile-pos">Architect / Director</div>
+        </div>
+        <div class="profile-row"><span class="pkey">소속</span><span class="pval">(주)대성건축사사무소</span></div>
+        <div class="profile-row"><span class="pkey">직위</span><span class="pval gd">이사</span></div>
+        <div class="profile-row"><span class="pkey">재직기간</span><span class="pval">2003.04 ~ 현재</span></div>
+        <div class="profile-row"><span class="pkey">총 경력</span><span class="pval gd">29년 (1993~)</span></div>
+        <div class="profile-row"><span class="pkey">건축사 면허</span><span class="pval">License #20072</span></div>
+        <div class="profile-row"><span class="pkey">소재지</span><span class="pval">전북 익산시</span></div>
+        <div class="profile-row"><span class="pkey">상태</span><span class="pval cy">● 자문 가능</span></div>
+      </div>
+      <div class="about-text rv">
+        <div class="sec-eyebrow" style="margin-bottom:16px;">About</div>
+        <h2 class="about-tagline">건축과 설비를 아우르는<br><span>29년의 통합 기술 솔루션</span></h2>
+        <p class="about-bio">
+          <strong>건축과 기계설비를 동시에 이해하는 복합 기술 역량의 전문가입니다.</strong><br><br>
+          설계, 시공, 감리, CM, VE 등 건설 전 과정에서 쌓아온 독보적인 전문성으로
+          공공기관과 민간 클라이언트 모두에게 신뢰받는 건축사입니다.<br><br>
+          익산시 건축위원회 위원 및 전북특별자치도 기술자문위원으로 활동하며
+          공공 사업의 경제성과 안전성을 높이고 있습니다.<br><br>
+          <em style="color:var(--t-high);font-style:normal;font-weight:600;">"현장의 안전과 품질을 최우선 가치로 둡니다. 설계와 시공의 간극을 좁히는 소통, 문제 해결 중심의 실무력."</em>
+        </p>
+        <div class="comp-grid">
+          <div class="comp"><div class="comp-t">🏗 건축 설계 · 감리</div><div class="comp-d">공동주택, 의료·교육, 산업시설 총괄 설계 및 책임 감리</div></div>
+          <div class="comp"><div class="comp-t">⚙️ 기계 · 소방 설비</div><div class="comp-d">HVAC, 공조냉동, 소방설비 통합 검토 및 기술 자문</div></div>
+          <div class="comp"><div class="comp-t">📊 CM · VE 전문</div><div class="comp-d">건설사업관리, 가치공학으로 비용·품질 최적 균형 도출</div></div>
+          <div class="comp"><div class="comp-t">🌱 환경 플랜트</div><div class="comp-d">하수·폐수처리 공정 설비 디자인 및 환경시설 특화 설계</div></div>
+        </div>
+        <a href="#contact" class="btn btn-gold">▶ 기술 자문 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════ -->
+<section id="contact" class="sec sec-alt">
+  <div class="inner">
+    <div class="contact-wrap rv">
+      <div class="contact-pre">// 07. Get in touch</div>
+      <h2 class="contact-title">파트너를 위한 <span class="hl">최적의 선택</span></h2>
+      <p class="contact-sub">설계부터 시공관리까지, 실패 없는 프로젝트를 약속합니다.<br>기술 자문, 설계 협업, 프로젝트 컨설팅 문의를 환영합니다.</p>
+      <div class="ccard">
+        <div class="cperson">
+          <div class="cperson-icon" style="background:transparent;border:none;padding:0;overflow:visible;">
+            <img src="./images01/만민로고.png" alt="KIM MANMIN" style="width:56px;height:56px;object-fit:contain;display:block;">
+          </div>
+          <div>
+            <div class="cperson-nm">김만민 (Architect)</div>
+            <div class="cperson-role">건축사 / 이사 — (주)대성건축사사무소</div>
+          </div>
+        </div>
+        <div class="cinfo-grid">
+          <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
+          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#365b57585b5f585d5f5b765e57585b575f5a18585342"><span class="__cf_email__" data-cfemail="afc2cec1c2c6c1c4c6c2efc7cec1c2cec6c381c1cadb">[email&#160;protected]</span></a></div></div>
+          <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
+          <div><div class="cinfo-key">경력</div><div class="cinfo-val">29년 (1993~현재)</div></div>
+        </div>
+        <div class="company-row">
+          <div class="co-badge">DAE<br>SUNG</div>
+          <div>
+            <div class="co-nm">(주)대성건축사사무소</div>
+            <div class="co-addr">📍 전북 익산시 선화로 259</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <span class="foot-l">© 2025 김만민 건축사 / (주)대성건축사사무소 — All rights reserved</span>
+  <span class="foot-r">건축사 면허 <span class="acc">#20072</span> · 익산시 건축위원회 위원</span>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 50));
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  // Counter animation
+  const cobs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.dataset.n;
+      const suffix = target === 100 ? '%' : '+';
+      let cur = 0;
+      const step = Math.max(1, Math.ceil(target / 40));
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, target);
+        el.textContent = cur + suffix;
+        if (cur >= target) clearInterval(t);
+      }, 38);
+      cobs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-n]').forEach(el => cobs.observe(el));
+
+  // Stat bar trigger
+  const bobs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.stat-cell').forEach(el => bobs.observe(el));
+</script>
+
+<!-- ══ LICENSE MODAL ═════════════════════════════ -->
+<div id="licModal" class="lic-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="licModalTitle">
+  <div class="lic-modal">
+    <div class="lic-modal-header">
+      <span class="lic-modal-title" id="licModalTitle">자격증</span>
+      <button class="lic-modal-close" onclick="closeLicModal()" aria-label="닫기">✕</button>
+    </div>
+    <div class="lic-modal-img-wrap">
+      <img id="licModalImg" src="" alt="자격증" />
+    </div>
+    <div class="lic-modal-footer">클릭하거나 ESC를 눌러 닫기</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ── 자격증 이미지 데이터 ──────────────────────────
+  const LIC = {
+    '건축사': { title:title:'건축사 자격증  #20072', src:'./images01/licenses/건축사_자격증.jpg' },
+    '일반기계기사': { title:title:'일반기계기사 자격증', src:'./images01/licenses/일반기계기사.jpg' },
+    '건설기계설비기사': { title:title:'건설기계설비기사 자격증', src:'./images01/licenses/건설기계설비기사.jpg' },
+    '공조냉동기계기사': { title:title:'공조냉동기계기사 자격증', src:'./images01/licenses/공조냉동기계기사.jpg' },
+    '소방설비기사_기계': { title:title:'소방설비기사 (기계분야) 자격증', src:'./images01/licenses/소방설비기사_기계.jpg' },
+    '소방설비기사_전기': { title:title:'소방설비기사 (전기분야) 자격증', src:'./images01/licenses/소방설비기사_전기.jpg' },
+    '건축설비기사': { title:title:'건축설비기사 자격증', src:'./images01/licenses/건축설비기사.jpg' },
+    '건축산업기사': { title:title:'건축산업기사 자격증', src:'./images01/licenses/건축산업기사.jpg' },
+    '토목기사': { title:title:'토목기사 자격증', src:'./images01/licenses/토목기사.jpg' },
+    'CVS': { title:title:'국제공인VE전문가 (CVS) 자격증', src:'./images01/licenses/CVS_자격증.jpg' },
+    'VMA': { title:title:'VMA (Value Methodology Associate) 자격증', src:'./images01/licenses/VMA_자격증.jpg' },
+    'VMP': { title:title:'VMP 가치혁신전문가 자격증', src:'./images01/licenses/VMP_자격증.jpg' },
+  };
+
+  window.openLicModal = function(key) {
+    const d = LIC[key]; if(!d) return;
+    document.getElementById('licModalTitle').textContent = d.title;
+    const img = document.getElementById('licModalImg');
+    img.src = ''; img.alt = d.title;
+    // 지연 로드로 모달 먼저 열기
+    const overlay = document.getElementById('licModal');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { img.src = d.src; }, 30);
+  };
+
+  window.closeLicModal = function() {
+    document.getElementById('licModal').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { document.getElementById('licModalImg').src = ''; }, 300);
+  };
+
+  // ESC 닫기
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLicModal(); });
+
+  // 오버레이 클릭 닫기
+  document.getElementById('licModal').addEventListener('click', function(e) {
+    if(e.target === this) closeLicModal();
+  });
+})();
+</script>
+
+
+<!-- ══ ADVISORY MODAL (위촉장 뷰어) ════════════════ -->
+<div id="advModal" class="lic-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="advModalTitle">
+  <div class="lic-modal">
+    <div class="lic-modal-header">
+      <span class="lic-modal-title" id="advModalTitle">위촉장</span>
+      <button class="lic-modal-close" onclick="closeAdvModal()" aria-label="닫기">✕</button>
+    </div>
+    <div class="lic-modal-img-wrap">
+      <img id="advModalImg" src="" alt="위촉장" />
+    </div>
+    <div class="lic-modal-footer">클릭하거나 ESC를 눌러 닫기</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const ADV = {
+    'iksan_2025_05': { title:title:'위촉장 — 익산시 지역건축안전센터 건축안전자문단 (2025.5)', src:'./images01/advisory/위촉장_익산시_2025_05.jpg' },
+    'jeonbuk_2025_01': { title:title:'위촉장 — 전북특별자치도 기술자문단 (2025.1)', src:'./images01/advisory/위촉장_전북_2025_01.jpg' },
+    'iksan_2024_08': { title:title:'위촉장 — 익산시 건축위원회 위원 (2024.8)', src:'./images01/advisory/위촉장_익산시_2024_08.jpg' },
+    'jeonbuk_2023_01': { title:title:'위촉장 — 전라북도 공동주택 기술자문단 (2023.1)', src:'./images01/advisory/위촉장_전북_2023_01.jpg' },
+    'iksan_2021_08': { title:title:'위촉장 — 익산시 건축위원회 위원 (2021.8)', src:'./images01/advisory/위촉장_익산시_2021_08.jpg' },
+  };
+
+  window.openAdvModal = function(key) {
+    const d = ADV[key]; if (!d) return;
+    document.getElementById('advModalTitle').textContent = d.title;
+    const img = document.getElementById('advModalImg');
+    img.src = ''; img.alt = d.title;
+    const overlay = document.getElementById('advModal');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { img.src = d.src; }, 30);
+  };
+
+  window.closeAdvModal = function() {
+    document.getElementById('advModal').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { document.getElementById('advModalImg').src = ''; }, 300);
+  };
+
+  // ESC 닫기 (기존 licModal ESC와 공존)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAdvModal();
+  });
+
+  // 오버레이 클릭 닫기
+  document.getElementById('advModal').addEventListener('click', function(e) {
+    if (e.target === this) closeAdvModal();
+  });
+})();
+</script>
+
+
+<!-- PWA Service Worker 등록 -->
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js');
+  window.addE
