@@ -1223,8 +1223,14 @@ footer {
 <nav id="nav">
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
   <a href="#" class="logo">
-    <img src="./images01/협회로고.jpg" alt="건축사협회 로고" width="32" height="32" style="display:block;object-fit:contain;border-radius:2px;">
-    <img src="./images01/만민로고.png" alt="KIM MANMIN" width="44" height="44" style="display:block;object-fit:contain;background:transparent;filter:brightness(0) invert(1);">
+    <div style="position:relative;width:44px;height:44px;flex-shrink:0;display:block;">
+      <!-- 배경: 만민로고 흰 박스 -->
+      <img src="./images01/만민로고.png" alt="KIM MANMIN"
+           style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;background:transparent;filter:brightness(0) invert(1);">
+      <!-- 전면: 협회로고 완전 겹치기 -->
+      <img src="./images01/협회로고.jpg" alt="건축사협회 로고"
+           style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;border-radius:2px;">
+    </div>
     <div>
       <div class="logo-kr">김만민 건축사</div>
       <span class="logo-en">ARCHITECT KIM MANMIN</span>
@@ -1391,7 +1397,9 @@ footer {
   <div class="inner">
     <div class="scope-grid">
       <div class="scope-card rv">
-        <div class="scope-thumb" style="background:linear-gradient(135deg,#080e1e,#0f1a32);">🏢</div>
+        <div class="scope-thumb" style="background:#090d18;font-size:0;">
+          <img src="./images01/공동주택.jpg" alt="공동주택 설계 조감도 — 아파트 단지" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
+        </div>
         <div class="scope-body">
           <div class="scope-en">RESIDENTIAL</div>
           <h3 class="scope-title">공동주택</h3>
@@ -1399,7 +1407,9 @@ footer {
         </div>
       </div>
       <div class="scope-card rv">
-        <div class="scope-thumb" style="background:linear-gradient(135deg,#06100e,#0c1c18);">🏥</div>
+        <div class="scope-thumb" style="background:#090d18;font-size:0;">
+          <img src="./images01/병원.jpg" alt="병원·의료시설 건축 조감도" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
+        </div>
         <div class="scope-body">
           <div class="scope-en">HOSPITAL · MEDICAL · EDUCATION</div>
           <h3 class="scope-title">병원·의료시설 / 교육·연구시설</h3>
@@ -1407,7 +1417,9 @@ footer {
         </div>
       </div>
       <div class="scope-card rv">
-        <div class="scope-thumb" style="background:linear-gradient(135deg,#0a0e10,#131e22);">🏭</div>
+        <div class="scope-thumb" style="background:#090d18;font-size:0;">
+          <img src="./images01/공장.jpg" alt="공장·산업시설 건축 조감도" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
+        </div>
         <div class="scope-body">
           <div class="scope-en">FACTORY · INDUSTRIAL · ENVIRONMENT</div>
           <h3 class="scope-title">공장·산업시설 / 환경플랜트</h3>
@@ -2304,7 +2316,7 @@ footer {
         </div>
         <div class="cinfo-grid">
           <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
-          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="mailto:manminkim@hanmail.net">manminkim@hanmail.net</a></div></div>
+          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#523f333c3f3b3c393b3f123a333c3f333b3e7c3c3726"><span class="__cf_email__" data-cfemail="2548444b484c4b4e4c48654d444b48444c490b4b4051">[email&#160;protected]</span></a></div></div>
           <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
           <div><div class="cinfo-key">경력</div><div class="cinfo-val">29년 (1993~현재)</div></div>
         </div>
@@ -2329,7 +2341,7 @@ footer {
 </footer>
 
 <!-- ══ SCRIPTS ════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Nav scroll effect
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 50));
@@ -2460,6 +2472,25 @@ footer {
     document.getElementById('advModalTitle').textContent = d.title;
     const img = document.getElementById('advModalImg');
     img.src = ''; img.alt = d.title;
+    img.style.display = 'block';
+    // 이미지 로드 실패 안내
+    img.onerror = function() {
+      this.style.display = 'none';
+      let msg = document.getElementById('adv-err-msg');
+      if (!msg) {
+        msg = document.createElement('p');
+        msg.id = 'adv-err-msg';
+        msg.style.cssText = 'text-align:center;padding:40px 20px;color:#7090b8;font-size:.9rem;line-height:1.8;';
+        this.parentNode.appendChild(msg);
+      }
+      msg.style.display = 'block';
+      msg.innerHTML = '📂 이미지 파일을 찾을 수 없습니다.<br><code style="font-size:.78rem;color:#d4a843;">./images01/advisory/</code> 폴더에<br>위촉장 이미지를 업로드해 주세요.';
+    };
+    img.onload = function() {
+      this.style.display = 'block';
+      const msg = document.getElementById('adv-err-msg');
+      if (msg) msg.style.display = 'none';
+    };
     const overlay = document.getElementById('advModal');
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2478,14 +2509,4 @@ footer {
   });
 
   // 오버레이 클릭 닫기
-  document.getElementById('advModal').addEventListener('click', function(e) {
-    if (e.target === this) closeAdvModal();
-  });
-})();
-</script>
-
-
-<!-- PWA Service Worker 등록 -->
-<script>
-if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js');
-  window.addE
+  document.getElementById('advModal')
