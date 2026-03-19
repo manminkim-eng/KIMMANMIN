@@ -803,6 +803,35 @@ nav.on {
 .co-addr { font-family: var(--f-mono); font-size: .65rem; color: var(--t-sub); margin-top: 2px; }
 
 /* ═══════════════════════════════════════
+   KAKAO SHARE & CONTACT BUTTONS
+═══════════════════════════════════════ */
+.contact-action-row {
+  display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;
+}
+.btn-kakao-share {
+  flex: 1; min-width: 140px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 20px;
+  background: #FEE500; color: #191919;
+  border: none; cursor: pointer;
+  font-family: var(--f-kr); font-size: .9rem; font-weight: 700;
+  text-decoration: none; transition: all .22s;
+  clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+}
+.btn-kakao-share:hover { background: #F5D800; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,229,0,.4); }
+.btn-kakao-inquiry {
+  flex: 1; min-width: 140px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 20px;
+  background: #3A1D1D; color: #FEE500;
+  border: 1.5px solid #FEE500; cursor: pointer;
+  font-family: var(--f-kr); font-size: .9rem; font-weight: 700;
+  text-decoration: none; transition: all .22s;
+  clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+}
+.btn-kakao-inquiry:hover { background: #4a2a2a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,229,0,.25); }
+
+/* ═══════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════ */
 footer {
@@ -2849,10 +2878,33 @@ footer {
         </div>
         <div class="cinfo-grid">
           <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
-          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="mailto:manminkim@hanmail.net">manminkim@hanmail.net</a></div></div>
+          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#7d101c131014131614103d151c13101c141153131809"><span class="__cf_email__" data-cfemail="e08d818e8d898e8b898da088818e8d81898cce8e8594">[email&#160;protected]</span></a></div></div>
           <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
           <div><div class="cinfo-key">경력</div><div class="cinfo-val">30년 (1993~현재)</div></div>
         </div>
+
+        <!-- 카카오 공유 & 1:1 문의 버튼 -->
+        <div class="contact-action-row">
+          <!-- 카카오톡으로 홈피 공유 -->
+          <button class="btn-kakao-share" onclick="shareKakao()" title="홈페이지 주소를 복사하여 카카오톡으로 공유">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.583 1.574 4.865 3.969 6.242L5 20l4.188-2.156A12.3 12.3 0 0012 18c5.523 0 10-3.477 10-7.5S17.523 3 12 3z"/>
+            </svg>
+            카카오톡 공유 (주소 복사)
+          </button>
+          <!-- 카카오톡 1:1 문의 -->
+          <a href="https://open.kakao.com/o/sLxZAemi" target="_blank" rel="noopener"
+             class="btn-kakao-inquiry" id="kakao-inquiry-btn"
+             title="카카오톡으로 1:1 문의하기">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.583 1.574 4.865 3.969 6.242L5 20l4.188-2.156A12.3 12.3 0 0012 18c5.523 0 10-3.477 10-7.5S17.523 3 12 3z"/>
+            </svg>
+            카카오톡 1:1 문의
+          </a>
+        </div>
+        <div style="margin-top:8px;font-family:var(--f-mono);font-size:.62rem;color:var(--t-dim);text-align:center;line-height:1.6;">
+          💬 카카오톡 공유 — 주소 복사 후 카톡 채팅창에 붙여넣기<br>
+          📩 1:1 문의 — 카카오 오픈채팅으로 기술 자문·설계 협업 문의</div>
         <div class="company-row">
           <div class="co-badge" style="background:transparent;border:none;padding:0;overflow:hidden;">
             <img src="./images01/대성로고.jpg" alt="대성건축사사무소 로고" style="width:56px;height:56px;object-fit:contain;display:block;">
@@ -2873,8 +2925,48 @@ footer {
   <span class="foot-r">건축사 면허 <span class="acc">#20072</span> · 익산시 건축위원회 위원</span>
 </footer>
 
+<!-- ══ KAKAO SDK ══════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+        integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4"
+        crossorigin="anonymous"></script>
+<script>
+(function() {
+  /* ── 카카오 앱 키 ─────────────────────────────
+     https://developers.kakao.com 에서 발급 후
+     아래 'YOUR_KAKAO_JS_KEY' 를 실제 키로 교체하세요.
+  ──────────────────────────────────────────────── */
+  var KAKAO_KEY = 'YOUR_KAKAO_JS_KEY';
+  var PAGE_URL  = 'https://manminkim-eng.github.io/KIMMANMIN/';
+  var PAGE_TITLE = '김만민 건축사 — 전문 기술 역량 분석 보고서';
+  var PAGE_DESC  = '건설 전 생애주기를 아우르는 30년 통합 솔루션 전문가 · 건축사+CVS+안전진단';
+  var PAGE_IMG   = PAGE_URL + 'images01/만민로고.png';
+
+  /* 카카오 SDK 초기화 */
+  if (typeof Kakao !== 'undefined' && KAKAO_KEY !== 'YOUR_KAKAO_JS_KEY') {
+    try { Kakao.init(KAKAO_KEY); } catch(e) {}
+  }
+
+  /* 카카오톡 공유 함수 */
+  window.shareKakao = function() {
+    var url = 'https://manminkim-eng.github.io/KIMMANMIN/';
+    /* 클립보드 복사 후 안내 */
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function() {
+        alert('📋 홈페이지 주소가 복사되었습니다!\n\n카카오톡을 열고 채팅창에\n붙여넣기(길게 누르기 → 붙여넣기) 하세요.\n\n' + url);
+      }).catch(function() {
+        prompt('아래 주소를 복사하여 카카오톡에 붙여넣어 주세요.', url);
+      });
+    } else {
+      prompt('아래 주소를 복사하여 카카오톡에 붙여넣어 주세요.', url);
+    }
+  };
+
+  /* 카카오 오픈채팅 링크 정상 등록됨 — 바로 이동 */
+})();
+</script>
+
 <!-- ══ SCRIPTS ════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Nav scroll effect
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 50));
@@ -3046,11 +3138,4 @@ if ('serviceWorker' in navigator) {
               b.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:9999;background:#d4a843;color:#0c1120;padding:10px 20px;border-radius:12px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:nowrap';
               b.innerHTML =
                 '<span>🔄 새 버전이 있습니다</span>' +
-                '<button onclick="(()=>{document.getElementById('sw-update-banner').remove();navigator.serviceWorker.ready.then(r=>{r.waiting&&r.waiting.postMessage({type:'SKIP_WAITING'})})})()" style="background:#0c1120;color:#d4a843;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;">업데이트</button>' +
-                '<button onclick="document.getElementById('sw-update-banner').remove()" style="background:rgba(12,17,32,.25);color:#0c1120;border:none;border-radius:8px;padding:6px 10px;font-size:11px;cursor:pointer;">나중에</button>';
-              document.body.appendChild(b);
-            }
-          });
-        });
-      })
-      .c
+                '<button onclick="(()=>{document.getElementById('sw-update-banner').remove();navigator.serviceWorker.ready.then(r=>{r.waiting&&r.waiting.postMessage({type:'SKIP_WAITING'})})})()" style=
