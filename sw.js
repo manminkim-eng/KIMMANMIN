@@ -1,117 +1,92 @@
 /* ═══════════════════════════════════════════════════════════════
-   김만민 건축사 포탈 — Service Worker
-   대성건축사사무소 | ARCHITECT KIM MANMIN
-   전략: Cache-First (로컬 자산) + Network-First (외부 CDN)
+   김만민 건축사 — 대성건축사사무소  ·  Service Worker  v1.0
+   ARCHITECT KIM MANMIN  |  amber #d4a843
+   Cache-First (로컬) + Network-First (CDN)
    ═══════════════════════════════════════════════════════════════ */
 
-const CACHE_NAME   = 'manmin-portal-v1.0';
-const CDN_CACHE    = 'manmin-portal-cdn-v1.0';
-const OFFLINE_PAGE = './index.html';
+const CACHE     = 'manmin-v1.0';
+const CDN_CACHE = 'manmin-cdn-v1.0';
+const OFFLINE   = './index.html';
 
-/* ── 앱 셸 (아이콘 · 필수 파일) ─────────────────────────────── */
 const APP_SHELL = [
-  './index.html',
-  './manifest.json',
-  './favicon.ico',
-  './icons/icon-72x72.png',
-  './icons/icon-96x96.png',
-  './icons/icon-128x128.png',
-  './icons/icon-144x144.png',
-  './icons/icon-152x152.png',
-  './icons/icon-192x192.png',
-  './icons/icon-384x384.png',
-  './icons/icon-512x512.png',
+  './index.html', './manifest.json', './favicon.ico',
+  './icons/icon-72x72.png',   './icons/icon-96x96.png',
+  './icons/icon-128x128.png', './icons/icon-144x144.png',
+  './icons/icon-152x152.png', './icons/icon-192x192.png',
+  './icons/icon-384x384.png', './icons/icon-512x512.png',
   './icons/apple-touch-icon.png',
-  './icons/favicon-32x32.png',
-  './icons/favicon-16x16.png',
+  './icons/favicon-32x32.png', './icons/favicon-16x16.png',
 ];
+/* images/ · images01/ 은 첫 방문 후 cacheFirstLocal 로 자동 캐시 */
 
-/* ── CDN 오리진 (Network-First) ─────────────────────────────── */
-const CDN_ORIGINS = [
-  'https://fonts.googleapis.com',
-  'https://fonts.gstatic.com',
-  'https://cdn.jsdelivr.net',
-  'https://cdnjs.cloudflare.com',
+const CDN = [
+  'https://fonts.googleapis.com', 'https://fonts.gstatic.com',
+  'https://cdn.jsdelivr.net',     'https://cdnjs.cloudflare.com',
   'https://unpkg.com',
 ];
 
-/* INSTALL */
-self.addEventListener('install', (event) => {
-  console.log('[SW] Install — 프리캐시 시작');
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(c => c.addAll(APP_SHELL))
-      .then(() => { console.log('[SW] 완료'); return self.skipWaiting(); })
+/* ── INSTALL ─────────────────────────────────────────────────── */
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE).then(c => c.addAll(APP_SHELL))
+      .then(() => { console.log('[SW] 프리캐시 완료'); return self.skipWaiting(); })
       .catch(() => self.skipWaiting())
   );
 });
 
-/* ACTIVATE */
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(k => ![CACHE_NAME, CDN_CACHE].includes(k)).map(k => caches.delete(k))
-    )).then(() => self.clients.claim())
+/* ── ACTIVATE ────────────────────────────────────────────────── */
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys()
+      .then(ks => Promise.all(ks.filter(k => ![CACHE, CDN_CACHE].includes(k)).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
 });
 
-/* FETCH */
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  if (request.method !== 'GET') return;
-  if (!request.url.startsWith('http')) return;
-
-  const url = new URL(request.url);
-  const isCDN = CDN_ORIGINS.some(
-    o => url.origin === new URL(o).origin || request.url.startsWith(o)
-  );
-  event.respondWith(isCDN ? networkFirstCDN(request) : cacheFirstLocal(request));
+/* ── FETCH ───────────────────────────────────────────────────── */
+self.addEventListener('fetch', e => {
+  const req = e.request;
+  if (req.method !== 'GET' || !req.url.startsWith('http')) return;
+  const url = new URL(req.url);
+  const isCDN = CDN.some(o => url.origin === new URL(o).origin || req.url.startsWith(o));
+  e.respondWith(isCDN ? nf(req) : cf(req));
 });
 
-async function cacheFirstLocal(request) {
-  const cached = await caches.match(request);
-  if (cached) return cached;
+async function cf(req) {
+  const c = await caches.match(req);
+  if (c) return c;
   try {
-    const res = await fetch(request);
-    if (res && res.status === 200 && res.type !== 'opaque')
-      (await caches.open(CACHE_NAME)).put(request, res.clone());
-    return res;
+    const r = await fetch(req);
+    if (r && r.status === 200 && r.type !== 'opaque') (await caches.open(CACHE)).put(req, r.clone());
+    return r;
   } catch (_) {
-    if (request.headers.get('accept')?.includes('text/html')) {
-      const offline = await caches.match(OFFLINE_PAGE);
-      if (offline) return offline;
+    if (req.headers.get('accept')?.includes('text/html')) {
+      const off = await caches.match(OFFLINE); if (off) return off;
     }
-    return new Response('오프라인 상태입니다.',
-      { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+    return new Response('오프라인 상태입니다.', { status: 503, headers: { 'Content-Type': 'text/plain;charset=utf-8' } });
   }
 }
 
-async function networkFirstCDN(request) {
+async function nf(req) {
   try {
-    const res = await fetch(request);
-    if (res && res.status === 200)
-      (await caches.open(CDN_CACHE)).put(request, res.clone());
-    return res;
+    const r = await fetch(req);
+    if (r && r.status === 200) (await caches.open(CDN_CACHE)).put(req, r.clone());
+    return r;
   } catch (_) {
-    return (await caches.match(request, { cacheName: CDN_CACHE }))
-      || new Response('', { status: 503 });
+    return (await caches.match(req, { cacheName: CDN_CACHE })) || new Response('', { status: 503 });
   }
 }
 
-/* MESSAGE */
-self.addEventListener('message', event => {
-  if (event.data?.type === 'SKIP_WAITING' || event.data?.action === 'SKIP_WAITING')
-    self.skipWaiting();
-  if (event.data?.action === 'CLEAR_CACHE')
-    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k))));
+/* ── MESSAGE ─────────────────────────────────────────────────── */
+self.addEventListener('message', e => {
+  if (e.data?.type === 'SKIP_WAITING' || e.data?.action === 'SKIP_WAITING') self.skipWaiting();
+  if (e.data?.action === 'CLEAR_CACHE') caches.keys().then(ks => Promise.all(ks.map(k => caches.delete(k))));
 });
 
-/* PUSH */
-self.addEventListener('push', event => {
-  const data = event.data?.json() ?? { title: '김만민 건축사', body: '새로운 소식이 있습니다.' };
-  event.waitUntil(self.registration.showNotification(data.title, {
-    body: data.body,
-    icon: './icons/icon-192x192.png',
-    badge: './icons/icon-72x72.png',
+/* ── PUSH ────────────────────────────────────────────────────── */
+self.addEventListener('push', e => {
+  const d = e.data?.json() ?? { title: '김만민 건축사', body: '새로운 소식이 있습니다.' };
+  e.waitUntil(self.registration.showNotification(d.title, {
+    body: d.body, icon: './icons/icon-192x192.png', badge: './icons/icon-72x72.png',
   }));
 });

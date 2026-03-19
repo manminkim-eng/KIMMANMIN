@@ -1223,11 +1223,9 @@ footer {
 <nav id="nav">
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
   <a href="#" class="logo">
-    <div style="position:relative;width:44px;height:44px;flex-shrink:0;display:block;">
-      <!-- 배경: 만민로고 흰 박스 -->
+    <div style="position:relative;width:44px;height:44px;flex-shrink:0;">
       <img src="./images01/만민로고.png" alt="KIM MANMIN"
-           style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;background:transparent;filter:brightness(0) invert(1);">
-      <!-- 전면: 협회로고 완전 겹치기 -->
+           style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;filter:brightness(0) invert(1);">
       <img src="./images01/협회로고.jpg" alt="건축사협회 로고"
            style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;border-radius:2px;">
     </div>
@@ -1459,7 +1457,7 @@ footer {
         <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">PHASE 03 ★ LATEST</div>
         <div style="font-family:var(--f-mono);font-size:1.1rem;font-weight:700;color:var(--gold-lt);">MANMIN</div>
         <div style="font-family:var(--f-mono);font-size:.75rem;color:var(--cyan);margin-top:2px;">Ver 3.0</div>
-        <div style="font-size:.78rem;color:var(--t-body);margin-top:6px;line-height:1.5;">스프링클러설비<br>PWA 앱</div>
+        <div style="font-size:.78rem;color:var(--t-body);margin-top:6px;line-height:1.5;">옥내소화전설비<br>PWA 앱</div>
       </div>
     </div>
 
@@ -2008,11 +2006,11 @@ footer {
         </div>
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">3</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">8</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Released</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">2</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">8</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">In Progress</div>
           </div>
           <div style="text-align:center;">
@@ -2024,6 +2022,446 @@ footer {
     </div>
 
   </div>
+
+  <!-- ══ 건축사 대가 산정 별도 시리즈 ══════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // ARCHITECT FEE Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건축사 업무 대가 산정</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">공공건축 설계·감리 대가를 자동으로 산출하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">공사비 기준 요율 방식 · 직선보간법 자동 계산 · 복합인증 가산 체감 공식</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- ARCHITECT-FEE-001: 공공건축 설계·감리 대가 산정 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(168,139,250,.4);color:#a78bfa;">건축사 대가</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">공공건축 설계·감리</span>
+              <span class="wtag" style="border-color:rgba(168,139,250,.3);color:#a78bfa;">직선보간법</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">공공건축 설계·감리 대가 산정 가이드 — ARCHITECT FEE Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">공사비 기준의 복잡한 건축사 업무 대가 산정 체계를 자동화한 웹 계산 도구. 건축물 난이도(1~3종) 및 도면 상세도(기본·중급·상급) 선택부터 직선보간법 요율 산출, 복합인증(제로에너지·녹색건축·기타) 가산 및 체감 공식(A + ½B + ⅓C) 적용, 업무별 산정 방식(요율 vs 실비정액가산식) 구분까지 실무 핵심 프로세스를 자동 계산합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.68rem;color:#a78bfa;">Y = y₁ − {(X−x₂)(y₁−y₂) / (x₁−x₂)} — 직선보간법</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">복합인증 합산 : A + ½B + ⅓C</div>
+            </div>
+          </div>
+          <!-- GitHub 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/1architect-fee-app/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [건축사 대가] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
+              공공건축 설계·감리 대가 산정 5단계 핵심 프로세스
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/1architect-fee-app/','_blank')">
+              <img src="./images/공공대가.png"
+                   alt="공공건축 설계·감리 대가 산정 핵심 가이드 인포그래픽 — ARCHITECT FEE Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">공사비 기준 건축사 대가 산정 5단계 — ① 순수 공사비 확인 → ② 건축물 종별·도서 수준 결정 → ③ 직선보간법 요율 산출 → ④ 복합인증 가산·체감 적용(A+½B+⅓C) → ⑤ 요율 방식 vs 실비정액가산식 구분 인포그래픽.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/1architect-fee-app/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/1architect-fee-app →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 열관류율 산정 별도 시리즈 ══════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // U-VALUE Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건축물 에너지 성능</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">열관류율 산출 및 법규 판정을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">국토교통부 고시 기준 완벽 반영 · 직선보간법 자동 계산 · 소수점 4째 자리 정밀 판정</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- U-VALUE-001: 건축물 열관류율 산출 및 법규 판정 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(56,189,248,.4);color:#38bdf8;">열관류율</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">국토교통부 고시</span>
+              <span class="wtag" style="border-color:rgba(56,189,248,.3);color:#38bdf8;">법규 자동 판정</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">건축물 열관류율 산출 및 법규 판정 자동화 시스템 — MANMIN Ver2.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">재료와 두께 입력만으로 열관류율을 자동 산출하고 지역별 법규 기준 적합 여부를 즉각 판정하는 원스톱 자동화 시스템. 국토교통부 고시 기준(별표 1~별표 6) 완벽 반영, 단열 기준·표면 열전달저항·중공층 조건 자동 배정, 소수점 4째 자리(0.001 단위) 정밀 판정까지 20년 실무 노하우를 코드화했습니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #38bdf8;font-family:var(--f-mono);font-size:.68rem;color:#38bdf8;">U = 1 / (Rsi + ΣR + Rse) — 열관류율 기본 산식</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">R = d / λ — 재료 열저항 (두께 ÷ 열전도율)</div>
+            </div>
+          </div>
+          <!-- GitHub 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/u-value-app-/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [열관류율] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#38bdf8;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);padding:1px 8px;">GUIDE</span>
+              열관류율 산출 및 법규 판정 자동화 시스템 — 원스톱 프로세스
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/u-value-app-/','_blank')">
+              <img src="./images/열관류율.jpg"
+                   alt="건축물 열관류율 산출 및 법규 판정 자동화 시스템 인포그래픽 — MANMIN Ver2.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">재료·두께 입력 → 열저항(R = d/λ) 자동 산출 → 지역별 기준값 비교 → PASS/FAIL 즉각 판정. 국토교통부 고시 별표 1~6 완벽 반영, 표면 열전달저항·중공층 자동 배정, 소수점 4째 자리 0.001 단위 정밀 계산.</p>
+          </div>
+
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/u-value-app-/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/u-value-app- →
+          </a>
+          <span class="wdate">2025 · Ver 2.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 해체공사 감리비 별도 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:#fb923c;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // DEMOLITION Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건축물 해체공사 감리</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">해체공사 감리비 산출을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">건축관리법 · 국토교통부 고시 기준 · 실비정액가산 방식 자동 계산 · 상주 감리원 배치 기준</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- DEMOLITION-001: 건축물 해체공사 감리비 산출 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(251,146,60,.4);color:#fb923c;">해체감리</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">건축관리법</span>
+              <span class="wtag" style="border-color:rgba(251,146,60,.3);color:#fb923c;">실비정액가산</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">건축물 해체공사 감리비 산출 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">「건축물관리법」 및 국토교통부 고시를 기반으로 해체공사 감리 대가를 자동 산정하는 웹 계산 도구. 요율 방식과 실비정액가산 방식(직접인건비 + 직접경비 + 제경비 + 기술료) 비교, 민간 상주 감리 현장 표준인 실비정액가산 방식의 4대 구성 요소 자동 계산, 연면적 기준 상주 감리원 배치(3,000㎡ 미만 1명 이상 · 이상 2명 이상)까지 실무 핵심을 자동화했습니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">감리대가 = 직접인건비 + 직접경비 + 제경비 + 기술료</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
+            </div>
+          </div>
+          <!-- GitHub 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [해체감리] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">GUIDE</span>
+              해체공사 감리비 산출 핵심 가이드 — 감리비 구성·체크리스트·배치 기준
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/demolition-calc/','_blank')">
+              <img src="./images/해체감리.jpg"
+                   alt="건축물 해체공사 감리비 산출 가이드 인포그래픽 — MANMIN Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/demolition-calc →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 건축 상주감리 별도 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:#34d399;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // ARCH-SUPERVISION Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건축 상주감리 대가 산출</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">2026 상주감리 대가 산출 및 법규 판정을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">2026년 최신 개정 법령 반영 · 실비정액가산방식 자동 계산 · 엔지니어링 노임단가 자동 적용</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- ARCH-SUP-001: 건축 상주감리 대가 산출 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
+        <!-- 우측 상단 고정 버튼 -->
+        <a href="https://manminkim-eng.github.io/arch-supervision/" target="_blank" rel="noopener"
+           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
+                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
+                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
+                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GITHUB [상주감리] 바로가기
+        </a>
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(52,211,153,.4);color:#34d399;">상주감리</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">건축법 제25조</span>
+              <span class="wtag" style="border-color:rgba(52,211,153,.3);color:#34d399;">2026 최신 개정</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">2026 상주감리 대가 산출 및 법규 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">2026년 최신 개정 법령에 따른 상주감리 배치 대상 확인 및 실비정액가산방식을 통한 투명한 대가 산출을 자동화한 웹 계산 도구. 건축법 제25조·시행령 제19조 기준 상주 의무 대상(5,000㎡ 이상·5개 층 이상·3,000㎡ 아파트 등) 자동 판별, 2026년 한국엔지니어링협회 공표 노임단가(기술사 467,217원·특급 373,353원·고급 310,884원/일) 자동 적용, 감리원 배치 통보·신고(착공 후 7일 이내) 안내까지 실무 전 과정을 커버합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #34d399;font-family:var(--f-mono);font-size:.68rem;color:#34d399;">총 감리비 = 직접인건비 + 직접경비 + 제경비 + 기술료 + 부가가치세</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">2026 노임단가 — 기술사 467,217 · 특급 373,353 · 고급 310,884 원/일</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#34d399;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);padding:1px 8px;">GUIDE</span>
+              2026 상주감리 대가 산출 법규 가이드 — 배치 기준·노임단가·산출 공식
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/arch-supervision/','_blank')">
+              <img src="./images/건축감리.jpg"
+                   alt="2026 상주감리 대가 산출 및 법규 가이드 인포그래픽 — MANMIN Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">건축법 제25조 기준 상주 의무 대상 자동 판별, 실비정액가산방식 5대 구성 요소 자동 계산, 2026년 엔지니어링 노임단가 자동 반영, 감리원 배치 통보·신고 기한(착공 후 7일 이내) 안내 인포그래픽.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/arch-supervision/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/arch-supervision →
+          </a>
+          <span class="wdate">2026 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 적정 공사기간 산정 별도 시리즈 ══════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:#e879f9;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // CONSTRUCTION-AIR Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건설현장 공사기간 산정</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">적정 공사기간 산정을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">건설공사 품질·안전 확보 · 비작업일수 자동 산정 · 공종별 권장 준비기간 반영</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- CONSTRUCTION-AIR-001: 적정 공사기간 산정 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(232,121,249,.4);color:#e879f9;">공사기간</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">건설공사 품질·안전</span>
+              <span class="wtag" style="border-color:rgba(232,121,249,.3);color:#e879f9;">비작업일수 자동산정</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">건설현장 적정 공사기간 산정 가이드라인 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건설공사의 품질 및 안전 확보를 위해 발주자가 적정 공사기간을 산정하고 관리하는 체계적 방법을 자동화한 웹 도구. 준비기간·정리기간 설정(착공 전 안전관리계획 수립·준공 전 행정절차), 기상불능일(A)+법정공휴일(B)−중복일수(C) 비작업일수 자동 산정, 주 40시간 근무제 적용(월 비작업일수 8일 미만 시 8일 적용), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 반영까지 전 과정을 자동화합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #e879f9;font-family:var(--f-mono);font-size:.68rem;color:#e879f9;">비작업일수 = 기상불능(A) + 법정공휴일(B) − 중복일수(C)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">100억 이상 공사 — 입찰 시 공기 산정 작업심의 의무</div>
+            </div>
+          </div>
+          <!-- GitHub 링크 버튼 -->
+          <a href="https://manminkim-eng.github.io/construction-air/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
+                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
+                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
+                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
+                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GITHUB [공사기간] 바로가기
+          </a>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#e879f9;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(232,121,249,.15);border:1px solid rgba(232,121,249,.3);padding:1px 8px;">GUIDE</span>
+              적정 공사기간 산정 4대 구성 요소 · 발주자 핵심 역할 · 공기 조정 기준
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/construction-air/','_blank')">
+              <img src="./images/공기산정.jpg"
+                   alt="건설현장 적정 공사기간 산정 가이드라인 인포그래픽 — MANMIN Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#e879f9;border:1px solid rgba(232,121,249,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">적정 공사기간 4대 구성 요소(준비기간·비작업일수·주 40시간·정리기간) 자동 산정, 발주자 핵심 역할(입찰 산정근거 명시·시공 여건 제공·정당한 공기 조정), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 인포그래픽.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/construction-air/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/construction-air →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- ══ YOUTUBE ═══════════════════════════════════ -->
@@ -2316,7 +2754,7 @@ footer {
         </div>
         <div class="cinfo-grid">
           <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
-          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#523f333c3f3b3c393b3f123a333c3f333b3e7c3c3726"><span class="__cf_email__" data-cfemail="2548444b484c4b4e4c48654d444b48444c490b4b4051">[email&#160;protected]</span></a></div></div>
+          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="mailto:manminkim@hanmail.net">manminkim@hanmail.net</a></div></div>
           <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
           <div><div class="cinfo-key">경력</div><div class="cinfo-val">29년 (1993~현재)</div></div>
         </div>
@@ -2472,25 +2910,6 @@ footer {
     document.getElementById('advModalTitle').textContent = d.title;
     const img = document.getElementById('advModalImg');
     img.src = ''; img.alt = d.title;
-    img.style.display = 'block';
-    // 이미지 로드 실패 안내
-    img.onerror = function() {
-      this.style.display = 'none';
-      let msg = document.getElementById('adv-err-msg');
-      if (!msg) {
-        msg = document.createElement('p');
-        msg.id = 'adv-err-msg';
-        msg.style.cssText = 'text-align:center;padding:40px 20px;color:#7090b8;font-size:.9rem;line-height:1.8;';
-        this.parentNode.appendChild(msg);
-      }
-      msg.style.display = 'block';
-      msg.innerHTML = '📂 이미지 파일을 찾을 수 없습니다.<br><code style="font-size:.78rem;color:#d4a843;">./images01/advisory/</code> 폴더에<br>위촉장 이미지를 업로드해 주세요.';
-    };
-    img.onload = function() {
-      this.style.display = 'block';
-      const msg = document.getElementById('adv-err-msg');
-      if (msg) msg.style.display = 'none';
-    };
     const overlay = document.getElementById('advModal');
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2509,4 +2928,43 @@ footer {
   });
 
   // 오버레이 클릭 닫기
-  document.getElementById('advModal')
+  document.getElementById('advModal').addEventListener('click', function(e) {
+    if (e.target === this) closeAdvModal();
+  });
+})();
+</script>
+
+<!-- ═══ PWA Service Worker 등록 ═══ -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => {
+        console.log('[PWA] SW 등록 완료 — scope:', reg.scope);
+        reg.addEventListener('updatefound', () => {
+          const nw = reg.installing;
+          if (!nw) return;
+          nw.addEventListener('statechange', () => {
+            if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+              const b = document.createElement('div');
+              b.id = 'sw-update-banner';
+              b.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:9999;background:#d4a843;color:#0c1120;padding:10px 20px;border-radius:12px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:nowrap';
+              b.innerHTML =
+                '<span>🔄 새 버전이 있습니다</span>' +
+                '<button onclick="(()=>{document.getElementById('sw-update-banner').remove();navigator.serviceWorker.ready.then(r=>{r.waiting&&r.waiting.postMessage({type:'SKIP_WAITING'})})})()" style="background:#0c1120;color:#d4a843;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;">업데이트</button>' +
+                '<button onclick="document.getElementById('sw-update-banner').remove()" style="background:rgba(12,17,32,.25);color:#0c1120;border:none;border-radius:8px;padding:6px 10px;font-size:11px;cursor:pointer;">나중에</button>';
+              document.body.appendChild(b);
+            }
+          });
+        });
+      })
+      .catch(e => console.warn('[PWA] SW 등록 실패:', e));
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!window._swReload) { window._swReload = true; location.reload(); }
+    });
+  });
+}
+</script>
+
+</body>
+</html>
