@@ -652,6 +652,39 @@ nav.on {
   box-shadow: 0 6px 18px rgba(255,0,0,.2);
 }
 
+
+/* ═══════════════════════════════════════
+   WEBDEV CARD BUTTON GROUP
+═══════════════════════════════════════ */
+.wcard-btn-group {
+  display: flex; flex-direction: row; gap: 8px;
+  flex-shrink: 0; flex-wrap: wrap; align-items: flex-start;
+}
+.wcard-gh-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: var(--bg-deep); border: 1px solid var(--line2); color: var(--t-high);
+  text-decoration: none; font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; transition: all .22s; white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+.wcard-gh-btn:hover {
+  border-color: var(--blue); background: rgba(90,154,232,.1);
+  transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.3);
+}
+.wcard-yt-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255,0,0,.08); border: 1px solid rgba(255,80,80,.35); color: #ff8080;
+  text-decoration: none; font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; transition: all .22s; white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+.wcard-yt-btn:hover {
+  background: rgba(255,0,0,.18); border-color: rgba(255,80,80,.7); color: #ffaaaa;
+  transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255,0,0,.2);
+}
+
 /* ═══════════════════════════════════════
    WEB DEV SECTION
 ═══════════════════════════════════════ */
@@ -1188,6 +1221,10 @@ footer {
 
   /* Scope */
   .scope-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* 웹계산 버튼 그룹 모바일: 세로 배치 */
+  .wcard-btn-group { flex-direction: column; width: 100%; }
+  .wcard-gh-btn, .wcard-yt-btn { width: 100%; justify-content: center; }
 
   /* CM Projects */
   .cm-proj-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -1872,16 +1909,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H = E(실양정) + F(배관) + G(호스) + H(방수압) + I(안전율)</div>
             </div>
           </div>
-          <!-- GitHub 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/fire-hydrant-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [옥내소화전] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/fire-hydrant-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [옥내소화전] 바로가기
+            </a>
+            <a href="https://youtu.be/jlyeiVDQ8YE" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -1916,10 +1954,6 @@ footer {
             manminkim-eng.github.io/fire-hydrant-calc →
           </a>
           
-          <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2024~2025 · Ver 1.0 → 2.0</span>
         </div>
       </div>
@@ -1943,16 +1977,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">방수량 350 ℓ/min 이상 · 노즐 선단 압력 0.25MPa 이상</div>
             </div>
           </div>
-          <!-- GITHUB 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [옥외소화전] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [옥외소화전] 바로가기
+            </a>
+            <a href="https://youtu.be/yRaYfDDtrtw" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -1987,10 +2022,6 @@ footer {
             manminkim-eng.github.io/outdoor-hydrant-calc →
           </a>
           
-          <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2014,16 +2045,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">전양정(I) = 실양정 + 배관마찰손실 + 헤드선단압력(10m) + 안전율</div>
             </div>
           </div>
-          <!-- GITHUB 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/fire-sprinkler-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [스프링클러] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/fire-sprinkler-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [스프링클러] 바로가기
+            </a>
+            <a href="https://youtu.be/NPnroNKZ8EA" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2058,10 +2090,6 @@ footer {
             manminkim-eng.github.io/fire-sprinkler-calc →
           </a>
           
-          <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2085,16 +2113,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = p₁ + p₂ + 0.1 (MPa)</div>
             </div>
           </div>
-          <!-- GITHUB 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [간이스프링클러] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [간이스프링클러] 바로가기
+            </a>
+            <a href="https://youtu.be/HXmyAZ6YnH8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2129,10 +2158,6 @@ footer {
             manminkim-eng.github.io/simple-sprinkler-calc →
           </a>
           
-          <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2156,16 +2181,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(소화전), H(스프링클러) ]</div>
             </div>
           </div>
-          <!-- GITHUB 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/combo-pump-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [겸용-옥내+스프링] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/combo-pump-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [겸용-옥내+스프링] 바로가기
+            </a>
+            <a href="https://youtu.be/3Wytb2xBep8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2200,10 +2226,6 @@ footer {
             manminkim-eng.github.io/combo-pump-calc →
           </a>
           
-          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 2.0</span>
         </div>
       </div>
@@ -2227,16 +2249,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(옥내소화전), H(간이스프링클러) ]</div>
             </div>
           </div>
-          <!-- GITHUB 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/combo-easy-fire-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [겸용-간이+옥내] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/combo-easy-fire-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [겸용-간이+옥내] 바로가기
+            </a>
+            <a href="https://youtu.be/3Wytb2xBep8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2271,16 +2294,12 @@ footer {
             manminkim-eng.github.io/combo-easy-fire-calc →
           </a>
           
-          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
 
       <!-- WEB-011: 옥내+옥외 소화전 겸용 Ver1.0 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2298,18 +2317,18 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = (0.163 × Q × H × K) ÷ 효율 · 노즐 방수압 0.17MPa 이상</div>
             </div>
           </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [겸용-옥내+옥외] 바로가기
+            </a>
+            <a href="https://youtu.be/3Wytb2xBep8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
-        <!-- GITHUB 링크 버튼 — 우측 상단 고정 -->
-        <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/" target="_blank" rel="noopener"
-           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
-                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
-                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
-                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GITHUB [겸용-옥내+옥외] 바로가기
-        </a>
-
         <!-- 이미지 갤러리 -->
         <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
 
@@ -2342,27 +2361,12 @@ footer {
             manminkim-eng.github.io/combo-indoor-outdoor-calc →
           </a>
           
-          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
 
       <!-- WEB-012: 소방 펌프 용량 계산서 통합 포탈 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
-        <!-- 우측 상단 고정 버튼 -->
-        <a href="https://manminkim-eng.github.io/portal/" target="_blank" rel="noopener"
-           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
-                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
-                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
-                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GITHUB [통합 포탈] 바로가기
-        </a>
-
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2381,8 +2385,18 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">겸용 설비 3종 — 옥내+스프링 · 간이+옥내 · 옥내+옥외</div>
             </div>
           </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/portal/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [통합 포탈] 바로가기
+            </a>
+            <a href="https://youtu.be/1A03X_H5esU" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
-
         <!-- 이미지 갤러리 -->
         <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
 
@@ -2419,10 +2433,6 @@ footer {
             manminkim-eng.github.io/portal →
           </a>
           
-          <a href="https://youtu.be/1A03X_H5esU" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025~2026 · 7종 통합</span>
         </div>
       </div>
@@ -2498,16 +2508,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">복합인증 합산 : A + ½B + ⅓C</div>
             </div>
           </div>
-          <!-- GitHub 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/1architect-fee-app/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [건축사 대가] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/1architect-fee-app/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [건축사 대가] 바로가기
+            </a>
+            <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2541,10 +2552,6 @@ footer {
             manminkim-eng.github.io/1architect-fee-app →
           </a>
           
-          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2592,16 +2599,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">R = d / λ — 재료 열저항 (두께 ÷ 열전도율)</div>
             </div>
           </div>
-          <!-- GitHub 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/u-value-app-/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [열관류율] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/u-value-app-/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [열관류율] 바로가기
+            </a>
+            <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2635,10 +2643,6 @@ footer {
             manminkim-eng.github.io/u-value-app- →
           </a>
           
-          <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 2.0</span>
         </div>
       </div>
@@ -2686,16 +2690,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
             </div>
           </div>
-          <!-- GitHub 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [해체감리] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [해체감리] 바로가기
+            </a>
+            <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2727,10 +2732,6 @@ footer {
             manminkim-eng.github.io/demolition-calc →
           </a>
           
-          <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2759,17 +2760,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCH-SUP-001: 건축 상주감리 대가 산출 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
-        <!-- 우측 상단 고정 버튼 -->
-        <a href="https://manminkim-eng.github.io/arch-supervision/" target="_blank" rel="noopener"
-           style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
-                  padding:8px 16px;background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                  text-decoration:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;
-                  letter-spacing:.06em;text-transform:uppercase;transition:all .22s;
-                  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);z-index:2;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GITHUB [상주감리] 바로가기
-        </a>
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2788,8 +2779,18 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">2026 노임단가 — 기술사 467,217 · 특급 373,353 · 고급 310,884 원/일</div>
             </div>
           </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/arch-supervision/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [상주감리] 바로가기
+            </a>
+            <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
-
         <!-- 이미지 갤러리 -->
         <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
           <div style="display:flex;flex-direction:column;gap:8px;">
@@ -2824,10 +2825,6 @@ footer {
             manminkim-eng.github.io/arch-supervision →
           </a>
           
-          <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2026 · Ver 1.0</span>
         </div>
       </div>
@@ -2875,16 +2872,17 @@ footer {
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">100억 이상 공사 — 입찰 시 공기 산정 작업심의 의무</div>
             </div>
           </div>
-          <!-- GitHub 링크 버튼 -->
-          <a href="https://manminkim-eng.github.io/construction-air/" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;
-                    background:var(--bg-deep);border:1px solid var(--line2);color:var(--t-high);
-                    text-decoration:none;font-family:var(--f-mono);font-size:.75rem;font-weight:700;
-                    letter-spacing:.06em;text-transform:uppercase;transition:all .22s;flex-shrink:0;
-                    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GITHUB [공사기간] 바로가기
-          </a>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/construction-air/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [공사기간] 바로가기
+            </a>
+            <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
         </div>
 
         <!-- 이미지 갤러리 -->
@@ -2916,10 +2914,6 @@ footer {
             manminkim-eng.github.io/construction-air →
           </a>
           
-          <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener" class="yt-link-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-            YouTube 해설 영상 →
-          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2950,7 +2944,6 @@ footer {
         <span class="yt-cat-dot"></span>
         <span class="yt-cat-label">소방</span>
         <span class="yt-cat-en">Fire Safety</span>
-        <span class="yt-cat-soon">업로드 예정</span>
       </div>
       <div class="yt-cat-sep">·</div>
       <div class="yt-cat-item yt-cat-mech">
@@ -2977,7 +2970,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">5 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">6 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -3142,16 +3135,158 @@ footer {
         </div>
       </div>
 
-      <!-- ══ 소방·기계·토목 예고 배너 ══ -->
+
+      <!-- ══ 소방 카테고리 구분 헤더 ══ -->
+      <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
+        <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:#f87171;letter-spacing:.14em;text-transform:uppercase;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);padding:3px 12px;">🔥  소방 · Fire Safety</span>
+        <div style="flex:1;height:1px;background:var(--line);"></div>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">5 videos</span>
+      </div>
+
+      <!-- 소방① jlyeiVDQ8YE — 옥내소화전 양정 계산 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/jlyeiVDQ8YE','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/jlyeiVDQ8YE/maxresdefault.jpg"
+               alt="옥내소화전 양정 계산 NFTC 102 펌프 용량 산정 가이드 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">NFTC 102</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 옥내소화전 · NFTC 102</div>
+          <h3 class="yt-title">옥내소화전 양정 계산 방법 완벽 정리<br><span style="font-size:.88em;color:var(--t-sub);">NFTC 102 기준 펌프 용량 산정 가이드 — MANMIN Ver1.0</span></h3>
+          <p class="yt-desc">NFTC 102 기준에 따른 펌프 용량 산정 프로세스 MANMIN-Ver1.0을 통해 유체역학적 정밀도와 법적 기준을 결합한 설계의 본질을 공개합니다. 단순한 수치 계산을 넘어 화재 상황에서의 안전성을 확보하는 과학적인 접근법을 확인하세요.</p>
+          <div class="yt-meta">
+            <span>소방 · 옥내소화전 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/jlyeiVDQ8YE" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방② yRaYfDDtrtw — 옥외소화전 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/yRaYfDDtrtw','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/yRaYfDDtrtw/maxresdefault.jpg"
+               alt="옥외소화전 NFPC 109 설계 기준 펌프 용량 산정 가이드 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">NFPC 109</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 옥외소화전 · NFPC 109</div>
+          <h3 class="yt-title">2026년 3월 시행 NFPC 109 옥외소화전 설계 기준 및 펌프 용량 산정 가이드</h3>
+          <p class="yt-desc">법규 텍스트를 넘어 실전 설계에 즉시 활용 가능한 MANMIN-Ver1.0 엔지니어링 워크플로우를 공개합니다. 재난 상황에서도 멈추지 않는 무결점 생존 인프라 구축을 위한 핵심 가이드를 확인하세요.</p>
+          <div class="yt-meta">
+            <span>소방 · 옥외소화전 · 2026 개정</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/yRaYfDDtrtw" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방③ NPnroNKZ8EA — 스프링클러 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/NPnroNKZ8EA','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/NPnroNKZ8EA/maxresdefault.jpg"
+               alt="스프링클러 펌프 용량계산 NFTC 103 수리계산 마스터 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">NFTC 103</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 스프링클러 · NFTC 103</div>
+          <h3 class="yt-title">스프링클러 펌프 용량계산 가이드<br><span style="font-size:.88em;color:var(--t-sub);">NFTC 103 기준 수리계산 완벽 마스터 — MANMIN Ver1.0</span></h3>
+          <p class="yt-desc">NFTC 103 화재안전성능기준을 기반으로 한 MANMIN-Ver1.0 프로세스를 통해, 복잡한 법적 텍스트를 정밀한 수학적 로직으로 번역하는 과정을 공개합니다. 단 1%의 오차도 허용하지 않는 전략적 엔지니어링의 정수를 확인하세요.</p>
+          <div class="yt-meta">
+            <span>소방 · 스프링클러 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/NPnroNKZ8EA" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방④ HXmyAZ6YnH8 — 간이스프링클러 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/HXmyAZ6YnH8','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/HXmyAZ6YnH8/maxresdefault.jpg"
+               alt="간이스프링클러 펌프 용량 산정 NFSC 103A 수리계산 설계 워크플로우 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">NFSC 103A</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 간이스프링클러 · NFSC 103A</div>
+          <h3 class="yt-title">간이스프링클러 펌프 용량 산정 가이드<br><span style="font-size:.88em;color:var(--t-sub);">NFSC 103A 수리계산 및 설계 워크플로우 — MANMIN Ver1.0</span></h3>
+          <p class="yt-desc">NFSC 103A 화재안전성능기준을 바탕으로 한 MANMIN-Ver1.0 프로세스를 통해 복잡한 설계 매트릭스를 정밀한 엔지니어링 워크플로우로 시각화했습니다. 한 치의 오차도 허용하지 않는 무결점 소방 설계의 정수를 확인하세요.</p>
+          <div class="yt-meta">
+            <span>소방 · 간이스프링클러 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/HXmyAZ6YnH8" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방⑤ 3Wytb2xBep8 — 겸용 펌프 (옥내+스프링클러) -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/3Wytb2xBep8','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/3Wytb2xBep8/maxresdefault.jpg"
+               alt="옥내소화전 스프링클러 겸용 펌프 설계 마스터 가이드 NFTC 102 103 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">MANMIN Ver2.0</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 겸용 펌프 · NFTC 102+103</div>
+          <h3 class="yt-title">옥내소화전 &amp; 스프링클러 겸용 펌프 설계 마스터 가이드<br><span style="font-size:.88em;color:var(--t-sub);">NFTC 102, 103 완벽 적용 — MANMIN Ver2.0</span></h3>
+          <p class="yt-desc">MANMIN-Ver2.0을 통해 공간과 비용을 획기적으로 줄이면서도 시스템의 무결성을 보장하는 통합 설계의 정수를 공개합니다. 단순히 수치를 합치는 것을 넘어 시스템 실패를 원천 차단하는 하이엔드 엔지니어링 로직을 확인하세요.</p>
+          <div class="yt-meta">
+            <span>소방 · 겸용펌프 · Ver2.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/3Wytb2xBep8" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 기계·토목 예고 배너 ══ -->
       <div style="grid-column:1/-1;margin-top:8px;">
         <div class="rv yt-upcoming-banner">
           <div class="yt-upcoming-inner">
             <div class="yt-upcoming-icon">📹</div>
             <div class="yt-upcoming-text">
-              <div class="yt-upcoming-title">소방 · 기계 · 토목 영상 업로드 예정</div>
-              <p class="yt-upcoming-desc">소방설비 펌프 용량 계산 · NFTC 법규 해설 · 기계설비 실무 · 토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
+              <div class="yt-upcoming-title">기계 · 토목 영상 업로드 예정</div>
+              <p class="yt-upcoming-desc">기계설비 실무 · 토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
             </div>
-            <a href="https://www.youtube.com/channel/UCMxuIzM37bMZ8tjkbtVt_eQ" target="_blank" rel="noopener" class="yt-sub-btn" style="white-space:nowrap;flex-shrink:0;">▶ 채널 구독</a>
           </div>
         </div>
       </div>
