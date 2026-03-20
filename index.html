@@ -132,11 +132,11 @@ nav.on {
 .nav-ul a {
   display: flex; align-items: center; gap: 5px;
   height: 64px; padding: 0 16px;
-  font-family: var(--f-mono); font-size: .68rem; font-weight: 500;
-  color: var(--t-sub); text-decoration: none; letter-spacing: .08em;
+  font-family: var(--f-kr); font-size: .78rem; font-weight: 700;
+  color: var(--t-sub); text-decoration: none; letter-spacing: .04em;
   transition: color .2s, background .2s;
 }
-.nav-ul a .nn { color: var(--t-dim); font-size: .56rem; }
+.nav-ul a .nn { color: var(--t-dim); font-size: .62rem; font-weight: 400; font-family: var(--f-mono); }
 .nav-ul a:hover { color: var(--gold-lt); background: var(--bg-card); }
 
 /* ═══════════════════════════════════════
@@ -587,6 +587,71 @@ nav.on {
 .cm-cap-title { font-family: var(--f-kr); font-size: 1rem; font-weight: 700; color: var(--t-high); margin-bottom: 10px; line-height: 1.35; }
 .cm-cap-desc { font-size: .88rem; color: var(--t-body); line-height: 1.82; }
 
+
+/* ═══════════════════════════════════════
+   YOUTUBE CATEGORY BANNER
+═══════════════════════════════════════ */
+.yt-cat-banner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 14px 20px; margin-bottom: 28px;
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+}
+.yt-cat-item { display: flex; align-items: center; gap: 6px; }
+.yt-cat-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+}
+.yt-cat-arch .yt-cat-dot  { background: var(--gold); }
+.yt-cat-fire .yt-cat-dot  { background: #f87171; }
+.yt-cat-mech .yt-cat-dot  { background: var(--blue); }
+.yt-cat-civil .yt-cat-dot { background: #4ade80; }
+.yt-cat-label {
+  font-family: var(--f-kr); font-size: .88rem; font-weight: 700; color: var(--t-high);
+}
+.yt-cat-en {
+  font-family: var(--f-mono); font-size: .6rem; color: var(--t-sub); letter-spacing: .06em;
+}
+.yt-cat-soon {
+  font-family: var(--f-mono); font-size: .56rem; color: var(--cyan);
+  background: rgba(32,208,232,.1); border: 1px solid rgba(32,208,232,.25);
+  padding: 1px 7px; letter-spacing: .04em;
+}
+.yt-cat-sep { color: var(--t-dim); font-size: .8rem; }
+
+/* upcoming 배너 */
+.yt-upcoming-banner {
+  border: 1px solid var(--line2); background: var(--bg-deep);
+  border-left: 3px solid var(--cyan);
+}
+.yt-upcoming-inner {
+  display: flex; align-items: center; gap: 20px; padding: 18px 24px; flex-wrap: wrap;
+}
+.yt-upcoming-icon { font-size: 1.8rem; flex-shrink: 0; }
+.yt-upcoming-text { flex: 1; min-width: 200px; }
+.yt-upcoming-title {
+  font-family: var(--f-kr); font-size: 1rem; font-weight: 700;
+  color: var(--cyan); margin-bottom: 4px;
+}
+.yt-upcoming-desc {
+  font-size: .88rem; color: var(--t-body); line-height: 1.7;
+}
+
+/* yt-link 버튼 (웹계산 카드용) */
+.yt-link-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 18px;
+  background: rgba(255,0,0,.08); border: 1px solid rgba(255,80,80,.35);
+  color: #ff8080; text-decoration: none;
+  font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; transition: all .22s; flex-shrink: 0;
+  clip-path: polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
+}
+.yt-link-btn:hover {
+  background: rgba(255,0,0,.18); border-color: rgba(255,80,80,.7);
+  color: #ffaaaa; transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,0,0,.2);
+}
+
 /* ═══════════════════════════════════════
    WEB DEV SECTION
 ═══════════════════════════════════════ */
@@ -654,7 +719,7 @@ nav.on {
 }
 .wfoot {
   padding: 13px 22px; border-top: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
 .wlink {
   font-family: var(--f-mono); font-size: .68rem;
@@ -1850,6 +1915,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/fire-hydrant-calc →
           </a>
+          
+          <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2024~2025 · Ver 1.0 → 2.0</span>
         </div>
       </div>
@@ -1915,6 +1985,11 @@ footer {
           <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/outdoor-hydrant-calc →
+          </a>
+          
+          <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -1982,6 +2057,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/fire-sprinkler-calc →
           </a>
+          
+          <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2047,6 +2127,11 @@ footer {
           <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/simple-sprinkler-calc →
+          </a>
+          
+          <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -2114,6 +2199,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/combo-pump-calc →
           </a>
+          
+          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 2.0</span>
         </div>
       </div>
@@ -2180,6 +2270,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/combo-easy-fire-calc →
           </a>
+          
+          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2245,6 +2340,11 @@ footer {
           <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/combo-indoor-outdoor-calc →
+          </a>
+          
+          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -2317,6 +2417,11 @@ footer {
           <a href="https://manminkim-eng.github.io/portal/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/portal →
+          </a>
+          
+          <a href="https://youtu.be/1A03X_H5esU" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
           </a>
           <span class="wdate">2025~2026 · 7종 통합</span>
         </div>
@@ -2435,6 +2540,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/1architect-fee-app →
           </a>
+          
+          <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2524,6 +2634,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/u-value-app- →
           </a>
+          
+          <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 2.0</span>
         </div>
       </div>
@@ -2610,6 +2725,11 @@ footer {
           <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/demolition-calc →
+          </a>
+          
+          <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -2703,6 +2823,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/arch-supervision →
           </a>
+          
+          <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2026 · Ver 1.0</span>
         </div>
       </div>
@@ -2790,6 +2915,11 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/construction-air →
           </a>
+          
+          <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener" class="yt-link-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+            YouTube 해설 영상 →
+          </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
@@ -2803,169 +2933,225 @@ footer {
 <section id="youtube" class="sec">
   <div class="sec-hd rv">
     <div class="sec-eyebrow">YouTube Channel</div>
-    <h2 class="sec-title">소방·건축 계산 노하우를 공유하는 <span class="hl">유튜브 채널</span></h2>
-    <p class="sec-sub">전문 기술 역량 분석 보고서 · MANMIN 웹 시리즈 · 소방설비 계산 실무 · 건축 엔지니어링 지식 공유</p>
+    <h2 class="sec-title">건축 · 소방 · 기계 · 토목 실무를 담은 <span class="hl">유튜브 채널</span></h2>
+    <p class="sec-sub">건축설계 실무 · 소방설비 계산 · 기계설비 · 토목 엔지니어링 | 30년 현장 경험을 영상으로 공유합니다</p>
   </div>
+
+  <!-- 카테고리 탭 안내 배너 -->
+  <div class="inner">
+    <div class="rv yt-cat-banner">
+      <div class="yt-cat-item yt-cat-arch">
+        <span class="yt-cat-dot"></span>
+        <span class="yt-cat-label">건축</span>
+        <span class="yt-cat-en">Architecture</span>
+      </div>
+      <div class="yt-cat-sep">·</div>
+      <div class="yt-cat-item yt-cat-fire">
+        <span class="yt-cat-dot"></span>
+        <span class="yt-cat-label">소방</span>
+        <span class="yt-cat-en">Fire Safety</span>
+        <span class="yt-cat-soon">업로드 예정</span>
+      </div>
+      <div class="yt-cat-sep">·</div>
+      <div class="yt-cat-item yt-cat-mech">
+        <span class="yt-cat-dot"></span>
+        <span class="yt-cat-label">기계</span>
+        <span class="yt-cat-en">Mechanical</span>
+        <span class="yt-cat-soon">업로드 예정</span>
+      </div>
+      <div class="yt-cat-sep">·</div>
+      <div class="yt-cat-item yt-cat-civil">
+        <span class="yt-cat-dot"></span>
+        <span class="yt-cat-label">토목</span>
+        <span class="yt-cat-en">Civil</span>
+        <span class="yt-cat-soon">업로드 예정</span>
+      </div>
+    </div>
+  </div>
+
   <div class="inner">
     <div class="yt-grid">
 
-      <!-- Featured: 전문 기술 역량 분석 보고서 -->
+
+      <!-- ══ 건축 카테고리 구분 헤더 ══ -->
+      <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
+        <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
+        <div style="flex:1;height:1px;background:var(--line);"></div>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">5 videos</span>
+      </div>
+
+      <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
       <div class="ytc feat rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/1A03X_H5esU','_blank')">
         <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a0d18,#111828,#0c1420);"></div>
-          <!-- 역량 레이더 차트 SVG 배경 -->
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.13;" viewBox="0 0 400 225" fill="none">
-            <polygon points="200,30 320,105 275,195 125,195 80,105" stroke="#d4a843" stroke-width="1" fill="rgba(212,168,67,.06)"/>
-            <polygon points="200,65 280,118 253,178 147,178 120,118" stroke="#d4a843" stroke-width="0.5" fill="none"/>
-            <polygon points="200,95 255,130 235,165 165,165 145,130" stroke="#d4a843" stroke-width="0.5" fill="none"/>
-            <line x1="200" y1="30" x2="200" y2="195" stroke="#d4a843" stroke-width="0.5"/>
-            <line x1="200" y1="112" x2="320" y2="105" stroke="#d4a843" stroke-width="0.5"/>
-            <line x1="200" y1="112" x2="275" y2="195" stroke="#d4a843" stroke-width="0.5"/>
-            <line x1="200" y1="112" x2="125" y2="195" stroke="#d4a843" stroke-width="0.5"/>
-            <line x1="200" y1="112" x2="80" y2="105" stroke="#d4a843" stroke-width="0.5"/>
-            <polygon points="200,48 305,112 262,186 138,186 95,112" stroke="#f0c96a" stroke-width="1.5" fill="rgba(240,201,106,.1)"/>
-            <circle cx="200" cy="48" r="4" fill="#f0c96a"/>
-            <circle cx="305" cy="112" r="4" fill="#f0c96a"/>
-            <circle cx="262" cy="186" r="4" fill="#f0c96a"/>
-            <circle cx="138" cy="186" r="4" fill="#20d0e8"/>
-            <circle cx="95" cy="112" r="4" fill="#f0c96a"/>
-          </svg>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">16분 분량</span>
+          <img src="https://img.youtube.com/vi/1A03X_H5esU/maxresdefault.jpg"
+               alt="김만민 건축사 전문 기술 역량 분석 보고서 NotebookLM AI 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.78) 0%,transparent 50%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
           <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(212,168,67,.18);border:1px solid rgba(212,168,67,.5);color:var(--gold-lt);">전문역량 보고서</span>
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(32,208,232,.15);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">NotebookLM</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.18);border:1px solid rgba(212,168,67,.5);color:var(--gold-lt);">전문역량 보고서</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(32,208,232,.15);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">NotebookLM AI</span>
           </div>
         </div>
         <div class="ytbody">
-          <div class="yt-cat">전문 기술 역량 분석 · NotebookLM AI 보고서</div>
-          <h3 class="yt-title">김만민 건축사 — 전문 기술 역량 분석 보고서 · 건설 전 생애주기를 아우르는 30년 통합 솔루션</h3>
-          <p class="yt-desc">건설 전 생애주기(Life-Cycle)를 아우르는 통합 솔루션 전문가 김만민 건축사의 역량을 AI(NotebookLM)가 분석한 보고서 영상. 30년 10,831일의 현장 실무 경력, 건축사+CVS 이중 정체성(Dual Identity), 건축·기계·소방·품질·토목 전 분야 특급 등급 보유, 4단계 경력 성장 로드맵(시공→설계→CM→VE·안전), VE 20건 이상·1,336일 실적, 안전진단 780건 이상 수행, 공공기관 신뢰도(익산시·전북도 자문위원)까지 — 대형 복합 프로젝트 총괄 단장(PM)으로서의 종합 가치를 심층 분석합니다.</p>
+          <div class="yt-cat">건축 · 전문 기술 역량 분석 · AI 보고서</div>
+          <h3 class="yt-title">김만민 건축사 — 전문 기술 역량 분석 보고서<br><span style="font-size:.88em;color:var(--t-sub);">건설 전 생애주기를 아우르는 30년 통합 솔루션</span></h3>
+          <p class="yt-desc">건설 전 생애주기를 아우르는 통합 솔루션 전문가 김만민 건축사의 역량을 AI(NotebookLM)가 심층 분석한 보고서 영상. 30년 현장 실무 경력, 건축사+CVS 이중 정체성, 건축·기계·소방·품질·토목 전 분야 특급 등급 보유, VE 20건 이상, 안전진단 780건 이상 수행, 익산시·전북도 자문위원 등 대형 복합 프로젝트 총괄 PM으로서의 종합 가치를 분석합니다.</p>
           <div class="yt-meta">
-            <span>2024.01.01</span><span class="yt-meta-sep"></span>
-            <span>전문역량 분석</span><span class="yt-meta-sep"></span>
-            <a href="https://youtu.be/1A03X_H5esU" target="_blank" rel="noopener" style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;" onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+            <span>건축 · 역량분석</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/1A03X_H5esU" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
       </div>
 
-      <!-- 스프링클러 계산서 Ver3.0 소개 -->
-      <div class="ytc rv">
+      <!-- ② 9ufd9QEtY6c — 공공건축 대가산정 MANMIN Ver3.0 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/9ufd9QEtY6c','_blank')">
         <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#050c1e,#091828,#071420);"></div>
-          <!-- 스프링클러 SVG 배경 -->
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.12;" viewBox="0 0 400 225" fill="none">
-            <circle cx="200" cy="112" r="14" fill="#5a9ae8"/>
-            <line x1="200" y1="30" x2="200" y2="98" stroke="#5a9ae8" stroke-width="2"/>
-            <line x1="200" y1="126" x2="200" y2="195" stroke="#5a9ae8" stroke-width="2"/>
-            <line x1="80" y1="112" x2="186" y2="112" stroke="#5a9ae8" stroke-width="2"/>
-            <line x1="214" y1="112" x2="320" y2="112" stroke="#5a9ae8" stroke-width="2"/>
-            <circle cx="200" cy="30" r="6" fill="#20d0e8"/><circle cx="200" cy="195" r="6" fill="#20d0e8"/>
-            <circle cx="80" cy="112" r="6" fill="#20d0e8"/><circle cx="320" cy="112" r="6" fill="#20d0e8"/>
-            <line x1="118" y1="50" x2="189" y2="100" stroke="#5a9ae8" stroke-width="1.5"/>
-            <line x1="282" y1="50" x2="211" y2="100" stroke="#5a9ae8" stroke-width="1.5"/>
-            <line x1="118" y1="174" x2="189" y2="124" stroke="#5a9ae8" stroke-width="1.5"/>
-            <line x1="282" y1="174" x2="211" y2="124" stroke="#5a9ae8" stroke-width="1.5"/>
-            <circle cx="118" cy="50" r="5" fill="#20d0e8"/><circle cx="282" cy="50" r="5" fill="#20d0e8"/>
-            <circle cx="118" cy="174" r="5" fill="#20d0e8"/><circle cx="282" cy="174" r="5" fill="#20d0e8"/>
-          </svg>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">24:18</span>
-          <span class="yt-views">👁 3,800 views</span>
-          <!-- 챕터 표시 -->
+          <img src="https://img.youtube.com/vi/9ufd9QEtY6c/maxresdefault.jpg"
+               alt="공공건축 설계·감리 대가산정 MANMIN Ver3.0 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
           <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(32,208,232,.15);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">MANMIN Ver3.0</span>
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 6px;background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);color:var(--blue);">PWA</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(90,154,232,.12);border:1px solid rgba(90,154,232,.3);color:var(--blue);">대가산정</span>
           </div>
         </div>
         <div class="ytbody">
-          <div class="yt-cat">스프링클러설비 · NFTC 103</div>
-          <h3 class="yt-title">스프링클러 펌프 계산서 Ver3.0 완전 공개 — PWA로 오프라인에서도 쓰는 소방계산 앱</h3>
-          <p class="yt-desc">NFTC 103 기반 스프링클러설비 펌프 용량 자동 계산 PWA 앱 전체 사용법. 기준개수 선택부터 배관 마찰손실, 전동기 출력, A4 계산서 인쇄까지 실무 적용 방법을 완전 공개합니다.</p>
+          <div class="yt-cat">건축 · 공공건축 설계·감리 대가산정</div>
+          <h3 class="yt-title">"아직도 수기로 계산하시나요?" 공공건축 대가산정의 게임 체인저, MANMIN-Ver3.0 마스터 파이프라인</h3>
+          <p class="yt-desc">국토교통부 고시 제2020-635호를 기반으로 제작된 MANMIN-Ver3.0은 설계 및 감리 업무의 투명성과 정확성을 극대화합니다. 공공건축 설계·감리 대가를 자동으로 산출하는 웹 계산 도구의 전체 사용법을 공개합니다.</p>
           <div class="yt-meta">
-            <span>2025.03.18</span><span class="yt-meta-sep"></span>
-            <span>24:18</span><span class="yt-meta-sep"></span>
-            <span>3,800 views</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 옥내소화전 Ver2.0 계산서 -->
-      <div class="ytc rv">
-        <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#14060a,#200c10);"></div>
-          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">🧯</span>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">18:42</span>
-          <span class="yt-views">👁 2,400 views</span>
-        </div>
-        <div class="ytbody">
-          <div class="yt-cat">옥내소화전 · NFTC 102</div>
-          <h3 class="yt-title">옥내소화전 펌프 전양정(H) 계산 완전 정복 — MANMIN Ver2.0 A4 계산서 출력</h3>
-          <p class="yt-desc">NFTC 102 기반 옥내소화전 전양정 5가지 수두 합산 방법. 수원 용량부터 전동기 HP 선정까지 실무 계산서 작성법을 단계별로 설명합니다.</p>
-          <div class="yt-meta">
-            <span>2025.02.10</span><span class="yt-meta-sep"></span>
-            <span>18:42</span>
+            <span>건축 · 대가산정 · MANMIN Ver3.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/9ufd9QEtY6c" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
       </div>
 
-      <!-- Hazen-Williams 마찰손실 해설 -->
-      <div class="ytc rv">
+      <!-- ③ iSsJoGqVwyU — 열관류율 자동 산출 MANMIN Ver2.0 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/iSsJoGqVwyU','_blank')">
         <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#060e14,#0a1828);"></div>
-          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">📐</span>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">16:05</span>
-          <span class="yt-views">👁 1,920 views</span>
+          <img src="https://img.youtube.com/vi/iSsJoGqVwyU/maxresdefault.jpg"
+               alt="건축물 열관류율 자동 산출 MANMIN Ver2.0 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(32,208,232,.12);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">에너지설계</span>
+          </div>
         </div>
         <div class="ytbody">
-          <div class="yt-cat">배관 마찰손실 · Hazen-Williams</div>
-          <h3 class="yt-title">Hazen-Williams 공식 제대로 이해하기 — 소방배관 마찰손실 실전 계산법</h3>
-          <p class="yt-desc">소방설비 배관 마찰손실의 핵심, Hazen-Williams 공식을 건축사 관점에서 쉽게 설명합니다. 관경·유량·C값 선택법과 실무 적용 사례까지 포함합니다.</p>
+          <div class="yt-cat">건축 · 에너지절약설계 · 열관류율</div>
+          <h3 class="yt-title">건축물 열관류율 자동 산출 시스템 — MANMIN Ver2.0<br><span style="font-size:.88em;color:var(--t-sub);">에너지절약설계기준 완벽 반영</span></h3>
+          <p class="yt-desc">건축물 에너지 설계의 가장 까다로운 부분인 '열관류율 산출'과 '법적 적합성 판정'. 20년 실무 노하우를 파이썬(Python) 엔진에 녹여낸 MANMIN Ver2.0 시스템을 소개하고, 열관류율 산출·법규 판정 자동화 웹 도구의 전체 사용법을 공개합니다.</p>
           <div class="yt-meta">
-            <span>2025.01.22</span><span class="yt-meta-sep"></span>
-            <span>16:05</span>
+            <span>건축 · 열관류율 · Ver2.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/iSsJoGqVwyU" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
       </div>
 
-      <!-- 소방설비 자격 + 건축사 복합역량 -->
-      <div class="ytc rv">
+      <!-- ④ uJPMRdm02QM — 해체공사 감리비 산출 가이드 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/uJPMRdm02QM','_blank')">
         <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0c0808,#1e1010);"></div>
-          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">🔥</span>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">14:30</span>
-          <span class="yt-views">👁 1,540 views</span>
+          <img src="https://img.youtube.com/vi/uJPMRdm02QM/maxresdefault.jpg"
+               alt="건축물 해체공사 감리비 산출 가이드 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3);color:#f87171;">해체감리</span>
+          </div>
         </div>
         <div class="ytbody">
-          <div class="yt-cat">소방설비기사 · 복합자격</div>
-          <h3 class="yt-title">건축사 + 소방설비기사 — 복합 자격이 현장에서 만드는 차이</h3>
-          <p class="yt-desc">10여 종 자격증을 보유한 건축사가 말하는 소방설비 통합 지식의 실무적 가치. 설계 단계부터 소방 간섭을 제로화하는 방법을 공유합니다.</p>
+          <div class="yt-cat">건축 · 해체공사 감리비 산출</div>
+          <h3 class="yt-title">건축물 해체공사 감리비 산출 가이드<br><span style="font-size:.88em;color:var(--t-sub);">실비정액가산방식 vs 요율방식 완벽 비교</span></h3>
+          <p class="yt-desc">건축물관리법 시행규칙과 국토교통부 고시를 바탕으로, 해체공사 감리비 산출의 핵심 로직을 퀵 브리핑합니다. 실비정액가산방식과 요율방식의 차이를 명확히 정리하고, 감리비 산출을 자동화하는 웹 계산 도구를 소개합니다.</p>
           <div class="yt-meta">
-            <span>2025.01.08</span><span class="yt-meta-sep"></span>
-            <span>14:30</span>
+            <span>건축 · 해체감리 · 대가산출</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/uJPMRdm02QM" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
       </div>
 
-      <!-- NFTC 개정 해설 -->
-      <div class="ytc rv">
+      <!-- ⑤ nIcsKp-H0ps — 2026 상주감리 대가 산출 매뉴얼 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/nIcsKp-H0ps','_blank')">
         <div class="ythumb">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#08080e,#101018);"></div>
-          <span style="position:relative;z-index:2;opacity:.14;font-size:2.2rem;">📋</span>
-          <div class="yt-play">▶</div>
-          <span class="yt-dur">20:15</span>
-          <span class="yt-views">👁 1,280 views</span>
+          <img src="https://img.youtube.com/vi/nIcsKp-H0ps/maxresdefault.jpg"
+               alt="2026년 상주감리 대가 산출 및 행정처리 원스톱 매뉴얼 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.18);border:1px solid rgba(212,168,67,.5);color:var(--gold-lt);">건축사 필수</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(32,208,232,.12);border:1px solid rgba(32,208,232,.3);color:var(--cyan);">2026 개정</span>
+          </div>
         </div>
         <div class="ytbody">
-          <div class="yt-cat">법규 해설 · NFTC 개정</div>
-          <h3 class="yt-title">2026년 NFTC 103 개정 핵심 정리 — 스프링클러 설계자가 꼭 알아야 할 변경사항</h3>
-          <p class="yt-desc">2026년 3월 시행 화재안전기술기준(NFTC 103) 주요 개정 내용 해설. 방수압, 헤드 수량, 고층건축물 NFTC 604 연동 등 실무 변경사항을 정리합니다.</p>
+          <div class="yt-cat">건축 · 상주감리 · 2026 법규 개정</div>
+          <h3 class="yt-title">[건축사 필수 시청] 2026년 상주감리 대가 산출기 작성 및 행정 처리 원스톱 매뉴얼</h3>
+          <p class="yt-desc">2026년 건축법 및 건축사법 개정으로 민간 감리 시장의 패러다임이 완전히 바뀝니다. 개정 내용 핵심 요약부터 상주감리 대가 산출 및 법규 가이드 MANMIN Ver1.0 웹 도구 사용법까지 원스톱으로 안내합니다.</p>
           <div class="yt-meta">
-            <span>2024.12.15</span><span class="yt-meta-sep"></span>
-            <span>20:15</span>
+            <span>건축 · 상주감리 · 2026 개정</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/nIcsKp-H0ps" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥ z7RmV__j9I0 — 공기산정 2023 가이드라인 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/z7RmV__j9I0','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/z7RmV__j9I0/maxresdefault.jpg"
+               alt="건설현장 적정 공사기간 산정 2023 국토부 가이드라인 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);color:#4ade80;">2023 가이드라인</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">건축 · 공사기간 산정 · 국토부 가이드라인</div>
+          <h3 class="yt-title">[건축실무] 시간의 청사진 — 안전과 품질을 지키는 공기 산정의 과학<br><span style="font-size:.88em;color:var(--t-sub);">2023 국토부 적정 공사기간 가이드라인</span></h3>
+          <p class="yt-desc">건설 공사 현장의 안전·품질·법적 의무를 충족하기 위한 '2023 공공 건설공사 적정 공사기간 가이드라인' 핵심 요약 영상. 건설현장 적정 공사기간 산정 가이드라인을 자동화한 MANMIN Ver1.0 웹 도구와 함께 실무 적용법을 안내합니다.</p>
+          <div class="yt-meta">
+            <span>건축 · 공기산정 · 2023 국토부</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/z7RmV__j9I0" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 소방·기계·토목 예고 배너 ══ -->
+      <div style="grid-column:1/-1;margin-top:8px;">
+        <div class="rv yt-upcoming-banner">
+          <div class="yt-upcoming-inner">
+            <div class="yt-upcoming-icon">📹</div>
+            <div class="yt-upcoming-text">
+              <div class="yt-upcoming-title">소방 · 기계 · 토목 영상 업로드 예정</div>
+              <p class="yt-upcoming-desc">소방설비 펌프 용량 계산 · NFTC 법규 해설 · 기계설비 실무 · 토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
+            </div>
+            <a href="https://www.youtube.com/channel/UCMxuIzM37bMZ8tjkbtVt_eQ" target="_blank" rel="noopener" class="yt-sub-btn" style="white-space:nowrap;flex-shrink:0;">▶ 채널 구독</a>
           </div>
         </div>
       </div>
