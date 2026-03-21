@@ -1908,8 +1908,8 @@ footer {
 <section id="webdev" class="sec sec-alt">
   <div class="sec-hd rv">
     <div class="sec-eyebrow">Web Development — MANMIN Series</div>
-    <h2 class="sec-title">소방·건축 실무를 디지털로 구현한 <span class="hl">웹 계산 도구</span></h2>
-    <p class="sec-sub">화재안전기술기준(NFTC) 기반 — 현장 경험 30년을 코드로 담은 엔지니어링 웹 시리즈</p>
+    <h2 class="sec-title">건축 · 소방 · 기계 실무를 디지털로 구현한 <span class="hl">웹 계산 도구</span></h2>
+    <p class="sec-sub">건축 · 소방(NFTC) · 기계설비 — 현장 경험 30년을 코드로 담은 멀티 엔지니어링 웹 시리즈</p>
   </div>
   <div class="inner">
 
@@ -2960,9 +2960,94 @@ footer {
     </div>
   </div>
 
-</section>
+  <!-- ══ 기계설비 웹 계산 시리즈 ══════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
 
-<!-- ══ YOUTUBE ═══════════════════════════════════ -->
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // MECHANICAL Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow" style="color:var(--blue);">기계설비 계산 도구</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">기계설비 설계를 자동화하는 <span class="bl">웹 계산 도구</span></h2>
+      <p class="sec-sub">수리학적 정밀도 + 신뢰성 해석 — 현장 실무 기반 기계설비 엔지니어링 시리즈</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- MECH-001: 건축물 우수관경 산정 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(90,154,232,.4);color:var(--blue);">기계설비</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">우수관경 산정</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">건축물 우수관경 산정 가이드 — MANMIN Ver2.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">기후 변화에 대응하여 수리학적 계산과 신뢰성 해석을 결합한 최적의 우수관경 산정 프로세스. 정밀한 우수 유입량(Q<sub>L</sub>) 산출(지붕·수직벽 면적 합산), Manning 공식 배수 용량(Q<sub>C</sub>) 결정, FORM(First-Order Reliability Method) 신뢰성 분석(Z = Q<sub>C</sub> - Q<sub>L</sub>), 비용 대비 안전성 최적화까지 — 단 1%의 오차도 허용하지 않는 전략적 엔지니어링 워크플로우.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">Q<sub>L</sub> = 지붕면적 + (수직 벽 면적 × 1/2)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">Z = Q<sub>C</sub> − Q<sub>L</sub> · FORM 신뢰성 분석 · Manning 공식</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Roof-Drain/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [우수관경] 바로가기
+            </a>
+            <a href="#youtube" class="wcard-yt-btn" style="opacity:.5;pointer-events:none;cursor:default;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상 (업로드 예정)
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
+              수리학적 계산 + FORM 신뢰성 해석 · 비용 최적 관경 도출
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="window.open('https://manminkim-eng.github.io/Roof-Drain/','_blank')">
+              <img src="./images01/건물우수.jpg"
+                   alt="MANMIN Ver2.0 건축물 우수관경 산정 가이드 인포그래픽 — 수리학적 계산 + FORM 신뢰성 분석"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">Phase 1 수리학적 기초 산정(유입량·배수용량·관경 도출) + Phase 2 FORM 신뢰성 해석(Z = Q<sub>C</sub>−Q<sub>L</sub>) + 비용 대비 안전성 최적화. 제천시 우수관망 케이스 스터디 포함.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Roof-Drain/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Roof-Drain →
+          </a>
+          <span class="wdate">2025 · Ver 2.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section> ═══════════════════════════════════ -->
 <section id="youtube" class="sec">
   <div class="sec-hd rv">
     <div class="sec-eyebrow">YouTube Channel</div>
@@ -2989,7 +3074,6 @@ footer {
         <span class="yt-cat-dot"></span>
         <span class="yt-cat-label">기계</span>
         <span class="yt-cat-en">Mechanical</span>
-        <span class="yt-cat-soon">업로드 예정</span>
       </div>
       <div class="yt-cat-sep">·</div>
       <div class="yt-cat-item yt-cat-civil">
@@ -3317,14 +3401,48 @@ footer {
         </div>
       </div>
 
-      <!-- ══ 기계·토목 예고 배너 ══ -->
+      <!-- ══ 기계 카테고리 구분 헤더 ══ -->
+      <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
+        <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;background:rgba(90,154,232,.1);border:1px solid rgba(90,154,232,.3);padding:3px 12px;">⚙️  기계 · Mechanical</span>
+        <div style="flex:1;height:1px;background:var(--line);"></div>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">1 video — 업로드 예정</span>
+      </div>
+
+      <!-- 기계① 우수관경 — 업로드 예정 플레이스홀더 -->
+      <div class="ytc rv" style="cursor:default;opacity:.7;">
+        <div class="ythumb" style="background:linear-gradient(135deg,#050c1e,#091828);">
+          <img src="./images01/건물우수.jpg"
+               alt="건축물 우수관경 산정 가이드 MANMIN Ver2.0 유튜브 영상 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.5;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.85) 0%,rgba(9,13,24,.4) 100%);z-index:1;"></div>
+          <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:2rem;color:var(--blue);opacity:.7;">📹</div>
+            <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--blue);letter-spacing:.1em;background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.35);padding:4px 12px;">업로드 예정</div>
+          </div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.4);color:var(--blue);">기계</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(90,154,232,.08);border:1px solid rgba(90,154,232,.25);color:#93c5fd;">우수관경</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">기계설비 · 우수관경 산정 · MANMIN Ver2.0</div>
+          <h3 class="yt-title">건축물 우수관경 산정 가이드 — MANMIN Ver2.0<br><span style="font-size:.88em;color:var(--t-sub);">수리학적 계산 + FORM 신뢰성 해석 + 비용 최적화</span></h3>
+          <p class="yt-desc">기후 변화에 대응하여 수리학적 계산과 신뢰성 해석을 결합한 최적의 우수관경 산정 프로세스. Phase 1 유입량·배수용량·관경 도출부터 Phase 2 FORM 신뢰성 분석(Z = Q<sub>C</sub>−Q<sub>L</sub>), 비용 대비 안전성 최적화까지 실무 전 과정을 해설합니다.</p>
+          <div class="yt-meta">
+            <span style="color:var(--blue);">기계 · 우수관경 · 조만간 업로드</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 토목 예고 배너 ══ -->
       <div style="grid-column:1/-1;margin-top:8px;">
         <div class="rv yt-upcoming-banner">
           <div class="yt-upcoming-inner">
             <div class="yt-upcoming-icon">📹</div>
             <div class="yt-upcoming-text">
-              <div class="yt-upcoming-title">기계 · 토목 영상 업로드 예정</div>
-              <p class="yt-upcoming-desc">기계설비 실무 · 토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
+              <div class="yt-upcoming-title">토목 영상 업로드 예정</div>
+              <p class="yt-upcoming-desc">토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
             </div>
           </div>
         </div>
