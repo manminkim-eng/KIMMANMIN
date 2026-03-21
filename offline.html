@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>오프라인 — MANMIN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  min-height:100vh;
+  background:#0c1120;
+  background-image:
+    linear-gradient(rgba(74,130,220,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,130,220,0.05) 1px,transparent 1px);
+  background-size:80px 80px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color:#eef2ff;padding:24px;
+}
+.box{
+  max-width:400px;width:100%;text-align:center;
+  background:#131c32;
+  border:1px solid #1e2e50;
+  border-radius:16px;
+  padding:48px 32px;
+  box-shadow:0 8px 48px rgba(0,0,0,.6);
+  position:relative;overflow:hidden;
+}
+.box::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;
+  background:radial-gradient(ellipse,rgba(212,168,67,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.logo-box{
+  width:64px;height:64px;
+  border:2px solid #d4a843;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:700;color:#d4a843;
+  letter-spacing:.05em;margin:0 auto 24px;
+}
+h1{font-size:1.3rem;font-weight:800;color:#eef2ff;margin-bottom:8px;}
+p{font-size:.85rem;color:#7090b8;line-height:1.75;margin-bottom:28px;}
+.tag{
+  display:inline-block;
+  background:rgba(32,208,232,.08);
+  border:1px solid rgba(32,208,232,.2);
+  color:#20d0e8;
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.08em;
+  padding:4px 12px;border-radius:2px;
+  margin-bottom:28px;
+}
+button{
+  background:#d4a843;color:#0c1120;
+  border:none;padding:12px 32px;
+  border-radius:6px;font-size:.88rem;font-weight:800;
+  cursor:pointer;transition:background .15s;
+  font-family:inherit;
+}
+button:hover{background:#f0c96a;}
+.footer{margin-top:24px;font-size:.72rem;color:#3a5070;font-family:'JetBrains Mono',monospace,sans-serif;}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo-box">KMM</div>
+  <div class="tag">● OFFLINE MODE</div>
+  <h1>오프라인 상태입니다</h1>
+  <p>인터넷 연결을 확인해 주세요.<br>연결 후 다시 시도하면<br>이전 캐시 데이터로 자동 복원됩니다.</p>
+  <button onclick="location.reload()">🔄 다시 시도</button>
+  <div class="footer">ARCHITECT KIM MANMIN — 대성건축사사무소</div>
+</div>
+</body>
+</html>
