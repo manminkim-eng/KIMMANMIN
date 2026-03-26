@@ -2287,6 +2287,95 @@ footer {
     </div>
   </div>
 
+  <!-- ══ 해체공사 감리비 별도 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:#fb923c;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // DEMOLITION Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">건축물 해체공사 감리</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">해체공사 감리비 산출을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">건축관리법 · 국토교통부 고시 기준 · 실비정액가산 방식 자동 계산 · 상주 감리원 배치 기준</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- DEMOLITION-001: 건축물 해체공사 감리비 산출 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(251,146,60,.4);color:#fb923c;">해체감리</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">건축관리법</span>
+              <span class="wtag" style="border-color:rgba(251,146,60,.3);color:#fb923c;">실비정액가산</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.15rem;">건축물 해체공사 감리비 산출 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">「건축물관리법」 및 국토교통부 고시를 기반으로 해체공사 감리 대가를 자동 산정하는 웹 계산 도구. 요율 방식과 실비정액가산 방식(직접인건비 + 직접경비 + 제경비 + 기술료) 비교, 민간 상주 감리 현장 표준인 실비정액가산 방식의 4대 구성 요소 자동 계산, 연면적 기준 상주 감리원 배치(3,000㎡ 미만 1명 이상 · 이상 2명 이상)까지 실무 핵심을 자동화했습니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">감리대가 = 직접인건비 + 직접경비 + 제경비 + 기술료</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [해체감리] 바로가기
+            </a>
+            <a href="https://youtu.be/GpP3evxHDsY" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">GUIDE</span>
+              해체공사 감리비 산출 핵심 가이드 — 감리비 구성·체크리스트·배치 기준
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/해체감리.jpg', '해체공사 감리 대가 산정 계산기', 'https://manminkim-eng.github.io/demolition-calc/')">
+              <img src="./images/해체감리.jpg"
+                   alt="건축물 해체공사 감리비 산출 가이드 인포그래픽 — MANMIN Ver1.0"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/demolition-calc →
+          </a>
+          
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ══ 건축 상주감리 별도 시리즈 ════════════════════ -->
   <div class="inner" style="margin-top:48px;">
 
@@ -2545,95 +2634,6 @@ footer {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/Change-of-Use →
           </a>
-          <span class="wdate">2025 · Ver 1.0</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ 해체공사 감리비 별도 시리즈 ════════════════════ -->
-  <div class="inner" style="margin-top:48px;">
-
-    <!-- 섹션 구분 헤더 -->
-    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
-      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
-      <div style="font-family:var(--f-mono);font-size:.68rem;color:#fb923c;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
-        // DEMOLITION Series
-      </div>
-      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
-    </div>
-
-    <div class="sec-hd rv" style="margin-bottom:28px;">
-      <div class="sec-eyebrow">건축물 해체공사 감리</div>
-      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">해체공사 감리비 산출을 자동화하는 <span class="hl">웹 계산 도구</span></h2>
-      <p class="sec-sub">건축관리법 · 국토교통부 고시 기준 · 실비정액가산 방식 자동 계산 · 상주 감리원 배치 기준</p>
-    </div>
-
-    <div class="webdev-grid">
-
-      <!-- DEMOLITION-001: 건축물 해체공사 감리비 산출 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
-        <!-- 헤더 -->
-        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-          <div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-              <span class="wtag" style="border-color:rgba(251,146,60,.4);color:#fb923c;">해체감리</span>
-              <span class="wtag b">React · PWA</span>
-              <span class="wtag">건축관리법</span>
-              <span class="wtag" style="border-color:rgba(251,146,60,.3);color:#fb923c;">실비정액가산</span>
-              <span class="wtag live">● GITHUB LIVE</span>
-            </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">건축물 해체공사 감리비 산출 가이드 — MANMIN Ver1.0</h3>
-            <p class="wdesc" style="max-width:680px;margin-top:6px;">「건축물관리법」 및 국토교통부 고시를 기반으로 해체공사 감리 대가를 자동 산정하는 웹 계산 도구. 요율 방식과 실비정액가산 방식(직접인건비 + 직접경비 + 제경비 + 기술료) 비교, 민간 상주 감리 현장 표준인 실비정액가산 방식의 4대 구성 요소 자동 계산, 연면적 기준 상주 감리원 배치(3,000㎡ 미만 1명 이상 · 이상 2명 이상)까지 실무 핵심을 자동화했습니다.</p>
-            <!-- 핵심 공식 -->
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">감리대가 = 직접인건비 + 직접경비 + 제경비 + 기술료</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
-            </div>
-          </div>
-          <!-- 버튼 그룹 -->
-          <div class="wcard-btn-group">
-            <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wcard-gh-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GITHUB [해체감리] 바로가기
-            </a>
-            <a href="https://youtu.be/GpP3evxHDsY" target="_blank" rel="noopener" class="wcard-yt-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
-              YouTube 해설 영상
-            </a>
-          </div>
-        </div>
-
-        <!-- 이미지 갤러리 -->
-        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
-              <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">GUIDE</span>
-              해체공사 감리비 산출 핵심 가이드 — 감리비 구성·체크리스트·배치 기준
-            </div>
-            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
-                 onclick="openWcImg('./images/해체감리.jpg', '해체공사 감리 대가 산정 계산기', 'https://manminkim-eng.github.io/demolition-calc/')">
-              <img src="./images/해체감리.jpg"
-                   alt="건축물 해체공사 감리비 산출 가이드 인포그래픽 — MANMIN Ver1.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
-                   onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'"/>
-              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
-                          background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
-            </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
-          </div>
-        </div>
-
-        <!-- 푸터: 링크 + 날짜 -->
-        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
-          <a href="https://manminkim-eng.github.io/demolition-calc/" target="_blank" rel="noopener" class="wlink">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            manminkim-eng.github.io/demolition-calc →
-          </a>
-          
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
       </div>
