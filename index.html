@@ -28,7 +28,7 @@
 <!-- 폰트: Noto Sans KR (한글 최고가독성) + JetBrains Mono (레이블/코드) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════
@@ -59,9 +59,9 @@
   --red:      #ff4444;
 
   /* Typography */
-  --f-kr:    'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-  --f-serif: 'Noto Serif KR', serif;
-  --f-mono:  'JetBrains Mono', monospace;
+  --f-kr:    'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --f-serif: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --f-mono:  'JetBrains Mono', 'Consolas', monospace;
 
   /* Spacing */
   --max:     1120px;
@@ -72,13 +72,13 @@
    RESET & BASE
 ═══════════════════════════════════════ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 
 body {
   background: var(--bg);
   color: var(--t-body);
   font-family: var(--f-kr);
-  line-height: 1.7;
+  line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;     /* 한글 단어 단위 줄바꿈 */
@@ -132,11 +132,11 @@ nav.on {
 .nav-ul a {
   display: flex; align-items: center; gap: 5px;
   height: 64px; padding: 0 16px;
-  font-family: var(--f-kr); font-size: .78rem; font-weight: 700;
-  color: var(--t-sub); text-decoration: none; letter-spacing: .04em;
+  font-family: var(--f-kr); font-size: .82rem; font-weight: 700;
+  color: var(--t-sub); text-decoration: none; letter-spacing: .02em;
   transition: color .2s, background .2s;
 }
-.nav-ul a .nn { color: var(--t-dim); font-size: .62rem; font-weight: 400; font-family: var(--f-mono); }
+.nav-ul a .nn { color: var(--t-dim); font-size: .65rem; font-weight: 400; font-family: var(--f-mono); }
 .nav-ul a:hover { color: var(--gold-lt); background: var(--bg-card); }
 
 /* ═══════════════════════════════════════
@@ -202,15 +202,15 @@ nav.on {
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
 .hero-eyebrow {
-  font-family: var(--f-mono); font-size: .78rem;
-  color: var(--gold); letter-spacing: .16em; text-transform: uppercase;
+  font-family: var(--f-mono); font-size: .8rem;
+  color: var(--gold); letter-spacing: .12em; text-transform: uppercase;
   margin-bottom: 16px;
 }
 .hero-eyebrow::before { content: '// '; color: var(--t-dim); }
 
 /* 이름 — 가장 크고 선명하게 */
 .hero-name {
-  font-family: var(--f-serif);
+  font-family: var(--f-kr);
   font-size: clamp(3.5rem, 8vw, 6.5rem);
   font-weight: 700;
   color: var(--t-high);
@@ -220,14 +220,14 @@ nav.on {
 }
 
 .hero-title {
-  font-size: 1.2rem; font-weight: 500;
+  font-size: 1.25rem; font-weight: 500;
   color: var(--gold-lt);
-  letter-spacing: .06em;
+  letter-spacing: .04em;
   margin-bottom: 6px;
 }
 .hero-title-en {
-  font-family: var(--f-mono); font-size: .8rem;
-  color: var(--t-sub); letter-spacing: .1em;
+  font-family: var(--f-mono); font-size: .82rem;
+  color: var(--t-sub); letter-spacing: .08em;
   text-transform: uppercase; margin-bottom: 28px;
 }
 
@@ -240,9 +240,9 @@ nav.on {
 
 /* 핵심 설명 — 가독성 극대화 */
 .hero-desc {
-  font-size: 1.08rem; font-weight: 400;
+  font-size: 1.12rem; font-weight: 400;
   color: var(--t-body);
-  line-height: 1.9;
+  line-height: 1.95;
   max-width: 520px;
   margin-bottom: 36px;
 }
@@ -253,7 +253,7 @@ nav.on {
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 13px 26px;
-  font-family: var(--f-kr); font-size: .92rem; font-weight: 600;
+  font-family: var(--f-kr); font-size: .95rem; font-weight: 600;
   text-decoration: none; cursor: pointer; border: none;
   transition: all .22s;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
@@ -312,7 +312,7 @@ nav.on {
   margin-bottom: 4px;
 }
 .stat-lbl {
-  font-family: var(--f-kr); font-size: .8rem; font-weight: 400;
+  font-family: var(--f-kr); font-size: .85rem; font-weight: 400;
   color: var(--t-sub); display: block;
 }
 .stat-bar-wrap { margin-top: 10px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
@@ -332,18 +332,18 @@ nav.on {
 
 .sec-hd { max-width: var(--max); margin: 0 auto 56px; }
 .sec-eyebrow {
-  font-family: var(--f-mono); font-size: .72rem;
-  color: var(--gold); letter-spacing: .14em; text-transform: uppercase;
+  font-family: var(--f-mono); font-size: .76rem;
+  color: var(--gold); letter-spacing: .1em; text-transform: uppercase;
   display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
 }
 .sec-eyebrow::before { content: '//'; color: var(--t-dim); }
 
 /* 섹션 제목 — 크고 선명 */
 .sec-title {
-  font-family: var(--f-serif);
+  font-family: var(--f-kr);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 700; color: var(--t-high);
-  line-height: 1.25; letter-spacing: -.01em;
+  line-height: 1.3; letter-spacing: -.01em;
 }
 .sec-title .hl { color: var(--gold-lt); }
 .sec-title .bl { color: var(--blue); }
@@ -351,8 +351,8 @@ nav.on {
 /* 섹션 서브 — 충분히 밝게 */
 .sec-sub {
   margin-top: 14px;
-  font-size: 1.02rem; font-weight: 400;
-  color: var(--t-body); line-height: 1.85;
+  font-size: 1.05rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.9;
 }
 
 /* 내용 wrapper */
@@ -378,13 +378,13 @@ nav.on {
 }
 /* 카드 제목 */
 .exp-title {
-  font-family: var(--f-kr); font-size: 1.1rem; font-weight: 700;
-  color: var(--t-high); margin-bottom: 12px; line-height: 1.4;
+  font-family: var(--f-kr); font-size: 1.15rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 12px; line-height: 1.5;
 }
 /* 카드 설명 */
 .exp-body {
-  font-size: .95rem; font-weight: 400;
-  color: var(--t-body); line-height: 1.85;
+  font-size: 1.0rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.9;
 }
 .exp-tag {
   display: inline-block; margin-top: 18px;
@@ -419,12 +419,12 @@ nav.on {
 }
 .lic-item:hover { border-color: var(--gold); background: #1a2540; }
 .lic-name {
-  font-family: var(--f-kr); font-size: .95rem; font-weight: 600;
-  color: var(--t-high); line-height: 1.4; margin-bottom: 4px;
+  font-family: var(--f-kr); font-size: 1.0rem; font-weight: 600;
+  color: var(--t-high); line-height: 1.45; margin-bottom: 4px;
 }
 .lic-en {
-  font-family: var(--f-mono); font-size: .6rem;
-  color: var(--t-sub); letter-spacing: .04em;
+  font-family: var(--f-mono); font-size: .63rem;
+  color: var(--t-sub); letter-spacing: .03em;
 }
 .lic-special {
   grid-column: span 2;
@@ -472,12 +472,12 @@ nav.on {
   color: var(--gold); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;
 }
 .scope-title {
-  font-family: var(--f-kr); font-size: 1.08rem; font-weight: 700;
-  color: var(--t-high); margin-bottom: 10px; line-height: 1.35;
+  font-family: var(--f-kr); font-size: 1.12rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 10px; line-height: 1.45;
 }
 .scope-desc {
-  font-size: .92rem; font-weight: 400;
-  color: var(--t-body); line-height: 1.82;
+  font-size: .97rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.9;
 }
 
 /* ═══════════════════════════════════════
@@ -732,9 +732,9 @@ nav.on {
 .wbody { padding: 20px 22px; }
 .wtags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
 .wtag {
-  font-family: var(--f-mono); font-size: .6rem; padding: 2px 8px;
+  font-family: var(--f-mono); font-size: .65rem; padding: 3px 9px;
   border: 1px solid var(--line); color: var(--t-sub);
-  text-transform: uppercase; letter-spacing: .06em;
+  text-transform: uppercase; letter-spacing: .05em;
 }
 .wtag.g { border-color: rgba(212,168,67,.4); color: var(--gold); }
 .wtag.b { border-color: rgba(90,154,232,.4); color: var(--blue); }
@@ -742,25 +742,25 @@ nav.on {
 
 /* 웹 카드 제목 */
 .wtitle {
-  font-family: var(--f-kr); font-size: 1.05rem; font-weight: 700;
-  color: var(--t-high); margin-bottom: 8px; line-height: 1.35;
+  font-family: var(--f-kr); font-size: 1.12rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 10px; line-height: 1.5;
 }
 /* 웹 카드 설명 */
 .wdesc {
-  font-size: .9rem; font-weight: 400;
-  color: var(--t-body); line-height: 1.82;
+  font-size: .97rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.9;
 }
 .wfoot {
-  padding: 13px 22px; border-top: 1px solid var(--line);
+  padding: 14px 22px; border-top: 1px solid var(--line);
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
 .wlink {
-  font-family: var(--f-mono); font-size: .68rem;
-  color: var(--cyan); text-decoration: none; letter-spacing: .08em; text-transform: uppercase;
+  font-family: var(--f-mono); font-size: .7rem;
+  color: var(--cyan); text-decoration: none; letter-spacing: .06em; text-transform: uppercase;
   display: flex; align-items: center; gap: 5px; transition: gap .2s;
 }
 .wlink:hover { gap: 9px; }
-.wdate { font-family: var(--f-mono); font-size: .62rem; color: var(--t-dim); }
+.wdate { font-family: var(--f-mono); font-size: .65rem; color: var(--t-dim); }
 
 /* 모바일/태블릿 전용 GUIDE·PORTAL 위 바로가기 버튼 — 데스크톱 기본 숨김 */
 .mobile-goto-btn {
@@ -819,25 +819,25 @@ nav.on {
 }
 .ytbody { padding: 20px 22px; }
 .yt-cat {
-  font-family: var(--f-mono); font-size: .65rem;
-  color: var(--gold); letter-spacing: .1em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+  font-family: var(--f-mono); font-size: .68rem;
+  color: var(--gold); letter-spacing: .08em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
 }
-.yt-cat::before { content: '▶'; font-size: .5rem; }
+.yt-cat::before { content: '▶'; font-size: .52rem; }
 
 /* 유튜브 카드 제목 */
 .yt-title {
-  font-family: var(--f-kr); font-size: .98rem; font-weight: 700;
-  color: var(--t-high); margin-bottom: 8px; line-height: 1.5;
+  font-family: var(--f-kr); font-size: 1.04rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 10px; line-height: 1.6;
 }
 /* 유튜브 설명 */
 .yt-desc {
-  font-size: .88rem; font-weight: 400;
-  color: var(--t-body); line-height: 1.82; margin-bottom: 14px;
+  font-size: .94rem; font-weight: 400;
+  color: var(--t-body); line-height: 1.88; margin-bottom: 14px;
 }
 .yt-meta {
   display: flex; gap: 12px; align-items: center;
-  font-family: var(--f-mono); font-size: .62rem; color: var(--t-dim);
+  font-family: var(--f-mono); font-size: .65rem; color: var(--t-dim);
   border-top: 1px solid var(--line); padding-top: 12px;
 }
 .yt-meta-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line2); }
@@ -1208,7 +1208,7 @@ footer {
   /* Sections */
   .sec { padding: 56px var(--side); }
   .sec-hd { margin-bottom: 28px; }
-  .sec-title { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+  .sec-title { font-size: clamp(1.55rem, 5.5vw, 2.1rem); }
 
   /* Expertise */
   .exp-grid { grid-template-columns: 1fr; gap: 0; }
@@ -2137,12 +2137,12 @@ footer {
               <span class="wtag" style="border-color:rgba(168,139,250,.3);color:#a78bfa;">직선보간법</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">공공건축 설계·감리 대가 산정 가이드 — ARCHITECT FEE Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">공공건축 설계·감리 대가 산정 가이드 — ARCHITECT FEE Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">공사비 기준의 복잡한 건축사 업무 대가 산정 체계를 자동화한 웹 계산 도구. 건축물 난이도(1~3종) 및 도면 상세도(기본·중급·상급) 선택부터 직선보간법 요율 산출, 복합인증(제로에너지·녹색건축·기타) 가산 및 체감 공식(A + ½B + ⅓C) 적용, 업무별 산정 방식(요율 vs 실비정액가산식) 구분까지 실무 핵심 프로세스를 자동 계산합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.68rem;color:#a78bfa;">Y = y₁ − {(X−x₂)(y₁−y₂) / (x₁−x₂)} — 직선보간법</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">복합인증 합산 : A + ½B + ⅓C</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">복합인증 합산 : A + ½B + ⅓C</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2177,7 +2177,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">공사비 기준 건축사 대가 산정 5단계 — ① 순수 공사비 확인 → ② 건축물 종별·도서 수준 결정 → ③ 직선보간법 요율 산출 → ④ 복합인증 가산·체감 적용(A+½B+⅓C) → ⑤ 요율 방식 vs 실비정액가산식 구분 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">공사비 기준 건축사 대가 산정 5단계 — ① 순수 공사비 확인 → ② 건축물 종별·도서 수준 결정 → ③ 직선보간법 요율 산출 → ④ 복합인증 가산·체감 적용(A+½B+⅓C) → ⑤ 요율 방식 vs 실비정액가산식 구분 인포그래픽.</p>
           </div>
 
         </div>
@@ -2202,7 +2202,7 @@ footer {
     <!-- 섹션 구분 헤더 -->
     <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
       <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
-      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+      <div style="font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
         // U-VALUE Series
       </div>
       <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
@@ -2228,12 +2228,12 @@ footer {
               <span class="wtag" style="border-color:rgba(56,189,248,.3);color:#38bdf8;">법규 자동 판정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">건축물 열관류율 산출 및 법규 판정 자동화 시스템 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">건축물 열관류율 산출 및 법규 판정 자동화 시스템 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">재료와 두께 입력만으로 열관류율을 자동 산출하고 지역별 법규 기준 적합 여부를 즉각 판정하는 원스톱 자동화 시스템. 국토교통부 고시 기준(별표 1~별표 6) 완벽 반영, 단열 기준·표면 열전달저항·중공층 조건 자동 배정, 소수점 4째 자리(0.001 단위) 정밀 판정까지 20년 실무 노하우를 코드화했습니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #38bdf8;font-family:var(--f-mono);font-size:.68rem;color:#38bdf8;">U = 1 / (Rsi + ΣR + Rse) — 열관류율 기본 산식</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">R = d / λ — 재료 열저항 (두께 ÷ 열전도율)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">R = d / λ — 재료 열저항 (두께 ÷ 열전도율)</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2268,7 +2268,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">재료·두께 입력 → 열저항(R = d/λ) 자동 산출 → 지역별 기준값 비교 → PASS/FAIL 즉각 판정. 국토교통부 고시 별표 1~6 완벽 반영, 표면 열전달저항·중공층 자동 배정, 소수점 4째 자리 0.001 단위 정밀 계산.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">재료·두께 입력 → 열저항(R = d/λ) 자동 산출 → 지역별 기준값 비교 → PASS/FAIL 즉각 판정. 국토교통부 고시 별표 1~6 완벽 반영, 표면 열전달저항·중공층 자동 배정, 소수점 4째 자리 0.001 단위 정밀 계산.</p>
           </div>
 
         </div>
@@ -2319,12 +2319,12 @@ footer {
               <span class="wtag" style="border-color:rgba(251,146,60,.3);color:#fb923c;">실비정액가산</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">건축물 해체공사 감리비 산출 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">건축물 해체공사 감리비 산출 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">「건축물관리법」 및 국토교통부 고시를 기반으로 해체공사 감리 대가를 자동 산정하는 웹 계산 도구. 요율 방식과 실비정액가산 방식(직접인건비 + 직접경비 + 제경비 + 기술료) 비교, 민간 상주 감리 현장 표준인 실비정액가산 방식의 4대 구성 요소 자동 계산, 연면적 기준 상주 감리원 배치(3,000㎡ 미만 1명 이상 · 이상 2명 이상)까지 실무 핵심을 자동화했습니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">감리대가 = 직접인건비 + 직접경비 + 제경비 + 기술료</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">제경비 110~120% · 기술료 20~40% (직접인건비 기준)</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2358,7 +2358,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
           </div>
         </div>
 
@@ -2408,12 +2408,12 @@ footer {
               <span class="wtag" style="border-color:rgba(52,211,153,.3);color:#34d399;">2026 최신 개정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">2026 상주감리 대가 산출 및 법규 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">2026 상주감리 대가 산출 및 법규 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">2026년 최신 개정 법령에 따른 상주감리 배치 대상 확인 및 실비정액가산방식을 통한 투명한 대가 산출을 자동화한 웹 계산 도구. 건축법 제25조·시행령 제19조 기준 상주 의무 대상(5,000㎡ 이상·5개 층 이상·3,000㎡ 아파트 등) 자동 판별, 2026년 한국엔지니어링협회 공표 노임단가(기술사 467,217원·특급 373,353원·고급 310,884원/일) 자동 적용, 감리원 배치 통보·신고(착공 후 7일 이내) 안내까지 실무 전 과정을 커버합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #34d399;font-family:var(--f-mono);font-size:.68rem;color:#34d399;">총 감리비 = 직접인건비 + 직접경비 + 제경비 + 기술료 + 부가가치세</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">2026 노임단가 — 기술사 467,217 · 특급 373,353 · 고급 310,884 원/일</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">2026 노임단가 — 기술사 467,217 · 특급 373,353 · 고급 310,884 원/일</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2446,7 +2446,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">건축법 제25조 기준 상주 의무 대상 자동 판별, 실비정액가산방식 5대 구성 요소 자동 계산, 2026년 엔지니어링 노임단가 자동 반영, 감리원 배치 통보·신고 기한(착공 후 7일 이내) 안내 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축법 제25조 기준 상주 의무 대상 자동 판별, 실비정액가산방식 5대 구성 요소 자동 계산, 2026년 엔지니어링 노임단가 자동 반영, 감리원 배치 통보·신고 기한(착공 후 7일 이내) 안내 인포그래픽.</p>
           </div>
         </div>
 
@@ -2470,7 +2470,7 @@ footer {
     <!-- 섹션 구분 헤더 -->
     <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
       <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
-      <div style="font-family:var(--f-mono);font-size:.68rem;color:#e879f9;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+      <div style="font-family:var(--f-mono);font-size:.71rem;color:#e879f9;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
         // CONSTRUCTION-AIR Series
       </div>
       <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
@@ -2496,12 +2496,12 @@ footer {
               <span class="wtag" style="border-color:rgba(232,121,249,.3);color:#e879f9;">비작업일수 자동산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">건설현장 적정 공사기간 산정 가이드라인 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">건설현장 적정 공사기간 산정 가이드라인 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">건설공사의 품질 및 안전 확보를 위해 발주자가 적정 공사기간을 산정하고 관리하는 체계적 방법을 자동화한 웹 도구. 준비기간·정리기간 설정(착공 전 안전관리계획 수립·준공 전 행정절차), 기상불능일(A)+법정공휴일(B)−중복일수(C) 비작업일수 자동 산정, 주 40시간 근무제 적용(월 비작업일수 8일 미만 시 8일 적용), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 반영까지 전 과정을 자동화합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #e879f9;font-family:var(--f-mono);font-size:.68rem;color:#e879f9;">비작업일수 = 기상불능(A) + 법정공휴일(B) − 중복일수(C)</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">100억 이상 공사 — 입찰 시 공기 산정 작업심의 의무</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #e879f9;font-family:var(--f-mono);font-size:.71rem;color:#e879f9;">비작업일수 = 기상불능(A) + 법정공휴일(B) − 중복일수(C)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">100억 이상 공사 — 입찰 시 공기 산정 작업심의 의무</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2535,7 +2535,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#e879f9;border:1px solid rgba(232,121,249,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">적정 공사기간 4대 구성 요소(준비기간·비작업일수·주 40시간·정리기간) 자동 산정, 발주자 핵심 역할(입찰 산정근거 명시·시공 여건 제공·정당한 공기 조정), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">적정 공사기간 4대 구성 요소(준비기간·비작업일수·주 40시간·정리기간) 자동 산정, 발주자 핵심 역할(입찰 산정근거 명시·시공 여건 제공·정당한 공기 조정), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 인포그래픽.</p>
           </div>
         </div>
 
@@ -2584,13 +2584,13 @@ footer {
               <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">건축물 용도변경</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">[건축실무] 용도변경의 핵심 게이트: 입지 제한부터 주차장·하수도 인프라 검토까지 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">[건축실무] 용도변경의 핵심 게이트: 입지 제한부터 주차장·하수도 인프라 검토까지 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">MANMIN-Ver1.0 용도변경 전략 가이드를 통해, 건축법 제19조에 따른 9개 시설군의 위계부터 입지 제한 판정, 그리고 주차장·하수도 등 인프라 한계선까지 실무적인 해법을 공개합니다. 단순 서류 작업을 넘어 자산의 호환성을 입증하는 고도의 시스템 엔지니어링을 확인하세요!</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">9개 시설군 위계 — 상위군 이동 시 허가 / 하위군 이동 시 신고</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">국토계획법 입지 제한 · 용도지역별 허용 용도 선행 확인</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);">주차장 · 하수도 · 소방 · 교육환경보호구역 — 4대 부대조건</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">9개 시설군 위계 — 상위군 이동 시 허가 / 하위군 이동 시 신고</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">국토계획법 입지 제한 · 용도지역별 허용 용도 선행 확인</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">주차장 · 하수도 · 소방 · 교육환경보호구역 — 4대 부대조건</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2624,7 +2624,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">건축법 제19조 9개 시설군 위계(1군~9군) 기반 허가·신고·기재내용변경 행정 절차 판정 + 국토계획법 용도지역별 입지 제한 선행 확인 + 주차장(법정 주차대수) · 하수도원인자부담금(발생량 증가) · 소방안전시설 · 교육환경보호구역 4대 필수 부대조건 검토 + 지자체 조례 개별 확인. 건축법 제19조 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축법 제19조 9개 시설군 위계(1군~9군) 기반 허가·신고·기재내용변경 행정 절차 판정 + 국토계획법 용도지역별 입지 제한 선행 확인 + 주차장(법정 주차대수) · 하수도원인자부담금(발생량 증가) · 소방안전시설 · 교육환경보호구역 4대 필수 부대조건 검토 + 지자체 조례 개별 확인. 건축법 제19조 완벽 대응.</p>
           </div>
         </div>
 
@@ -2672,13 +2672,13 @@ footer {
               <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">건폐율·용적률 산출</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">부동산 투자 전 필수! 국토계획법 vs 지자체 조례, 내 땅의 진짜 가치는? (건폐율·용적률 완벽 가이드) — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">부동산 투자 전 필수! 국토계획법 vs 지자체 조례, 내 땅의 진짜 가치는? (건폐율·용적률 완벽 가이드) — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">국토계획법상 용적률만 믿고 투자했다가 낭패를 보는 사례가 너무나 많습니다. 서울시와 포천시의 실제 사례를 통해 법과 조례 사이의 '치명적 간극'을 해부하고, 수익성을 극대화할 수 있는 MANMIN-Ver1.0 프레임워크를 공개합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">국토계획법(국법) vs 지자체 조례(Local) — 실제 적용 기준 비교</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">토지이음 → 지자체 조례 → 지구단위계획 — 건축 규모 4단계 산출</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);">공간: 지하층·지상주차장·피난안전구역 — 용적률 제외 면적 반영</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">국토계획법(국법) vs 지자체 조례(Local) — 실제 적용 기준 비교</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">토지이음 → 지자체 조례 → 지구단위계획 — 건축 규모 4단계 산출</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">공간: 지하층·지상주차장·피난안전구역 — 용적률 제외 면적 반영</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2712,7 +2712,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">국토계획법(국법) vs 지자체 조례(Local) 용적률 실제 적용 기준 비교(중심상업지역 국법 1,500% → 서울시 조례 1,000%) + 건축 규모 즉시 산출 4단계(토지이음 용도지역 확인 → 지자체 조례 조회 → 지구단위계획 파악 → 실제 면적 계산) + 용적률 산정 제외 면적(지하층·지상주차장·피난안전구역) 반영. 건축법·국토계획법 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">국토계획법(국법) vs 지자체 조례(Local) 용적률 실제 적용 기준 비교(중심상업지역 국법 1,500% → 서울시 조례 1,000%) + 건축 규모 즉시 산출 4단계(토지이음 용도지역 확인 → 지자체 조례 조회 → 지구단위계획 파악 → 실제 면적 계산) + 용적률 산정 제외 면적(지하층·지상주차장·피난안전구역) 반영. 건축법·국토계획법 완벽 대응.</p>
           </div>
         </div>
 
@@ -2735,7 +2735,7 @@ footer {
     <!-- 섹션 구분 헤더 -->
     <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
       <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
-      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+      <div style="font-family:var(--f-mono);font-size:.71rem;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
         // MECHANICAL Series
       </div>
       <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
@@ -2760,12 +2760,12 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">우수관경 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">건축물 우수관경 산정 가이드 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">건축물 우수관경 산정 가이드 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">기후 변화에 대응하여 수리학적 계산과 신뢰성 해석을 결합한 최적의 우수관경 산정 프로세스. 정밀한 우수 유입량(Q<sub>L</sub>) 산출(지붕·수직벽 면적 합산), Manning 공식 배수 용량(Q<sub>C</sub>) 결정, FORM(First-Order Reliability Method) 신뢰성 분석(Z = Q<sub>C</sub> - Q<sub>L</sub>), 비용 대비 안전성 최적화까지 — 단 1%의 오차도 허용하지 않는 전략적 엔지니어링 워크플로우.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">Q<sub>L</sub> = 지붕면적 + (수직 벽 면적 × 1/2)</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">Z = Q<sub>C</sub> − Q<sub>L</sub> · FORM 신뢰성 분석 · Manning 공식</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">Q<sub>L</sub> = 지붕면적 + (수직 벽 면적 × 1/2)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">Z = Q<sub>C</sub> − Q<sub>L</sub> · FORM 신뢰성 분석 · Manning 공식</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2799,7 +2799,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">Phase 1 수리학적 기초 산정(유입량·배수용량·관경 도출) + Phase 2 FORM 신뢰성 해석(Z = Q<sub>C</sub>−Q<sub>L</sub>) + 비용 대비 안전성 최적화. 제천시 우수관망 케이스 스터디 포함.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">Phase 1 수리학적 기초 산정(유입량·배수용량·관경 도출) + Phase 2 FORM 신뢰성 해석(Z = Q<sub>C</sub>−Q<sub>L</sub>) + 비용 대비 안전성 최적화. 제천시 우수관망 케이스 스터디 포함.</p>
           </div>
         </div>
 
@@ -2824,12 +2824,12 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">위생배관 관경 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">기계설비 급배수 관경 산정 가이드: 헌터 곡선 &amp; 하젠-윌리엄스 공식 완벽 적용 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">기계설비 급배수 관경 산정 가이드: 헌터 곡선 &amp; 하젠-윌리엄스 공식 완벽 적용 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">기계설비법 시행에 따라 더욱 엄격해진 설계 기준을 충족하는 MANMIN-Ver2.0 급배수 관경 산정 가이드. 헌터 곡선을 통한 동시사용 유량 예측부터 자기 세척 속도를 고려한 오·배수 설계까지, 건축 인프라의 디지털 전환(DX)을 선도하는 정밀 엔지니어링의 정수를 확인하세요!</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">Q = f(FU) · 헌터 곡선 — 동시사용 순간최대유량 산출</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H = f(v², N) · 하젠-윌리엄스 공식 — 마찰손실수두 산정</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">Q = f(FU) · 헌터 곡선 — 동시사용 순간최대유량 산출</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">H = f(v², N) · 하젠-윌리엄스 공식 — 마찰손실수두 산정</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2863,7 +2863,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">헌터 곡선 기반 동시사용 순간최대유량 산출 + 하젠-윌리엄스 공식 마찰손실수두 산정 + 자기 세척 유속(0.6~1.5 m/s) 확보를 위한 오·배수 관경 및 최소 구배(1/50~1/200) 설계. 기계설비법 설계계산서 작성 기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">헌터 곡선 기반 동시사용 순간최대유량 산출 + 하젠-윌리엄스 공식 마찰손실수두 산정 + 자기 세척 유속(0.6~1.5 m/s) 확보를 위한 오·배수 관경 및 최소 구배(1/50~1/200) 설계. 기계설비법 설계계산서 작성 기준 완벽 대응.</p>
           </div>
         </div>
 
@@ -2888,13 +2888,13 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">냉온수 배관 관경 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">기계설비 냉온수 배관 관경 산정 가이드: CAPEX와 OPEX를 고려한 최적 설계법 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">기계설비 냉온수 배관 관경 산정 가이드: CAPEX와 OPEX를 고려한 최적 설계법 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">전체 시스템의 생애주기 비용을 결정하는 <strong style="color:var(--gold-lt);">'경제적 관경'</strong>을 어떻게 찾을 수 있을까요? 기계설비 기술기준을 바탕으로 물리적 원리와 법적 기준을 결합한 MANMIN-Ver2.0 냉온수 배관 산정 가이드를 공개합니다. 유체역학적 안정성과 경제적 효율성 사이의 완벽한 스위트 스팟(Sweet Spot)을 확인하세요!</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">Q = A × V — 유량·유속·관경의 연속 방정식</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">Economic Diameter — CAPEX + OPEX 최소화 최적 관경</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);">권장 유속: 1.0 ~ 2.0 m/s — 기계설비 기술기준 [별표 8]</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">Q = A × V — 유량·유속·관경의 연속 방정식</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">Economic Diameter — CAPEX + OPEX 최소화 최적 관경</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">권장 유속: 1.0 ~ 2.0 m/s — 기계설비 기술기준 [별표 8]</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2928,7 +2928,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">연속방정식(Q = A × V) 기반 유량·유속·관경 상관관계 + 유속 증가 시 압력 손실의 급격한 상승(유속의 제곱에 비례) + 초기 자재비(CAPEX)와 장기적 펌프 동력비(OPEX)의 합계가 최소화되는 경제적 관경 산정. 기계설비 기술기준 [별표 8] 권장 유속(1.0~2.0 m/s) 완벽 준수.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">연속방정식(Q = A × V) 기반 유량·유속·관경 상관관계 + 유속 증가 시 압력 손실의 급격한 상승(유속의 제곱에 비례) + 초기 자재비(CAPEX)와 장기적 펌프 동력비(OPEX)의 합계가 최소화되는 경제적 관경 산정. 기계설비 기술기준 [별표 8] 권장 유속(1.0~2.0 m/s) 완벽 준수.</p>
           </div>
         </div>
 
@@ -2953,13 +2953,13 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">공조덕트 규격 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">[기계설비 실무] MANMIN-Ver2.0: 기계설비법 기준 풍량 최적화 및 덕트 규격 산정 매뉴얼</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">[기계설비 실무] MANMIN-Ver2.0: 기계설비법 기준 풍량 최적화 및 덕트 규격 산정 매뉴얼</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">기계설비법과 KDS/KCS 건설기준을 바탕으로 한 MANMIN-Ver2.0 공조덕트 규격 산정 가이드를 공개합니다. 단순한 사이즈 결정을 넘어, 유체역학적 효율과 물리적 제약 사이의 완벽한 밸런스를 찾는 고도의 엔지니어링 전략을 확인하세요!</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">Q = A × V × 3,600 — 풍량·단면적·풍속 상관관계</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">등마찰손실법 · 풍속법 · 정압재취득법 — 3대 산정법</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);">저속(≤15 m/s · ≤500 Pa) vs 고속(≤2,500 Pa) 분류 기준</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">Q = A × V × 3,600 — 풍량·단면적·풍속 상관관계</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">등마찰손실법 · 풍속법 · 정압재취득법 — 3대 산정법</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">저속(≤15 m/s · ≤500 Pa) vs 고속(≤2,500 Pa) 분류 기준</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -2993,7 +2993,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">Q=A×V×3,600 기반 풍량·단면적·풍속 상관관계 + 등마찰손실법(0.8~1.2 Pa/m) · 풍속법(사무소 주덕트 7~10 m/s) · 정압재취득법(분기점 정압 재취득) 3대 산정 방법론 + 저속/고속 덕트 분류 기준(풍속 15 m/s · 정압 500 Pa 경계) + 사각형 덕트 종횡비 제한(최대 1:4). 기계설비법 및 KDS/KCS 건설기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">Q=A×V×3,600 기반 풍량·단면적·풍속 상관관계 + 등마찰손실법(0.8~1.2 Pa/m) · 풍속법(사무소 주덕트 7~10 m/s) · 정압재취득법(분기점 정압 재취득) 3대 산정 방법론 + 저속/고속 덕트 분류 기준(풍속 15 m/s · 정압 500 Pa 경계) + 사각형 덕트 종횡비 제한(최대 1:4). 기계설비법 및 KDS/KCS 건설기준 완벽 대응.</p>
           </div>
         </div>
 
@@ -3018,13 +3018,13 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">펌프 용량 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">기계설비 펌프 용량 산정 가이드: 전양정(H)과 동력(P) 계산부터 장비 선정까지 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">기계설비 펌프 용량 산정 가이드: 전양정(H)과 동력(P) 계산부터 장비 선정까지 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">전체 시스템의 에너지 성능(EPI)을 좌우하고 막대한 비용 낭비를 막아주는 MANMIN-Ver2.0 펌프 용량 산정 가이드를 공개합니다. 냉난방 순환펌프의 밀폐회로 특성부터 오배수 펌프의 극한 상황 방어까지, 데이터에 기반한 정밀 엔지니어링의 정수를 확인하세요!</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.68rem;color:var(--blue);">H = 실양정 + 관로손실 + 말단소요압력 — 전양정 산정</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = γQH / η — 전동기 여유율 10~15% 적용</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.68rem;color:var(--cyan);">EPI 최적화 — 순환·급수·오배수 용도별 설계 기준</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">H = 실양정 + 관로손실 + 말단소요압력 — 전양정 산정</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">P = γQH / η — 전동기 여유율 10~15% 적용</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">EPI 최적화 — 순환·급수·오배수 용도별 설계 기준</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3058,7 +3058,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">전양정(H) = 실양정 + 관로손실 + 말단소요압력 산정 + 전동기 동력(P = γQH/η) 여유율 10~15% 적용 + 순환펌프(밀폐회로 실망정 0 · 열교환기 손실 70 kPa 이하) · 급수펌프(위생기구 수압 550 kPa 이하 유지) · 오배수펌프(유입 유량의 200% 이상 응령 · 고형물 통과 직경 25~50mm). 에너지성능지표(EPI) 최적화 기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">전양정(H) = 실양정 + 관로손실 + 말단소요압력 산정 + 전동기 동력(P = γQH/η) 여유율 10~15% 적용 + 순환펌프(밀폐회로 실망정 0 · 열교환기 손실 70 kPa 이하) · 급수펌프(위생기구 수압 550 kPa 이하 유지) · 오배수펌프(유입 유량의 200% 이상 응령 · 고형물 통과 직경 25~50mm). 에너지성능지표(EPI) 최적화 기준 완벽 대응.</p>
           </div>
         </div>
 
@@ -3114,12 +3114,12 @@ footer {
               <span class="wtag">NFTC 102</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">옥내소화전 펌프 전양정(H) 및 용량 계산 — MANMIN Ver1.0 → Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">옥내소화전 펌프 전양정(H) 및 용량 계산 — MANMIN Ver1.0 → Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFPC/NFTC 102) 기반 옥내소화전 펌프 전양정 및 용량 자동 계산 웹 도구 시리즈. 계산 가이드 인포그래픽(Ver1.0)부터 완전 자동화 계산서(Ver2.0)까지 — 수원 용량 산정, Hazen-Williams 배관 마찰손실, 전동기 동력, A4 계산서 출력.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f87171;font-family:var(--f-mono);font-size:.68rem;color:#f87171;">Q = 소화전수(최대2개) × 130 ℓ/min</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H = E(실양정) + F(배관) + G(호스) + H(방수압) + I(안전율)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f87171;font-family:var(--f-mono);font-size:.71rem;color:#f87171;">Q = 소화전수(최대2개) × 130 ℓ/min</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">H = E(실양정) + F(배관) + G(호스) + H(방수압) + I(안전율)</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3155,7 +3155,7 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 102 기반 전양정(H) 계산 공식 요약. 1단계 수원산정 → 2단계 전양정 계산 프로세스 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 102 기반 전양정(H) 계산 공식 요약. 1단계 수원산정 → 2단계 전양정 계산 프로세스 인포그래픽.</p>
           </div>
 
         </div>
@@ -3182,12 +3182,12 @@ footer {
               <span class="wtag">NFPC 109</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">옥외소화전 펌프 용량 및 수원 산정 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">옥외소화전 펌프 용량 및 수원 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전성능기준(NFPC 109) 기반 옥외소화전 펌프 용량 및 수원 산정 웹 가이드. 수원 저수량 산정, 방수량 기준, 펌프 성능(노즐 선단 압력 0.25MPa 이상), 20분 연속 운전 능력 등 실무 핵심 기준을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fb923c;font-family:var(--f-mono);font-size:.68rem;color:#fb923c;">수원 저수량 = N(최대 2개) × 7m³</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">방수량 350 ℓ/min 이상 · 노즐 선단 압력 0.25MPa 이상</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">방수량 350 ℓ/min 이상 · 노즐 선단 압력 0.25MPa 이상</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3223,7 +3223,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFPC 109 기반 옥외소화전 수원 저수량 산정(N×7m³)과 펌프 성능 기준(방수량·노즐압력·연속운전) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFPC 109 기반 옥외소화전 수원 저수량 산정(N×7m³)과 펌프 성능 기준(방수량·노즐압력·연속운전) 인포그래픽.</p>
           </div>
 
         </div>
@@ -3250,12 +3250,12 @@ footer {
               <span class="wtag">NFTC 103</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">스프링클러 펌프 용량 산정 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">스프링클러 펌프 용량 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 103) 기반 스프링클러설비 펌프 용량 산정 웹 가이드. 헤드 기준개수 설정(10·20·30개), 수원 용량(기준개수 × 1.6m³), 전양정 구성 요소(실양정·배관마찰손실·헤드선단압력·안전율), 전동기 출력 선정까지 실무 핵심 프로세스를 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #38bdf8;font-family:var(--f-mono);font-size:.68rem;color:#38bdf8;">펌프 토출량(C) = 기준개수(A) × 80 L/min</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">전양정(I) = 실양정 + 배관마찰손실 + 헤드선단압력(10m) + 안전율</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">전양정(I) = 실양정 + 배관마찰손실 + 헤드선단압력(10m) + 안전율</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3291,7 +3291,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 103 기반 헤드 기준개수 설정, 수원 용량 산정(기준개수×1.6m³), 전양정 구성 요소, 전동기 출력 선정 프로세스 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 103 기반 헤드 기준개수 설정, 수원 용량 산정(기준개수×1.6m³), 전양정 구성 요소, 전동기 출력 선정 프로세스 인포그래픽.</p>
           </div>
 
         </div>
@@ -3318,12 +3318,12 @@ footer {
               <span class="wtag">NFSC 103A</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">간이스프링클러 펌프 용량 및 압력 산정 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">간이스프링클러 펌프 용량 및 압력 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">소방청 고시 제2021-6호 '간이스프링클러설비의 화재안전기준(NFSC 103A)' 기반 펌프 용량 및 압력 산정 웹 가이드. 설비별 기본 성능 기준(방수압 0.1MPa · 방수량 50L/min 이상), 대상물 유형별 동시 개방 헤드 수(2개·5개), 충압펌프 기동용 수입개폐장치, 가압송수장치별 압력 산정 공식까지 실무 핵심 기준을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #34d399;font-family:var(--f-mono);font-size:.68rem;color:#34d399;">H = h₁ + 10 (m) · 방수압 0.1MPa · 방수량 50L/min 이상</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = p₁ + p₂ + 0.1 (MPa)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">P = p₁ + p₂ + 0.1 (MPa)</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3359,7 +3359,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFSC 103A 기반 간이스프링클러 설비별 기본 성능(방수압·방수량), 대상물 유형별 동시 개방 헤드 수, 가압송수장치별 압력 산정 공식(H = h₁ + 10, P = p₁ + p₂ + 0.1) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFSC 103A 기반 간이스프링클러 설비별 기본 성능(방수압·방수량), 대상물 유형별 동시 개방 헤드 수, 가압송수장치별 압력 산정 공식(H = h₁ + 10, P = p₁ + p₂ + 0.1) 인포그래픽.</p>
           </div>
 
         </div>
@@ -3386,12 +3386,12 @@ footer {
               <span class="wtag">NFTC 102 · 103</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">[옥내소화전 + 스프링클러] 겸용 펌프 용량 계산 가이드 — MANMIN Ver2.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">[옥내소화전 + 스프링클러] 겸용 펌프 용량 계산 가이드 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전과 스프링클러를 겸용하는 펌프 용량 산정 웹 가이드. 펌프 및 수원 용량 산정의 3대 원칙(토출량·수원 합산, 전양정 최댓값 채택, 방화벽 구획 시 최대치 적용)을 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³)와 함께 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #c084fc;font-family:var(--f-mono);font-size:.68rem;color:#c084fc;">Q(겸용) = Q(소화전) + Q(스프링클러) · V(겸용) = V(소화전) + V(스프링클러)</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(소화전), H(스프링클러) ]</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">H(겸용) = Max[ H(소화전), H(스프링클러) ]</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3427,7 +3427,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#c084fc;border:1px solid rgba(192,132,252,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">옥내소화전·스프링클러 겸용 펌프 용량 산정 3대 원칙 및 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">옥내소화전·스프링클러 겸용 펌프 용량 산정 3대 원칙 및 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³) 인포그래픽.</p>
           </div>
 
         </div>
@@ -3454,12 +3454,12 @@ footer {
               <span class="wtag">NFSC 103A · NFTC 102</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">간이스프링클러 &amp; 옥내소화전 겸용 시스템 용량 산정 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">간이스프링클러 &amp; 옥내소화전 겸용 시스템 용량 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전과 간이스프링클러가 가압송수장치(펌프)·수원을 공유할 경우의 겸용 용량 산정 웹 가이드. NFSC 103A·NFTC 102 기반으로 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화 구획 시 산정 용량 완화(두 설비 중 최대치 이상만 확보), 배관 연결·송수구 공통 사항(개폐표시형 밸브 설치 필수)을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #fbbf24;font-family:var(--f-mono);font-size:.68rem;color:#fbbf24;">Q(겸용) = Q(옥내소화전) + Q(간이스프링클러) · V(겸용) = V합산</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">H(겸용) = Max[ H(옥내소화전), H(간이스프링클러) ]</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">H(겸용) = Max[ H(옥내소화전), H(간이스프링클러) ]</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3495,7 +3495,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#fbbf24;border:1px solid rgba(251,191,36,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFSC 103A·NFTC 102 기반 간이스프링클러+옥내소화전 겸용 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화구획 시 완화 기준, 개폐표시형 밸브·송수구 공통사항 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFSC 103A·NFTC 102 기반 간이스프링클러+옥내소화전 겸용 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화구획 시 완화 기준, 개폐표시형 밸브·송수구 공통사항 인포그래픽.</p>
           </div>
 
         </div>
@@ -3522,12 +3522,12 @@ footer {
               <span class="wtag">NFTC 102</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">옥내·외 소화전 겸용 펌프 시스템 설계 가이드 — MANMIN Ver1.0</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">옥내·외 소화전 겸용 펌프 시스템 설계 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 102) 기반 옥내소화전과 옥외소화전 겸용 펌프의 토출량·양정·동력·수원 산정 웹 가이드. 토출 유량(설치 개수 최대 2개 × 130 ℓ/min), 전양정 계산 요소(실양정·배관호스마찰손실·노즐방수압 0.17MPa), 전동기 출력(P = 0.163 × Q × H × K ÷ 효율), 유효 수원(개수당 2.6m³ 이상), 과압 방지(0.7MPa 초과 시 감압장치), 겸용 시스템 합산 원칙까지 실무 핵심을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f97316;font-family:var(--f-mono);font-size:.68rem;color:#f97316;">Q = 설치 개수(최대 2개) × 130 ℓ/min · 수원 V = 개수당 2.6m³ 이상</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">P = (0.163 × Q × H × K) ÷ 효율 · 노즐 방수압 0.17MPa 이상</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">P = (0.163 × Q × H × K) ÷ 효율 · 노즐 방수압 0.17MPa 이상</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3562,7 +3562,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#f97316;border:1px solid rgba(249,115,22,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">NFTC 102 기반 옥내·외 소화전 겸용 토출량·전양정·전동기 출력·수원 산정, 과압 방지(0.7MPa 감압장치), 겸용 합산 원칙 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 102 기반 옥내·외 소화전 겸용 토출량·전양정·전동기 출력·수원 산정, 과압 방지(0.7MPa 감압장치), 겸용 합산 원칙 인포그래픽.</p>
           </div>
 
         </div>
@@ -3590,12 +3590,12 @@ footer {
               <span class="wtag" style="border-color:rgba(74,222,128,.3);color:#4ade80;">7종 계산서</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.15rem;">소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN</h3>
+            <h3 class="wtitle" style="font-size:1.18rem;">소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전·옥외소화전·스프링클러·간이스프링클러 및 겸용 시스템의 펌프 용량을 NFTC 화재안전기술기준에 따라 정밀 계산하는 통합 웹 포탈. 단독 설비 4종 + 겸용 설비 3종, 총 7종의 계산서를 하나의 포탈에서 제공합니다. NFTC 최신 기준 적용(2026.3.1 시행), H·W(Hazen-Williams) 배관 마찰손실, PWA 오프라인 지원, A4 인쇄 최적화.</p>
             <!-- 핵심 스펙 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #4ade80;font-family:var(--f-mono);font-size:.68rem;color:#4ade80;">단독 설비 4종 — 옥내소화전 · 옥외소화전 · 스프링클러 · 간이스프링클러</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.68rem;color:var(--gold-lt);">겸용 설비 3종 — 옥내+스프링 · 간이+옥내 · 옥내+옥외</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #4ade80;font-family:var(--f-mono);font-size:.71rem;color:#4ade80;">단독 설비 4종 — 옥내소화전 · 옥외소화전 · 스프링클러 · 간이스프링클러</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">겸용 설비 3종 — 옥내+스프링 · 간이+옥내 · 옥내+옥외</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -3629,7 +3629,7 @@ footer {
                           background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
                           padding:2px 7px;letter-spacing:.06em;">7종 통합</div>
             </div>
-            <p style="font-size:.78rem;color:var(--t-sub);line-height:1.6;">단독 설비 4종 + 겸용 설비 3종 총 7종 계산서 통합 포탈. 설비별 NFTC 설계 기준 비교표, NFTC 화재안전기술기준 시행일 안내(2026.3.1 최신 기준), PWA 오프라인 지원.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">단독 설비 4종 + 겸용 설비 3종 총 7종 계산서 통합 포탈. 설비별 NFTC 설계 기준 비교표, NFTC 화재안전기술기준 시행일 안내(2026.3.1 최신 기준), PWA 오프라인 지원.</p>
           </div>
 
         </div>
@@ -3645,6 +3645,94 @@ footer {
         </div>
       </div>
 
+    </div>
+
+    <!-- ══ 토목 우수·오수 배관 별도 시리즈 ══════════════ -->
+    <div class="inner" style="margin-top:48px;">
+
+      <!-- 섹션 구분 헤더 -->
+      <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+        <div style="font-family:var(--f-mono);font-size:.68rem;color:#4ade80;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+          // CIVIL-ENGINEERING Series
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+      </div>
+
+      <div class="sec-hd rv" style="margin-bottom:28px;">
+        <div class="sec-eyebrow" style="color:#4ade80;">토목 우수·오수 배관 설계</div>
+        <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">단지 내 우수·오수 배관 관경 산정을 자동화하는 <span style="color:#4ade80;">웹 계산 도구</span></h2>
+        <p class="sec-sub">KDS 기준 합리식 우수 유출량 산정 · 매닝 공식 관경 자동 계산 · 오수 계획시간최대오수량 반영</p>
+      </div>
+
+      <div class="webdev-grid">
+
+        <!-- CIVIL-001: 토목 우수·오수 배관 관경 산정 -->
+        <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid rgba(74,222,128,.25);">
+          <!-- 헤더 -->
+          <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            <div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+                <span class="wtag" style="border-color:rgba(74,222,128,.4);color:#4ade80;">토목</span>
+                <span class="wtag b">PWA · Ver2.0</span>
+                <span class="wtag" style="border-color:rgba(74,222,128,.3);color:#4ade80;">우수·오수 배관 관경 산정</span>
+                <span class="wtag live">● GITHUB LIVE</span>
+              </div>
+              <h3 class="wtitle" style="font-size:1.18rem;">토목 설계 효율 2배 높이기! 매닝 공식부터 SWMM 동적 시뮬레이션까지 — MANMIN Ver2.0</h3>
+              <p class="wdesc" style="max-width:680px;margin-top:6px;">KDS 설계 기준을 반영한 우수 및 오수 배관 관경 산정의 핵심 노하우를 공개합니다. 이론적인 매닝 공식(Manning Equation)부터 최신 동적 시뮬레이션 기법인 SWMM 활용법까지, 실무에서 즉시 적용 가능한 전략을 확인해 보세요.</p>
+              <!-- 핵심 공식 -->
+              <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+                <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #4ade80;font-family:var(--f-mono);font-size:.71rem;color:#4ade80;">Q = C·I·A — 합리식(Rational Formula) 우수 유출량 산정</div>
+                <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">매닝 공식 — 유속 0.8~3.0 m/s · 통수능력 120% 이상 확보</div>
+                <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">오수 계획시간최대오수량 = 1일 최대오수량 × 1.3~1.8배</div>
+              </div>
+            </div>
+            <!-- 버튼 그룹 -->
+            <div class="wcard-btn-group">
+              <a href="https://manminkim-eng.github.io/civil-engineering-piping/" target="_blank" rel="noopener" class="wcard-gh-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GITHUB [토목배관] 바로가기
+              </a>
+              <a href="https://youtu.be/70U-0przNqY" target="_blank" rel="noopener" class="wcard-yt-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+                YouTube 해설 영상
+              </a>
+            </div>
+          </div>
+
+          <!-- 이미지 -->
+          <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="font-family:var(--f-mono);font-size:.65rem;color:#4ade80;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+                <span style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);padding:1px 8px;">GUIDE</span>
+                합리식(Q=CIA) · 매닝 공식 · 우수 유속 제한 · 오수 계획시간최대오수량 · SWMM 동적 시뮬레이션
+              </div>
+              <div style="border:1px solid rgba(74,222,128,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                   onclick="openWcImg('./images/토목배관.jpg', '토목 우수·오수 배관 관경 산정 가이드', 'https://manminkim-eng.github.io/civil-engineering-piping/')">
+                <img src="./images/토목배관.jpg"
+                     alt="MANMIN Ver2.0 단지 내 토목 우수·오수 배관 관경 산정 가이드 인포그래픽 — 합리식 우수 유출량, 매닝 공식, KDS 기준, SWMM 동적 시뮬레이션"
+                     style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                     onmouseover="this.style.transform='scale(1.02)'"
+                     onmouseout="this.style.transform='scale(1)'"/>
+                <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                            background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
+                            padding:2px 7px;letter-spacing:.06em;">Ver 2.0</div>
+              </div>
+              <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">합리식(Q=C·I·A) 기반 계획우수유출량 산정 + 유속 0.8~3.0 m/s 유지 · 국지성 호우 대비 10~20% 할증 · 통수능력 120% 이상 확보 + 오수 계획시간최대오수량(1일 최대오수량 × 1.3~1.8배) + 침전 방지 유속 0.6~1.5 m/s · 최소 토피 20cm 이상 + 배수인구별 최소 오수 관경 기준(150명 이하 100mm · 300명 이하 150mm · 600명 이하 200mm). KDS 설계 기준 완벽 대응.</p>
+            </div>
+          </div>
+
+          <!-- 푸터 -->
+          <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+            <a href="https://manminkim-eng.github.io/civil-engineering-piping/" target="_blank" rel="noopener" class="wlink">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              manminkim-eng.github.io/civil-engineering-piping →
+            </a>
+            <span class="wdate">2025 · Ver 2.0</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- MANMIN 시리즈 요약 배너 -->
@@ -4335,15 +4423,36 @@ footer {
         </div>
       </div>
 
-      <!-- ══ 토목 예고 배너 ══ -->
-      <div style="grid-column:1/-1;margin-top:8px;">
-        <div class="rv yt-upcoming-banner">
-          <div class="yt-upcoming-inner">
-            <div class="yt-upcoming-icon">📹</div>
-            <div class="yt-upcoming-text">
-              <div class="yt-upcoming-title">토목 영상 업로드 예정</div>
-              <p class="yt-upcoming-desc">토목 엔지니어링 영상이 순차적으로 업로드됩니다. 채널 구독으로 알림을 받아보세요.</p>
-            </div>
+      <!-- ══ 토목 카테고리 구분 헤더 ══ -->
+      <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
+        <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:#4ade80;letter-spacing:.14em;text-transform:uppercase;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);padding:3px 12px;">🏗️  토목 · Civil Engineering</span>
+        <div style="flex:1;height:1px;background:var(--line);"></div>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">1 video</span>
+      </div>
+
+      <!-- 토목① 70U-0przNqY — 토목 우수·오수 배관 관경 산정 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/70U-0przNqY','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/70U-0przNqY/maxresdefault.jpg"
+               alt="토목 설계 효율 2배 높이기 매닝 공식 SWMM 동적 시뮬레이션 단지 내 우수 오수 배관 관경 산정 MANMIN Ver2.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.4);color:#4ade80;">토목</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#86efac;">Ver2.0</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat" style="color:#4ade80;">토목 · 우수·오수 배관 관경 산정 · MANMIN Ver2.0</div>
+          <h3 class="yt-title">토목 설계 효율 2배 높이기! 매닝 공식부터 SWMM 동적 시뮬레이션까지 한 번에 정리<br><span style="font-size:.88em;color:var(--t-sub);">KDS 기준 우수·오수 배관 관경 산정 — MANMIN Ver2.0</span></h3>
+          <p class="yt-desc">MANMIN-Ver2.0 시스템을 기반으로, KDS 설계 기준을 반영한 우수 및 오수 배관 관경 산정의 핵심 노하우를 공개합니다. 이론적인 매닝 공식(Manning Equation)부터 최신 동적 시뮬레이션 기법인 SWMM 활용법까지, 실무에서 즉시 적용 가능한 전략을 확인해 보세요.</p>
+          <div class="yt-meta">
+            <span>토목 · 배관관경 · Ver2.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/70U-0przNqY" target="_blank" rel="noopener"
+               style="color:#4ade80;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
       </div>
