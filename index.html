@@ -369,6 +369,7 @@ nav.on {
   background: var(--bg-card); padding: 36px 30px;
   border-top: 3px solid transparent;
   transition: background .25s, border-top-color .25s;
+  display: flex; flex-direction: column;
 }
 .exp-card:hover { background: #1a2540; border-top-color: var(--gold); }
 .exp-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
@@ -385,9 +386,10 @@ nav.on {
 .exp-body {
   font-size: 1.0rem; font-weight: 400;
   color: var(--t-body); line-height: 1.9;
+  flex: 1;
 }
 .exp-tag {
-  display: inline-block; margin-top: 18px;
+  display: inline-block; margin-top: auto; padding-top: 18px;
   font-family: var(--f-mono); font-size: .65rem; padding: 4px 12px;
   border: 1px solid var(--gold); color: var(--gold); letter-spacing: .08em; text-transform: uppercase;
   background: rgba(212,168,67,.07);
@@ -1785,7 +1787,7 @@ footer {
       <!-- 카드 1: 경험 기반 -->
       <div class="exp-card rv">
         <span class="exp-icon">🏗️</span>
-        <div class="exp-big">30년</div>
+        <div class="exp-big" style="font-size:2rem;">30년</div>
         <h3 class="exp-title">현장 중심의<br>실무 노하우</h3>
         <p class="exp-body">시공(1993) → 설계·엔지니어링(2003) → CM·감리(2013) → VE·안전(2016~) 까지 건설 전 과정을 현장에서 직접 경험한 10,831일의 실전 데이터가 모든 판단의 기초입니다.</p>
         <span class="exp-tag">Architecture & CM</span>
@@ -2729,6 +2731,95 @@ footer {
     </div>
   </div>
 
+
+  <!-- ══ 내진설계 별도 시리즈 ══════════════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // SEISMIC DESIGN Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">내진설계 검토 도구</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">건축물 내진설계 적용 여부를 즉시 판정하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">건축법·지진화산재해대책법 기준 · 내진설계 의무 대상 자동 판정 · 설계지진력 산정 핵심 기준</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- SEISMIC-001: 내진설계 의무 대상 판별 가이드 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(168,139,250,.4);color:#a78bfa;">내진설계</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag" style="border-color:rgba(168,139,250,.3);color:#c4b5fd;">건축법 기준</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 것 중 하나가 바로 '내진설계 의무 대상인가?' 하는 점입니다. 인허가일·구조형식·규모·용도 4가지 핵심 키워드를 통해 내 건축물이 내진설계 대상인지 즉시 확인하는 판별 마스터 플로우 — 일반 구조와 다른 목구조 완화 기준, 캔틸레버 등 특수 구조 위험성까지 완벽 대응.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.71rem;color:#a78bfa;">2층 이상 또는 연면적 200㎡ 이상 · 목구조는 3층/500㎡ 기준 완화</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">인허가일 핵심 — 2017.12 이후 강화 · 1988년부터 단계적 확대</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">모든 주택 예외 없이 의무 · 높이 13m·경간 10m 이상 특수 기준</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [내진설계] 바로가기
+            </a>
+            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
+              인허가일·구조형식·규모·용도 4대 판별 기준 · 목구조 완화 · 특수구조 위험성
+            </div>
+            <div style="border:1px solid rgba(168,139,250,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/내진성능.jpg', '내진설계 의무 대상 판별 마스터 가이드', 'https://manminkim-eng.github.io/Seismic-Evaluation/')">
+              <img src="./images/내진성능.jpg"
+                   alt="내 건물은 내진설계 의무 대상일까? 판별 가이드 — 2층·200㎡ 기준, 목구조 완화, 모든 주택 의무, 높이 13m·경간 10m 특수 기준, 1988년부터 단계적 법령 강화"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 내진설계 의무 여부 4대 판별 기준 — ① 인허가일(2017.12 이후 강화) ② 일반 구조 2층 이상 또는 연면적 200㎡ 이상 ③ 목구조 완화(3층/500㎡) · 모든 단독·공동주택 예외 없이 의무 ④ 높이 13m 이상 또는 경간 10m 이상 · 캔틸레버 3m 이상 특수 구조 포함. 건축도시정보센터(AURI) 간편조회 서비스 연계.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Seismic-Evaluation →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ══ 기계설비 웹 계산 시리즈 ══════════════════════ -->
   <div class="inner" style="margin-top:48px;">
 
@@ -3645,6 +3736,72 @@ footer {
         </div>
       </div>
 
+      <!-- WEB-NEW: 건축물 소방시설 설치 핵심 기준 Ver3.0 -->
+      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(248,113,113,.4);color:#f87171;">소방시설</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag">NFTC · Ver3.0</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">지하주차장 전기차 화재, 이제는 법이 바뀝니다! 1분 만에 끝내는 소방시설 핵심 해부 설명</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">최근 전기차 보급 확대와 건축 환경의 변화로 인해 소방 관련 법령이 대폭 강화되었습니다. 본 영상에서는 6층 이상 건축물의 전 층 스프링클러 의무화부터, 지하주차장 전기차 화재 대응을 위한 특화 설계, 그리고 2024년 12월부터 시행되는 연립·다세대 주택의 소방시설 의무화까지 실무에서 바로 적용해야 할 핵심 전략을 아주 빠르게 짚어드립니다.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f87171;font-family:var(--f-mono);font-size:.71rem;color:#f87171;">6층 이상 전 층 스프링클러 의무화 · 지하주차장 전기차 특화 설계</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">2024.12 연립·다세대 주택 간이스프링클러 전면 의무화</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">노유자 시설 자동화재탐지설비 연면적 무관 전 시설 설치</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Fire-Protection-Systems/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [소방시설] 바로가기
+            </a>
+            <a href="https://youtu.be/TxEYi1PNxSw" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#f87171;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);padding:1px 8px;">GUIDE</span>
+              소방시설 설치 의무 기준 · 2024-2025 최신 개정 사항 · 건축물 유형별 핵심 기준
+            </div>
+            <div style="border:1px solid rgba(248,113,113,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/소방시설.jpg', '건축물 소방시설 설치 및 화재 안전 핵심 기준 가이드', 'https://manminkim-eng.github.io/Fire-Protection-Systems/')">
+              <img src="./images/소방시설.jpg"
+                   alt="[가이드] 건축물 소방시설 설치 및 화재 안전 핵심 기준 Ver3.0 — 주요 소방시설 설치 의무 기준, 2024-2025 최신 특화 및 개정 기준, 지하주차장 전기차 화재 대응, 간이스프링클러 의무화"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#f87171;border:1px solid rgba(248,113,113,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 3.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 연면적·층수·용도에 따른 소화·경보·피난 설비 설치 기준 완전 정리. 스프링클러(6층 이상 전 층) · 옥내소화전(연면적 3,000㎡ 이상) · 노유자 시설 자동화재탐지설비(연면적 무관) · 2024.12 연립·다세대 간이스프링클러 전면 의무화 · 지하주차장 전기차 대응(습식 스프링클러 + 조기반응형 헤드 주차당 2개) 최신 개정 기준 수록.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Fire-Protection-Systems/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Fire-Protection-Systems →
+          </a>
+          <span class="wdate">2025 · Ver 3.0</span>
+        </div>
+      </div>
+
+
     </div>
 
     <!-- MANMIN 시리즈 요약 배너 -->
@@ -3659,11 +3816,11 @@ footer {
         </div>
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">8</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">9</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Released</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">8</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">9</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">In Progress</div>
           </div>
           <div style="text-align:center;">
@@ -3810,7 +3967,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">9 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">10 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -4057,6 +4214,34 @@ footer {
         </div>
       </div>
 
+
+      <!-- ⑩ HTIdc61avE8 — 내진설계 판별 마스터 가이드 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/HTIdc61avE8','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/HTIdc61avE8/maxresdefault.jpg"
+               alt="건축사 김만민 내진설계 의무 대상 판별 마스터 가이드 목구조 완화 기준 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.4);color:#a78bfa;">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(168,139,250,.08);border:1px solid rgba(168,139,250,.25);color:#c4b5fd;">내진설계</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">건축 · 내진설계 · 판별 가이드</div>
+          <h3 class="yt-title">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드</h3>
+          <p class="yt-desc">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 내진설계 의무 대상 여부. 인허가일·구조형식·규모·용도 4가지 핵심 키워드로 1분 만에 판별하는 마스터 플로우 공개. 목구조 완화 기준(3층/500㎡)과 캔틸레버 등 특수 구조 위험성까지 꼼꼼하게 짚어드립니다.</p>
+          <div class="yt-meta">
+            <span>건축 · 내진설계 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
             <!-- ══ 기계 카테고리 구분 헤더 ══ -->
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;background:rgba(90,154,232,.1);border:1px solid rgba(90,154,232,.3);padding:3px 12px;">⚙️  기계 · Mechanical</span>
@@ -4203,7 +4388,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:#f87171;letter-spacing:.14em;text-transform:uppercase;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);padding:3px 12px;">🔥  소방 · Fire Safety</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">8 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">10 videos</span>
       </div>
 
       <!-- 소방① jlyeiVDQ8YE — 옥내소화전 양정 계산 -->
@@ -4417,6 +4602,34 @@ footer {
           <div class="yt-meta">
             <span>소방 · 통합포탈 · NFTC</span><span class="yt-meta-sep"></span>
             <a href="https://youtu.be/YGQ5fEDFqv8" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 소방⑨ TxEYi1PNxSw — 소방시설 설치 핵심 기준 Ver3.0 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/TxEYi1PNxSw','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/TxEYi1PNxSw/maxresdefault.jpg"
+               alt="지하주차장 전기차 화재 소방시설 설치 핵심 기준 Ver3.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">Ver 3.0</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 소방시설 설치 기준 · Ver 3.0</div>
+          <h3 class="yt-title">지하주차장 전기차 화재, 이제는 법이 바뀝니다!<br><span style="font-size:.88em;color:var(--t-sub);">1분 만에 끝내는 소방시설 핵심 해부 설명</span></h3>
+          <p class="yt-desc">최근 전기차 보급 확대와 건축 환경의 변화로 인해 소방 관련 법령이 대폭 강화되었습니다. 6층 이상 건축물의 전 층 스프링클러 의무화, 지하주차장 전기차 화재 대응 특화 설계, 2024년 12월부터 시행되는 연립·다세대 주택 소방시설 의무화까지 실무 핵심 전략을 빠르게 짚어드립니다.</p>
+          <div class="yt-meta">
+            <span>소방 · 소방시설 · NFTC · Ver3.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/TxEYi1PNxSw" target="_blank" rel="noopener"
                style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
                onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
