@@ -764,6 +764,11 @@ nav.on {
 .wlink:hover { gap: 9px; }
 .wdate { font-family: var(--f-mono); font-size: .65rem; color: var(--t-dim); }
 
+/* 05 개발웹 바로가기 — 태블릿/모바일에서만 표시 */
+@media (max-width: 1024px) {
+  .tools-hub-shortcut { display: flex !important; }
+}
+
 /* 모바일/태블릿 전용 GUIDE·PORTAL 위 바로가기 버튼 — 데스크톱 기본 숨김 */
 .mobile-goto-btn {
   display: none;
@@ -1683,6 +1688,75 @@ footer {
   .pwa-banner-inner { gap: 10px; }
 }
 
+
+/* ═══════════════════════════════════════
+   WEB TOOLS HUB
+═══════════════════════════════════════ */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.hub-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 18px 16px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .22s, border-color .22s, background .22s, box-shadow .22s;
+  position: relative;
+  overflow: hidden;
+}
+.hub-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity .22s;
+}
+.hub-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+.hub-arch:hover { border-color: var(--gold); background: rgba(212,168,67,.05); }
+.hub-arch:hover::after { opacity: 1; background: linear-gradient(to right, var(--gold), transparent); }
+.hub-mech:hover { border-color: var(--blue); background: rgba(90,154,232,.05); }
+.hub-mech:hover::after { opacity: 1; background: linear-gradient(to right, var(--blue), transparent); }
+.hub-fire:hover { border-color: #f87171; background: rgba(248,113,113,.05); }
+.hub-fire:hover::after { opacity: 1; background: linear-gradient(to right, #f87171, transparent); }
+.hub-civil:hover { border-color: #4ade80; background: rgba(74,222,128,.05); }
+.hub-civil:hover::after { opacity: 1; background: linear-gradient(to right, #4ade80, transparent); }
+.hub-icon {
+  font-size: 1.6rem; margin-bottom: 10px; line-height: 1;
+}
+.hub-name {
+  font-family: var(--f-kr); font-size: .95rem; font-weight: 700;
+  color: var(--t-high); margin-bottom: 6px; line-height: 1.3;
+}
+.hub-desc {
+  font-size: .78rem; color: var(--t-sub); line-height: 1.65;
+  flex: 1;
+}
+.hub-tag {
+  display: inline-block; margin-top: 12px;
+  font-family: var(--f-mono); font-size: .58rem;
+  padding: 2px 8px;
+  border: 1px solid var(--gold); color: var(--gold);
+  background: rgba(212,168,67,.07);
+  letter-spacing: .08em; text-transform: uppercase;
+  align-self: flex-start;
+}
+/* 반응형 */
+@media (max-width: 900px) {
+  .hub-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .hub-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .hub-card { padding: 14px 12px 10px; }
+  .hub-icon { font-size: 1.3rem; }
+  .hub-name { font-size: .88rem; }
+  .hub-desc { font-size: .72rem; }
+}
+
 </style>
 </head>
 <body>
@@ -1707,7 +1781,7 @@ footer {
     <li><a href="#licenses" ><span class="nn">02</span>자격현황</a></li>
     <li><a href="#scope"      ><span class="nn">03</span>프로젝트</a></li>
     <li><a href="#cm-projects"><span class="nn">04</span>CM실적</a></li>
-    <li><a href="#webdev"     ><span class="nn">05</span>개발웹</a></li>
+    <li><a href="#tools-hub"  ><span class="nn">05</span>개발웹</a></li>
     <li><a href="#youtube"  ><span class="nn">05</span>유튜브</a></li>
     <li><a href="#advisory" ><span class="nn">06</span>자문활동</a></li>
     <li><a href="#contact"  ><span class="nn">07</span>연락처</a></li>
@@ -2100,6 +2174,261 @@ footer {
   </div>
 </section>
 
+<!-- ══ WEB TOOLS HUB ════════════════════════════ -->
+<section id="tools-hub" class="sec">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Engineering Tools Navigator</div>
+    <h2 class="sec-title">공종별 <span class="hl">웹 계산 도구</span> 한눈에 찾기</h2>
+    <p class="sec-sub">건축 · 기계설비 · 소방 · 토목 — 원하는 계산기를 바로 선택하세요</p>
+  </div>
+
+  <div class="inner">
+
+    <!-- ── 건축 ──────────────────────────────────── -->
+    <div class="hub-category rv" style="margin-bottom:40px;">
+
+      <!-- 카테고리 헤더 -->
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="width:4px;height:36px;background:linear-gradient(to bottom,var(--gold),var(--gold-lt));border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;">// ARCHITECTURE</div>
+          <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">8 tools</span>
+      </div>
+
+      <!-- 도구 카드 그리드 -->
+      <div class="hub-grid">
+
+        <a href="#card-arch-fee" class="hub-card rv hub-arch">
+          <div class="hub-icon">💰</div>
+          <div class="hub-name">건축사 대가</div>
+          <div class="hub-desc">공공건축 설계·감리<br>업무 대가 자동 산출</div>
+          <div class="hub-tag">ARCH FEE</div>
+        </a>
+
+        <a href="#card-u-value" class="hub-card rv hub-arch">
+          <div class="hub-icon">🌡️</div>
+          <div class="hub-name">열관류율</div>
+          <div class="hub-desc">단열재 U-Value 산출<br>지역별 법규 판정</div>
+          <div class="hub-tag">U-VALUE</div>
+        </a>
+
+        <a href="#card-demolition" class="hub-card rv hub-arch">
+          <div class="hub-icon">🏚️</div>
+          <div class="hub-name">해체감리비</div>
+          <div class="hub-desc">건축물 해체공사<br>감리 대가 산출</div>
+          <div class="hub-tag">DEMOLITION</div>
+        </a>
+
+        <a href="#card-supervision" class="hub-card rv hub-arch">
+          <div class="hub-icon">👷</div>
+          <div class="hub-name">상주감리 대가</div>
+          <div class="hub-desc">2026 최신 기준<br>상주감리 대가 산출</div>
+          <div class="hub-tag">SUPERVISION</div>
+        </a>
+
+        <a href="#card-construction-air" class="hub-card rv hub-arch">
+          <div class="hub-icon">📅</div>
+          <div class="hub-name">공사기간 산정</div>
+          <div class="hub-desc">적정 공사기간<br>자동 산출 가이드</div>
+          <div class="hub-tag">DURATION</div>
+        </a>
+
+        <a href="#card-change-use" class="hub-card rv hub-arch">
+          <div class="hub-icon">🔄</div>
+          <div class="hub-name">용도변경</div>
+          <div class="hub-desc">9개 시설군 위계<br>법적 절차 판정</div>
+          <div class="hub-tag">USE CHANGE</div>
+        </a>
+
+        <a href="#card-land-use" class="hub-card rv hub-arch">
+          <div class="hub-icon">🗺️</div>
+          <div class="hub-name">건폐율·용적률</div>
+          <div class="hub-desc">국토계획법 vs 조례<br>건축 규모 즉시 산출</div>
+          <div class="hub-tag">LAND USE</div>
+        </a>
+
+        <a href="#card-seismic" class="hub-card rv hub-arch">
+          <div class="hub-icon">🏗️</div>
+          <div class="hub-name">내진설계 판별</div>
+          <div class="hub-desc">의무 대상 즉시 판정<br>목구조 완화 기준</div>
+          <div class="hub-tag">SEISMIC</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── 기계설비 ──────────────────────────────── -->
+    <div class="hub-category rv" style="margin-bottom:40px;">
+
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="width:4px;height:36px;background:linear-gradient(to bottom,var(--blue),var(--cyan));border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;">// MECHANICAL</div>
+          <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">기계설비 배관·덕트·펌프</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">5 tools</span>
+      </div>
+
+      <div class="hub-grid">
+
+        <a href="#card-roof-drain" class="hub-card rv hub-mech">
+          <div class="hub-icon">🌧️</div>
+          <div class="hub-name">우수관경 산정</div>
+          <div class="hub-desc">건축물 옥상 배수<br>관경 자동 산출</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">ROOF DRAIN</div>
+        </a>
+
+        <a href="#card-sanitary" class="hub-card rv hub-mech">
+          <div class="hub-icon">🚿</div>
+          <div class="hub-name">위생배관 관경</div>
+          <div class="hub-desc">헌터 곡선·H-W 공식<br>급배수 관경 산정</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">SANITARY</div>
+        </a>
+
+        <a href="#card-cold-hot" class="hub-card rv hub-mech">
+          <div class="hub-icon">🔵</div>
+          <div class="hub-name">냉온수 배관</div>
+          <div class="hub-desc">냉·온수 순환배관<br>관경 및 유속 산정</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">HVAC PIPE</div>
+        </a>
+
+        <a href="#card-duct" class="hub-card rv hub-mech">
+          <div class="hub-icon">💨</div>
+          <div class="hub-name">공조 덕트</div>
+          <div class="hub-desc">공조·환기 덕트<br>사이즈 자동 산정</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">DUCT</div>
+        </a>
+
+        <a href="#card-pump" class="hub-card rv hub-mech">
+          <div class="hub-icon">⚙️</div>
+          <div class="hub-name">설비 펌프</div>
+          <div class="hub-desc">전양정·동력 산정<br>펌프 용량 최적화</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">PUMP</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── 소방 ──────────────────────────────────── -->
+    <div class="hub-category rv" style="margin-bottom:40px;">
+
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="width:4px;height:36px;background:linear-gradient(to bottom,#f87171,#fca5a5);border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.65rem;color:#f87171;letter-spacing:.14em;text-transform:uppercase;">// FIRE SAFETY</div>
+          <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">소방설비 NFTC 기준 계산</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">9 tools</span>
+      </div>
+
+      <div class="hub-grid">
+
+        <a href="#card-fire-hydrant" class="hub-card rv hub-fire">
+          <div class="hub-icon">🚒</div>
+          <div class="hub-name">옥내소화전</div>
+          <div class="hub-desc">전양정·수원용량<br>NFTC 102 기준</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">NFTC 102</div>
+        </a>
+
+        <a href="#card-outdoor-hydrant" class="hub-card rv hub-fire">
+          <div class="hub-icon">🔴</div>
+          <div class="hub-name">옥외소화전</div>
+          <div class="hub-desc">옥외 펌프 용량<br>NFPC 109 기준</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">NFPC 109</div>
+        </a>
+
+        <a href="#card-sprinkler" class="hub-card rv hub-fire">
+          <div class="hub-icon">💧</div>
+          <div class="hub-name">스프링클러</div>
+          <div class="hub-desc">수리계산·헤드<br>NFTC 103 기준</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">NFTC 103</div>
+        </a>
+
+        <a href="#card-simple-sprinkler" class="hub-card rv hub-fire">
+          <div class="hub-icon">🟢</div>
+          <div class="hub-name">간이스프링클러</div>
+          <div class="hub-desc">압력·용량 산정<br>NFSC 103A 기준</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">NFSC 103A</div>
+        </a>
+
+        <a href="#card-combo-indoor-outdoor" class="hub-card rv hub-fire">
+          <div class="hub-icon">🔗</div>
+          <div class="hub-name">옥내+옥외 겸용</div>
+          <div class="hub-desc">겸용 펌프 용량<br>통합 산정</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">겸용</div>
+        </a>
+
+        <a href="#card-combo-easy" class="hub-card rv hub-fire">
+          <div class="hub-icon">🔗</div>
+          <div class="hub-name">간이+옥내 겸용</div>
+          <div class="hub-desc">겸용 시스템<br>용량 산정</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">겸용</div>
+        </a>
+
+        <a href="#card-combo-hydrant" class="hub-card rv hub-fire">
+          <div class="hub-icon">🔗</div>
+          <div class="hub-name">옥내+스프링클러</div>
+          <div class="hub-desc">겸용 전양정<br>최댓값 채택</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">겸용</div>
+        </a>
+
+        <a href="#card-portal" class="hub-card rv hub-fire" style="border-color:rgba(212,168,67,.35);background:rgba(212,168,67,.04);">
+          <div class="hub-icon">🏛️</div>
+          <div class="hub-name">통합 포탈</div>
+          <div class="hub-desc">7종 소방 계산서<br>원스톱 포탈</div>
+          <div class="hub-tag" style="color:var(--gold);border-color:var(--gold);">PORTAL</div>
+        </a>
+
+        <a href="#card-fire-systems" class="hub-card rv hub-fire">
+          <div class="hub-icon">🔥</div>
+          <div class="hub-name">소방시설 기준</div>
+          <div class="hub-desc">설치 의무 대상<br>2024~2025 개정</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">Ver 3.0</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── 토목 ──────────────────────────────────── -->
+    <div class="hub-category rv">
+
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="width:4px;height:36px;background:linear-gradient(to bottom,#4ade80,#86efac);border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.65rem;color:#4ade80;letter-spacing:.14em;text-transform:uppercase;">// CIVIL ENGINEERING</div>
+          <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">토목 배관·구조 설계</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">2 tools</span>
+      </div>
+
+      <div class="hub-grid">
+
+        <a href="#card-civil-piping" class="hub-card rv hub-civil">
+          <div class="hub-icon">🌊</div>
+          <div class="hub-name">우수·오수 배관</div>
+          <div class="hub-desc">합리식·매닝 공식<br>관경 자동 산정</div>
+          <div class="hub-tag" style="color:#4ade80;border-color:#4ade80;">KDS</div>
+        </a>
+
+        <a href="#webdev" class="hub-card rv hub-civil">
+          <div class="hub-icon">🧱</div>
+          <div class="hub-name">옹벽 안전성</div>
+          <div class="hub-desc">활동·전도·지지력<br>내진 M-O 공식</div>
+          <div class="hub-tag" style="color:#4ade80;border-color:#4ade80;">KDS·KR</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══ WEB DEV ═══════════════════════════════════ -->
 <section id="webdev" class="sec sec-alt">
   <div class="sec-hd rv">
@@ -2128,7 +2457,24 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCHITECT-FEE-001: 공공건축 설계·감리 대가 산정 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-arch-fee" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
+        <!-- 05 개발웹 바로가기 버튼 (모바일/태블릿 전용) -->
+        <a href="#tools-hub"
+           style="position:absolute;top:12px;right:12px;z-index:10;
+                  display:none;align-items:center;gap:5px;
+                  padding:5px 12px;
+                  background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.45);
+                  color:var(--gold-lt);text-decoration:none;
+                  font-family:var(--f-mono);font-size:.62rem;font-weight:700;
+                  letter-spacing:.06em;text-transform:uppercase;
+                  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%);
+                  transition:background .2s,color .2s;"
+           onmouseover="this.style.background='rgba(212,168,67,.22)'"
+           onmouseout="this.style.background='rgba(212,168,67,.12)'"
+           class="tools-hub-shortcut">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+          05 개발웹
+        </a>
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2219,7 +2565,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- U-VALUE-001: 건축물 열관류율 산출 및 법규 판정 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-u-value" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2310,7 +2656,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- DEMOLITION-001: 건축물 해체공사 감리비 산출 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-demolition" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2399,7 +2745,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCH-SUP-001: 건축 상주감리 대가 산출 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-supervision" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2498,6 +2844,7 @@ footer {
               <span class="wtag" style="border-color:rgba(232,121,249,.3);color:#e879f9;">비작업일수 자동산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-construction-air"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">건설현장 적정 공사기간 산정 가이드라인 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">건설공사의 품질 및 안전 확보를 위해 발주자가 적정 공사기간을 산정하고 관리하는 체계적 방법을 자동화한 웹 도구. 준비기간·정리기간 설정(착공 전 안전관리계획 수립·준공 전 행정절차), 기상불능일(A)+법정공휴일(B)−중복일수(C) 비작업일수 자동 산정, 주 40시간 근무제 적용(월 비작업일수 8일 미만 시 8일 적용), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 반영까지 전 과정을 자동화합니다.</p>
             <!-- 핵심 공식 -->
@@ -2576,7 +2923,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCH-003: 건축물 용도변경 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-change-use" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2664,7 +3011,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCH-004: 국토이용 건폐율·용적률 산출 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-land-use" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2753,7 +3100,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- SEISMIC-001: 내진설계 의무 대상 판별 가이드 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-seismic" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2841,7 +3188,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- MECH-001: 건축물 우수관경 산정 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-roof-drain" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -2915,6 +3262,7 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">위생배관 관경 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-sanitary"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">기계설비 급배수 관경 산정 가이드: 헌터 곡선 &amp; 하젠-윌리엄스 공식 완벽 적용 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">기계설비법 시행에 따라 더욱 엄격해진 설계 기준을 충족하는 MANMIN-Ver2.0 급배수 관경 산정 가이드. 헌터 곡선을 통한 동시사용 유량 예측부터 자기 세척 속도를 고려한 오·배수 설계까지, 건축 인프라의 디지털 전환(DX)을 선도하는 정밀 엔지니어링의 정수를 확인하세요!</p>
             <!-- 핵심 공식 -->
@@ -2979,6 +3327,7 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">냉온수 배관 관경 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-cold-hot"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">기계설비 냉온수 배관 관경 산정 가이드: CAPEX와 OPEX를 고려한 최적 설계법 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">전체 시스템의 생애주기 비용을 결정하는 <strong style="color:var(--gold-lt);">'경제적 관경'</strong>을 어떻게 찾을 수 있을까요? 기계설비 기술기준을 바탕으로 물리적 원리와 법적 기준을 결합한 MANMIN-Ver2.0 냉온수 배관 산정 가이드를 공개합니다. 유체역학적 안정성과 경제적 효율성 사이의 완벽한 스위트 스팟(Sweet Spot)을 확인하세요!</p>
             <!-- 핵심 공식 -->
@@ -3044,6 +3393,7 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">공조덕트 규격 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-duct"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">[기계설비 실무] MANMIN-Ver2.0: 기계설비법 기준 풍량 최적화 및 덕트 규격 산정 매뉴얼</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">기계설비법과 KDS/KCS 건설기준을 바탕으로 한 MANMIN-Ver2.0 공조덕트 규격 산정 가이드를 공개합니다. 단순한 사이즈 결정을 넘어, 유체역학적 효율과 물리적 제약 사이의 완벽한 밸런스를 찾는 고도의 엔지니어링 전략을 확인하세요!</p>
             <!-- 핵심 공식 -->
@@ -3109,6 +3459,7 @@ footer {
               <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">펌프 용량 산정</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-pump"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">기계설비 펌프 용량 산정 가이드: 전양정(H)과 동력(P) 계산부터 장비 선정까지 — MANMIN Ver2.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">전체 시스템의 에너지 성능(EPI)을 좌우하고 막대한 비용 낭비를 막아주는 MANMIN-Ver2.0 펌프 용량 산정 가이드를 공개합니다. 냉난방 순환펌프의 밀폐회로 특성부터 오배수 펌프의 극한 상황 방어까지, 데이터에 기반한 정밀 엔지니어링의 정수를 확인하세요!</p>
             <!-- 핵심 공식 -->
@@ -3194,8 +3545,8 @@ footer {
 
     <div class="webdev-grid">
 
-      <!-- WEB-002~003: 옥내소화전 통합 — 이미지 갤러리 + GitHub 링크 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <!-- WEB-002~003: 옥내소화전 통합 -->
+      <div id="card-fire-hydrant" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -3273,6 +3624,7 @@ footer {
               <span class="wtag">NFPC 109</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-outdoor-hydrant"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">옥외소화전 펌프 용량 및 수원 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전성능기준(NFPC 109) 기반 옥외소화전 펌프 용량 및 수원 산정 웹 가이드. 수원 저수량 산정, 방수량 기준, 펌프 성능(노즐 선단 압력 0.25MPa 이상), 20분 연속 운전 능력 등 실무 핵심 기준을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
@@ -3341,6 +3693,7 @@ footer {
               <span class="wtag">NFTC 103</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-sprinkler"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">스프링클러 펌프 용량 산정 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 103) 기반 스프링클러설비 펌프 용량 산정 웹 가이드. 헤드 기준개수 설정(10·20·30개), 수원 용량(기준개수 × 1.6m³), 전양정 구성 요소(실양정·배관마찰손실·헤드선단압력·안전율), 전동기 출력 선정까지 실무 핵심 프로세스를 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
@@ -3399,7 +3752,7 @@ footer {
       </div>
 
       <!-- WEB-008: 간이스프링클러 Ver1.0 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-simple-sprinkler" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -3467,7 +3820,7 @@ footer {
       </div>
 
       <!-- WEB-009: 겸용 펌프 Ver2.0 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-combo-hydrant" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -3535,7 +3888,7 @@ footer {
       </div>
 
       <!-- WEB-010: 간이스프링클러+옥내소화전 겸용 Ver1.0 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-combo-easy" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -3613,6 +3966,7 @@ footer {
               <span class="wtag">NFTC 102</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-combo-indoor-outdoor"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">옥내·외 소화전 겸용 펌프 시스템 설계 가이드 — MANMIN Ver1.0</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">화재안전기술기준(NFTC 102) 기반 옥내소화전과 옥외소화전 겸용 펌프의 토출량·양정·동력·수원 산정 웹 가이드. 토출 유량(설치 개수 최대 2개 × 130 ℓ/min), 전양정 계산 요소(실양정·배관호스마찰손실·노즐방수압 0.17MPa), 전동기 출력(P = 0.163 × Q × H × K ÷ 효율), 유효 수원(개수당 2.6m³ 이상), 과압 방지(0.7MPa 초과 시 감압장치), 겸용 시스템 합산 원칙까지 실무 핵심을 인포그래픽으로 정리합니다.</p>
             <!-- 핵심 공식 -->
@@ -3681,6 +4035,7 @@ footer {
               <span class="wtag" style="border-color:rgba(74,222,128,.3);color:#4ade80;">7종 계산서</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
+<span id="card-portal"></span>
             <h3 class="wtitle" style="font-size:1.18rem;">소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN</h3>
             <p class="wdesc" style="max-width:680px;margin-top:6px;">옥내소화전·옥외소화전·스프링클러·간이스프링클러 및 겸용 시스템의 펌프 용량을 NFTC 화재안전기술기준에 따라 정밀 계산하는 통합 웹 포탈. 단독 설비 4종 + 겸용 설비 3종, 총 7종의 계산서를 하나의 포탈에서 제공합니다. NFTC 최신 기준 적용(2026.3.1 시행), H·W(Hazen-Williams) 배관 마찰손실, PWA 오프라인 지원, A4 인쇄 최적화.</p>
             <!-- 핵심 스펙 -->
@@ -3737,7 +4092,7 @@ footer {
       </div>
 
       <!-- WEB-NEW: 건축물 소방시설 설치 핵심 기준 Ver3.0 -->
-      <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <div id="card-fire-systems" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
@@ -3852,7 +4207,7 @@ footer {
       <div class="webdev-grid">
 
         <!-- CIVIL-001: 토목 우수·오수 배관 관경 산정 -->
-        <div class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid rgba(74,222,128,.25);">
+        <div id="card-civil-piping" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid rgba(74,222,128,.25);">
           <!-- 헤더 -->
           <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
             <div>
