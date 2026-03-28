@@ -2319,7 +2319,7 @@ footer {
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">소방설비 NFTC 기준 계산</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">9 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">10 tools</span>
       </div>
 
       <div class="hub-grid">
@@ -2378,6 +2378,14 @@ footer {
           <div class="hub-name">통합 포탈</div>
           <div class="hub-desc">7종 소방 계산서<br>원스톱 포탈</div>
           <div class="hub-tag" style="color:var(--gold);border-color:var(--gold);">PORTAL</div>
+        </a>
+
+
+        <a href="#card-smoke-control" class="hub-card rv hub-fire">
+          <div class="hub-icon">💨</div>
+          <div class="hub-name">제연설비</div>
+          <div class="hub-desc">거실·가압제연 설계<br>CONTAM 시뮬레이션</div>
+          <div class="hub-tag" style="color:#f87171;border-color:#f87171;">NFTC 501</div>
         </a>
 
         <a href="#card-fire-systems" class="hub-card rv hub-fire">
@@ -4070,6 +4078,72 @@ footer {
         </div>
       </div>
 
+
+      <!-- WEB-SMOKE: 제연설비 설계 및 계산 가이드 Ver3.0 -->
+      <div id="card-smoke-control" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(248,113,113,.4);color:#f87171;">소방</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag" style="border-color:rgba(248,113,113,.3);color:#fca5a5;">NFTC 501 · 501A</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">시뮬레이션(CONTAM)과 현장 성능 검증의 모든 것 — 제연설비 마스터 클래스 MANMIN Ver3.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">거실제연(NFTC 501)과 가압제연(NFTC 501A)의 공학적 구조를 심층 분석합니다. 40Pa 이상의 차압 유지와 110N 이하의 개방력 사이의 정밀한 밸런스, 약식 계산의 위험성을 극복하는 CONTAM/SMACNA 시뮬레이션 활용법, 그리고 2024년 개정의 핵심인 T.A.B.(성능시험) 의무화 대응 전략까지 실무자라면 반드시 알아야 할 제연설비의 모든 것.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #f87171;font-family:var(--f-mono);font-size:.71rem;color:#f87171;">거실제연 — 바닥면적 400㎡ 미만 5,000㎥/hr · 400㎡↑ 40,000~65,000㎥/hr</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">가압제연 — 차압 40Pa 이상 유지 · 문 개방력 110N 이하 동시 만족</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">T.A.B. 합격 — 개별 배출구 설계값 60%↑ · 전체 총합 100% 이상</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Smoke-Control-System/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [제연설비] 바로가기
+            </a>
+            <a href="https://youtu.be/iTJbSPXriSM" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#f87171;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);padding:1px 8px;">GUIDE</span>
+              거실제연 배출량 기준 · 가압제연 차압·개방력 · CONTAM 시뮬레이션 · T.A.B. 성능 검증
+            </div>
+            <div style="border:1px solid rgba(248,113,113,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/제연설비.jpg', '제연설비 설계 및 계산 가이드 MANMIN Ver3.0', 'https://manminkim-eng.github.io/Smoke-Control-System/')">
+              <img src="./images/제연설비.jpg"
+                   alt="최신 화재안전기술기준(NFTC) 제연설비 설계 및 계산 가이드 MANMIN Ver3.0 — 거실제연 NFTC 501, 가압제연 NFTC 501A, T.A.B 성능 판정, 차압 40Pa, 문 개방력 110N"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#f87171;border:1px solid rgba(248,113,113,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 3.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">거실제연(NFTC 501) 배출량 — 400㎡ 미만 5,000㎥/hr · 400㎡↑(직경 40m 내) 40,000㎥/hr · 400㎡↑(직경 40m 초과) 45,000~65,000㎥/hr + 가압제연(NFTC 501A) 차압 40Pa 이상 유지 · 문 개방력 110N 이하 동시 만족 · 총 급기량 = 누설량 + 피난 시 방연풍속 보충량 + T.A.B.(Testing·Adjusting·Balancing) 개별 배출구 60% 이상 · 전체 총합 100% 이상. CONTAM·SMACNA 시뮬레이션 기반.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Smoke-Control-System/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Smoke-Control-System →
+          </a>
+          <span class="wdate">2025 · Ver 3.0</span>
+        </div>
+      </div>
+
       <!-- WEB-NEW: 건축물 소방시설 설치 핵심 기준 Ver3.0 -->
       <div id="card-fire-systems" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
@@ -4150,11 +4224,11 @@ footer {
         </div>
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">9</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--gold-lt);">10</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Released</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">9</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">10</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">In Progress</div>
           </div>
           <div style="text-align:center;">
@@ -4367,7 +4441,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">10 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">11 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -4788,7 +4862,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:#f87171;letter-spacing:.14em;text-transform:uppercase;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);padding:3px 12px;">🔥  소방 · Fire Safety</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">10 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">11 videos</span>
       </div>
 
       <!-- 소방① jlyeiVDQ8YE — 옥내소화전 양정 계산 -->
@@ -5009,7 +5083,34 @@ footer {
       </div>
 
 
-      <!-- 소방⑨ TxEYi1PNxSw — 소방시설 설치 핵심 기준 Ver3.0 -->
+      <!-- 소방⑨ iTJbSPXriSM — 제연설비 마스터 클래스 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/iTJbSPXriSM','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/iTJbSPXriSM/maxresdefault.jpg"
+               alt="제연설비 마스터 클래스 CONTAM 시뮬레이션 현장 성능 검증 NFTC 501 501A Ver3.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);color:#f87171;">소방</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#fca5a5;">NFTC 501</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">소방 · 제연설비 · NFTC 501·501A</div>
+          <h3 class="yt-title">시뮬레이션(CONTAM)과 현장 성능 검증의 모든 것<br><span style="font-size:.88em;color:var(--t-sub);">제연설비 마스터 클래스 — MANMIN Ver3.0</span></h3>
+          <p class="yt-desc">거실제연(NFTC 501)과 가압제연(NFTC 501A)의 공학적 구조 심층 분석. 40Pa 차압 유지와 110N 개방력의 정밀한 밸런스, CONTAM/SMACNA 시뮬레이션 활용법, 2024년 개정 핵심 T.A.B. 의무화 대응 전략까지 제연설비의 모든 것을 퀵 브리핑합니다.</p>
+          <div class="yt-meta">
+            <span>소방 · 제연설비 · NFTC 501 · Ver3.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/iTJbSPXriSM" target="_blank" rel="noopener"
+               style="color:#f87171;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 소방⑩ TxEYi1PNxSw — 소방시설 설치 핵심 기준 Ver3.0 -->
       <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/TxEYi1PNxSw','_blank')">
         <div class="ythumb">
           <img src="https://img.youtube.com/vi/TxEYi1PNxSw/maxresdefault.jpg"
