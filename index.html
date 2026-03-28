@@ -764,11 +764,6 @@ nav.on {
 .wlink:hover { gap: 9px; }
 .wdate { font-family: var(--f-mono); font-size: .65rem; color: var(--t-dim); }
 
-/* 05 개발웹 바로가기 — 태블릿/모바일에서만 표시 */
-@media (max-width: 1024px) {
-  .tools-hub-shortcut { display: flex !important; }
-}
-
 /* 모바일/태블릿 전용 GUIDE·PORTAL 위 바로가기 버튼 — 데스크톱 기본 숨김 */
 .mobile-goto-btn {
   display: none;
@@ -1822,6 +1817,7 @@ footer {
       <div class="hero-btns">
         <a href="#contact"   class="btn btn-gold">▶ 문의하기</a>
         <a href="#expertise" class="btn btn-ghost">전문분야 보기 →</a>
+        <a href="#tools-hub" class="btn btn-ghost" style="border-color:var(--gold);color:var(--gold-lt);">⚙ 05.개발웹 →</a>
       </div>
     </div>
     <div class="hero-spec">
@@ -2457,24 +2453,7 @@ footer {
     <div class="webdev-grid">
 
       <!-- ARCHITECT-FEE-001: 공공건축 설계·감리 대가 산정 -->
-      <div id="card-arch-fee" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);position:relative;">
-        <!-- 05 개발웹 바로가기 버튼 (모바일/태블릿 전용) -->
-        <a href="#tools-hub"
-           style="position:absolute;top:12px;right:12px;z-index:10;
-                  display:none;align-items:center;gap:5px;
-                  padding:5px 12px;
-                  background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.45);
-                  color:var(--gold-lt);text-decoration:none;
-                  font-family:var(--f-mono);font-size:.62rem;font-weight:700;
-                  letter-spacing:.06em;text-transform:uppercase;
-                  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%);
-                  transition:background .2s,color .2s;"
-           onmouseover="this.style.background='rgba(212,168,67,.22)'"
-           onmouseout="this.style.background='rgba(212,168,67,.12)'"
-           class="tools-hub-shortcut">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
-          05 개발웹
-        </a>
+      <div id="card-arch-fee" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
