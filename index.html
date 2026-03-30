@@ -2192,7 +2192,7 @@ footer {
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">9 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">10 tools</span>
       </div>
 
       <!-- 도구 카드 그리드 -->
@@ -2210,6 +2210,13 @@ footer {
           <div class="hub-name">열관류율</div>
           <div class="hub-desc">단열재 U-Value 산출<br>지역별 법규 판정</div>
           <div class="hub-tag">U-VALUE</div>
+        </a>
+
+        <a href="#card-epi" class="hub-card rv hub-arch">
+          <div class="hub-icon">⚡</div>
+          <div class="hub-name">EPI 점수</div>
+          <div class="hub-desc">에너지성능지표<br>인허가 전략 가이드</div>
+          <div class="hub-tag">EPI</div>
         </a>
 
         <a href="#card-demolition" class="hub-card rv hub-arch">
@@ -2631,6 +2638,94 @@ footer {
           </a>
           
           <span class="wdate">2025 · Ver 2.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ EPI 에너지성능지표 별도 시리즈 ══════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // EPI · Energy Performance Index Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow" style="color:var(--gold);">건축물 에너지성능지표 (EPI)</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">EPI 인허가 타겟 스코어를 달성하는 <span class="hl">설계 전략 가이드</span></h2>
+      <p class="sec-sub">2025년 최신 에너지절약설계기준 반영 · 민간 65점·공공 74점 달성 전략 · ZEB 예비인증·에너지소비총량제 활용법</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- EPI-001: 건축물 에너지성능지표 설계 가이드 -->
+      <div id="card-epi" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">에너지설계</span>
+              <span class="wtag b">PWA · Ver3.0</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">EPI · ZEB · 총량제</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">최신 에너지절약설계기준 EPI 점수 가이드 — MANMIN Ver3.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축사 김만민의 MANMIN-Ver 3.0 최신 건축물 에너지성능지표(EPI) 설계 가이드. 2025년 말 시행 최신 기준에 맞춰 민간 65점·공공 74점 타겟 스코어 달성 전략을 상세히 해부합니다. 1,000㎡ 이상 대형 건축물에 적용되는 로이(Low-E) 유리·고효율 히트펌프·BEMS 구축 의무화 등 복잡한 개별 규제부터, 에너지 소비총량제 및 ZEB 예비인증 활용법까지 실무 핵심을 커버합니다.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">민간 65점 · 공공기관 74점 이상 — 부문별 최소 합계 점수</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">총량제 면제 — 민간 150 kWh/㎡·yr · 공공 130 kWh/㎡·yr 미만</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">ZEB 예비인증 — 건축 허가 시 제출 시 EPI 전면 면제</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Energy-Performance-Index/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [EPI 가이드] 바로가기
+            </a>
+            <a href="https://youtu.be/otiwCsjPk-0" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
+              EPI 의무 확보 기준 · 총량제 면제 전략 · ZEB 인증 활용 · 공공기관 특화 항목
+            </div>
+            <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/성능지표.jpg', '최신 에너지절약설계기준 EPI 점수 가이드 MANMIN Ver3.0', 'https://manminkim-eng.github.io/Energy-Performance-Index/')">
+              <img src="./images/성능지표.jpg"
+                   alt="MANMIN Ver3.0 최신 에너지절약설계기준 EPI 점수 가이드 인포그래픽 — 민간 65점·공공 74점 타겟 전략, 1,000㎡ 이상 의무 항목, 에너지소비총량제, ZEB 예비인증 활용"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 3.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">민간 65점·공공 74점 부문별 최소 합계 점수 달성 전략 + 1,000㎡ 이상 공통 의무 항목(태양열 취득 저감 0.6점·고효율 냉난방 0.6점·조명밀도 0.8점·신재생 4점) + 중앙식 공조 시 추가 의무(고효율 송풍기·폐열회수환기장치·가변속 제어) + 공공기관 특화(1,000㎡ 이상 전기대체 냉방 0.6점·10,000㎡ 이상 BEMS 1점) + 총량제 면제(민간 150·공공 130 kWh/㎡·yr 미만) + ZEB 예비인증 제출 시 EPI 전면 면제. 2025년 12월 31일 시행 최신 기준 완벽 반영.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Energy-Performance-Index/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Energy-Performance-Index →
+          </a>
+          <span class="wdate">2025 · Ver 3.0</span>
         </div>
       </div>
 
@@ -4603,7 +4698,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">13 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">14 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -4741,7 +4836,34 @@ footer {
         </div>
       </div>
 
-      <!-- ⑤ GpP3evxHDsY — 해체공사 감리비 산출 가이드 -->
+      <!-- ⑤ otiwCsjPk-0 — EPI 에너지성능지표 설계 가이드 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/otiwCsjPk-0','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/otiwCsjPk-0/maxresdefault.jpg"
+               alt="1000㎡ 이상 대형 건축물 EPI 인허가 로이유리 BEMS 에너지성능지표 MANMIN Ver3.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축실무</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);color:var(--gold-lt);">EPI · Ver3.0</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">건축 · 에너지성능지표(EPI) · 2025 최신 기준</div>
+          <h3 class="yt-title">1,000㎡ 이상 대형 건축물 필수 시청! 로이유리부터 BEMS까지, EPI 인허가 한 장으로 끝내기<br><span style="font-size:.88em;color:var(--t-sub);">민간 65점·공공 74점 달성 전략 — MANMIN Ver3.0</span></h3>
+          <p class="yt-desc">건축사 김만민의 MANMIN-Ver 3.0 최신 건축물 에너지성능지표(EPI) 설계 가이드. 2025년 말 시행 최신 규정에 맞춰 민간 65점·공공 74점 타겟 스코어 달성 전략을 상세히 해부합니다. 로이(Low-E) 유리·고효율 히트펌프·BEMS 의무화 등 복잡한 개별 규제부터 에너지 소비총량제 및 ZEB 예비인증 활용법까지 실무 핵심 전략을 빠르게 짚어드립니다.</p>
+          <div class="yt-meta">
+            <span>건축 · EPI · ZEB · 2025 기준</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/otiwCsjPk-0" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥ GpP3evxHDsY — 해체공사 감리비 산출 가이드 -->
       <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/GpP3evxHDsY','_blank')">
         <div class="ythumb">
           <img src="https://img.youtube.com/vi/GpP3evxHDsY/maxresdefault.jpg"
