@@ -2192,7 +2192,7 @@ footer {
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">10 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">11 tools</span>
       </div>
 
       <!-- 도구 카드 그리드 -->
@@ -2266,6 +2266,13 @@ footer {
           <div class="hub-name">일조사선·일영</div>
           <div class="hub-desc">정북방향 이격·동지<br>2시간 일조 계산</div>
           <div class="hub-tag">SUNLIGHT</div>
+        </a>
+
+        <a href="#card-parking" class="hub-card rv hub-arch">
+          <div class="hub-icon">🅿️</div>
+          <div class="hub-name">부설주차장</div>
+          <div class="hub-desc">용도별 설치기준<br>주차대수 자동 산정</div>
+          <div class="hub-tag">PARKING</div>
         </a>
 
       </div>
@@ -3345,6 +3352,94 @@ footer {
           <a href="https://manminkim-eng.github.io/Architectural-line/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             manminkim-eng.github.io/Architectural-line →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 부설주차장 설치기준 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // PARKING LOT ACT Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow" style="color:var(--gold);">건축물 부설주차장 설치기준</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">용도별 주차대수를 자동 산정하는 <span class="hl">부설주차장 가이드</span></h2>
+      <p class="sec-sub">주차장법 · 지자체 조례 강화 기준 반영 · 소수점 누적 합산 로직 · 2025 전기차 충전·기계식 주차 제원 의무 완벽 대응</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- PARKING-001: 건축물 부설주차장 설치기준 및 산정 가이드 -->
+      <div id="card-parking" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">건축법규</span>
+              <span class="wtag b">PWA · Ver1.0</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">주차장법 · 조례</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">건축물 용도별 부설주차장 설치기준 및 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축사 김만민의 MANMIN-Ver 1.0 건축물 부설주차장 설치기준 및 주차대수 자동 산정 가이드. 지자체별 최대 50%까지 강화된 조례의 벽, 증축 시 소수점 누적 합산 로직, 2025년부터 강화된 기계식 주차장 제원 및 전기차 충전소 의무 할당까지 실무 핵심을 자동화합니다.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">위탁 100㎡ · 상업 150㎡ · 근생 200㎡당 1대 — 용도별 기준</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">소수점 — 일반 0.5 이상 반올림 · 주택 소수점 발생 시 무조건 올림</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">전기차 충전 5%(신축) · 장애인 2~4% 의무 구획 비율</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [부설주차장] 바로가기
+            </a>
+            <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
+              용도별 설치기준 · 소수점 처리 로직 · 의무 구획 비율 · 2025 전기차·기계식 주차 강화
+            </div>
+            <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/주차장법.jpg', '건축물 부설주차장 설치 및 산정 가이드 MANMIN Ver1.0', 'https://manminkim-eng.github.io/Parking-Lot-Act/')">
+              <img src="./images/주차장법.jpg"
+                   alt="MANMIN Ver1.0 건축물 부설주차장 설치기준 및 산정 가이드 인포그래픽 — 용도별 면적 기준, 소수점 처리 방식, 장애인·전기차 의무 구획 비율, 2025 기계식 주차 제원 강화"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용도별 설치기준(위탁 100㎡·상업 150㎡·근생 200㎡당 1대) + 주거 세대당 최소 1대·60㎡ 이하 0.7대·원룸형 0.5~0.6대 + 특수 시설 고유단위(골프장 1홀 10대·골프연습장 1타석 1대) + 소수점 처리(일반 0.5 이상 반올림·주택 소수점 발생 시 무조건 올림) + 용도변경 시 누적 합산 0.5대 미만 유보 + 법정 의무 구획 비율(장애인 2~4%·전기차 충전 신축 5%·기축 2%). 지자체 조례 최대 50% 강화 및 2025 기계식 주차장 제원 상향 완벽 반영.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Parking-Lot-Act →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -4698,7 +4793,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">14 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">15 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -5048,6 +5143,33 @@ footer {
           <div class="yt-meta">
             <span>건축 · 일조사선 · Ver1.0</span><span class="yt-meta-sep"></span>
             <a href="https://youtu.be/89j8wCsM6fg" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑫ CYGWRnWMZp4 — 2025 주차장법 부설주차장 설치기준 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/CYGWRnWMZp4','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/CYGWRnWMZp4/maxresdefault.jpg"
+               alt="전기차 충전 의무 기계식 주차장 제원 상향 2025 주차장법 핵심 요약 대체부지 전략 MANMIN Ver1.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축법규</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);color:var(--gold-lt);">Ver1.0 · 2025</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">건축 · 주차장법 · 부설주차장 설치기준 · 2025 개정</div>
+          <h3 class="yt-title">전기차 충전 의무부터 기계식 주차장 제원 상향까지, 2025 주차장법 핵심 요약<br><span style="font-size:.88em;color:var(--t-sub);">feat. 대체부지 전략 — MANMIN Ver1.0</span></h3>
+          <p class="yt-desc">건축사 김만민의 MANMIN-Ver 1.0 건축물 부설주차장 설치기준 및 산정 가이드. 지자체별 최대 50%까지 강화된 조례의 벽, 증축 시 시한폭탄이 될 수 있는 소수점 누적 합산의 법칙, 그리고 2025년부터 더욱 강화되는 기계식 주차장 제원과 전기차 충전소 의무 할당까지 실무 핵심을 빠르게 짚어드립니다.</p>
+          <div class="yt-meta">
+            <span>건축 · 주차장법 · 2025 개정</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener"
                style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
                onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
