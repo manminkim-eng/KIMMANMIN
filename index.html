@@ -607,6 +607,7 @@ nav.on {
 .yt-cat-fire .yt-cat-dot  { background: #f87171; }
 .yt-cat-mech .yt-cat-dot  { background: var(--blue); }
 .yt-cat-civil .yt-cat-dot { background: #4ade80; }
+.yt-cat-struct .yt-cat-dot { background: #a78bfa; }
 .yt-cat-label {
   font-family: var(--f-kr); font-size: .88rem; font-weight: 700; color: var(--t-high);
 }
@@ -1714,6 +1715,8 @@ footer {
 .hub-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.45); }
 .hub-arch:hover { border-color: var(--gold); background: rgba(212,168,67,.05); }
 .hub-arch:hover::after { opacity: 1; background: linear-gradient(to right, var(--gold), transparent); }
+.hub-struct:hover { border-color: #a78bfa; background: rgba(167,139,250,.05); }
+.hub-struct:hover::after { opacity: 1; background: linear-gradient(to right, #a78bfa, transparent); }
 .hub-mech:hover { border-color: var(--blue); background: rgba(90,154,232,.05); }
 .hub-mech:hover::after { opacity: 1; background: linear-gradient(to right, var(--blue), transparent); }
 .hub-fire:hover { border-color: #f87171; background: rgba(248,113,113,.05); }
@@ -1751,6 +1754,7 @@ footer {
   .hub-name { font-size: .88rem; }
   .hub-desc { font-size: .72rem; }
 }
+
 
 </style>
 </head>
@@ -1790,6 +1794,7 @@ footer {
   </button>
 </nav>
 
+
 <!-- ══ HERO ═══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-br tl"></div><div class="hero-br tr"></div>
@@ -1827,7 +1832,7 @@ footer {
       <div class="spec-row"><span class="spec-k">Career</span><span class="spec-v">30년 (1993~현재)</span></div>
       <div class="spec-row"><span class="spec-k">License</span><span class="spec-v">건축사 #20072</span></div>
       <div class="spec-row"><span class="spec-k">Cert.</span><span class="spec-v">10여 종 보유</span></div>
-      <div class="spec-row"><span class="spec-k">Specialty</span><span class="spec-v">건축 + 기계설비 + 소방[기계+전기] + 토목</span></div>
+      <div class="spec-row"><span class="spec-k">Specialty</span><span class="spec-v">건축 + 구조 + 기계설비 + 소방[기계+전기] + 토목</span></div>
       <div class="spec-row"><span class="spec-k">VE</span><span class="spec-v">CVS · VMP</span></div>
       <div class="spec-row"><span class="spec-k">Status</span><span class="spec-v cy">● 자문 가능</span></div>
     </div>
@@ -2176,7 +2181,7 @@ footer {
   <div class="sec-hd rv">
     <div class="sec-eyebrow">Engineering Tools Navigator</div>
     <h2 class="sec-title">공종별 <span class="hl">웹 계산 도구</span> 한눈에 찾기</h2>
-    <p class="sec-sub">건축 · 기계설비 · 소방 · 토목 — 원하는 계산기를 바로 선택하세요</p>
+    <p class="sec-sub">건축 · 구조· 기계설비 · 소방 · 토목 — 원하는 계산기를 바로 선택하세요</p>
   </div>
 
   <div class="inner">
@@ -2192,7 +2197,7 @@ footer {
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">11 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">10 tools</span>
       </div>
 
       <!-- 도구 카드 그리드 -->
@@ -2254,13 +2259,6 @@ footer {
           <div class="hub-tag">LAND USE</div>
         </a>
 
-        <a href="#card-seismic" class="hub-card rv hub-arch">
-          <div class="hub-icon">🏗️</div>
-          <div class="hub-name">내진설계 판별</div>
-          <div class="hub-desc">의무 대상 즉시 판정<br>목구조 완화 기준</div>
-          <div class="hub-tag">SEISMIC</div>
-        </a>
-
         <a href="#card-arch-sunlight" class="hub-card rv hub-arch">
           <div class="hub-icon">☀️</div>
           <div class="hub-name">일조사선·일영</div>
@@ -2273,6 +2271,38 @@ footer {
           <div class="hub-name">부설주차장</div>
           <div class="hub-desc">용도별 설치기준<br>주차대수 자동 산정</div>
           <div class="hub-tag">PARKING</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── 구조 ────────────────────────────────── -->
+    <div class="hub-category rv" style="margin-bottom:40px;">
+
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="width:4px;height:36px;background:linear-gradient(to bottom,#a78bfa,#c4b5fd);border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--f-mono);font-size:.65rem;color:#a78bfa;letter-spacing:.14em;text-transform:uppercase;">// STRUCTURE</div>
+          <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축구조 설계·하중 산정</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">2 tools</span>
+      </div>
+
+      <div class="hub-grid">
+
+        <a href="#card-seismic" class="hub-card rv hub-struct">
+          <div class="hub-icon">🏗️</div>
+          <div class="hub-name">내진설계 판별</div>
+          <div class="hub-desc">의무 대상 즉시 판정<br>목구조 완화 기준</div>
+          <div class="hub-tag" style="color:#a78bfa;border-color:#a78bfa;">SEISMIC</div>
+        </a>
+
+        <a href="#card-struct-load" class="hub-card rv hub-struct">
+          <div class="hub-icon">🏛️</div>
+          <div class="hub-name">설계하중 산정</div>
+          <div class="hub-desc">KDS 41 기준 통합<br>설계하중 자동 산출</div>
+          <div class="hub-tag" style="color:#a78bfa;border-color:#a78bfa;">STRUCTURE</div>
         </a>
 
       </div>
@@ -2480,8 +2510,8 @@ footer {
 <section id="webdev" class="sec sec-alt">
   <div class="sec-hd rv">
     <div class="sec-eyebrow">Web Development — MANMIN Series</div>
-    <h2 class="sec-title">건축 · 기계 · 소방 · 토목 실무를 디지털로 구현한 <span class="hl">웹 계산 도구</span></h2>
-    <p class="sec-sub">건축 · 기계설비 · 소방(NFTC) · 토목  — 현장 경험 30년을 코드로 담은 멀티 엔지니어링 웹 시리즈</p>
+    <h2 class="sec-title">건축 · 구조 · 기계설비 · 소방 · 토목 실무를 디지털로 구현한 <span class="hl">웹 계산 도구</span></h2>
+    <p class="sec-sub">건축 · 구조 · 기계설비 · 소방 · 토목 — 현장 경험 30년을 코드로 담은 멀티 엔지니어링 웹 시리즈</p>
   </div>
   <!-- ══ 건축사 대가 산정 별도 시리즈 ══════════════════ -->
   <div class="inner" style="margin-top:48px;">
@@ -3197,53 +3227,53 @@ footer {
   </div>
 
 
-  <!-- ══ 내진설계 별도 시리즈 ══════════════════════════════ -->
+  <!-- ══ 부설주차장 설치기준 시리즈 ════════════════════ -->
   <div class="inner" style="margin-top:48px;">
 
     <!-- 섹션 구분 헤더 -->
     <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
       <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
       <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
-        // SEISMIC DESIGN Series
+        // PARKING LOT ACT Series
       </div>
       <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
     </div>
 
     <div class="sec-hd rv" style="margin-bottom:28px;">
-      <div class="sec-eyebrow">내진설계 검토 도구</div>
-      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">건축물 내진설계 적용 여부를 즉시 판정하는 <span class="hl">웹 계산 도구</span></h2>
-      <p class="sec-sub">건축법·지진화산재해대책법 기준 · 내진설계 의무 대상 자동 판정 · 설계지진력 산정 핵심 기준</p>
+      <div class="sec-eyebrow" style="color:var(--gold);">건축물 부설주차장 설치기준</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">용도별 주차대수를 자동 산정하는 <span class="hl">부설주차장 가이드</span></h2>
+      <p class="sec-sub">주차장법 · 지자체 조례 강화 기준 반영 · 소수점 누적 합산 로직 · 2025 전기차 충전·기계식 주차 제원 의무 완벽 대응</p>
     </div>
 
     <div class="webdev-grid">
 
-      <!-- SEISMIC-001: 내진설계 의무 대상 판별 가이드 -->
-      <div id="card-seismic" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <!-- PARKING-001: 건축물 부설주차장 설치기준 및 산정 가이드 -->
+      <div id="card-parking" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
             <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-              <span class="wtag" style="border-color:rgba(168,139,250,.4);color:#a78bfa;">내진설계</span>
-              <span class="wtag b">React · PWA</span>
-              <span class="wtag" style="border-color:rgba(168,139,250,.3);color:#c4b5fd;">건축법 기준</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">건축법규</span>
+              <span class="wtag b">PWA · Ver1.0</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">주차장법 · 조례</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.18rem;">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드 — MANMIN Ver1.0</h3>
-            <p class="wdesc" style="max-width:680px;margin-top:6px;">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 것 중 하나가 바로 '내진설계 의무 대상인가?' 하는 점입니다. 인허가일·구조형식·규모·용도 4가지 핵심 키워드를 통해 내 건축물이 내진설계 대상인지 즉시 확인하는 판별 마스터 플로우 — 일반 구조와 다른 목구조 완화 기준, 캔틸레버 등 특수 구조 위험성까지 완벽 대응.</p>
+            <h3 class="wtitle" style="font-size:1.18rem;">건축물 용도별 부설주차장 설치기준 및 산정 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축사 김만민의 MANMIN-Ver 1.0 건축물 부설주차장 설치기준 및 주차대수 자동 산정 가이드. 지자체별 최대 50%까지 강화된 조례의 벽, 증축 시 소수점 누적 합산 로직, 2025년부터 강화된 기계식 주차장 제원 및 전기차 충전소 의무 할당까지 실무 핵심을 자동화합니다.</p>
             <!-- 핵심 기준 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.71rem;color:#a78bfa;">2층 이상 또는 연면적 200㎡ 이상 · 목구조는 3층/500㎡ 기준 완화</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">인허가일 핵심 — 2017.12 이후 강화 · 1988년부터 단계적 확대</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">모든 주택 예외 없이 의무 · 높이 13m·경간 10m 이상 특수 기준</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">위탁 100㎡ · 상업 150㎡ · 근생 200㎡당 1대 — 용도별 기준</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">소수점 — 일반 0.5 이상 반올림 · 주택 소수점 발생 시 무조건 올림</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">전기차 충전 5%(신축) · 장애인 2~4% 의무 구획 비율</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
           <div class="wcard-btn-group">
-            <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wcard-gh-btn">
+            <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wcard-gh-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GITHUB [내진설계] 바로가기
+              GITHUB [부설주차장] 바로가기
             </a>
-            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener" class="wcard-yt-btn">
+            <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener" class="wcard-yt-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
@@ -3253,30 +3283,30 @@ footer {
         <!-- 이미지 -->
         <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
-              <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
-              인허가일·구조형식·규모·용도 4대 판별 기준 · 목구조 완화 · 특수구조 위험성
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
+              용도별 설치기준 · 소수점 처리 로직 · 의무 구획 비율 · 2025 전기차·기계식 주차 강화
             </div>
-            <div style="border:1px solid rgba(168,139,250,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
-                 onclick="openWcImg('./images/내진성능.jpg', '내진설계 의무 대상 판별 마스터 가이드', 'https://manminkim-eng.github.io/Seismic-Evaluation/')">
-              <img src="./images/내진성능.jpg"
-                   alt="내 건물은 내진설계 의무 대상일까? 판별 가이드 — 2층·200㎡ 기준, 목구조 완화, 모든 주택 의무, 높이 13m·경간 10m 특수 기준, 1988년부터 단계적 법령 강화"
+            <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/주차장법.jpg', '건축물 부설주차장 설치 및 산정 가이드 MANMIN Ver1.0', 'https://manminkim-eng.github.io/Parking-Lot-Act/')">
+              <img src="./images/주차장법.jpg"
+                   alt="MANMIN Ver1.0 건축물 부설주차장 설치기준 및 산정 가이드 인포그래픽 — 용도별 면적 기준, 소수점 처리 방식, 장애인·전기차 의무 구획 비율, 2025 기계식 주차 제원 강화"
                    style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
                    onmouseout="this.style.transform='scale(1)'"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
-                          background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
+                          background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 내진설계 의무 여부 4대 판별 기준 — ① 인허가일(2017.12 이후 강화) ② 일반 구조 2층 이상 또는 연면적 200㎡ 이상 ③ 목구조 완화(3층/500㎡) · 모든 단독·공동주택 예외 없이 의무 ④ 높이 13m 이상 또는 경간 10m 이상 · 캔틸레버 3m 이상 특수 구조 포함. 건축도시정보센터(AURI) 간편조회 서비스 연계.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용도별 설치기준(위탁 100㎡·상업 150㎡·근생 200㎡당 1대) + 주거 세대당 최소 1대·60㎡ 이하 0.7대·원룸형 0.5~0.6대 + 특수 시설 고유단위(골프장 1홀 10대·골프연습장 1타석 1대) + 소수점 처리(일반 0.5 이상 반올림·주택 소수점 발생 시 무조건 올림) + 용도변경 시 누적 합산 0.5대 미만 유보 + 법정 의무 구획 비율(장애인 2~4%·전기차 충전 신축 5%·기축 2%). 지자체 조례 최대 50% 강화 및 2025 기계식 주차장 제원 상향 완벽 반영.</p>
           </div>
         </div>
 
         <!-- 푸터 -->
         <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
-          <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wlink">
+          <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            manminkim-eng.github.io/Seismic-Evaluation →
+            manminkim-eng.github.io/Parking-Lot-Act →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -3374,53 +3404,142 @@ footer {
     </div>
   </div>
 
-  <!-- ══ 부설주차장 설치기준 시리즈 ════════════════════ -->
+
+  <!-- ══ 내진설계 별도 시리즈 ══════════════════════════════ -->
   <div class="inner" style="margin-top:48px;">
 
     <!-- 섹션 구분 헤더 -->
     <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
       <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
       <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
-        // PARKING LOT ACT Series
+        // SEISMIC DESIGN Series
       </div>
       <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
     </div>
 
     <div class="sec-hd rv" style="margin-bottom:28px;">
-      <div class="sec-eyebrow" style="color:var(--gold);">건축물 부설주차장 설치기준</div>
-      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">용도별 주차대수를 자동 산정하는 <span class="hl">부설주차장 가이드</span></h2>
-      <p class="sec-sub">주차장법 · 지자체 조례 강화 기준 반영 · 소수점 누적 합산 로직 · 2025 전기차 충전·기계식 주차 제원 의무 완벽 대응</p>
+      <div class="sec-eyebrow">내진설계 검토 도구</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">건축물 내진설계 적용 여부를 즉시 판정하는 <span class="hl">웹 계산 도구</span></h2>
+      <p class="sec-sub">건축법·지진화산재해대책법 기준 · 내진설계 의무 대상 자동 판정 · 설계지진력 산정 핵심 기준</p>
     </div>
 
     <div class="webdev-grid">
 
-      <!-- PARKING-001: 건축물 부설주차장 설치기준 및 산정 가이드 -->
-      <div id="card-parking" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+      <!-- SEISMIC-001: 내진설계 의무 대상 판별 가이드 -->
+      <div id="card-seismic" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
         <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
             <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">건축법규</span>
-              <span class="wtag b">PWA · Ver1.0</span>
-              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">주차장법 · 조례</span>
+              <span class="wtag" style="border-color:rgba(168,139,250,.4);color:#a78bfa;">내진설계</span>
+              <span class="wtag b">React · PWA</span>
+              <span class="wtag" style="border-color:rgba(168,139,250,.3);color:#c4b5fd;">건축법 기준</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
-            <h3 class="wtitle" style="font-size:1.18rem;">건축물 용도별 부설주차장 설치기준 및 산정 가이드 — MANMIN Ver1.0</h3>
-            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축사 김만민의 MANMIN-Ver 1.0 건축물 부설주차장 설치기준 및 주차대수 자동 산정 가이드. 지자체별 최대 50%까지 강화된 조례의 벽, 증축 시 소수점 누적 합산 로직, 2025년부터 강화된 기계식 주차장 제원 및 전기차 충전소 의무 할당까지 실무 핵심을 자동화합니다.</p>
+            <h3 class="wtitle" style="font-size:1.18rem;">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 것 중 하나가 바로 '내진설계 의무 대상인가?' 하는 점입니다. 인허가일·구조형식·규모·용도 4가지 핵심 키워드를 통해 내 건축물이 내진설계 대상인지 즉시 확인하는 판별 마스터 플로우 — 일반 구조와 다른 목구조 완화 기준, 캔틸레버 등 특수 구조 위험성까지 완벽 대응.</p>
             <!-- 핵심 기준 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">위탁 100㎡ · 상업 150㎡ · 근생 200㎡당 1대 — 용도별 기준</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">소수점 — 일반 0.5 이상 반올림 · 주택 소수점 발생 시 무조건 올림</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">전기차 충전 5%(신축) · 장애인 2~4% 의무 구획 비율</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.71rem;color:#a78bfa;">2층 이상 또는 연면적 200㎡ 이상 · 목구조는 3층/500㎡ 기준 완화</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">인허가일 핵심 — 2017.12 이후 강화 · 1988년부터 단계적 확대</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">모든 주택 예외 없이 의무 · 높이 13m·경간 10m 이상 특수 기준</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
           <div class="wcard-btn-group">
-            <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wcard-gh-btn">
+            <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wcard-gh-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GITHUB [부설주차장] 바로가기
+              GITHUB [내진설계] 바로가기
             </a>
-            <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener" class="wcard-yt-btn">
+            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
+              인허가일·구조형식·규모·용도 4대 판별 기준 · 목구조 완화 · 특수구조 위험성
+            </div>
+            <div style="border:1px solid rgba(168,139,250,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/내진성능.jpg', '내진설계 의무 대상 판별 마스터 가이드', 'https://manminkim-eng.github.io/Seismic-Evaluation/')">
+              <img src="./images/내진성능.jpg"
+                   alt="내 건물은 내진설계 의무 대상일까? 판별 가이드 — 2층·200㎡ 기준, 목구조 완화, 모든 주택 의무, 높이 13m·경간 10m 특수 기준, 1988년부터 단계적 법령 강화"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 내진설계 의무 여부 4대 판별 기준 — ① 인허가일(2017.12 이후 강화) ② 일반 구조 2층 이상 또는 연면적 200㎡ 이상 ③ 목구조 완화(3층/500㎡) · 모든 단독·공동주택 예외 없이 의무 ④ 높이 13m 이상 또는 경간 10m 이상 · 캔틸레버 3m 이상 특수 구조 포함. 건축도시정보센터(AURI) 간편조회 서비스 연계.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Seismic-Evaluation/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Seismic-Evaluation →
+          </a>
+          <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 건축구조 설계하중 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // STRUCTURAL DESIGN LOAD Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow" style="color:var(--gold);">건축구조 · 설계하중 통합 산정</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">KDS 41 최신 건축구조기준에 따른 <span class="hl">설계하중 통합 산출 웹 도구</span></h2>
+      <p class="sec-sub">2022 KDS 41 건축구조기준 완벽 반영 · 풍하중 500년 재현기간 · 홍수·파랑하중 신설 · 비구조요소 내진설계 의무화</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- STRUCT-001: 건축구조 설계하중 통합 산정 -->
+      <div id="card-struct-load" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">건축구조</span>
+              <span class="wtag b">PWA · Ver1.0</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">KDS 41 · 설계하중</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">실무자 필독! 변화된 KDS 41 건축구조기준과 설계하중 산정법 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축물의 안전을 결정짓는 첫 단추, 설계하중! MANMIN-Ver1.0 최신 KDS 41 건축구조기준 통합 가이드. 기후 위기 속 풍하중 재현기간 100년→500년 상향, 홍수·파랑하중 신설, 비구조요소 내진설계 의무화 등 구조 안전의 새로운 패러다임을 정밀하게 해독합니다.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">풍하중 재현기간 100년 → 500년 상향 · 홍수하중(Fa)·파랑하중(Wa) 신설</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">활하중 — 주택/공동주택 거실 2.0 · 일반 사무실 2.5 · 상점 5.0 kN/㎡</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">비구조요소 내진설계 의무화 · 시공하중(C) 규정 신설 · 특별지진하중 확대</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/architectural-structure/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [설계하중] 바로가기
+            </a>
+            <a href="https://youtu.be/XDEm_gU_n5s" target="_blank" rel="noopener" class="wcard-yt-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
@@ -3432,12 +3551,12 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
-              용도별 설치기준 · 소수점 처리 로직 · 의무 구획 비율 · 2025 전기차·기계식 주차 강화
+              KDS 41 기후변화 대응 · 시공안전·내진설계 심화 · 용도별 최소 등분포활하중
             </div>
             <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
-                 onclick="openWcImg('./images/주차장법.jpg', '건축물 부설주차장 설치 및 산정 가이드 MANMIN Ver1.0', 'https://manminkim-eng.github.io/Parking-Lot-Act/')">
-              <img src="./images/주차장법.jpg"
-                   alt="MANMIN Ver1.0 건축물 부설주차장 설치기준 및 산정 가이드 인포그래픽 — 용도별 면적 기준, 소수점 처리 방식, 장애인·전기차 의무 구획 비율, 2025 기계식 주차 제원 강화"
+                 onclick="openWcImg('./images/설계하중.png', '최신 KDS 41 건축구조기준 설계하중 핵심 가이드 MANMIN Ver1.0', 'https://manminkim-eng.github.io/architectural-structure/')">
+              <img src="./images/설계하중.png"
+                   alt="MANMIN Ver1.0 최신 KDS 41 건축구조기준 설계하중 핵심 가이드 인포그래픽 — 풍하중 500년 재현기간, 홍수·파랑하중 신설, 비구조요소 내진설계 의무화, 용도별 등분포활하중"
                    style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
                    onmouseout="this.style.transform='scale(1)'"/>
@@ -3445,15 +3564,15 @@ footer {
                           background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
                           padding:2px 7px;letter-spacing:.06em;">Ver 1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용도별 설치기준(위탁 100㎡·상업 150㎡·근생 200㎡당 1대) + 주거 세대당 최소 1대·60㎡ 이하 0.7대·원룸형 0.5~0.6대 + 특수 시설 고유단위(골프장 1홀 10대·골프연습장 1타석 1대) + 소수점 처리(일반 0.5 이상 반올림·주택 소수점 발생 시 무조건 올림) + 용도변경 시 누적 합산 0.5대 미만 유보 + 법정 의무 구획 비율(장애인 2~4%·전기차 충전 신축 5%·기축 2%). 지자체 조례 최대 50% 강화 및 2025 기계식 주차장 제원 상향 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">기후변화 대응 — 풍하중 재현기간 100년→500년 상향 · 홍수하중(Fa)·파랑하중(Wa) 신설(수변지역 침수·융수합·유송꿰물 의무 검토) + 시공하중(C) 규정 신설(공사 중 작업원·장비·자재 하중 세분화) + 비구조요소 내진설계 의무화(파라펫·외장재 등 붕괴 방지 부스 설계 필수) + 특별지진하중 적용 확대(필로티 등 취약 구조 수직 부재 시스템 초과강도계수 적용) + 용도별 최소 등분포활하중(주택·공동주택 거실 2.0 · 일반 사무실 2.5 · 상점·맥화점 5.0 kN/㎡). 2022 KDS 41 최신 기준 완벽 반영.</p>
           </div>
         </div>
 
         <!-- 푸터 -->
         <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
-          <a href="https://manminkim-eng.github.io/Parking-Lot-Act/" target="_blank" rel="noopener" class="wlink">
+          <a href="https://manminkim-eng.github.io/architectural-structure/" target="_blank" rel="noopener" class="wlink">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            manminkim-eng.github.io/Parking-Lot-Act →
+            manminkim-eng.github.io/architectural-structure →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
         </div>
@@ -4909,6 +5028,12 @@ footer {
         <span class="yt-cat-en">Architecture</span>
       </div>
       <div class="yt-cat-sep">·</div>
+      <div class="yt-cat-item yt-cat-struct">
+        <span class="yt-cat-dot"></span>
+        <span class="yt-cat-label">구조</span>
+        <span class="yt-cat-en">Structure</span>
+      </div>
+      <div class="yt-cat-sep">·</div>
       <div class="yt-cat-item yt-cat-mech">
         <span class="yt-cat-dot"></span>
         <span class="yt-cat-label">기계</span>
@@ -4937,7 +5062,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">15 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">14 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -5239,33 +5364,6 @@ footer {
       </div>
 
 
-      <!-- ⑩ HTIdc61avE8 — 내진설계 판별 마스터 가이드 -->
-      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/HTIdc61avE8','_blank')">
-        <div class="ythumb">
-          <img src="https://img.youtube.com/vi/HTIdc61avE8/maxresdefault.jpg"
-               alt="건축사 김만민 내진설계 의무 대상 판별 마스터 가이드 목구조 완화 기준 썸네일"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
-               onerror="this.style.display='none'">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
-          <div class="yt-play" style="z-index:2;">▶</div>
-          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.4);color:#a78bfa;">건축실무</span>
-            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(168,139,250,.08);border:1px solid rgba(168,139,250,.25);color:#c4b5fd;">내진설계</span>
-          </div>
-        </div>
-        <div class="ytbody">
-          <div class="yt-cat">건축 · 내진설계 · 판별 가이드</div>
-          <h3 class="yt-title">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드</h3>
-          <p class="yt-desc">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 내진설계 의무 대상 여부. 인허가일·구조형식·규모·용도 4가지 핵심 키워드로 1분 만에 판별하는 마스터 플로우 공개. 목구조 완화 기준(3층/500㎡)과 캔틸레버 등 특수 구조 위험성까지 꼼꼼하게 짚어드립니다.</p>
-          <div class="yt-meta">
-            <span>건축 · 내진설계 · Ver1.0</span><span class="yt-meta-sep"></span>
-            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener"
-               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
-               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
-          </div>
-        </div>
-      </div>
-
       <!-- ⑪ 89j8wCsM6fg — 일조사선 및 일영시간 계산 가이드 -->
       <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/89j8wCsM6fg','_blank')">
         <div class="ythumb">
@@ -5315,6 +5413,67 @@ footer {
             <span>건축 · 주차장법 · 2025 개정</span><span class="yt-meta-sep"></span>
             <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener"
                style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ 구조 카테고리 구분 헤더 ══ -->
+      <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
+        <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:#a78bfa;letter-spacing:.14em;text-transform:uppercase;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);padding:3px 12px;">🏛️  구조 · Structure</span>
+        <div style="flex:1;height:1px;background:var(--line);"></div>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">2 videos</span>
+      </div>
+
+      <!-- 구조① HTIdc61avE8 — 내진설계 판별 마스터 가이드 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/HTIdc61avE8','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/HTIdc61avE8/maxresdefault.jpg"
+               alt="건축사 김만민 내진설계 의무 대상 판별 마스터 가이드 목구조 완화 기준 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.4);color:#a78bfa;">구조</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#c4b5fd;">내진설계</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">구조 · 내진설계 · 판별 가이드</div>
+          <h3 class="yt-title">2층? 200㎡? 목구조는 다르다! 건축사 김만민이 알려주는 내진설계 판별 마스터 가이드</h3>
+          <p class="yt-desc">내 집을 짓거나 건물을 매수할 때 가장 먼저 확인해야 할 내진설계 의무 대상 여부. 인허가일·구조형식·규모·용도 4가지 핵심 키워드로 1분 만에 판별하는 마스터 플로우 공개. 목구조 완화 기준(3층/500㎡)과 캔틸레버 등 특수 구조 위험성까지 꼼꼼하게 짚어드립니다.</p>
+          <div class="yt-meta">
+            <span>구조 · 내진설계 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/HTIdc61avE8" target="_blank" rel="noopener"
+               style="color:#a78bfa;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 구조② XDEm_gU_n5s — KDS 41 건축구조기준 설계하중 산정법 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/XDEm_gU_n5s','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/XDEm_gU_n5s/maxresdefault.jpg"
+               alt="실무자 필독 변화된 KDS 41 건축구조기준과 설계하중 산정법 MANMIN Ver1.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.4);color:#a78bfa;">구조</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#c4b5fd;">Ver1.0 · KDS 41</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">구조 · 설계하중 · KDS 41 · MANMIN Ver1.0</div>
+          <h3 class="yt-title">실무자 필독! 변화된 KDS 41 건축구조기준과 설계하중 산정법<br><span style="font-size:.88em;color:var(--t-sub);">풍하중 500년 · 홍수하중 신설 · 비구조요소 내진 의무화 — MANMIN Ver1.0</span></h3>
+          <p class="yt-desc">건축물의 안전을 결정짓는 첫 단추, 설계하중! MANMIN-Ver1.0 최신 KDS 41 건축구조기준 통합 가이드. 급격한 기후 위기와 예측 불가능한 극한 환경 속에서 구조 안전의 새로운 패러다임을 정립하고 적용해야 하는지 핵심 내용을 정밀하게 해독합니다.</p>
+          <div class="yt-meta">
+            <span>구조 · KDS 41 · Ver1.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/XDEm_gU_n5s" target="_blank" rel="noopener"
+               style="color:#a78bfa;font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
                onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
         </div>
@@ -6466,6 +6625,7 @@ if ('serviceWorker' in navigator) {
   }
 })();
 </script>
+
 
 </body>
 </html>
