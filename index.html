@@ -1038,6 +1038,23 @@ nav.on {
   clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
 }
 .btn-kakao-inquiry:hover { background: #4a2a2a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,229,0,.25); }
+.btn-naver-blog {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 13px 20px; margin-top: 10px;
+  background: #03C75A; color: #fff;
+  border: none; cursor: pointer;
+  font-family: var(--f-kr); font-size: .9rem; font-weight: 700;
+  text-decoration: none; transition: all .22s;
+  clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+}
+.btn-naver-blog:hover { background: #02a84b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(3,199,90,.35); }
+.btn-naver-blog .naver-n {
+  font-family: 'Arial Black', sans-serif; font-size: 1rem; font-weight: 900;
+  background: #fff; color: #03C75A;
+  width: 22px; height: 22px; border-radius: 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; letter-spacing: -.03em;
+}
 
 /* ═══════════════════════════════════════
    FOOTER
@@ -6229,6 +6246,14 @@ footer {
         <div style="margin-top:8px;font-family:var(--f-mono);font-size:.62rem;color:var(--t-dim);text-align:center;line-height:1.6;">
           💬 카카오톡 공유 — 주소 복사 후 카톡 채팅창에 붙여넣기<br>
           📩 1:1 문의 — 카카오 오픈채팅으로 기술 자문·설계 협업 문의</div>
+        <!-- 네이버 블로그 버튼 -->
+        <a href="https://blog.naver.com/manmin72" target="_blank" rel="noopener"
+           class="btn-naver-blog" title="MANMIN 네이버 블로그 — 건축·토목·기계설비 실무 정보">
+          <span class="naver-n">N</span>
+          MANMIN 네이버 블로그 &mdash; 실무 계산 해설 보러가기
+        </a>
+        <div style="margin-top:6px;font-family:var(--f-mono);font-size:.62rem;color:var(--t-dim);text-align:center;line-height:1.6;">
+          📝 건축 · 토목 · 기계설비 실무 계산 해설 아티클 모음</div>
         <div class="company-row">
           <div class="co-badge" style="background:transparent;border:none;padding:0;overflow:hidden;">
             <img src="./images01/대성로고.jpg" alt="대성건축사사무소 로고" style="width:56px;height:56px;object-fit:contain;display:block;">
