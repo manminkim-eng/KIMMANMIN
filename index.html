@@ -2389,6 +2389,13 @@ footer {
           <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">VENTILATION</div>
         </a>
 
+        <a href="#card-rts-load" class="hub-card rv hub-mech">
+          <div class="hub-icon">🌡️</div>
+          <div class="hub-name">냉난방 부하계산</div>
+          <div class="hub-desc">RTS법 기반 피크 부하<br>장비 용량 최적 산정</div>
+          <div class="hub-tag" style="color:var(--blue);border-color:var(--blue);">RTS · Ver3.0</div>
+        </a>
+
       </div>
     </div>
 
@@ -4075,6 +4082,71 @@ footer {
         </div>
       </div>
 
+      <!-- MECH-008: 건물 냉난방 부하계산 RTS법 -->
+      <div id="card-rts-load" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(90,154,232,.4);color:var(--blue);">기계설비</span>
+              <span class="wtag b">PWA · Ver3.0</span>
+              <span class="wtag" style="border-color:rgba(90,154,232,.3);color:var(--blue);">냉난방 부하계산 RTS법</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">설계 오류 막는 법! 건물 냉난방 부하 계산의 표준, RTS(복사시계열)법 완벽 가이드 — MANMIN Ver3.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">ASHRAE에서 권장하는 최신 부하계산 방식인 RTS(Radiant Time Series)법의 핵심 원리와 적용 방법을 상세히 다룹니다. 정확한 장비 용량 선정을 위해 필수적인 '24시간 정상 주기 기반의 부하계산 최적화 프레임워크'를 어떻게 실무에 적용할 수 있는지 MANMIN 시스템을 통해 확인하세요.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">RTS법 — 24시간 정상 주기 기반 열취득 프로파일 산출</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">CTS(외벽 전도 지연) + RTS(복사열 실내 부하 변환 지연) 2단계 시간 지연</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">냉방부하(4단계 시계열 연산) vs 난방부하(U·A·ΔT 단순 열손실)</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Radiant-Time-Series-Method/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [부하계산] 바로가기
+            </a>
+            <a href="https://youtu.be/QYbtftpS2yI" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
+              RTS법 핵심 메커니즘 · CTS·RTS 시간 지연 · 냉방부하 4단계 · 냉난방 차이점 비교
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/부하계산.jpg', '건물 냉난방 부하계산 RTS법 가이드', 'https://manminkim-eng.github.io/Radiant-Time-Series-Method/')">
+              <img src="./images/부하계산.jpg"
+                   alt="MANMIN Ver3.0 건물 냉난방 부하계산 RTS(복사시계열)법 가이드 인포그래픽 — CTS 외벽 전도 지연, RTS 복사열 실내 부하 변환 지연, 냉방부하 4단계 프로세스"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 3.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">RTS법 핵심 메커니즘(정상 주기 상태 가정 · 24시간 반복 기상·실내 조건 기반 피크 부하 산출) + CTS 외벽 전도 지연 · RTS 복사열 실내 부하 변환 지연 2단계 시간 지연 효과 + 냉방부하 4단계 프로세스(① 24시간 열취득 프로파일 산출 → ② 대류/복사 성분 분할 → ③ 시계열(RTF) 계수 적용 → ④ 부하 합산 및 최대 부하 결정) + 냉방부하(일사·내부 발열·축열 포함 4단계 시계열 연산) vs 난방부하(최악 조건 U·A·ΔT 단순 열손실 합산) 비교. ASHRAE 권장 기준 완벽 대응.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Radiant-Time-Series-Method/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Radiant-Time-Series-Method →
+          </a>
+          <span class="wdate">2025 · Ver 3.0</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -5500,7 +5572,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:16px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;background:rgba(90,154,232,.1);border:1px solid rgba(90,154,232,.3);padding:3px 12px;">⚙️  기계 · Mechanical</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">7 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">8 videos</span>
       </div>
 
       <!-- 기계① DKEUjBqWd6o — 우수관경 산정 -->
@@ -5686,6 +5758,33 @@ footer {
           <div class="yt-meta">
             <span>기계 · 기계환기 · Ver2.0</span><span class="yt-meta-sep"></span>
             <a href="https://youtu.be/3BXAANr-Q2U" target="_blank" rel="noopener"
+               style="color:var(--blue);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 기계⑧ QYbtftpS2yI — 건물 냉난방 부하계산 RTS법 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/QYbtftpS2yI','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/QYbtftpS2yI/maxresdefault.jpg"
+               alt="건물 냉난방 부하계산 RTS 복사시계열법 완벽 가이드 ASHRAE MANMIN Ver3.0 설계 오류 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.75) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.4);color:var(--blue);">기계</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(90,154,232,.08);border:1px solid rgba(90,154,232,.25);color:#93c5fd;">Ver3.0</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">기계설비 · 냉난방 부하계산 RTS법 · MANMIN Ver3.0</div>
+          <h3 class="yt-title">설계 오류 막는 법! 건물 냉난방 부하 계산의 표준, RTS법 완벽 가이드<br><span style="font-size:.88em;color:var(--t-sub);">ASHRAE 권장 RTS(복사시계열)법 · 24시간 정상 주기 기반 — MANMIN Ver3.0</span></h3>
+          <p class="yt-desc">ASHRAE에서 권장하는 최신 부하계산 방식인 RTS(Radiant Time Series)법의 핵심 원리와 적용 방법을 상세히 다룹니다. 정확한 장비 용량 선정을 위해 필수적인 '24시간 정상 주기 기반의 부하계산 최적화 프레임워크'를 어떻게 실무에 적용할 수 있는지 MANMIN 시스템을 통해 알기 쉽게 설명해 드립니다.</p>
+          <div class="yt-meta">
+            <span>기계 · RTS부하계산 · Ver3.0</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/QYbtftpS2yI" target="_blank" rel="noopener"
                style="color:var(--blue);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
                onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
