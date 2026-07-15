@@ -1,7 +1,8 @@
 {
   "name": "MANMIN",
   "short_name": "MANMIN",
-  "description": "김만민 건축사 — 건축·기계설비·소방·토목 복합 기술역량 포탈",
+  "version": "2.0",
+  "description": "김만민 건축사 — 건축·기계설비·소방·토목 복합 기술역량 포탈 [MANMIN-Ver2.0]",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "any",
