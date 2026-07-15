@@ -1129,7 +1129,7 @@ footer {
   position: relative; z-index: 1;
 }
 .foot-l, .foot-r { font-family: var(--f-mono); font-size: .68rem; color: var(--t-dim); letter-spacing: .06em; }
-.foot-ver { display: inline-block; margin-left: 9px; padding: 1px 8px; border: 1px solid var(--line2); border-radius: 20px; color: var(--gold); font-size: .62rem; letter-spacing: .08em; white-space: nowrap; }
+.foot-ver { margin-left: 9px; color: var(--gold); font-size: .62rem; letter-spacing: .08em; white-space: nowrap; }
 .foot-r .acc { color: var(--gold); }
 
 /* ═══════════════════════════════════════
@@ -1845,11 +1845,9 @@ footer {
 <!-- ══ NAV ═══════════════════════════════════════ -->
 <nav id="nav">
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-  <a href="#" class="logo">
+  <a href="#" class="logo" aria-label="홈으로 — 김만민 건축사" title="홈으로">
     <div style="position:relative;width:44px;height:44px;flex-shrink:0;">
-      <img src="./images01/만민로고.png" alt="KIM MANMIN"
-           style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;filter:brightness(0) invert(1);" loading="eager" decoding="async" width="512" height="512">
-      <img src="./images01/협회로고.webp" alt="건축사협회 로고"
+      <img src="./images01/협회로고.webp" alt="건축사협회 로고 — 홈으로"
            style="position:absolute;top:0;left:0;width:44px;height:44px;display:block;object-fit:contain;border-radius:2px;" loading="eager" decoding="async" width="130" height="132">
     </div>
     <div>
