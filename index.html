@@ -1840,7 +1840,7 @@ footer {
 /* ══ 경력 아카이브 카드 (자격현황 하단) ══════════ */
 .arc-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-top: 22px;
 }
@@ -1867,6 +1867,8 @@ footer {
 .arc-gold::after { background: linear-gradient(to right, var(--gold), transparent); }
 .arc-blue:hover { border-color: var(--blue); background: rgba(90,154,232,.05); }
 .arc-blue::after { background: linear-gradient(to right, var(--blue), transparent); }
+.arc-cyan:hover { border-color: var(--cyan); background: rgba(32,208,232,.05); }
+.arc-cyan::after { background: linear-gradient(to right, var(--cyan), transparent); }
 .arc-en {
   font-family: var(--f-mono); font-size: .6rem; letter-spacing: .18em;
   color: var(--t-sub); text-transform: uppercase; margin-bottom: 8px;
@@ -1874,16 +1876,22 @@ footer {
 .arc-title { font-size: 1.06rem; font-weight: 700; color: var(--t-high); margin-bottom: 10px; }
 .arc-gold .arc-title { color: var(--gold-lt); }
 .arc-blue .arc-title { color: var(--blue); }
+.arc-cyan .arc-title { color: var(--cyan); }
 .arc-desc { font-size: .8rem; line-height: 1.75; color: var(--t-body); margin-bottom: 16px; flex: 1; }
-.arc-stats { display: flex; gap: 10px; margin-bottom: 16px; }
+.arc-stats { display: flex; gap: 10px; margin-bottom: 16px; align-items: stretch; }
 .arc-stat {
-  flex: 1; text-align: center; padding: 10px 6px;
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-height: 62px;
+  text-align: center; padding: 10px 4px;
   background: var(--bg-deep); border: 1px solid var(--line);
 }
-.arc-stat-n { font-family: var(--f-mono); font-size: .92rem; font-weight: 700; color: var(--t-high); }
+.arc-stat-n { font-family: var(--f-mono); font-size: .92rem; font-weight: 700; line-height: 1.25; white-space: nowrap; color: var(--t-high); }
 .arc-gold .arc-stat-n { color: var(--gold); }
 .arc-blue .arc-stat-n { color: var(--blue); }
-.arc-stat-l { font-size: .62rem; color: var(--t-sub); margin-top: 4px; letter-spacing: .02em; }
+.arc-cyan .arc-stat-n { color: var(--cyan); }
+.arc-stat-l { font-size: .62rem; color: var(--t-sub); margin-top: 4px; letter-spacing: .02em; line-height: 1.3; word-break: keep-all; }
 .arc-go {
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--f-mono); font-size: .68rem; letter-spacing: .08em;
@@ -1899,11 +1907,13 @@ footer {
 .profile-more:hover { color: var(--gold-lt); }
 .arc-gold:hover .arc-go { color: var(--gold-lt); }
 .arc-blue:hover .arc-go { color: var(--blue); }
-@media (max-width: 640px) {
+.arc-cyan:hover .arc-go { color: var(--cyan); }
+@media (max-width: 900px) {
   .arc-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
   .arc-card { padding: 18px 16px 14px; }
   .arc-title { font-size: .98rem; }
   .arc-desc { font-size: .76rem; }
+  .arc-stat { min-height: 56px; }
   .arc-stat-n { font-size: .84rem; }
   .arc-stat-l { font-size: .58rem; }
 }
@@ -2106,11 +2116,23 @@ footer {
         <div class="arc-title">건축 포트폴리오</div>
         <p class="arc-desc">설계부터 감리 · CM · VE · 안전점검까지 건축 생애주기 전 과정의 실적을 담은 아카이브입니다. 프로젝트 갤러리와 대표작 상세, 3개 공인 협회 경력증명서 원본까지 열람할 수 있습니다.</p>
         <div class="arc-stats">
-          <div class="arc-stat"><div class="arc-stat-n">31년 7개월</div><div class="arc-stat-l">건설기술자 경력</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">31.6년</div><div class="arc-stat-l">건설기술자 경력</div></div>
           <div class="arc-stat"><div class="arc-stat-n">124건</div><div class="arc-stat-l">참여 프로젝트</div></div>
           <div class="arc-stat"><div class="arc-stat-n">12종</div><div class="arc-stat-l">보유 자격</div></div>
         </div>
         <span class="arc-go">포트폴리오 바로가기 ↗</span>
+      </a>
+
+      <a href="https://manminkim-eng.github.io/26CM-VE-KIMMANMIN/" target="_blank" rel="noopener noreferrer" class="arc-card arc-cyan" id="card-cmve">
+        <div class="arc-en">CM &middot; VE Archive</div>
+        <div class="arc-title">건설사업관리 &middot; 가치공학</div>
+        <p class="arc-desc">건축사와 국제공인 VE전문가(CVS)를 동시에 보유한 기술인이 수행한 실무 아카이브입니다. 감독권한대행 CM부터 시공단계 감리, 설계 경제성 검토(VE)까지 프로젝트별 기록을 정리했습니다.</p>
+        <div class="arc-stats">
+          <div class="arc-stat"><div class="arc-stat-n">10건</div><div class="arc-stat-l">건설사업관리</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">20건</div><div class="arc-stat-l">가치공학 VE</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">1,336일</div><div class="arc-stat-l">VE 수행</div></div>
+        </div>
+        <span class="arc-go">CM &middot; VE 아카이브 바로가기 ↗</span>
       </a>
 
       <a href="https://manminkim-eng.github.io/career/" target="_blank" rel="noopener noreferrer" class="arc-card arc-blue" id="card-career">
