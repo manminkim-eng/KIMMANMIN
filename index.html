@@ -24,7 +24,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://manminkim-eng.github.io/KIMMANMIN/">
 <meta property="og:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta property="og:description" content="30년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
+<meta property="og:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
 <meta property="og:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta name="twitter:description" content="30년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공.">
+<meta name="twitter:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공.">
 <meta name="twitter:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <!-- JSON-LD 구조화 데이터 (구글 리치 결과) -->
 <script type="application/ld+json">
@@ -64,7 +64,7 @@
       ],
       "url": "https://manminkim-eng.github.io/KIMMANMIN/",
       "image": "https://manminkim-eng.github.io/KIMMANMIN/images01/만민로고.png",
-      "description": "30년 현장 경력의 건축사. 건축·구조·기계설비·소방·토목 복합 기술역량 보유. CVS 국제공인 VE전문가."
+      "description": "31년 현장 경력의 건축사. 건축·구조·기계설비·소방·토목 복합 기술역량 보유. CVS 국제공인 VE전문가."
     },
     {
       "@type": "WebSite",
@@ -1837,6 +1837,76 @@ footer {
   .hub-desc { font-size: .72rem; }
 }
 
+/* ══ 경력 아카이브 카드 (자격현황 하단) ══════════ */
+.arc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+.arc-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 22px 22px 18px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform .22s, border-color .22s, background .22s, box-shadow .22s;
+}
+.arc-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity .22s;
+}
+.arc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+.arc-card:hover::after { opacity: 1; }
+.arc-gold:hover { border-color: var(--gold); background: rgba(212,168,67,.05); }
+.arc-gold::after { background: linear-gradient(to right, var(--gold), transparent); }
+.arc-blue:hover { border-color: var(--blue); background: rgba(90,154,232,.05); }
+.arc-blue::after { background: linear-gradient(to right, var(--blue), transparent); }
+.arc-en {
+  font-family: var(--f-mono); font-size: .6rem; letter-spacing: .18em;
+  color: var(--t-sub); text-transform: uppercase; margin-bottom: 8px;
+}
+.arc-title { font-size: 1.06rem; font-weight: 700; color: var(--t-high); margin-bottom: 10px; }
+.arc-gold .arc-title { color: var(--gold-lt); }
+.arc-blue .arc-title { color: var(--blue); }
+.arc-desc { font-size: .8rem; line-height: 1.75; color: var(--t-body); margin-bottom: 16px; flex: 1; }
+.arc-stats { display: flex; gap: 10px; margin-bottom: 16px; }
+.arc-stat {
+  flex: 1; text-align: center; padding: 10px 6px;
+  background: var(--bg-deep); border: 1px solid var(--line);
+}
+.arc-stat-n { font-family: var(--f-mono); font-size: .92rem; font-weight: 700; color: var(--t-high); }
+.arc-gold .arc-stat-n { color: var(--gold); }
+.arc-blue .arc-stat-n { color: var(--blue); }
+.arc-stat-l { font-size: .62rem; color: var(--t-sub); margin-top: 4px; letter-spacing: .02em; }
+.arc-go {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--f-mono); font-size: .68rem; letter-spacing: .08em;
+  color: var(--t-sub); transition: color .22s;
+}
+.profile-more {
+  display: block; margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: .66rem; letter-spacing: .06em;
+  color: var(--t-sub); text-decoration: none; text-align: center;
+  transition: color .22s;
+}
+.profile-more:hover { color: var(--gold-lt); }
+.arc-gold:hover .arc-go { color: var(--gold-lt); }
+.arc-blue:hover .arc-go { color: var(--blue); }
+@media (max-width: 640px) {
+  .arc-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
+  .arc-card { padding: 18px 16px 14px; }
+  .arc-title { font-size: .98rem; }
+  .arc-desc { font-size: .76rem; }
+  .arc-stat-n { font-size: .84rem; }
+  .arc-stat-l { font-size: .58rem; }
+}
 
 </style>
 </head>
@@ -1886,7 +1956,7 @@ footer {
       <div class="status-badge">
         <span class="status-dot"></span>자문 가능 · AVAILABLE
       </div>
-      <div class="hero-eyebrow">30년 현장 중심 실무 경력</div>
+      <div class="hero-eyebrow">31년 현장 중심 실무 경력</div>
       <h1 class="hero-name">김만민</h1>
       <div class="hero-title">건축사 / 이사</div>
       <div class="hero-title-en">Architect &amp; Director — Daesung Architecture</div>
@@ -1897,7 +1967,7 @@ footer {
       <p class="hero-desc">
         <strong>건축과 기계설비를 동시에 이해하는 복합 기술 역량.</strong><br>
         기획부터 설계, 시공, 감리, CM, VE, 안전진단, 해체감리까지 — 건설 전 과정을 아우르는<br>
-        30년의 통합 기술 솔루션으로 완벽한 프로젝트를 실현합니다.
+        31년의 통합 기술 솔루션으로 완벽한 프로젝트를 실현합니다.
       </p>
       <div class="hero-btns">
         <a href="#contact"   class="btn btn-gold">▶ 문의하기</a>
@@ -1909,7 +1979,7 @@ footer {
       <div style="padding:18px 20px;border-bottom:1px solid var(--line);text-align:center;background:rgba(255,255,255,0.04);">
         <img src="./images01/만민로고.png" alt="ARCHITECT KIM MANMIN" style="width:100%;max-width:180px;height:auto;object-fit:contain;display:inline-block;" loading="eager" decoding="async" width="512" height="512">
       </div>
-      <div class="spec-row"><span class="spec-k">Career</span><span class="spec-v">30년 (1993~현재)</span></div>
+      <div class="spec-row"><span class="spec-k">Career</span><span class="spec-v">31년 7개월 (1993~현재)</span></div>
       <div class="spec-row"><span class="spec-k">License</span><span class="spec-v">건축사 #20072</span></div>
       <div class="spec-row"><span class="spec-k">Cert.</span><span class="spec-v">10여 종 보유</span></div>
       <div class="spec-row"><span class="spec-k">Specialty</span><span class="spec-v">건축 + 구조 + 기계설비 + 소방[기계+전기] + 토목</span></div>
@@ -1922,9 +1992,9 @@ footer {
 <!-- ══ STATS ═══════════════════════════════════════ -->
 <div class="stats-bar">
   <div class="stats-row">
-    <div class="stat-cell rv"><span class="stat-num" data-n="30">0</span><span class="stat-lbl">년 경력 (1993~)</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:97%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="31">0</span><span class="stat-lbl">년 경력 (1993~)</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:97%"></div></div></div>
     <div class="stat-cell rv"><span class="stat-num" data-n="10">0</span><span class="stat-lbl">여 종 국가자격</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
-    <div class="stat-cell rv"><span class="stat-num" data-n="4">0</span><span class="stat-lbl">개 공공기관 자문</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:80%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="4">0</span><span class="stat-lbl">건 공공기관 위촉</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:80%"></div></div></div>
     <div class="stat-cell rv"><span class="stat-num" data-n="100">0</span><span class="stat-lbl">% 신뢰 기반 실무</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
   </div>
 </div>
@@ -1942,7 +2012,7 @@ footer {
       <!-- 카드 1: 경험 기반 -->
       <div class="exp-card rv">
         <span class="exp-icon">🏗️</span>
-        <div class="exp-big" style="font-size:2rem;">30년</div>
+        <div class="exp-big" style="font-size:2rem;">31년</div>
         <h3 class="exp-title">현장 중심의<br>실무 노하우</h3>
         <p class="exp-body">시공(1993) → 설계·엔지니어링(2003) → CM·감리(2013) → VE·안전(2016~) 까지 건설 전 과정을 현장에서 직접 경험한 10,831일의 실전 데이터가 모든 판단의 기초입니다.</p>
         <span class="exp-tag">Architecture & CM</span>
@@ -2026,6 +2096,35 @@ footer {
           <div class="lic-sp-sub">익산시 건축위원회 · 전북특별자치도 기술자문단</div>
         </div>
       </div>
+    </div>
+
+    <!-- ── 경력 아카이브 카드 (포트폴리오 → 경력 대시보드) ── -->
+    <div class="arc-grid rv">
+
+      <a href="https://manminkim-eng.github.io/KIMMANMIN-portfolio/" target="_blank" rel="noopener noreferrer" class="arc-card arc-gold" id="card-portfolio">
+        <div class="arc-en">Architect Portfolio</div>
+        <div class="arc-title">건축 포트폴리오</div>
+        <p class="arc-desc">설계부터 감리 · CM · VE · 안전점검까지 건축 생애주기 전 과정의 실적을 담은 아카이브입니다. 프로젝트 갤러리와 대표작 상세, 3개 공인 협회 경력증명서 원본까지 열람할 수 있습니다.</p>
+        <div class="arc-stats">
+          <div class="arc-stat"><div class="arc-stat-n">31년 7개월</div><div class="arc-stat-l">건설기술자 경력</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">124건</div><div class="arc-stat-l">참여 프로젝트</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">12종</div><div class="arc-stat-l">보유 자격</div></div>
+        </div>
+        <span class="arc-go">포트폴리오 바로가기 ↗</span>
+      </a>
+
+      <a href="https://manminkim-eng.github.io/career/" target="_blank" rel="noopener noreferrer" class="arc-card arc-blue" id="card-career">
+        <div class="arc-en">Career Dashboard</div>
+        <div class="arc-title">경력 종합 대시보드</div>
+        <p class="arc-desc">설계 · 감리 · 안전진단 · VE · 협회실적 · 법정교육을 마스터 경력데이터 기준으로 통합 관리합니다. 영역별 실적과 연도별 추이, 자격 · 교육 이수현황을 분기(1 · 4 · 7 · 10월)마다 갱신합니다.</p>
+        <div class="arc-stats">
+          <div class="arc-stat"><div class="arc-stat-n">1,201건</div><div class="arc-stat-l">총 경력 레코드</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">31개년</div><div class="arc-stat-l">관리 연도</div></div>
+          <div class="arc-stat"><div class="arc-stat-n">8종</div><div class="arc-stat-l">분석 항목</div></div>
+        </div>
+        <span class="arc-go">대시보드 바로가기 ↗</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -6334,14 +6433,15 @@ footer {
         <div class="profile-row"><span class="pkey">소속</span><span class="pval">(주)대성건축사사무소</span></div>
         <div class="profile-row"><span class="pkey">직위</span><span class="pval gd">이사</span></div>
         <div class="profile-row"><span class="pkey">재직기간</span><span class="pval">2003.04 ~ 현재</span></div>
-        <div class="profile-row"><span class="pkey">총 경력</span><span class="pval gd">30년 (1993~)</span></div>
+        <div class="profile-row"><span class="pkey">총 경력</span><span class="pval gd">31년 7개월 (1993~)</span></div>
         <div class="profile-row"><span class="pkey">건축사 면허</span><span class="pval">License #20072</span></div>
         <div class="profile-row"><span class="pkey">소재지</span><span class="pval">전북 익산시</span></div>
         <div class="profile-row"><span class="pkey">상태</span><span class="pval cy">● 자문 가능</span></div>
+        <a href="https://manminkim-eng.github.io/KIMMANMIN-portfolio/#profile" target="_blank" rel="noopener noreferrer" class="profile-more">상세 프로필 · 경력 전문 보기 ↗</a>
       </div>
       <div class="about-text rv">
         <div class="sec-eyebrow" style="margin-bottom:16px;">About</div>
-        <h2 class="about-tagline">건축과 설비를 아우르는<br><span>30년의 통합 기술 솔루션</span></h2>
+        <h2 class="about-tagline">건축과 설비를 아우르는<br><span>31년의 통합 기술 솔루션</span></h2>
         <p class="about-bio">
           <strong>건축과 기계설비를 동시에 이해하는 복합 기술 역량의 전문가입니다.</strong><br><br>
           기획, 설계, 시공, 감리, CM, VE, 안전진단, 해체감리 등 건설 전 과정에서 쌓아온 독보적인 전문성으로
@@ -6383,7 +6483,7 @@ footer {
           <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
           <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#7d101c131014131614103d151c13101c141153131809"><span class="__cf_email__" data-cfemail="e08d818e8d898e8b898da088818e8d81898cce8e8594">[email&#160;protected]</span></a></div></div>
           <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
-          <div><div class="cinfo-key">경력</div><div class="cinfo-val">30년 (1993~현재)</div></div>
+          <div><div class="cinfo-key">경력</div><div class="cinfo-val">31년 7개월 (1993~현재)</div></div>
         </div>
 
         <!-- 카카오 공유 & 1:1 문의 버튼 -->
@@ -6449,7 +6549,7 @@ footer {
   var KAKAO_KEY = 'YOUR_KAKAO_JS_KEY';
   var PAGE_URL  = 'https://manminkim-eng.github.io/KIMMANMIN/';
   var PAGE_TITLE = '김만민 건축사 — 전문 기술 역량 분석 보고서';
-  var PAGE_DESC  = '건설 전 생애주기를 아우르는 30년 통합 솔루션 전문가 · 건축사+CVS+안전진단';
+  var PAGE_DESC  = '건설 전 생애주기를 아우르는 31년 통합 솔루션 전문가 · 건축사+CVS+안전진단';
   var PAGE_IMG   = PAGE_URL + 'images01/만민로고.png';
 
   /* 카카오 SDK 초기화 */
