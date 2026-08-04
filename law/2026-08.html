@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>
+window.__bip=null;
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault(); window.__bip=e;
+  window.dispatchEvent(new Event('bip-ready'));
+});
+window.addEventListener('appinstalled',function(){ window.__bip=null; window.__installed=true; });
+</script>
 <title>2026년 8월 법규 검토 요약 — MANMIN LEGAL REVIEW</title>
 <meta name="description" content="주택법 8.4 시행(통합심의 확대·간선시설 상환 의무화) · 건축법 시행령 7.28 개정 · 주차장법 8.28 시행 예정">
 <meta name="author" content="김만민 건축사 · ㈜대성건축사사무소">
@@ -263,10 +271,9 @@ footer a:hover{color:var(--gold)}
 <body>
 <div id="toast" class="toast"></div>
 <div class="iosgd" id="iosgd">
- <span class="x2" onclick="closeIos()">✕</span>
- <b>홈 화면에 추가하기</b>
- <p>Safari 하단의 <b style="display:inline">공유 <span style="font-size:15px">􀈂</span> (□↑)</b> 버튼을 누른 뒤
- <b style="display:inline">“홈 화면에 추가”</b>를 선택하시면 앱처럼 바로 열 수 있습니다.</p>
+ <span class="x2" onclick="closeGuide()">✕</span>
+ <b id="gdTitle">홈 화면에 추가하기</b>
+ <p id="gdBody"></p>
 </div>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
 <header><div class="wrap hd">
@@ -470,34 +477,86 @@ KDS·KCS 국가건설기준은 국가건설기준센터(kcsc.re.kr) 공고본을
 </div></footer>
 <script>
 /* ── PWA 설치 ── */
-var _deferred=null;
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
     navigator.serviceWorker.register('sw.js').catch(function(){});
   });
 }
 function isStandalone(){
-  return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
+  return window.matchMedia('(display-mode: standalone)').matches ||
+         window.matchMedia('(display-mode: minimal-ui)').matches ||
+         navigator.standalone===true;
 }
-window.addEventListener('beforeinstallprompt',function(e){
-  e.preventDefault(); _deferred=e;
-  var b=document.getElementById('btnInstall'); if(b&&!isStandalone())b.classList.add('on');
+function envInfo(){
+  var ua=navigator.userAgent;
+  return {
+    ios: /iPad|iPhone|iPod/.test(ua) && !window.MSStream,
+    android: /Android/.test(ua),
+    samsung: /SamsungBrowser/.test(ua),
+    firefox: /Firefox/.test(ua),
+    naver: /NAVER\(inapp/.test(ua) || /whale/i.test(ua),
+    kakao: /KAKAOTALK/i.test(ua),
+    mobile: /Mobi|Android|iPhone|iPad/.test(ua)
+  };
+}
+/* 설치되지 않았으면 버튼을 항상 노출 — 프롬프트가 없어도 수동 안내로 대응 */
+function syncInstallBtn(){
+  var b=document.getElementById('btnInstall'); if(!b)return;
+  if(isStandalone()||window.__installed){ b.classList.remove('on'); }
+  else { b.classList.add('on'); }
+}
+window.addEventListener('bip-ready', syncInstallBtn);
+window.addEventListener('appinstalled', function(){
+  syncInstallBtn(); closeGuide(); toast('홈 화면에 설치되었습니다');
 });
-window.addEventListener('appinstalled',function(){
-  _deferred=null;
-  var b=document.getElementById('btnInstall'); if(b)b.classList.remove('on');
-  toast('홈 화면에 설치되었습니다');
-});
+
 function installApp(){
-  if(_deferred){
-    _deferred.prompt();
-    _deferred.userChoice.then(function(c){
-      if(c.outcome==='accepted'){var b=document.getElementById('btnInstall');if(b)b.classList.remove('on');}
-      _deferred=null;
+  if(window.__bip){
+    window.__bip.prompt();
+    window.__bip.userChoice.then(function(c){
+      window.__bip=null;
+      if(c.outcome==='accepted'){ window.__installed=true; syncInstallBtn(); }
+      else { toast('설치를 취소했습니다'); }
     });
-  } else { document.getElementById('iosgd').classList.add('on'); }
+    return;
+  }
+  openGuide();
 }
-function closeIos(){document.getElementById('iosgd').classList.remove('on')}
+function openGuide(){
+  var e=envInfo(), t='', h='';
+  if(e.kakao || e.naver){
+    h='먼저 기본 브라우저로 열어주세요';
+    t='<b>카카오톡·네이버 앱 내부 화면에서는 설치할 수 없습니다.</b><br><br>' +
+      '우측 상단 <b>⋮ 또는 ⋯</b> → <b>“다른 브라우저로 열기”</b>(또는 Chrome·Safari로 열기)를 선택한 뒤 다시 설치를 눌러 주세요.';
+  } else if(e.ios){
+    h='iPhone · iPad 에서 설치하기';
+    t='① 화면 하단(또는 상단)의 <b>공유 버튼 [ ⬆ ]</b> 을 누릅니다.<br>' +
+      '② 목록을 내려 <b>“홈 화면에 추가”</b> 를 선택합니다.<br>' +
+      '③ 우측 상단 <b>“추가”</b> 를 누르면 완료됩니다.<br><br>' +
+      '<span style="color:var(--muted)">※ 사파리(Safari)에서만 가능합니다. 크롬에서는 지원되지 않습니다.</span>';
+  } else if(e.samsung){
+    h='삼성 인터넷에서 설치하기';
+    t='① 하단 <b>메뉴(≡)</b> 를 누릅니다.<br>② <b>“현재 페이지 추가”</b> → <b>“홈 화면”</b> 을 선택합니다.';
+  } else if(e.android){
+    h='Android 에서 설치하기';
+    t='① 우측 상단 <b>⋮</b> 메뉴를 누릅니다.<br>' +
+      '② <b>“앱 설치”</b> 또는 <b>“홈 화면에 추가”</b> 를 선택합니다.<br><br>' +
+      '<span style="color:var(--muted)">※ 메뉴가 안 보이면 페이지를 한 번 새로고침한 뒤 다시 시도해 주세요.</span>';
+  } else if(e.firefox){
+    h='Firefox 에서 설치하기';
+    t='Firefox 데스크톱은 앱 설치를 지원하지 않습니다.<br>' +
+      '<b>Chrome · Edge</b> 로 접속하시거나, 이 페이지를 <b>즐겨찾기(Ctrl+D)</b> 에 추가해 주세요.';
+  } else {
+    h='PC 에서 설치하기';
+    t='① 주소창 오른쪽의 <b>설치 아이콘 [ ⊕ ]</b> 또는 모니터 모양 아이콘을 누릅니다.<br>' +
+      '② 아이콘이 없으면 <b>⋮ 메뉴 → 캐스트·저장 및 공유 → 페이지를 앱으로 설치</b> 를 선택합니다.<br><br>' +
+      '<span style="color:var(--muted)">※ Chrome 또는 Edge 에서 지원됩니다.</span>';
+  }
+  document.getElementById('gdTitle').innerHTML=h;
+  document.getElementById('gdBody').innerHTML=t;
+  document.getElementById('iosgd').classList.add('on');
+}
+function closeGuide(){var g=document.getElementById('iosgd'); if(g)g.classList.remove('on');}
 
 /* ── 테마 ── */
 (function(){var t=localStorage.getItem('mlr-theme');if(t)document.documentElement.dataset.theme=t;})();
@@ -648,9 +707,7 @@ function closeModal(){document.getElementById('mask').classList.remove('on')}
 /* ── 초기화 ── */
 document.addEventListener('DOMContentLoaded',function(){
  paintDday();
- var ua=navigator.userAgent, ios=/iPad|iPhone|iPod/.test(ua) && !window.MSStream;
- var b=document.getElementById('btnInstall');
- if(b && ios && !isStandalone()) b.classList.add('on');
+ syncInstallBtn();
  var q=document.getElementById('q');
  if(q){q.addEventListener('input',function(){F.q=this.value.toLowerCase();applyFilter()});}
  applyFilter();
@@ -659,7 +716,7 @@ document.addEventListener('DOMContentLoaded',function(){
  window.addEventListener('scroll',function(){
    document.getElementById('top').classList.toggle('on',window.scrollY>500)});
  document.addEventListener('keydown',function(e){
-   if(e.key==='Escape')closeModal();
+   if(e.key==='Escape'){closeModal();closeGuide();}
    if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){
      e.preventDefault();if(q)q.focus();}
  });
