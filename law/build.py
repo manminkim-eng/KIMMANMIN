@@ -153,15 +153,19 @@ header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgb
  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background-color:var(--bg)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.markchip{flex:none;width:46px;height:46px;border-radius:10px;display:flex;
- align-items:center;justify-content:center;
- background:rgba(212,168,67,.10);border:1.5px solid rgba(212,168,67,.45)}
-.brandmark{height:34px;width:34px;object-fit:contain;display:block}
-html[data-theme="light"] .markchip{background:rgba(43,58,103,.06);border-color:rgba(43,58,103,.4)}
-html[data-theme="light"] .brandmark{content:url("assets/mark.png")}
-.btn.install{display:none;background:var(--gold);color:#0c1120;border-color:var(--gold);font-weight:800}
-.btn.install:hover{filter:brightness(1.1);color:#0c1120}
-.btn.install.on{display:inline-block}
+.markchip{flex:none;width:46px;height:46px;border-radius:10px;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ background:#f0ead9;border:1.5px solid rgba(212,168,67,.55);
+ box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.brandmark{height:100%;width:100%;object-fit:cover;display:block}
+html[data-theme="light"] .markchip{border-color:rgba(43,58,103,.35);box-shadow:none}
+.btn.install{display:none;background:var(--gold);color:#0c1120;border-color:var(--gold);
+ font-weight:800;align-items:center;gap:6px;padding:6px 12px 6px 8px}
+.btn.install:hover{filter:brightness(1.08);color:#0c1120}
+.btn.install.on{display:inline-flex}
+.btn.install img{height:19px;width:19px;object-fit:contain;display:block;
+ filter:brightness(0) saturate(100%)}
+.btn.install span{line-height:1}
 .iosgd{position:fixed;left:12px;right:12px;bottom:12px;z-index:150;background:var(--panel);
  border:1px solid var(--gold);border-radius:13px;padding:15px 17px;display:none;
  box-shadow:0 10px 36px rgba(0,0,0,.45)}
@@ -323,6 +327,9 @@ footer a:hover{color:var(--gold)}
  .brandmark{height:28px;width:28px}
  .brand b{font-size:15.5px}
  .ver{font-size:9px;padding:2px 6px}
+ .btn.install{padding:7px 9px}
+ .btn.install span{display:none}
+ .btn.install img{height:21px;width:21px}
  .searchbox input{font-size:16px;padding:12px 40px 12px 14px}
  .btn{padding:9px 13px;font-size:13px}
  .chip{padding:7px 12px;font-size:12.5px}
@@ -423,24 +430,30 @@ function openGuide(){
     t='① 화면 하단(또는 상단)의 <b>공유 버튼 [ ⬆ ]</b> 을 누릅니다.<br>' +
       '② 목록을 내려 <b>“홈 화면에 추가”</b> 를 선택합니다.<br>' +
       '③ 우측 상단 <b>“추가”</b> 를 누르면 완료됩니다.<br><br>' +
+      '<span style="color:var(--muted)">※ iOS 는 이 방식이 곧 앱 설치입니다. 홈 화면 아이콘을 누르면 주소창 없이 앱처럼 열립니다.</span><br>' +
       '<span style="color:var(--muted)">※ 사파리(Safari)에서만 가능합니다. 크롬에서는 지원되지 않습니다.</span>';
   } else if(e.samsung){
-    h='삼성 인터넷에서 설치하기';
-    t='① 하단 <b>메뉴(≡)</b> 를 누릅니다.<br>② <b>“현재 페이지 추가”</b> → <b>“홈 화면”</b> 을 선택합니다.';
+    h='삼성 인터넷 — 앱으로 설치';
+    t='① 하단 <b>메뉴(≡)</b> 를 누릅니다.<br>' +
+      '② <b>“현재 페이지 추가”</b> → <b>“홈 화면”</b> 을 선택합니다.<br><br>' +
+      '<span style="color:var(--muted)">※ 삼성 인터넷은 이 경로로 앱 형태(WebAPK)로 설치됩니다. ' +
+      '더 확실하게 하시려면 <b>Chrome</b> 으로 접속해 주세요.</span>';
   } else if(e.android){
-    h='Android 에서 설치하기';
+    h='Android — 앱으로 설치하기';
     t='① 우측 상단 <b>⋮</b> 메뉴를 누릅니다.<br>' +
-      '② <b>“앱 설치”</b> 또는 <b>“홈 화면에 추가”</b> 를 선택합니다.<br><br>' +
-      '<span style="color:var(--muted)">※ 메뉴가 안 보이면 페이지를 한 번 새로고침한 뒤 다시 시도해 주세요.</span>';
+      '② <b>“앱 설치”</b> 를 선택합니다. <span style="color:var(--muted)">(설치형 앱)</span><br><br>' +
+      '<span style="color:var(--muted)">※ “앱 설치”가 안 보이고 <b>“홈 화면에 추가”</b>만 있다면 단순 바로가기입니다. ' +
+      '페이지를 새로고침하고 10초쯤 머문 뒤 다시 열어 보시면 “앱 설치”로 바뀝니다.</span>';
   } else if(e.firefox){
     h='Firefox 에서 설치하기';
     t='Firefox 데스크톱은 앱 설치를 지원하지 않습니다.<br>' +
       '<b>Chrome · Edge</b> 로 접속하시거나, 이 페이지를 <b>즐겨찾기(Ctrl+D)</b> 에 추가해 주세요.';
   } else {
-    h='PC 에서 설치하기';
+    h='PC — 앱으로 설치하기';
     t='① 주소창 오른쪽의 <b>설치 아이콘 [ ⊕ ]</b> 또는 모니터 모양 아이콘을 누릅니다.<br>' +
       '② 아이콘이 없으면 <b>⋮ 메뉴 → 캐스트·저장 및 공유 → 페이지를 앱으로 설치</b> 를 선택합니다.<br><br>' +
-      '<span style="color:var(--muted)">※ Chrome 또는 Edge 에서 지원됩니다.</span>';
+      '<span style="color:var(--muted)">※ 설치하면 주소창 없는 독립 창으로 열리고 시작 메뉴·작업표시줄에 등록됩니다. ' +
+      'Chrome 또는 Edge 에서 지원됩니다.</span>';
   }
   document.getElementById('gdTitle').innerHTML=h;
   document.getElementById('gdBody').innerHTML=t;
@@ -680,12 +693,12 @@ def header_bar(issues, current=None):
         opts.append(f'<option value="{d["issue"]}.html"{sel}>{esc(d["label"])} ({d["issue"]})</option>')
     return f"""<header><div class="wrap hd">
 <a class="brand" href="index.html">
-  <span class="markchip"><img class="brandmark" src="assets/mark-gold.png" alt="ARCHITECT KIM MANMIN 로고"></span>
+  <span class="markchip"><img class="brandmark" src="assets/mark.png" alt="ARCHITECT KIM MANMIN 로고"></span>
   <b>{SITE_TITLE}</b><span class="ver">{SITE_VER}</span><span>{SITE_SUB} · {esc(AUTHOR)}</span>
 </a>
 <div class="hdbtns">
   <select class="btn" onchange="if(this.value)location.href=this.value">{''.join(opts)}</select>
-  <button class="btn install" id="btnInstall" onclick="installApp()" title="홈 화면에 설치">📲 설치</button>
+  <button class="btn install" id="btnInstall" onclick="installApp()" title="앱으로 설치 — 주소창 없는 독립 창으로 열립니다"><img src="assets/mark-trans.png" alt=""><span>웹에 추가</span></button>
   <button class="btn" onclick="toggleTheme()" title="밝게/어둡게">◐</button>
   <a class="btn" href="{HOME}" target="_blank" rel="noopener">MANMIN 계산도구 ↗</a>
 </div>
