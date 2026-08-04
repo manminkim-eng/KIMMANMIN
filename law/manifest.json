@@ -13,6 +13,9 @@
   "lang": "ko",
   "dir": "ltr",
   "prefer_related_applications": false,
+  "related_applications": [
+    { "platform": "webapp", "url": "https://manminkim-eng.github.io/KIMMANMIN/law/manifest.json" }
+  ],
   "categories": ["productivity", "reference", "business"],
   "launch_handler": { "client_mode": "navigate-existing" },
   "icons": [

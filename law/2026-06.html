@@ -56,11 +56,11 @@ header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgb
  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background-color:var(--bg)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.markchip{flex:none;width:46px;height:46px;border-radius:10px;overflow:hidden;
- display:flex;align-items:center;justify-content:center;
+.markchip{flex:none;height:46px;width:auto;border-radius:10px;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;padding:4px 8px;
  background:#f0ead9;border:1.5px solid rgba(212,168,67,.55);
  box-shadow:0 1px 6px rgba(0,0,0,.25)}
-.brandmark{height:100%;width:100%;object-fit:cover;display:block}
+.brandmark{height:100%;width:auto;max-width:none;object-fit:contain;display:block}
 html[data-theme="light"] .markchip{border-color:rgba(43,58,103,.35);box-shadow:none}
 .btn.install{display:none;background:var(--gold);color:#0c1120;border-color:var(--gold);
  font-weight:800;align-items:center;gap:6px;padding:6px 12px 6px 8px}
@@ -226,8 +226,8 @@ footer a:hover{color:var(--gold)}
  .card{padding:15px 14px}
  .hd{gap:9px;padding:11px 0}
  .brand span:not(.ver):not(.markchip){display:none}
- .markchip{width:38px;height:38px;border-radius:8px}
- .brandmark{height:28px;width:28px}
+ .markchip{height:38px;width:auto;border-radius:8px;padding:3px 6px}
+ .brandmark{height:100%;width:auto}
  .brand b{font-size:15.5px}
  .ver{font-size:9px;padding:2px 6px}
  .btn.install{padding:7px 9px}
@@ -285,7 +285,7 @@ footer a:hover{color:var(--gold)}
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
 <header><div class="wrap hd">
 <a class="brand" href="index.html">
-  <span class="markchip"><img class="brandmark" src="assets/mark.png" alt="ARCHITECT KIM MANMIN 로고"></span>
+  <span class="markchip"><img class="brandmark" src="assets/logo-full.png" alt="ARCHITECT KIM MANMIN — 건축사 김만민" width="1200" height="867"></span>
   <b>MANMIN LEGAL REVIEW</b><span class="ver">MANMIN VER-1.0</span><span>만민 법규 검토 요약 · 김만민 건축사 · ㈜대성건축사사무소</span>
 </a>
 <div class="hdbtns">
@@ -465,6 +465,11 @@ if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
     navigator.serviceWorker.register('sw.js').catch(function(){});
   });
+  /* 새 SW 가 활성화되면 1회만 자동 새로고침 — 아이콘·본문 교체가 즉시 반영된다 */
+  var _swReloaded=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    if(_swReloaded)return; _swReloaded=true; location.reload();
+  });
 }
 function isStandalone(){
   return window.matchMedia('(display-mode: standalone)').matches ||
@@ -483,28 +488,59 @@ function envInfo(){
     mobile: /Mobi|Android|iPhone|iPad/.test(ua)
   };
 }
+/* 이미 설치된 앱인지 감지 — manifest 의 related_applications(webapp) 선언 기반 */
+window.__alreadyInstalled=false;
+function detectInstalled(){
+  if(!navigator.getInstalledRelatedApps) return Promise.resolve(false);
+  return navigator.getInstalledRelatedApps()
+    .then(function(l){ return !!(l && l.length); })
+    .catch(function(){ return false; });
+}
 /* 설치되지 않았으면 버튼을 항상 노출 — 프롬프트가 없어도 수동 안내로 대응 */
 function syncInstallBtn(){
   var b=document.getElementById('btnInstall'); if(!b)return;
-  if(isStandalone()||window.__installed){ b.classList.remove('on'); }
-  else { b.classList.add('on'); }
+  if(isStandalone()||window.__installed){ b.classList.remove('on'); return; }
+  b.classList.add('on');
+  var s=b.querySelector('span');
+  if(window.__alreadyInstalled){
+    b.title='이미 설치되어 있습니다 — 설치된 앱을 여는 방법 안내';
+    if(s)s.textContent='앱으로 열기';
+  }else{
+    b.title='앱으로 설치 — 주소창 없는 독립 창으로 열립니다';
+    if(s)s.textContent='웹에 추가';
+  }
 }
+window.addEventListener('load',function(){
+  detectInstalled().then(function(v){ window.__alreadyInstalled=v; syncInstallBtn(); });
+});
 window.addEventListener('bip-ready', syncInstallBtn);
 window.addEventListener('appinstalled', function(){
   syncInstallBtn(); closeGuide(); toast('홈 화면에 설치되었습니다');
 });
 
+function firePrompt(){
+  window.__bip.prompt();
+  window.__bip.userChoice.then(function(c){
+    window.__bip=null;
+    if(c.outcome==='accepted'){ window.__installed=true; syncInstallBtn(); }
+    else { toast('설치를 취소했습니다 — 다시 누르면 안내가 열립니다'); }
+  });
+}
+/* 프롬프트가 늦게 도착하는 경우가 있어 즉시 안내로 넘기지 않고 최대 2초 기다린다 */
 function installApp(){
-  if(window.__bip){
-    window.__bip.prompt();
-    window.__bip.userChoice.then(function(c){
-      window.__bip=null;
-      if(c.outcome==='accepted'){ window.__installed=true; syncInstallBtn(); }
-      else { toast('설치를 취소했습니다'); }
-    });
-    return;
-  }
-  openGuide();
+  if(window.__bip){ firePrompt(); return; }
+  if(window.__alreadyInstalled){ openGuide(); return; }
+  var b=document.getElementById('btnInstall'), done=false;
+  var fin=function(){
+    if(done)return; done=true;
+    window.removeEventListener('bip-ready',on);
+    if(b)b.style.opacity='';
+    if(window.__bip) firePrompt(); else openGuide();
+  };
+  var on=function(){ fin(); };
+  window.addEventListener('bip-ready',on);
+  if(b)b.style.opacity='.6';
+  setTimeout(fin,2000);
 }
 function openGuide(){
   var e=envInfo(), t='', h='';
@@ -542,11 +578,58 @@ function openGuide(){
       '<span style="color:var(--muted)">※ 설치하면 주소창 없는 독립 창으로 열리고 시작 메뉴·작업표시줄에 등록됩니다. ' +
       'Chrome 또는 Edge 에서 지원됩니다.</span>';
   }
+  if(window.__alreadyInstalled){
+    h='이미 설치되어 있습니다';
+    t='이 사이트는 이 기기에 <b>이미 앱으로 설치</b>되어 있어 설치창이 다시 뜨지 않습니다.<br>' +
+      '시작 메뉴 · 작업표시줄(휴대폰은 홈 화면)에서 <b>만민법규</b> 아이콘을 실행하세요.<br><br>' +
+      '<span style="color:var(--muted)">※ 아이콘 그림이 예전 것이라면 앱을 <b>삭제 후 재설치</b>해야 새 아이콘이 적용됩니다. ' +
+      'Android WebAPK · iOS 홈화면 아이콘은 설치 시점의 이미지를 그대로 보관합니다.</span>';
+  } else if(!window.__bip && !e.ios && !e.kakao && !e.naver){
+    t += '<br><br><b style="color:var(--gold)">설치창이 안 뜨나요?</b><br>' +
+      '① 이전에 <b>“설치 안 함”</b> 을 누르면 Chrome 이 한동안 설치창을 다시 띄우지 않습니다.<br>' +
+      '② 주소창 왼쪽 <b>🔒 → 사이트 설정 → 권한 재설정</b> 후 새로고침하면 복구됩니다.<br>' +
+      '③ <b>chrome://apps</b> 에 이미 설치본이 있으면 삭제한 뒤 다시 시도하세요.<br>' +
+      '④ 현재 상태를 확인하려면 주소 끝에 <b>?diag=1</b> 을 붙여 접속하세요.';
+  }
   document.getElementById('gdTitle').innerHTML=h;
   document.getElementById('gdBody').innerHTML=t;
   document.getElementById('iosgd').classList.add('on');
 }
 function closeGuide(){var g=document.getElementById('iosgd'); if(g)g.classList.remove('on');}
+
+/* ── 설치 진단 — 주소 끝에 ?diag=1 ── */
+function installDiag(){
+  var m=document.querySelector('link[rel=manifest]'), out=[];
+  var push=function(k,v,ok){
+    out.push('<tr><td style="padding:3px 12px 3px 0;color:var(--muted);white-space:nowrap">'+k+
+      '</td><td><b style="color:'+(ok?'#5fbf7a':'var(--danger)')+'">'+v+'</b></td></tr>');
+  };
+  var swOn=!!(navigator.serviceWorker && navigator.serviceWorker.controller);
+  push('HTTPS', isSecureContext?'OK':'실패', isSecureContext);
+  push('manifest 링크', m?'OK':'없음', !!m);
+  push('Service Worker', swOn?'제어중':'미제어', swOn);
+  push('설치 프롬프트', window.__bip?'수신됨':'미수신', !!window.__bip);
+  push('이미 설치됨', window.__alreadyInstalled?'예':'아니오', !window.__alreadyInstalled);
+  push('독립창 실행', isStandalone()?'예':'아니오', true);
+  var job = m ? fetch(m.href).then(function(r){return r.json()}).then(function(j){
+      return Promise.all((j.icons||[]).map(function(i){
+        return fetch(new URL(i.src,m.href).href,{cache:'reload'})
+          .then(function(r){ push('아이콘 '+i.sizes+' · '+(i.purpose||'any'), r.status, r.ok); })
+          .catch(function(){ push('아이콘 '+i.sizes, '요청 실패', false); });
+      }));
+    }).catch(function(){}) : Promise.resolve();
+  job.then(function(){
+    document.getElementById('gdTitle').innerHTML='PWA 설치 진단';
+    document.getElementById('gdBody').innerHTML='<table style="font-size:12.5px">'+out.join('')+'</table>' +
+      '<div style="margin-top:10px;color:var(--muted);font-size:11.5px;line-height:1.6">' +
+      '“설치 프롬프트 · 미수신” 인데 나머지가 모두 OK 라면 → 이미 설치되었거나, 이전에 설치를 취소해 ' +
+      'Chrome 이 프롬프트를 억제하는 중입니다. 사이트 권한 재설정 또는 기존 설치본 삭제 후 재시도하세요.</div>';
+    document.getElementById('iosgd').classList.add('on');
+  });
+}
+if(/[?&]diag=1/.test(location.search)){
+  window.addEventListener('load',function(){ setTimeout(installDiag,1500); });
+}
 
 /* ── 테마 ── */
 (function(){var t=localStorage.getItem('mlr-theme');if(t)document.documentElement.dataset.theme=t;})();

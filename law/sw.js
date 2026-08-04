@@ -2,17 +2,22 @@
    범위: /KIMMANMIN/law/  (메인 사이트 sw.js 와 독립)
    HTML·JSON = 네트워크 우선(매월 갱신 즉시 반영)
    아이콘·정적자원 = 캐시 우선                                */
-const CACHE = 'manmin-law-v1.0';
+/* v1.1 — 아이콘 전면 교체(원본 로고 무크롭 재생성). 캐시명을 올려 구 아이콘을 강제 폐기한다. */
+const CACHE = 'manmin-law-v1.1';
 const SHELL = [
   './',
   './index.html',
   './manifest.json',
+  './assets/logo-full.png',
   './assets/mark-gold.png',
   './assets/mark.png',
+  './assets/mark-trans.png',
   './assets/favicon-32.png',
   './assets/apple-touch-icon.png',
   './assets/icon-192.png',
-  './assets/icon-512.png'
+  './assets/icon-512.png',
+  './assets/maskable-192.png',
+  './assets/maskable-512.png'
 ];
 
 self.addEventListener('install', e => {
