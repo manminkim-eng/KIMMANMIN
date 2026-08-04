@@ -159,6 +159,16 @@ header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgb
 .brandmark{height:34px;width:34px;object-fit:contain;display:block}
 html[data-theme="light"] .markchip{background:rgba(43,58,103,.06);border-color:rgba(43,58,103,.4)}
 html[data-theme="light"] .brandmark{content:url("assets/mark.png")}
+.btn.install{display:none;background:var(--gold);color:#0c1120;border-color:var(--gold);font-weight:800}
+.btn.install:hover{filter:brightness(1.1);color:#0c1120}
+.btn.install.on{display:inline-block}
+.iosgd{position:fixed;left:12px;right:12px;bottom:12px;z-index:150;background:var(--panel);
+ border:1px solid var(--gold);border-radius:13px;padding:15px 17px;display:none;
+ box-shadow:0 10px 36px rgba(0,0,0,.45)}
+.iosgd.on{display:block}
+.iosgd b{color:var(--gold);font-size:13px;display:block;margin-bottom:7px}
+.iosgd p{font-size:13px;color:var(--txt);line-height:1.7}
+.iosgd .x2{position:absolute;top:11px;right:13px;color:var(--muted);cursor:pointer;font-size:15px}
 .ver{font-size:10px;font-weight:800;letter-spacing:.09em;color:#0c1120;
  background:var(--gold);padding:3px 8px;border-radius:5px;white-space:nowrap;align-self:center}
 .brand b{font-size:19px;letter-spacing:.11em;color:var(--gold);font-weight:800}
@@ -356,6 +366,36 @@ footer a:hover{color:var(--gold)}
 """
 
 JS = r"""
+/* ── PWA 설치 ── */
+var _deferred=null;
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
+function isStandalone(){
+  return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
+}
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault(); _deferred=e;
+  var b=document.getElementById('btnInstall'); if(b&&!isStandalone())b.classList.add('on');
+});
+window.addEventListener('appinstalled',function(){
+  _deferred=null;
+  var b=document.getElementById('btnInstall'); if(b)b.classList.remove('on');
+  toast('홈 화면에 설치되었습니다');
+});
+function installApp(){
+  if(_deferred){
+    _deferred.prompt();
+    _deferred.userChoice.then(function(c){
+      if(c.outcome==='accepted'){var b=document.getElementById('btnInstall');if(b)b.classList.remove('on');}
+      _deferred=null;
+    });
+  } else { document.getElementById('iosgd').classList.add('on'); }
+}
+function closeIos(){document.getElementById('iosgd').classList.remove('on')}
+
 /* ── 테마 ── */
 (function(){var t=localStorage.getItem('mlr-theme');if(t)document.documentElement.dataset.theme=t;})();
 function toggleTheme(){var h=document.documentElement;
@@ -505,6 +545,9 @@ function closeModal(){document.getElementById('mask').classList.remove('on')}
 /* ── 초기화 ── */
 document.addEventListener('DOMContentLoaded',function(){
  paintDday();
+ var ua=navigator.userAgent, ios=/iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+ var b=document.getElementById('btnInstall');
+ if(b && ios && !isStandalone()) b.classList.add('on');
  var q=document.getElementById('q');
  if(q){q.addEventListener('input',function(){F.q=this.value.toLowerCase();applyFilter()});}
  applyFilter();
@@ -541,6 +584,14 @@ def head(title, desc, canonical):
 <link rel="canonical" href="{canonical}">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="application-name" content="만민 건축법규 검토요약">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="만민법규">
+<meta name="msapplication-TileColor" content="#0c1120">
+<meta name="msapplication-TileImage" content="assets/icon-192.png">
 <meta property="og:type" content="article">
 <meta property="og:image" content="{CANON}assets/logo-full.png">
 <meta property="og:image:alt" content="ARCHITECT KIM MANMIN — 만민 법규 검토 요약">
@@ -554,6 +605,12 @@ def head(title, desc, canonical):
 </head>
 <body>
 <div id="toast" class="toast"></div>
+<div class="iosgd" id="iosgd">
+ <span class="x2" onclick="closeIos()">✕</span>
+ <b>홈 화면에 추가하기</b>
+ <p>Safari 하단의 <b style="display:inline">공유 <span style="font-size:15px">􀈂</span> (□↑)</b> 버튼을 누른 뒤
+ <b style="display:inline">“홈 화면에 추가”</b>를 선택하시면 앱처럼 바로 열 수 있습니다.</p>
+</div>
 <button id="top" onclick="scrollTo({{top:0,behavior:'smooth'}})" title="맨 위로">↑</button>
 """
 
@@ -571,6 +628,7 @@ def header_bar(issues, current=None):
 </a>
 <div class="hdbtns">
   <select class="btn" onchange="if(this.value)location.href=this.value">{''.join(opts)}</select>
+  <button class="btn install" id="btnInstall" onclick="installApp()" title="홈 화면에 설치">📲 설치</button>
   <button class="btn" onclick="toggleTheme()" title="밝게/어둡게">◐</button>
   <a class="btn" href="{HOME}" target="_blank" rel="noopener">MANMIN 계산도구 ↗</a>
 </div>
