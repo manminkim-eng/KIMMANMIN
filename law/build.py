@@ -24,6 +24,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data")
 
 SITE_TITLE = "MANMIN LEGAL REVIEW"
+SITE_VER = "MANMIN VER-1.0"
 SITE_SUB = "만민 법규 검토 요약"
 AUTHOR = "김만민 건축사 · ㈜대성건축사사무소"
 HOME = "https://manminkim-eng.github.io/KIMMANMIN/"
@@ -151,9 +152,15 @@ a{color:inherit;text-decoration:none}
 header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(212,168,67,.07),transparent);
  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background-color:var(--bg)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
-.brandmark{height:36px;width:36px;object-fit:contain;flex:none}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.markchip{flex:none;width:46px;height:46px;border-radius:10px;display:flex;
+ align-items:center;justify-content:center;
+ background:rgba(212,168,67,.10);border:1.5px solid rgba(212,168,67,.45)}
+.brandmark{height:34px;width:34px;object-fit:contain;display:block}
+html[data-theme="light"] .markchip{background:rgba(43,58,103,.06);border-color:rgba(43,58,103,.4)}
 html[data-theme="light"] .brandmark{content:url("assets/mark.png")}
+.ver{font-size:10px;font-weight:800;letter-spacing:.09em;color:#0c1120;
+ background:var(--gold);padding:3px 8px;border-radius:5px;white-space:nowrap;align-self:center}
 .brand b{font-size:19px;letter-spacing:.11em;color:var(--gold);font-weight:800}
 .brand span{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
 .hdbtns{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
@@ -301,9 +308,11 @@ footer a:hover{color:var(--gold)}
  header{position:relative}
  .card{padding:15px 14px}
  .hd{gap:9px;padding:11px 0}
- .brand span{display:none}
- .brandmark{height:30px;width:30px}
- .brand b{font-size:16.5px}
+ .brand span:not(.ver):not(.markchip){display:none}
+ .markchip{width:38px;height:38px;border-radius:8px}
+ .brandmark{height:28px;width:28px}
+ .brand b{font-size:15.5px}
+ .ver{font-size:9px;padding:2px 6px}
  .searchbox input{font-size:16px;padding:12px 40px 12px 14px}
  .btn{padding:9px 13px;font-size:13px}
  .chip{padding:7px 12px;font-size:12.5px}
@@ -557,8 +566,8 @@ def header_bar(issues, current=None):
         opts.append(f'<option value="{d["issue"]}.html"{sel}>{esc(d["label"])} ({d["issue"]})</option>')
     return f"""<header><div class="wrap hd">
 <a class="brand" href="index.html">
-  <img class="brandmark" src="assets/mark-gold.png" alt="ARCHITECT KIM MANMIN 로고">
-  <b>{SITE_TITLE}</b><span>{SITE_SUB} · {esc(AUTHOR)}</span>
+  <span class="markchip"><img class="brandmark" src="assets/mark-gold.png" alt="ARCHITECT KIM MANMIN 로고"></span>
+  <b>{SITE_TITLE}</b><span class="ver">{SITE_VER}</span><span>{SITE_SUB} · {esc(AUTHOR)}</span>
 </a>
 <div class="hdbtns">
   <select class="btn" onchange="if(this.value)location.href=this.value">{''.join(opts)}</select>
@@ -584,7 +593,7 @@ def footer_bar():
 실제 인허가·설계·감리 업무에 적용할 때는 반드시 국가법령정보센터의 <b>원문 및 시행일</b>을 직접 확인하시기 바랍니다.
 입법예고·의원발의 항목은 확정된 법령이 아니며 심의 과정에서 내용이 변경될 수 있습니다.<br>
 KDS·KCS 국가건설기준은 국가건설기준센터(kcsc.re.kr) 공고본을 출처로 합니다.<br>
-© {date.today().year} {esc(AUTHOR)}. 무단 전재·상업적 이용을 금합니다.
+© {date.today().year} {esc(AUTHOR)}. 무단 전재·상업적 이용을 금합니다. · {SITE_VER}
 </p>
 </div></footer>
 <script>{JS}</script>
@@ -706,7 +715,7 @@ def render_issue(d, issues):
     return head(title, desc, canon) + header_bar(issues, d["issue"]) + f"""
 <script>window.__META__={meta_js};</script>
 <section class="hero"><div class="wrap">
- <div class="eyebrow">MONTHLY LEGAL REVIEW · {d['issue']}</div>
+ <div class="eyebrow">MONTHLY LEGAL REVIEW · {d['issue']} · {SITE_VER}</div>
  <h1>{esc(d['label'])} 법규 검토 요약</h1>
  <p class="lead">{esc(d['headline'])}</p>
  <div class="meta">
@@ -805,7 +814,7 @@ def render_index(issues):
 
     return head(title, desc, CANON) + header_bar(issues, None) + f"""
 <section class="hero"><div class="wrap">
- <div class="eyebrow">MANMIN LEGAL REVIEW · MONTHLY</div>
+ <div class="eyebrow">MANMIN LEGAL REVIEW · MONTHLY · {SITE_VER}</div>
  <h1>만민 법규 검토 요약</h1>
  <p class="lead">건축 · 구조 · 기계설비 · 소방 · 토목 분야 법령 개정사항을 매월 첫째 주 화요일에 정리해 공유합니다.
  각 항목은 법제처 국가법령정보센터 원문으로 바로 연결되며, 입법예고 마감일은 자동으로 D-day가 계산됩니다.</p>

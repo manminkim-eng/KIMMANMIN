@@ -39,9 +39,15 @@ a{color:inherit;text-decoration:none}
 header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(212,168,67,.07),transparent);
  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background-color:var(--bg)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
-.brandmark{height:36px;width:36px;object-fit:contain;flex:none}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.markchip{flex:none;width:46px;height:46px;border-radius:10px;display:flex;
+ align-items:center;justify-content:center;
+ background:rgba(212,168,67,.10);border:1.5px solid rgba(212,168,67,.45)}
+.brandmark{height:34px;width:34px;object-fit:contain;display:block}
+html[data-theme="light"] .markchip{background:rgba(43,58,103,.06);border-color:rgba(43,58,103,.4)}
 html[data-theme="light"] .brandmark{content:url("assets/mark.png")}
+.ver{font-size:10px;font-weight:800;letter-spacing:.09em;color:#0c1120;
+ background:var(--gold);padding:3px 8px;border-radius:5px;white-space:nowrap;align-self:center}
 .brand b{font-size:19px;letter-spacing:.11em;color:var(--gold);font-weight:800}
 .brand span{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
 .hdbtns{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
@@ -189,9 +195,11 @@ footer a:hover{color:var(--gold)}
  header{position:relative}
  .card{padding:15px 14px}
  .hd{gap:9px;padding:11px 0}
- .brand span{display:none}
- .brandmark{height:30px;width:30px}
- .brand b{font-size:16.5px}
+ .brand span:not(.ver):not(.markchip){display:none}
+ .markchip{width:38px;height:38px;border-radius:8px}
+ .brandmark{height:28px;width:28px}
+ .brand b{font-size:15.5px}
+ .ver{font-size:9px;padding:2px 6px}
  .searchbox input{font-size:16px;padding:12px 40px 12px 14px}
  .btn{padding:9px 13px;font-size:13px}
  .chip{padding:7px 12px;font-size:12.5px}
@@ -239,8 +247,8 @@ footer a:hover{color:var(--gold)}
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
 <header><div class="wrap hd">
 <a class="brand" href="index.html">
-  <img class="brandmark" src="assets/mark-gold.png" alt="ARCHITECT KIM MANMIN 로고">
-  <b>MANMIN LEGAL REVIEW</b><span>만민 법규 검토 요약 · 김만민 건축사 · ㈜대성건축사사무소</span>
+  <span class="markchip"><img class="brandmark" src="assets/mark-gold.png" alt="ARCHITECT KIM MANMIN 로고"></span>
+  <b>MANMIN LEGAL REVIEW</b><span class="ver">MANMIN VER-1.0</span><span>만민 법규 검토 요약 · 김만민 건축사 · ㈜대성건축사사무소</span>
 </a>
 <div class="hdbtns">
   <select class="btn" onchange="if(this.value)location.href=this.value"><option value="">■ 월별 아카이브 이동</option><option value="index.html">전체 목록 (INDEX)</option><option value="2026-08.html">2026년 8월 (2026-08)</option><option value="2026-07.html">2026년 7월 (2026-07)</option><option value="2026-06.html" selected>2026년 6월 (2026-06)</option><option value="2026-05.html">2026년 5월 (2026-05)</option></select>
@@ -251,7 +259,7 @@ footer a:hover{color:var(--gold)}
 
 <script>window.__META__={"label": "2026년 6월", "headline": "주차장법 6.3 전면 시행(기계식 비율제한 폐지) · 국계법 개정 공포 · 건축물 설비기준 규칙 개정 예고", "issue": "2026-06", "home": "https://manminkim-eng.github.io/KIMMANMIN/"};</script>
 <section class="hero"><div class="wrap">
- <div class="eyebrow">MONTHLY LEGAL REVIEW · 2026-06</div>
+ <div class="eyebrow">MONTHLY LEGAL REVIEW · 2026-06 · MANMIN VER-1.0</div>
  <h1>2026년 6월 법규 검토 요약</h1>
  <p class="lead">주차장법 6.3 전면 시행(기계식 비율제한 폐지) · 국계법 개정 공포 · 건축물 설비기준 규칙 개정 예고</p>
  <div class="meta">
@@ -409,7 +417,7 @@ footer a:hover{color:var(--gold)}
 실제 인허가·설계·감리 업무에 적용할 때는 반드시 국가법령정보센터의 <b>원문 및 시행일</b>을 직접 확인하시기 바랍니다.
 입법예고·의원발의 항목은 확정된 법령이 아니며 심의 과정에서 내용이 변경될 수 있습니다.<br>
 KDS·KCS 국가건설기준은 국가건설기준센터(kcsc.re.kr) 공고본을 출처로 합니다.<br>
-© 2026 김만민 건축사 · ㈜대성건축사사무소. 무단 전재·상업적 이용을 금합니다.
+© 2026 김만민 건축사 · ㈜대성건축사사무소. 무단 전재·상업적 이용을 금합니다. · MANMIN VER-1.0
 </p>
 </div></footer>
 <script>
