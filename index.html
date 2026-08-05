@@ -24,7 +24,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://manminkim-eng.github.io/KIMMANMIN/">
 <meta property="og:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta property="og:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
+<meta property="og:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 33종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
 <meta property="og:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta name="twitter:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 32종 제공.">
+<meta name="twitter:description" content="31년 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 33종 제공.">
 <meta name="twitter:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <!-- JSON-LD 구조화 데이터 (구글 리치 결과) -->
 <script type="application/ld+json">
@@ -2471,7 +2471,7 @@ footer {
   <div class="sec-hd rv">
     <div class="sec-eyebrow">Engineering Tools Navigator</div>
     <h2 class="sec-title">공종별 <span class="hl">웹 계산 도구</span> 한눈에 찾기</h2>
-    <p class="sec-sub">건축 · 구조· 기계설비 · 소방 · 토목 — 원하는 계산기를 바로 선택하세요</p>
+    <p class="sec-sub">건축 · 구조 · 기계설비 · 소방 · 토목 — 계산 도구와 월간 법규 검토를 바로 선택하세요</p>
   </div>
 
   <div class="inner">
@@ -2487,7 +2487,7 @@ footer {
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">10 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-dim);white-space:nowrap;">11 tools</span>
       </div>
 
       <!-- 도구 카드 그리드 -->
@@ -2561,6 +2561,13 @@ footer {
           <div class="hub-name">부설주차장</div>
           <div class="hub-desc">용도별 설치기준<br>주차대수 자동 산정</div>
           <div class="hub-tag">PARKING</div>
+        </a>
+
+        <a href="#card-law" class="hub-card rv hub-arch">
+          <div class="hub-icon">⚖️</div>
+          <div class="hub-name">법규검토</div>
+          <div class="hub-desc">5개 분야 법령 개정<br>월간 검토 아카이브</div>
+          <div class="hub-tag">LEGAL REVIEW</div>
         </a>
 
       </div>
@@ -3606,6 +3613,94 @@ footer {
             manminkim-eng.github.io/Parking-Lot-Act →
           </a>
           <span class="wdate">2025 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 만민 법규 검토 운영시스템 시리즈 ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // MANMIN LEGAL REVIEW Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow" style="color:var(--gold);">월간 법규 개정 검토 요약</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">매월 첫째 주 화요일 갱신되는 <span class="hl">법규 검토 아카이브</span></h2>
+      <p class="sec-sub">건축 · 구조 · 기계설비 · 소방 · 토목 5개 분야 · 법제처 국가법령정보센터 원문 직결 · 입법예고 마감일 D-day 자동 산정</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- LAW-001: 만민 법규 검토 운영시스템 -->
+      <div id="card-law" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(212,168,67,.4);color:var(--gold-lt);">법규검토</span>
+              <span class="wtag b">PWA · VER-1.0</span>
+              <span class="wtag" style="border-color:rgba(212,168,67,.3);color:var(--gold-lt);">LEGAL REVIEW · MONTHLY</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">만민 법규 검토 운영시스템 — MANMIN VER-1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">건축사 김만민이 매월 첫째 주 화요일 정리해 공개하는 건축·구조·기계설비·소방·토목 법령 개정 요약 아카이브. 데이터 중심 자동 빌드 시스템(build.py + JSON)이 월별 페이지를 생성하고, 6단계 전수 확인 Quality Gate를 통과한 자료만 발행합니다. 각 항목은 법제처 원문으로 바로 연결되며 입법예고 마감일은 D-day가 자동 계산됩니다.</p>
+            <!-- 핵심 기준 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">데이터 중심 자동 빌드 — build.py + JSON → 월별 HTML 실시간 생성</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">6단계 전수 확인 Quality Gate — 미충족 시 발행 차단</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--blue);font-family:var(--f-mono);font-size:.71rem;color:var(--blue);">7대 법규 분류 — 시행령·입법예고 등 고유 색상 필터링</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/manmin-law/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [법규검토] 바로가기
+            </a>
+            <a href="https://youtu.be/JdTyW1rd00U" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">SYSTEM</span>
+              자동 빌드 · Quality Gate · 7대 분류 · 스마트 대시보드 · 원클릭 원고 추출
+            </div>
+            <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/법규검토.webp', '만민 법규 검토 운영시스템 MANMIN VER-1.0', 'https://manminkim-eng.github.io/manmin-law/')">
+              <img src="./images/법규검토.webp"
+                   alt="MANMIN VER-1.0 만민 법규 검토 운영시스템 인포그래픽 — 데이터 중심 자동 빌드, 6단계 전수 확인 Quality Gate, 7대 법규 분류 색상 체계, 스마트 대시보드와 원클릭 원고 추출"
+                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
+                          padding:2px 7px;letter-spacing:.06em;">VER-1.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">파이썬 스크립트(build.py)가 JSON 데이터를 읽어 월별 HTML 페이지를 자동 생성 + 6단계 전수 확인 'Quality Gate'로 데이터 무결성 확보 + 시행령·입법예고 등 7대 카테고리 고유 색상 분류 및 필터링 + 임박한 시행일 순 노출과 인쇄 시 상세 자동 확장 CSS + 필터링된 내용을 블로그·유튜브 자막용 텍스트로 즉시 변환하는 원클릭 추출. 2026년 5월호부터 누적 발행 중이며 최신호는 2026년 8월호입니다.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/manmin-law/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/manmin-law →
+          </a>
+          <span class="wdate">2026 · VER-1.0</span>
         </div>
       </div>
 
@@ -5424,7 +5519,7 @@ footer {
       <div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 0 4px;">
         <span style="font-family:var(--f-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);padding:3px 12px;">🏗️  건축 · Architecture</span>
         <div style="flex:1;height:1px;background:var(--line);"></div>
-        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">14 videos</span>
+        <span style="font-family:var(--f-mono);font-size:.58rem;color:var(--t-dim);">13 videos</span>
       </div>
 
       <!-- ① 역량 분석 보고서 Featured — 1A03X_H5esU -->
@@ -5774,6 +5869,33 @@ footer {
           <div class="yt-meta">
             <span>건축 · 주차장법 · 2025 개정</span><span class="yt-meta-sep"></span>
             <a href="https://youtu.be/CYGWRnWMZp4" target="_blank" rel="noopener"
+               style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
+               onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑬ JdTyW1rd00U — 만민 법규 검토 운영시스템 VER-1.0 -->
+      <div class="ytc rv" style="cursor:pointer;" onclick="window.open('https://youtu.be/JdTyW1rd00U','_blank')">
+        <div class="ythumb">
+          <img src="https://img.youtube.com/vi/JdTyW1rd00U/mqdefault.jpg"
+               alt="놓친 법령 개정 0건 매월 6단계로 훑는 만민 법규 검토 요약 MANMIN VER-1.0 썸네일"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none'" loading="lazy" decoding="async">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,13,24,.7) 0%,transparent 55%);z-index:1;"></div>
+          <div class="yt-play" style="z-index:2;">▶</div>
+          <div style="position:absolute;top:12px;left:14px;z-index:3;display:flex;gap:4px;">
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);color:var(--gold);">건축법규</span>
+            <span style="font-family:var(--f-mono);font-size:.58rem;padding:2px 8px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);color:var(--gold-lt);">VER-1.0 · 2026</span>
+          </div>
+        </div>
+        <div class="ytbody">
+          <div class="yt-cat">건축 · 법규 개정 · 월간 검토 요약 · 2026</div>
+          <h3 class="yt-title">[건축법규 실무] 놓친 법령 개정 0건: 매월 6단계로 훑는 만민 법규 검토 요약<br><span style="font-size:.88em;color:var(--t-sub);">feat. 만민 법규 검토 운영시스템 — MANMIN VER-1.0</span></h3>
+          <p class="yt-desc">건축사 김만민이 매월 첫째 주 화요일 정리하는 건축·구조·기계설비·소방·토목 법령 개정 요약. 데이터 중심 자동 빌드와 6단계 전수 확인 Quality Gate로 누락 없이 정리하고, 임박한 시행일·입법예고 D-day를 우선 노출하는 운영 방식을 소개합니다.</p>
+          <div class="yt-meta">
+            <span>건축 · 법규 개정 · 월간 검토</span><span class="yt-meta-sep"></span>
+            <a href="https://youtu.be/JdTyW1rd00U" target="_blank" rel="noopener"
                style="color:var(--gold);font-family:var(--f-mono);font-size:.62rem;text-decoration:none;letter-spacing:.06em;"
                onclick="event.stopPropagation()">▶ 영상 바로가기 →</a>
           </div>
