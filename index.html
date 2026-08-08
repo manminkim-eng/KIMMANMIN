@@ -93,6 +93,8 @@
 <link rel="dns-prefetch" href="https://img.youtube.com">
 <link rel="dns-prefetch" href="https://t1.kakaocdn.net">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- 로컬 폴백 폰트(오프라인·차단망 대응). 온라인에서는 다운로드되지 않음 -->
+<link rel="stylesheet" href="./assets/fonts/manmin-fonts.css">
 
 <style>
 /* ═══════════════════════════════════════
@@ -122,10 +124,16 @@
   --cyan:     #20d0e8;
   --red:      #ff4444;
 
-  /* Typography */
-  --f-kr:    'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  --f-serif: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-  --f-mono:  'JetBrains Mono', 'Consolas', monospace;
+  /* Typography — 'Noto Sans KR Local'은 CDN 차단·오프라인 시 폴백 */
+  --f-kr:    'Noto Sans KR', 'Noto Sans KR Local', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --f-serif: 'Noto Sans KR', 'Noto Sans KR Local', 'Apple SD Gothic Neo', sans-serif;
+  --f-mono:  'JetBrains Mono', 'Consolas', 'D2Coding', ui-monospace, monospace;
+
+  /* MANMIN 표준 폰트 토큰 (WAP 공통 규격 — 신규 작업은 이 4종 사용) */
+  --font-sans:    var(--f-kr);
+  --font-display: var(--f-kr);
+  --font-serif:   var(--f-serif);
+  --font-mono:    var(--f-mono);
 
   /* Spacing */
   --max:     1120px;

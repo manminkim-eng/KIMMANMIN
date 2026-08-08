@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.0';
+const CACHE_VERSION = 'manmin-v2.1';
 const OFFLINE_PAGE  = './offline.html';
 
 /* ── 사전 캐시 목록 (앱 셸) ── */
@@ -16,6 +16,9 @@ const PRECACHE = [
   './icons/icon-192x192.png',
   './icons/icon-512x512.png',
   './icons/apple-touch-icon.png',
+  /* 로컬 폴백 폰트 — CDN 차단·오프라인 시 한글 깨짐 방지 */
+  './assets/fonts/manmin-fonts.css',
+  './assets/fonts/NotoSansKR-var.woff2',
 ];
 
 /* ─────────────────────────────
