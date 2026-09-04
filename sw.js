@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.2';   /* 2026-09-05 카드 배지 Ver 5.0 (S10 단계 5) */
+const CACHE_VERSION = 'manmin-v2.3';   /* 2026-09-05 카드 제목·캡션 Ver5.0 통일 */
 const OFFLINE_PAGE  = './offline.html';
 
 /* ── 사전 캐시 목록 (앱 셸) ── */
