@@ -1213,10 +1213,10 @@ footer {
 .pdf-print-btn svg{ width:14px; height:14px; }
 .pdf-print-btn:hover{ background:var(--gold); color:#0c1120; transform:translateY(-1px); box-shadow:0 6px 18px rgba(212,168,67,.35); }
 .pdf-print-btn:active{ transform:translateY(0); }
-.pdf-print-bar{ display:flex; justify-content:center; padding:6px var(--side) 44px; position:relative; z-index:1; }
+.pdf-print-bar{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; padding:6px var(--side) 44px; position:relative; z-index:1; }
 .pdf-print-btn--lg{ height:44px; padding:0 26px; font-size:.78rem; letter-spacing:.06em; }
 .pdf-print-btn--lg svg{ width:16px; height:16px; }
-@media (max-width:640px){ #pdf-nav-btn{ display:none; } }
+@media (max-width:640px){ .pdf-print-bar{ display:none; } }
 
 @media print{
   *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
@@ -2105,11 +2105,6 @@ footer {
     <li><a href="#advisory"   ><span class="nn">07</span>자문활동</a></li>
     <li><a href="#contact"    ><span class="nn">08</span>연락처</a></li>
   </ul>
-  <!-- PDF 출력 버튼 (상단 · 08연락처 옆) -->
-  <button id="pdf-nav-btn" class="pdf-print-btn" onclick="printPortfolio()" aria-label="이 페이지를 PDF로 출력" title="이 페이지를 A4 PDF로 저장 / 인쇄">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    출력PDF
-  </button>
   <label for="nav-toggle" class="nav-hamburger" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
   </label>
@@ -2167,10 +2162,10 @@ footer {
 <!-- ══ STATS ═══════════════════════════════════════ -->
 <div class="stats-bar">
   <div class="stats-row">
-    <div class="stat-cell rv"><span class="stat-num" data-n="31">0</span><span class="stat-lbl">년 경력 (1993~)</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:97%"></div></div></div>
-    <div class="stat-cell rv"><span class="stat-num" data-n="10">0</span><span class="stat-lbl">여 종 국가자격</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
-    <div class="stat-cell rv"><span class="stat-num" data-n="4">0</span><span class="stat-lbl">건 공공기관 위촉</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:80%"></div></div></div>
-    <div class="stat-cell rv"><span class="stat-num" data-n="100">0</span><span class="stat-lbl">% 신뢰 기반 실무</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="31">31+</span><span class="stat-lbl">년 경력 (1993~)</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:97%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="10">10+</span><span class="stat-lbl">여 종 국가자격</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="4">4+</span><span class="stat-lbl">건 공공기관 위촉</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:80%"></div></div></div>
+    <div class="stat-cell rv"><span class="stat-num" data-n="100">100%</span><span class="stat-lbl">% 신뢰 기반 실무</span><div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:100%"></div></div></div>
   </div>
 </div>
 
@@ -6906,7 +6901,7 @@ footer {
         </div>
         <div class="cinfo-grid">
           <div><div class="cinfo-key">Mobile</div><div class="cinfo-val"><a href="tel:01082871231">010-8287-1231</a></div></div>
-          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#7d101c131014131614103d151c13101c141153131809"><span class="__cf_email__" data-cfemail="e08d818e8d898e8b898da088818e8d81898cce8e8594">[email&#160;protected]</span></a></div></div>
+          <div><div class="cinfo-key">Email</div><div class="cinfo-val"><a href="mailto:manminkim@hanmail.net">manminkim@hanmail.net</a></div></div>
           <div><div class="cinfo-key">건축사 면허</div><div class="cinfo-val">License #20072</div></div>
           <div><div class="cinfo-key">경력</div><div class="cinfo-val">31년 7개월 (1993~현재)</div></div>
         </div>
@@ -6955,16 +6950,23 @@ footer {
   </div>
 </section>
 
+<!-- 최하단 PDF 출력 바 (데스크탑 전용 · 모바일 ≤640px 숨김) -->
+<div class="pdf-print-bar">
+  <button id="pdf-bottom-btn" class="pdf-print-btn pdf-print-btn--lg" onclick="printPortfolio()" aria-label="이 페이지를 PDF로 출력" title="이 페이지를 A4 PDF로 저장 / 인쇄">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    포트폴리오 PDF 출력
+  </button>
+</div>
+
 <!-- ══ FOOTER ═════════════════════════════════════ -->
 <footer>
-  <span class="foot-l">© 2025 김만민 건축사 / (주)대성건축사사무소 — All rights reserved <span class="foot-ver">MANMIN PORTAL v2.0</span></span>
+  <span class="foot-l">© 2026 김만민 건축사 / (주)대성건축사사무소 — All rights reserved <span class="foot-ver">MANMIN PORTAL v2.0</span></span>
   <span class="foot-r">건축사 면허 <span class="acc">#20072</span> · 익산시 건축위원회 위원</span>
 </footer>
 
-<!-- (최하단 PDF 출력 바 제거됨 — 상단 08연락처 옆 버튼만 유지) -->
 
 <!-- ══ KAKAO SDK ══════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
         integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4"
         crossorigin="anonymous"></script>
 <script>
@@ -7004,7 +7006,7 @@ footer {
 </script>
 
 <!-- ══ SCRIPTS ════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav scroll effect
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 50));
@@ -7232,9 +7234,12 @@ if ('serviceWorker' in navigator) {
               b.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:9999;background:#d4a843;color:#0c1120;padding:10px 20px;border-radius:12px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:nowrap';
               b.innerHTML =
                 '<span>🔄 새 버전이 있습니다</span>' +
-                '<button onclick="(()=>{document.getElementById('sw-update-banner').remove();navigator.serviceWorker.ready.then(r=>{r.waiting&&r.waiting.postMessage({type:'SKIP_WAITING'})})})()" style='background:none;border:none;cursor:pointer;color:#0c1120;font-size:1.2rem;padding:0 4px;font-weight:700' +
-                '>&times;</button>';
+                '<button id="sw-update-close" style="background:none;border:none;cursor:pointer;color:#0c1120;font-size:1.2rem;padding:0 4px;font-weight:700">&times;</button>';
               document.body.appendChild(b);
+              document.getElementById('sw-update-close').addEventListener('click', function(){
+                b.remove();
+                navigator.serviceWorker.ready.then(function(r){ if (r.waiting) r.waiting.postMessage({type:'SKIP_WAITING'}); });
+              });
             }
           });
         });
