@@ -1168,6 +1168,19 @@ nav.on {
   clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
 }
 .btn-kakao-inquiry:hover { background: #4a2a2a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(254,229,0,.25); }
+.btn-pdf-print {
+  flex: 1; min-width: 140px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 20px;
+  background: transparent; color: var(--gold);
+  border: 1.5px solid var(--gold); cursor: pointer;
+  font-family: var(--f-kr); font-size: .9rem; font-weight: 700;
+  text-decoration: none; transition: all .22s;
+  clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+}
+.btn-pdf-print svg { width: 18px; height: 18px; flex-shrink: 0; }
+.btn-pdf-print:hover { background: var(--gold); color: #0c1120; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,.35); }
+@media (max-width:640px){ .btn-pdf-print{ display:none; } }
 .btn-naver-blog {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   width: 100%; padding: 13px 20px; margin-top: 10px;
@@ -1229,7 +1242,7 @@ footer {
 
   /* 화면 전용 요소 인쇄 숨김 */
   nav, #nav-toggle, .nav-hamburger, #pwa-install-btn,
-  .pdf-print-btn, .pdf-print-bar,
+  .pdf-print-btn, .pdf-print-bar, .btn-pdf-print,
   .lic-modal, .wcm-modal{ display:none !important; }
 
   /* 표지(hero)·섹션 여백 압축 → 용지 효율 */
@@ -6924,10 +6937,16 @@ footer {
             </svg>
             카카오톡 1:1 문의
           </a>
+          <!-- 포트폴리오 PDF 출력 (데스크탑 전용) -->
+          <button class="btn-pdf-print" onclick="printPortfolio()" title="이 페이지를 A4 PDF로 저장 / 인쇄" aria-label="이 페이지를 PDF로 출력">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            포트폴리오 PDF 출력
+          </button>
         </div>
         <div style="margin-top:8px;font-family:var(--f-mono);font-size:.62rem;color:var(--t-dim);text-align:center;line-height:1.6;">
           💬 카카오톡 공유 — 주소 복사 후 카톡 채팅창에 붙여넣기<br>
-          📩 1:1 문의 — 카카오 오픈채팅으로 기술 자문·설계 협업 문의</div>
+          📩 1:1 문의 — 카카오 오픈채팅으로 기술 자문·설계 협업 문의<br>
+          🖨 PDF 출력 — 포트폴리오 전체를 A4 PDF로 저장 (데스크탑)</div>
         <!-- 네이버 블로그 버튼 -->
         <a href="https://blog.naver.com/manmin72" target="_blank" rel="noopener"
            class="btn-naver-blog" title="MANMIN 네이버 블로그 — 건축·토목·기계설비 실무 정보">
@@ -6949,14 +6968,6 @@ footer {
     </div>
   </div>
 </section>
-
-<!-- 최하단 PDF 출력 바 (데스크탑 전용 · 모바일 ≤640px 숨김) -->
-<div class="pdf-print-bar">
-  <button id="pdf-bottom-btn" class="pdf-print-btn pdf-print-btn--lg" onclick="printPortfolio()" aria-label="이 페이지를 PDF로 출력" title="이 페이지를 A4 PDF로 저장 / 인쇄">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    포트폴리오 PDF 출력
-  </button>
-</div>
 
 <!-- ══ FOOTER ═════════════════════════════════════ -->
 <footer>
