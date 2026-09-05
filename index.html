@@ -2074,6 +2074,9 @@ footer {
   .arc-stat-l { font-size: .58rem; }
 }
 
+/* S13 — #brand 독립 섹션: about 하위 블록용 상단 여백·구분선 제거 · bs-hd 는 마크+한줄만 */
+#brand .brand-story{margin-top:0;padding-top:0;border-top:0;}
+#brand .bs-hd{align-items:center;}
 </style>
 </head>
 <body>
@@ -2535,6 +2538,125 @@ footer {
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ══ BRAND · 로고 도출 컨셉보드 (S13 2026-09-05 · About → 도구 허브 앞 이동) ══ -->
+<section id="brand" class="sec">
+  <div class="sec-hd rv">
+    <div class="sec-eyebrow">Brand Concept · Derivation</div>
+    <h2 class="sec-title">이름을 <span class="hl">구조</span>로 세운다</h2>
+    <p class="sec-sub">김만민 세 글자의 자모를 건축 부재로 치환해 세운 마크 — 아래 모든 계산 도구의 아이콘과 헤더 배지가 이 마크에서 나옵니다</p>
+  </div>
+  <div class="inner">
+      <!-- ── 브랜드 스토리 · 로고 도출 컨셉보드 ────────── -->
+      <div class="brand-story rv">
+        <div class="bs-hd">
+          <div>
+            <p class="bs-sub">김만민 세 글자의 자모를 건축 요소로 치환해 하나의 입면으로 조립한 마크입니다.</p>
+          </div>
+          <img class="bs-mark" src="./images01/만민로고_ENGINEER.webp" alt="ENGINEER KIM MANMIN 마크" loading="lazy" decoding="async" width="512" height="512">
+        </div>
+
+        <div class="bs-steps">
+          <div class="bs-step">
+            <div class="bs-n">STEP 01</div>
+            <div class="bs-t">이름 해체</div>
+            <div class="bs-name">김만민</div>
+            <div class="bs-jamo">
+              <div class="bs-jamo-row"><b>김</b><span>ㄱㅣㅁ</span></div>
+              <div class="bs-jamo-row"><b>만</b><span>ㅁㅏㄴ</span></div>
+              <div class="bs-jamo-row"><b>민</b><span>ㅁㅣㄴ</span></div>
+            </div>
+            <div class="bs-d">세 글자를 자모로 나누면 ㅁ 세 개, ㅣ 두 개, ㄱ 하나, ㄴ 두 개. 사각과 수직선이 반복되는 구조가 드러납니다.</div>
+          </div>
+
+          <div class="bs-step">
+            <div class="bs-n">STEP 02</div>
+            <div class="bs-t">획 추출</div>
+            <svg class="bs-fig" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="3" role="img" aria-label="자모를 단선 기하 단위로 환원한 도해">
+              <rect x="8" y="16" width="40" height="40"></rect>
+              <path d="M74 12 V72"></path>
+              <path d="M100 14 H132 V54"></path>
+              <path d="M154 12 V64 H190"></path>
+              <g fill="currentColor" stroke="none" opacity=".62" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">
+                <text x="28" y="82">ㅁ ×3</text>
+                <text x="74" y="82">ㅣ ×2</text>
+                <text x="116" y="82">ㄱ ×1</text>
+                <text x="172" y="82">ㄴ ×2</text>
+              </g>
+            </svg>
+            <div class="bs-d">글자에서 형태만 남기고 획을 단선으로 환원합니다. 굵기와 곡률을 버리면 네 종류의 기하 단위만 남습니다.</div>
+          </div>
+
+          <div class="bs-step">
+            <div class="bs-n">STEP 03</div>
+            <div class="bs-t">건축 치환</div>
+            <div class="bs-map">
+              <div class="bs-map-row">
+                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="4" y="4" width="22" height="22"></rect></svg>
+                <span>ㅁ → 평면 · 구조 프레임</span>
+              </div>
+              <div class="bs-map-row">
+                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 2 V28"></path></svg>
+                <span>ㅣ → 기둥 · 수직 동선</span>
+              </div>
+              <div class="bs-map-row">
+                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 24 L15 5 L26 24"></path></svg>
+                <span>ㄱ → 지붕 · 경사 입면</span>
+              </div>
+              <div class="bs-map-row">
+                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 4 V26 H27"></path></svg>
+                <span>ㄴ → 지반 · 기초 슬래브</span>
+              </div>
+            </div>
+            <div class="bs-d">각 획에 건축 부재의 역할을 부여합니다. 글자가 곧 부재가 되면서 이름과 직업이 한 형태로 겹칩니다.</div>
+          </div>
+
+          <div class="bs-step">
+            <div class="bs-n">STEP 04</div>
+            <div class="bs-t">조립</div>
+            <svg class="bs-fig" viewBox="0 0 160 132" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" role="img" aria-label="모듈 그리드 위에 부재를 조립한 입면 도해">
+              <g stroke="currentColor" opacity=".3" stroke-width="1" stroke-dasharray="3 4">
+                <path d="M14 8 V124 M56 8 V124 M98 8 V124 M140 8 V124"></path>
+                <path d="M8 34 H154 M8 68 H154 M8 102 H154"></path>
+              </g>
+              <path d="M40 52 L96 22 L96 118"></path>
+              <path d="M96 22 L124 46 V64"></path>
+              <path d="M40 52 V118"></path>
+              <path d="M20 118 H136"></path>
+              <path d="M22 62 H80 M22 104 H80"></path>
+              <path d="M32 44 V118 M62 74 V118"></path>
+            </svg>
+            <div class="bs-d">치환된 부재를 모듈 그리드 위에 올려 한 장의 입면으로 조립합니다. 좌측 격자는 반복되는 ㅁ, 우측 수직 슬래브는 ㅣ와 ㄱ의 결합입니다.</div>
+          </div>
+
+          <div class="bs-step is-final">
+            <div class="bs-n">STEP 05</div>
+            <div class="bs-t">확정 마크</div>
+            <img class="bs-logo" src="./images01/만민로고_ARCHITECT.webp" alt="ARCHITECT KIM MANMIN 확정 마크" loading="lazy" decoding="async" width="512" height="512">
+            <div class="bs-d">한 획도 장식으로 남기지 않습니다. 이름에서 나온 선만으로 세워진 입면이 서명이자 도면의 표제가 됩니다.</div>
+          </div>
+        </div>
+
+        <div class="bs-foot">
+          <div>
+            <div class="bs-fk">Keyword</div>
+            <div class="bs-fv">이름 = 구조</div>
+            <div class="bs-fd">서명을 그리지 않고 세웁니다. 자모의 반복이 곧 부재의 반복입니다.</div>
+          </div>
+          <div>
+            <div class="bs-fk">Tone</div>
+            <div class="bs-fv">단선 · 무장식</div>
+            <div class="bs-fd">균일한 굵기의 단선만 사용합니다. 면과 그림자를 쓰지 않아 도면과 같은 위계를 갖습니다.</div>
+          </div>
+          <div>
+            <div class="bs-fk">Application</div>
+            <div class="bs-fv">ARCHITECT / ENGINEER</div>
+            <div class="bs-fd">마크는 고정하고 직능 표기만 교체해 두 정체성을 한 체계로 운용합니다.</div>
+          </div>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -6764,116 +6886,6 @@ footer {
         <a href="#contact" class="btn btn-gold">▶ 기술 자문 문의</a>
       </div>
     </div>
-      <!-- ── 브랜드 스토리 · 로고 도출 컨셉보드 ────────── -->
-      <div class="brand-story rv">
-        <div class="bs-hd">
-          <div>
-            <div class="bs-eyebrow">Brand Concept · Derivation</div>
-            <h3 class="bs-title">이름을 구조로 세운다</h3>
-            <p class="bs-sub">김만민 세 글자의 자모를 건축 요소로 치환해 하나의 입면으로 조립한 마크입니다.</p>
-          </div>
-          <img class="bs-mark" src="./images01/만민로고_ENGINEER.webp" alt="ENGINEER KIM MANMIN 마크" loading="lazy" decoding="async" width="512" height="512">
-        </div>
-
-        <div class="bs-steps">
-          <div class="bs-step">
-            <div class="bs-n">STEP 01</div>
-            <div class="bs-t">이름 해체</div>
-            <div class="bs-name">김만민</div>
-            <div class="bs-jamo">
-              <div class="bs-jamo-row"><b>김</b><span>ㄱㅣㅁ</span></div>
-              <div class="bs-jamo-row"><b>만</b><span>ㅁㅏㄴ</span></div>
-              <div class="bs-jamo-row"><b>민</b><span>ㅁㅣㄴ</span></div>
-            </div>
-            <div class="bs-d">세 글자를 자모로 나누면 ㅁ 세 개, ㅣ 두 개, ㄱ 하나, ㄴ 두 개. 사각과 수직선이 반복되는 구조가 드러납니다.</div>
-          </div>
-
-          <div class="bs-step">
-            <div class="bs-n">STEP 02</div>
-            <div class="bs-t">획 추출</div>
-            <svg class="bs-fig" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="3" role="img" aria-label="자모를 단선 기하 단위로 환원한 도해">
-              <rect x="8" y="16" width="40" height="40"></rect>
-              <path d="M74 12 V72"></path>
-              <path d="M100 14 H132 V54"></path>
-              <path d="M154 12 V64 H190"></path>
-              <g fill="currentColor" stroke="none" opacity=".62" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">
-                <text x="28" y="82">ㅁ ×3</text>
-                <text x="74" y="82">ㅣ ×2</text>
-                <text x="116" y="82">ㄱ ×1</text>
-                <text x="172" y="82">ㄴ ×2</text>
-              </g>
-            </svg>
-            <div class="bs-d">글자에서 형태만 남기고 획을 단선으로 환원합니다. 굵기와 곡률을 버리면 네 종류의 기하 단위만 남습니다.</div>
-          </div>
-
-          <div class="bs-step">
-            <div class="bs-n">STEP 03</div>
-            <div class="bs-t">건축 치환</div>
-            <div class="bs-map">
-              <div class="bs-map-row">
-                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="4" y="4" width="22" height="22"></rect></svg>
-                <span>ㅁ → 평면 · 구조 프레임</span>
-              </div>
-              <div class="bs-map-row">
-                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 2 V28"></path></svg>
-                <span>ㅣ → 기둥 · 수직 동선</span>
-              </div>
-              <div class="bs-map-row">
-                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 24 L15 5 L26 24"></path></svg>
-                <span>ㄱ → 지붕 · 경사 입면</span>
-              </div>
-              <div class="bs-map-row">
-                <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 4 V26 H27"></path></svg>
-                <span>ㄴ → 지반 · 기초 슬래브</span>
-              </div>
-            </div>
-            <div class="bs-d">각 획에 건축 부재의 역할을 부여합니다. 글자가 곧 부재가 되면서 이름과 직업이 한 형태로 겹칩니다.</div>
-          </div>
-
-          <div class="bs-step">
-            <div class="bs-n">STEP 04</div>
-            <div class="bs-t">조립</div>
-            <svg class="bs-fig" viewBox="0 0 160 132" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" role="img" aria-label="모듈 그리드 위에 부재를 조립한 입면 도해">
-              <g stroke="currentColor" opacity=".3" stroke-width="1" stroke-dasharray="3 4">
-                <path d="M14 8 V124 M56 8 V124 M98 8 V124 M140 8 V124"></path>
-                <path d="M8 34 H154 M8 68 H154 M8 102 H154"></path>
-              </g>
-              <path d="M40 52 L96 22 L96 118"></path>
-              <path d="M96 22 L124 46 V64"></path>
-              <path d="M40 52 V118"></path>
-              <path d="M20 118 H136"></path>
-              <path d="M22 62 H80 M22 104 H80"></path>
-              <path d="M32 44 V118 M62 74 V118"></path>
-            </svg>
-            <div class="bs-d">치환된 부재를 모듈 그리드 위에 올려 한 장의 입면으로 조립합니다. 좌측 격자는 반복되는 ㅁ, 우측 수직 슬래브는 ㅣ와 ㄱ의 결합입니다.</div>
-          </div>
-
-          <div class="bs-step is-final">
-            <div class="bs-n">STEP 05</div>
-            <div class="bs-t">확정 마크</div>
-            <img class="bs-logo" src="./images01/만민로고_ARCHITECT.webp" alt="ARCHITECT KIM MANMIN 확정 마크" loading="lazy" decoding="async" width="512" height="512">
-            <div class="bs-d">한 획도 장식으로 남기지 않습니다. 이름에서 나온 선만으로 세워진 입면이 서명이자 도면의 표제가 됩니다.</div>
-          </div>
-        </div>
-
-        <div class="bs-foot">
-          <div>
-            <div class="bs-fk">Keyword</div>
-            <div class="bs-fv">이름 = 구조</div>
-            <div class="bs-fd">서명을 그리지 않고 세웁니다. 자모의 반복이 곧 부재의 반복입니다.</div>
-          </div>
-          <div>
-            <div class="bs-fk">Tone</div>
-            <div class="bs-fv">단선 · 무장식</div>
-            <div class="bs-fd">균일한 굵기의 단선만 사용합니다. 면과 그림자를 쓰지 않아 도면과 같은 위계를 갖습니다.</div>
-          </div>
-          <div>
-            <div class="bs-fk">Application</div>
-            <div class="bs-fv">ARCHITECT / ENGINEER</div>
-            <div class="bs-fd">마크는 고정하고 직능 표기만 교체해 두 정체성을 한 체계로 운용합니다.</div>
-          </div>
-        </div>
-      </div>
   </div>
 </section>
 
