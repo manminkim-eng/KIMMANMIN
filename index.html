@@ -759,6 +759,18 @@ nav.on {
   background: rgba(255,0,0,.18); border-color: rgba(255,80,80,.7); color: #ffaaaa;
   transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255,0,0,.2);
 }
+.wcard-manual-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: rgba(212,168,67,.08); border: 1px solid rgba(212,168,67,.35); color: var(--gold-lt);
+  text-decoration: none; font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; transition: all .22s; white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+.wcard-manual-btn:hover {
+  background: rgba(212,168,67,.18); border-color: rgba(212,168,67,.7); color: var(--gold);
+  transform: translateY(-2px); box-shadow: 0 6px 18px rgba(212,168,67,.2);
+}
 
 /* ═══════════════════════════════════════
    WEB DEV SECTION
@@ -1283,7 +1295,7 @@ footer {
   .wc .wtitle, .wc h3{ font-size:.92rem !important; line-height:1.2 !important; margin:2px 0 !important; }
   .wc .wdesc, .wc p{ font-size:.7rem !important; line-height:1.34 !important; margin:2px 0 !important; }
   .wc .wtag{ font-size:.54rem !important; padding:1px 5px !important; }
-  .wc .wcard-gh-btn, .wc .wcard-yt-btn{ font-size:.63rem !important; padding:4px 8px !important; }
+  .wc .wcard-gh-btn, .wc .wcard-yt-btn, .wc .wcard-manual-btn{ font-size:.63rem !important; padding:4px 8px !important; }
   .wc .wfoot{ padding-top:4px !important; margin-top:3px !important; }
   .wc > div{ padding-top:5px !important; padding-bottom:5px !important; }
 
@@ -1475,7 +1487,7 @@ footer {
 
   /* 웹계산 버튼 그룹 모바일: 세로 배치 */
   .wcard-btn-group { flex-direction: column; width: 100%; }
-  .wcard-gh-btn, .wcard-yt-btn { width: 100%; justify-content: center; }
+  .wcard-gh-btn, .wcard-yt-btn, .wcard-manual-btn { width: 100%; justify-content: center; }
 
   /* CM Projects */
   .cm-proj-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -3067,6 +3079,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/zplm4upFYRw" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/1architect-fee-app/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3076,20 +3096,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
-              공공건축 설계·감리 대가 산정 5단계 핵심 프로세스
+              전체 화면 — 공공기관 건축사 업무대가 산출기
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/공공대가.webp', '공공건축 설계·감리 대가 산정 가이드', 'https://manminkim-eng.github.io/1architect-fee-app/')">
               <img src="./images/공공대가.webp"
-                   alt="공공건축 설계·감리 대가 산정 핵심 가이드 인포그래픽 — ARCHITECT FEE Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="공공기관 건축사 업무대가 산출기 전체 화면 — MANMIN Ver5.0.4"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.4</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">공사비 기준 건축사 대가 산정 5단계 — ① 순수 공사비 확인 → ② 건축물 종별·도서 수준 결정 → ③ 직선보간법 요율 산출 → ④ 복합인증 가산·체감 적용(A+½B+⅓C) → ⑤ 요율 방식 vs 실비정액가산식 구분 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">입력 · 산출 화면 — 공사 정보 · 대가기준(건축사 / 엔지니어링) 선택 · 예정 공사비 입력 → 적용 요율과 최종 산출금액(VAT 별도) · 산출 근거.</p>
           </div>
 
         </div>
@@ -3158,6 +3178,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/w4fBuYbzpPM" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/u-value-app-/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3167,20 +3195,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#38bdf8;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);padding:1px 8px;">GUIDE</span>
-              열관류율 산출 및 법규 판정 자동화 시스템 — 원스톱 프로세스
+              전체 화면 — 열관류율 종합 검토 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/열관류율.webp', '열관류율(U-Value) 산정 계산기', 'https://manminkim-eng.github.io/u-value-app-/')">
               <img src="./images/열관류율.webp"
-                   alt="건축물 열관류율 산출 및 법규 판정 자동화 시스템 인포그래픽 — MANMIN Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="열관류율 종합 검토 시스템 전체 화면 — MANMIN Ver5.0.9"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.9</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">재료·두께 입력 → 열저항(R = d/λ) 자동 산출 → 지역별 기준값 비교 → PASS/FAIL 즉각 판정. 국토교통부 고시 별표 1~6 완벽 반영, 표면 열전달저항·중공층 자동 배정, 소수점 4째 자리 0.001 단위 정밀 계산.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">검토 조건 화면 — 지역 · 부위 · 외기 조건과 재료층 구성 입력 → 법적 기준 · 설계값 · 판정과 부위별 열저항 산출 근거표.</p>
           </div>
 
         </div>
@@ -3249,6 +3277,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/1cPPVhtz05Y" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Energy-Performance-Index/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3257,20 +3293,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
-              EPI 의무 확보 기준 · 총량제 면제 전략 · ZEB 인증 활용 · 공공기관 특화 항목
+              전체 화면 — EPI 에너지성능지표 산정기
             </div>
             <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/성능지표.webp', '최신 에너지절약설계기준 EPI 점수 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/Energy-Performance-Index/')">
               <img src="./images/성능지표.webp"
-                   alt="MANMIN Ver5.0 최신 에너지절약설계기준 EPI 점수 가이드 인포그래픽 — 민간 65점·공공 74점 타겟 전략, 1,000㎡ 이상 의무 항목, 에너지소비총량제, ZEB 예비인증 활용"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="EPI 에너지성능지표 산정기 전체 화면 — MANMIN Ver5.4.4"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.4.4</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">민간 65점·공공 74점 부문별 최소 합계 점수 달성 전략 + 1,000㎡ 이상 공통 의무 항목(태양열 취득 저감 0.6점·고효율 냉난방 0.6점·조명밀도 0.8점·신재생 4점) + 중앙식 공조 시 추가 의무(고효율 송풍기·폐열회수환기장치·가변속 제어) + 공공기관 특화(1,000㎡ 이상 전기대체 냉방 0.6점·10,000㎡ 이상 BEMS 1점) + 총량제 면제(민간 150·공공 130 kWh/㎡·yr 미만) + ZEB 예비인증 제출 시 EPI 전면 면제. 2025년 12월 31일 시행 최신 기준 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">EPI 산정 화면 — 건물 용도 · 지역 · 연면적 입력 → EPI 총점 게이지 · 부문별 점수 · 의무 항목 충족 현황.</p>
           </div>
         </div>
 
@@ -3337,6 +3373,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/3Asp3_nxoBc" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/demolition-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3345,20 +3389,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">GUIDE</span>
-              해체공사 감리비 산출 핵심 가이드 — 감리비 구성·체크리스트·배치 기준
+              전체 화면 — 건축물 해체공사 감리대가 산출기
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/해체감리.webp', '해체공사 감리 대가 산정 계산기', 'https://manminkim-eng.github.io/demolition-calc/')">
               <img src="./images/해체감리.webp"
-                   alt="건축물 해체공사 감리비 산출 가이드 인포그래픽 — MANMIN Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축물 해체공사 감리대가 산출기 전체 화면 — MANMIN Ver5.0.6"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.6</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">실비정액가산 방식 4대 구성 요소(직접인건비·직접경비·제경비·기술료) 자동 계산, 실무자 필수 체크리스트(업무 투기간 합산·VAT 손해배상보험료·추가 업무 비용), 연면적 기준 상주 감리원 배치 기준 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">산출 입력 화면 — 공사 정보 · 감리원 투입 설정 · 산출 요율(제경비 · 기술료) 입력 → 실시간 합계 금액(VAT 포함).</p>
           </div>
         </div>
 
@@ -3426,6 +3470,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/-DDM8Jo3hhU" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/arch-supervision/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
         <!-- 이미지 갤러리 -->
@@ -3433,20 +3485,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#34d399;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);padding:1px 8px;">GUIDE</span>
-              2026 상주감리 대가 산출 법규 가이드 — 배치 기준·노임단가·산출 공식
+              전체 화면 — 건축공사 상주감리 대가 산출기
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/건축감리.webp', '건축감리 업무 대가 산정 계산기', 'https://manminkim-eng.github.io/arch-supervision/')">
               <img src="./images/건축감리.webp"
-                   alt="2026 상주감리 대가 산출 및 법규 가이드 인포그래픽 — MANMIN Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축공사 상주감리 대가 산출기 전체 화면 — MANMIN Ver5.0.6"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.6</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축법 제25조 기준 상주 의무 대상 자동 판별, 실비정액가산방식 5대 구성 요소 자동 계산, 2026년 엔지니어링 노임단가 자동 반영, 감리원 배치 통보·신고 기한(착공 후 7일 이내) 안내 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">입력 · 산출 화면 — 공사 정보와 분야별 상주감리원(등급 · 기간 · 인일수) 설정 → 총 상주감리비(VAT 포함).</p>
           </div>
         </div>
 
@@ -3515,6 +3567,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/ArYEoEjnFtY" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/construction-air/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3523,20 +3583,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#e879f9;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(232,121,249,.15);border:1px solid rgba(232,121,249,.3);padding:1px 8px;">GUIDE</span>
-              적정 공사기간 산정 4대 구성 요소 · 발주자 핵심 역할 · 공기 조정 기준
+              전체 화면 — 건축공사 공기산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/공기산정.webp', '공사기간 산정 계산기', 'https://manminkim-eng.github.io/construction-air/')">
               <img src="./images/공기산정.webp"
-                   alt="건설현장 적정 공사기간 산정 가이드라인 인포그래픽 — MANMIN Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축공사 공기산정 시스템 전체 화면 — MANMIN Ver5.1.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#e879f9;border:1px solid rgba(232,121,249,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">적정 공사기간 4대 구성 요소(준비기간·비작업일수·주 40시간·정리기간) 자동 산정, 발주자 핵심 역할(입찰 산정근거 명시·시공 여건 제공·정당한 공기 조정), 공종별 권장 준비기간(공동주택 45일·고속도로 180일·철도 90일) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">프로젝트 기본 정보 화면 — 착공일 · 공사비 · 기상 관측 지점(2026 가이드라인 부록 3) · 공사 유형 선택 → 준비 · 작업 · 비작업 · 정리기간과 총 공기.</p>
           </div>
         </div>
 
@@ -3604,6 +3664,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/D1Ak_Yctby0" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Change-of-Use/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3612,20 +3680,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);padding:1px 8px;">GUIDE</span>
-              9개 시설군 위계 · 입지 제한 판정 · 주차장·하수도·소방·교육환경 4대 부대조건
+              전체 화면 — 건축물 용도변경 판정기
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/용도변경.webp', '건축물 용도변경 가이드', 'https://manminkim-eng.github.io/Change-of-Use/')">
               <img src="./images/용도변경.webp"
-                   alt="MANMIN Ver5.0 건축물 용도변경 가이드 인포그래픽 — 건축법 제19조 9개 시설군 위계, 입지 제한 판정, 주차장·하수도 인프라 검토 및 4대 부대조건"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축물 용도변경 판정기 전체 화면 — MANMIN Ver5.0.6"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.6</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축법 제19조 9개 시설군 위계(1군~9군) 기반 허가·신고·기재내용변경 행정 절차 판정 + 국토계획법 용도지역별 입지 제한 선행 확인 + 주차장(법정 주차대수) · 하수도원인자부담금(발생량 증가) · 소방안전시설 · 교육환경보호구역 4대 필수 부대조건 검토 + 지자체 조례 개별 확인. 건축법 제19조 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">판정 화면 — 현재 용도 → 변경 용도 3단계 선택(9개 시설군 · 31개 세부 용도) → 허가 · 신고 · 건축물대장 기재변경 판정.</p>
           </div>
         </div>
 
@@ -3692,6 +3760,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/Lccobto2vmE" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Land-Use/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3700,20 +3776,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.35);padding:1px 8px;">GUIDE</span>
-              국토계획법 vs 지자체 조례 · 건폐율·용적률 4단계 산출 · 법령·조례 간 치명적 간극 판정
+              전체 화면 — 건폐율 · 용적률 조례 적용 계산기
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/국토이용.webp', '국토이용 건폐율·용적률 산출 가이드', 'https://manminkim-eng.github.io/Land-Use/')">
               <img src="./images/국토이용.webp"
-                   alt="MANMIN Ver5.0 국토이용 건폐율·용적률 산출 가이드 인포그래픽 — 국토계획법 vs 지자체 조례 비교, 내 땅의 건축 규모 즉시 산출 4단계"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건폐율 · 용적률 조례 적용 계산기 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">국토계획법(국법) vs 지자체 조례(Local) 용적률 실제 적용 기준 비교(중심상업지역 국법 1,500% → 서울시 조례 1,000%) + 건축 규모 즉시 산출 4단계(토지이음 용도지역 확인 → 지자체 조례 조회 → 지구단위계획 파악 → 실제 면적 계산) + 용적률 산정 제외 면적(지하층·지상주차장·피난안전구역) 반영. 건축법·국토계획법 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">검토 입력 · 결과 화면 — 지자체(조례) · 용도지역 · 대지면적 입력 → 국토계획법 최대치와 조례 실제 적용 건폐율 · 용적률 비교.</p>
           </div>
         </div>
 
@@ -3781,6 +3857,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/9QMGKvIPyMo" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Parking-Lot-Act/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3789,20 +3873,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
-              용도별 설치기준 · 소수점 처리 로직 · 의무 구획 비율 · 2025 전기차·기계식 주차 강화
+              전체 화면 — 부설주차장 법정대수 산정기
             </div>
             <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/주차장법.webp', '건축물 부설주차장 설치 및 산정 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/Parking-Lot-Act/')">
               <img src="./images/주차장법.webp"
-                   alt="MANMIN Ver5.0 건축물 부설주차장 설치기준 및 산정 가이드 인포그래픽 — 용도별 면적 기준, 소수점 처리 방식, 장애인·전기차 의무 구획 비율, 2025 기계식 주차 제원 강화"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="부설주차장 법정대수 산정기 전체 화면 — MANMIN Ver5.1.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용도별 설치기준(위탁 100㎡·상업 150㎡·근생 200㎡당 1대) + 주거 세대당 최소 1대·60㎡ 이하 0.7대·원룸형 0.5~0.6대 + 특수 시설 고유단위(골프장 1홀 10대·골프연습장 1타석 1대) + 소수점 처리(일반 0.5 이상 반올림·주택 소수점 발생 시 무조건 올림) + 용도변경 시 누적 합산 0.5대 미만 유보 + 법정 의무 구획 비율(장애인 2~4%·전기차 충전 신축 5%·기축 2%). 지자체 조례 최대 50% 강화 및 2025 기계식 주차장 제원 상향 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">산정 입력 · 결과 화면 — 전북 14개 시 · 군 조례 선택 · 용도별 시설면적 입력 → 법정 부설주차장 대수와 장애인 전용 구획.</p>
           </div>
         </div>
 
@@ -3958,6 +4042,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/QpzsVLlko0Q" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Architectural-line/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -3966,20 +4058,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--gold-lt);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
-              정북방향 일조사선 · 일영시간 분석 · 20m 도로 배제 · GIS 기반 3D 시뮬레이션
+              전체 화면 — 일조권 · 사선제한 계산기
             </div>
             <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/일조사선.webp', '한눈에 보는 일조사선 및 일영시간 산정 가이드 (2023 최신 개정 반영)', 'https://manminkim-eng.github.io/Architectural-line/')">
               <img src="./images/일조사선.webp"
-                   alt="MANMIN Ver5.0 일조사선 및 일영시간 산정 가이드 — 정북방향 일조사선 10m 완화, 동지 기준 2시간 연속 일조, 20m 이상 도로 배제, GIS 기반 3D 시뮬레이션 (2023 건축법 시행령 개정 반영)"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="일조권 · 사선제한 계산기 전체 화면 — MANMIN Ver5.0.6"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.6</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">정북방향 일조사선 — 높이 10m 이하 1.5m 이상 이격 · 높이 10m 초과 각 부분 높이의 1/2 이상 이격 + 동지 기준 09~15시 중 연속 2시간 이상 일조 확보(일영시간 분석) + 20m 이상 도로 접합 시 일조 제한 배제 + 지표면 고저차 산정(평균 수평면 기준) + GIS 기반 3D 시뮬레이션으로 최적 층수·배치 자동 산정. 2023년 9월 개정 건축법 시행령 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">검토 화면 — 용도지역 · 건축물 유형 · 높이 · 경계 거리 입력 → 정북 사선 이격 · 동지 일영 · 채광 · 동 간 거리 판정과 단면 개념도.</p>
           </div>
         </div>
 
@@ -4047,6 +4139,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/GOLY6KDXGcw" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Seismic-Evaluation/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4055,20 +4155,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(168,139,250,.15);border:1px solid rgba(168,139,250,.3);padding:1px 8px;">GUIDE</span>
-              인허가일·구조형식·규모·용도 4대 판별 기준 · 목구조 완화 · 특수구조 위험성
+              전체 화면 — 내진설계 의무대상 판정기
             </div>
             <div style="border:1px solid rgba(168,139,250,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/내진성능.webp', '내진설계 의무 대상 판별 마스터 가이드', 'https://manminkim-eng.github.io/Seismic-Evaluation/')">
               <img src="./images/내진성능.webp"
-                   alt="내 건물은 내진설계 의무 대상일까? 판별 가이드 — 2층·200㎡ 기준, 목구조 완화, 모든 주택 의무, 높이 13m·경간 10m 특수 기준, 1988년부터 단계적 법령 강화"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="내진설계 의무대상 판정기 전체 화면 — MANMIN Ver5.0.8"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#a78bfa;border:1px solid rgba(168,139,250,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.8</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 내진설계 의무 여부 4대 판별 기준 — ① 인허가일(2017.12 이후 강화) ② 일반 구조 2층 이상 또는 연면적 200㎡ 이상 ③ 목구조 완화(3층/500㎡) · 모든 단독·공동주택 예외 없이 의무 ④ 높이 13m 이상 또는 경간 10m 이상 · 캔틸레버 3m 이상 특수 구조 포함. 건축도시정보센터(AURI) 간편조회 서비스 연계.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">판정 화면 — 허가 신청일 · 구조형식 · 층수 · 연면적 · 높이 입력 → 건축법 시행령 제32조 조항별 내진설계 의무 판정과 내진등급.</p>
           </div>
         </div>
 
@@ -4135,6 +4235,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/hu0zdEbMU2g" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/architectural-structure/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4143,20 +4251,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">GUIDE</span>
-              KDS 41 기후변화 대응 · 시공안전·내진설계 심화 · 용도별 최소 등분포활하중
+              전체 화면 — 건축물 설계하중 통합 산정
             </div>
             <div style="border:1px solid rgba(212,168,67,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/설계하중.webp', '최신 KDS 41 건축구조기준 설계하중 핵심 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/architectural-structure/')">
               <img src="./images/설계하중.webp"
-                   alt="MANMIN Ver5.0 최신 KDS 41 건축구조기준 설계하중 핵심 가이드 인포그래픽 — 풍하중 500년 재현기간, 홍수·파랑하중 신설, 비구조요소 내진설계 의무화, 용도별 등분포활하중"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축물 설계하중 통합 산정 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold-lt);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">기후변화 대응 — 풍하중 재현기간 100년→500년 상향 · 홍수하중(Fa)·파랑하중(Wa) 신설(수변지역 침수·융수합·유송꿰물 의무 검토) + 시공하중(C) 규정 신설(공사 중 작업원·장비·자재 하중 세분화) + 비구조요소 내진설계 의무화(파라펫·외장재 등 붕괴 방지 부스 설계 필수) + 특별지진하중 적용 확대(필로티 등 취약 구조 수직 부재 시스템 초과강도계수 적용) + 용도별 최소 등분포활하중(주택·공동주택 거실 2.0 · 일반 사무실 2.5 · 상점·맥화점 5.0 kN/㎡). 2022 KDS 41 최신 기준 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">프로젝트 화면 — 지역 · 중요도 · 건물 규모 · 기본풍속 · 지상적설하중 입력 → 고정 · 활 · 적설 · 풍 · 지진하중 단계 진행과 하중 요약.</p>
           </div>
         </div>
 
@@ -4222,6 +4330,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/DsK8o1BIfTc" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Roof-Drain/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4230,20 +4346,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              수리학적 계산 + FORM 신뢰성 해석 · 비용 최적 관경 도출
+              전체 화면 — 건축물 우수관경 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/건물우수.webp', '건물우수 배수시스템 계산기', 'https://manminkim-eng.github.io/Roof-Drain/')">
               <img src="./images/건물우수.webp"
-                   alt="MANMIN Ver5.0 건축물 우수관경 산정 가이드 인포그래픽 — 수리학적 계산 + FORM 신뢰성 분석"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="건축물 우수관경 산정 시스템 전체 화면 — MANMIN Ver5.0.14"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.14</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">Phase 1 수리학적 기초 산정(유입량·배수용량·관경 도출) + Phase 2 FORM 신뢰성 해석(Z = Q<sub>C</sub>−Q<sub>L</sub>) + 비용 대비 안전성 최적화. 제천시 우수관망 케이스 스터디 포함.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">관경 산정 화면 — STEP 1 지역 선택(시간최대강우량) · 유효면적 입력 → 추천 수직관 관경(DN)과 관경별 허용면적 적합 판정표.</p>
           </div>
         </div>
 
@@ -4287,6 +4403,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/P2foVzCpQTY" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Sanitary-Piping-System/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4295,20 +4419,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              헌터 곡선 · 하젠-윌리엄스 공식 · 자기세척속도 · 오배수 구배 기준
+              전체 화면 — 위생배관 관경 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/위생배관.webp', '위생배관 계산기', 'https://manminkim-eng.github.io/Sanitary-Piping-System/')">
               <img src="./images/위생배관.webp"
-                   alt="MANMIN Ver5.0 기계설비 급배수 위생배관 관경 산정 가이드 인포그래픽 — 헌터 곡선 & 하젠-윌리엄스 공식"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="위생배관 관경 산정 시스템 전체 화면 — MANMIN Ver5.0.12"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.12</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">헌터 곡선 기반 동시사용 순간최대유량 산출 + 하젠-윌리엄스 공식 마찰손실수두 산정 + 자기 세척 유속(0.6~1.5 m/s) 확보를 위한 오·배수 관경 및 최소 구배(1/50~1/200) 설계. 기계설비법 설계계산서 작성 기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">관경 산정 화면 — 건물 용도 · 층수 · 급수 방식 입력(4단계) → 급수 · 급탕 · 배수 주관 관경 결과 카드와 배관 시스템 구성 흐름.</p>
           </div>
         </div>
 
@@ -4353,6 +4477,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/e3EBTCIwJ-A" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/CHWS-STSTEM/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4361,20 +4493,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              연속방정식 · 압력손실 · 경제적 관경(Economic Diameter) · 기계설비 기술기준 [별표 8]
+              전체 화면 — 냉온수 배관 관경 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/냉온수배관.webp', '냉온수배관 계산기', 'https://manminkim-eng.github.io/CHWS-STSTEM/')">
               <img src="./images/냉온수배관.webp"
-                   alt="MANMIN Ver5.0 기계설비 냉온수 배관 관경 산정 가이드 인포그래픽 — CAPEX와 OPEX를 고려한 경제적 관경(Economic Diameter) 최적 설계법"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="냉온수 배관 관경 산정 시스템 전체 화면 — MANMIN Ver5.0.13"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.13</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">연속방정식(Q = A × V) 기반 유량·유속·관경 상관관계 + 유속 증가 시 압력 손실의 급격한 상승(유속의 제곱에 비례) + 초기 자재비(CAPEX)와 장기적 펌프 동력비(OPEX)의 합계가 최소화되는 경제적 관경 산정. 기계설비 기술기준 [별표 8] 권장 유속(1.0~2.0 m/s) 완벽 준수.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">관경 산정 화면 — 배관 재질 · 부하 → 유량 환산(ΔT) 입력 → 채택 관경 · 실제 유속 · 압력강하 결과와 유속 적정 범위 막대.</p>
           </div>
         </div>
 
@@ -4419,6 +4551,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/0ZE1AGd0k9c" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Air-Conditioning-Duct/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4427,20 +4567,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              Q=A×V×3,600 · 등마찰손실법 · 풍속법 · 정압재취득법 · 저속/고속 덕트 분류
+              전체 화면 — 공조 덕트 규격 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/공조덕트.webp', '공조덕트 계산기', 'https://manminkim-eng.github.io/Air-Conditioning-Duct/')">
               <img src="./images/공조덕트.webp"
-                   alt="MANMIN Ver5.0 기계설비 공조덕트 규격 산정 가이드 인포그래픽 — 풍량 최적화 및 덕트 규격 산정 매뉴얼, 기계설비법 KDS KCS 기준"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="공조 덕트 규격 산정 시스템 전체 화면 — MANMIN Ver5.1.2"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.2</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">Q=A×V×3,600 기반 풍량·단면적·풍속 상관관계 + 등마찰손실법(0.8~1.2 Pa/m) · 풍속법(사무소 주덕트 7~10 m/s) · 정압재취득법(분기점 정압 재취득) 3대 산정 방법론 + 저속/고속 덕트 분류 기준(풍속 15 m/s · 정압 500 Pa 경계) + 사각형 덕트 종횡비 제한(최대 1:4). 기계설비법 및 KDS/KCS 건설기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">규격 산정 화면 — 덕트 조건 · 풍량(CMH · CMS · CFM) 입력 → 사각덕트 규격 · 실제 풍속 · 권장 범위 판정과 산정 상세.</p>
           </div>
         </div>
 
@@ -4485,6 +4625,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/QMYdO_UjB8Q" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Booster-Pump/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4493,20 +4641,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              전양정(H) · 동력(P) · 순환펌프 밀폐회로 · 급수펌프 수압 기준 · 오배수펌프 · EPI 최적화
+              전체 화면 — 설비펌프 용량 자동선정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/설비펌프.webp', '설비펌프 계산기', 'https://manminkim-eng.github.io/Booster-Pump/')">
               <img src="./images/설비펌프.webp"
-                   alt="MANMIN Ver5.0 기계설비 펌프 용량 산정 가이드 인포그래픽 — 전양정(H)과 동력(P) 계산, 순환·급수·오배수 펌프 용도별 설계 기준 및 EPI 최적화"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="설비펌프 용량 자동선정 시스템 전체 화면 — MANMIN Ver5.0.3"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.3</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">전양정(H) = 실양정 + 관로손실 + 말단소요압력 산정 + 전동기 동력(P = γQH/η) 여유율 10~15% 적용 + 순환펌프(밀폐회로 실망정 0 · 열교환기 손실 70 kPa 이하) · 급수펌프(위생기구 수압 550 kPa 이하 유지) · 오배수펌프(유입 유량의 200% 이상 응령 · 고형물 통과 직경 25~50mm). 에너지성능지표(EPI) 최적화 기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용량 선정 화면 — 펌프 8종 진행 상태 카드 · 난방 순환펌프 입력(기계설비 기술기준 별표 1) → 유량 · 양정 · 계산동력 · 선정 출력.</p>
           </div>
         </div>
 
@@ -4550,6 +4698,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/bWpPj3dcNQ0" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Hot-Water-Supply-System/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4558,20 +4714,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              건물 용도별 급탕량 · 피크 부하 산정 · 안전율 1.3 · 보일러 정격 출력 환산
+              전체 화면 — 급탕량 · 보일러 출력 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/급탕설비.webp', '건물별 급탕량 보일러 산정 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/Hot-Water-Supply-System/')">
               <img src="./images/급탕설비.webp"
-                   alt="MANMIN Ver5.0 건물별 급탕량 및 보일러 용량 산정 가이드 인포그래픽 — 건물 용도별 1인 1일 급탕량, 4단계 핵심 산정 프로세스, 안전율 1.3 적용, kW 환산"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="급탕량 · 보일러 출력 산정 시스템 전체 화면 — MANMIN Ver5.0.2"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.2</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건물 용도별 1인 1일 급탕량(아파트 75~150L · 오피스 7~12L · 호텔/병원 100~200L) 기반 Q<sub>d</sub> = N × q<sub>d</sub> 총 급탕량 산정 + 동절기 온도 차 55℃(급수 5℃→급탕 60℃) 적용 Q<sub>h</sub> = G × ΔT 열량 산정 + 배관 열손실 대비 안전율 1.3 가산(P<sub>kcal</sub> = Q<sub>h</sub> × 1.3) + kcal/h → kW 단위 환산(P<sub>kW</sub> = P<sub>kcal</sub> / 860) 최종 보일러 정격 출력 도출.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">산정 화면 — 건물 용도 · 사용인원 · 온도 조건 입력 → 1일 최대 급탕량 · 시간최대 급탕량 · 보일러 필요 출력(kW).</p>
           </div>
         </div>
 
@@ -4615,6 +4771,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/3G0XgcDH8SI" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/ventilation-equipment/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4623,20 +4787,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              주거·다중이용시설·실내주차장 용도별 환기량 기준 · 3단계 산정 알고리즘
+              전체 화면 — 기계환기설비 환기량 산정 시스템
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/환기설비.webp', '건축물 용도별 법정 환기량 산출 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/ventilation-equipment/')">
               <img src="./images/환기설비.webp"
-                   alt="MANMIN Ver5.0 건축물 용도별 법정 기계환기설비 환기량 산출 가이드 인포그래픽 — 주거(체적 기준) · 다중이용시설(인원 기준) · 실내주차장(면적 기준), 3단계 알고리즘"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="기계환기설비 환기량 산정 시스템 전체 화면 — MANMIN Ver5.0.11"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0.11</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">주거용 건축물 — 실체적(㎥) × 0.5 ACH 체적 기준 + 다중이용시설 — 최대 수용인원(인) × 1인당 필요 환기량(지하역사·목욕장·이린이집 25 ㎥/인·h 이상 · 문화/집회·판매·업무·운수시설 29 ㎥/인·h 이상 · 의료·교육·노동·지하 탐방로 36 ㎥/인·h 이상) + 실내 주차장 — 바닥 면적(㎡) × 27 ㎥/㎡·h 면적 기준. 법정 환기량 3단계 알고리즘(① 용도 식별 및 데이터 입력 → ② 법정 기준 대입 및 계산 → ③ 설비 선정 및 성능 검토) 도출 + 멀티필터 포집율 60% 이상 확인.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">환기량 산정 화면 — 용도 선택 · 면적 · 인원 입력 → 기준 환기량 · 설계 환기량과 설비규칙 별표 1의6 법정 필요환기량 검토.</p>
           </div>
         </div>
 
@@ -4680,6 +4844,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/eJGhp-ZnWXw" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Radiant-Time-Series-Method/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4688,20 +4860,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(90,154,232,.15);border:1px solid rgba(90,154,232,.3);padding:1px 8px;">GUIDE</span>
-              RTS법 핵심 메커니즘 · CTS·RTS 시간 지연 · 냉방부하 4단계 · 냉난방 차이점 비교
+              전체 화면 — RTS-MANMIN 건축물 부하계산서
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/부하계산.webp', '건물 냉난방 부하계산 RTS법 가이드', 'https://manminkim-eng.github.io/Radiant-Time-Series-Method/')">
               <img src="./images/부하계산.webp"
-                   alt="MANMIN Ver5.0 건물 냉난방 부하계산 RTS(복사시계열)법 가이드 인포그래픽 — CTS 외벽 전도 지연, RTS 복사열 실내 부하 변환 지연, 냉방부하 4단계 프로세스"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="RTS-MANMIN 건축물 부하계산서 전체 화면 — MANMIN Ver5.2.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--blue);border:1px solid rgba(90,154,232,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.2.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">RTS법 핵심 메커니즘(정상 주기 상태 가정 · 24시간 반복 기상·실내 조건 기반 피크 부하 산출) + CTS 외벽 전도 지연 · RTS 복사열 실내 부하 변환 지연 2단계 시간 지연 효과 + 냉방부하 4단계 프로세스(① 24시간 열취득 프로파일 산출 → ② 대류/복사 성분 분할 → ③ 시계열(RTF) 계수 적용 → ④ 부하 합산 및 최대 부하 결정) + 냉방부하(일사·내부 발열·축열 포함 4단계 시계열 연산) vs 난방부하(최악 조건 U·A·ΔT 단순 열손실 합산) 비교. ASHRAE 권장 기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">프로젝트 개요 화면 — RTS 부하계산 작업 순서(STEP 1~7) · 위치 정보 · 계산 적용 기준, 좌측 계산 단계 목록과 상단 피크 부하 요약.</p>
           </div>
         </div>
 
@@ -4767,6 +4939,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/VuPSEIKyXH0" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/fire-hydrant-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4777,20 +4957,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.3);padding:1px 8px;">STEP 01</span>
-              계산 가이드 인포그래픽
+              전체 화면 — 옥내소화전 펌프 용량 계산서
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/옥내소화전.webp', '옥내소화전 소방 계산기', 'https://manminkim-eng.github.io/fire-hydrant-calc/')">
               <img src="./images/옥내소화전.webp"
-                   alt="옥내소화전 펌프 전양정 및 용량 계산 가이드 — MANMIN Ver5.0"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="옥내소화전 펌프 용량 계산서 전체 화면 — MANMIN Ver5.1.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:var(--gold);border:1px solid rgba(212,168,67,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 102 기반 전양정(H) 계산 공식 요약. 1단계 수원산정 → 2단계 전양정 계산 프로세스 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">데이터 입력 화면 — 프로젝트 정보 · 시스템 파라미터(NFTC 102·604) · 배관 구간 마찰손실 입력. 상단 요약 막대에 토출량 · 수원(옥상수조 포함) · 전양정 · 전동기 동력이 실시간 표시됩니다.</p>
           </div>
 
         </div>
@@ -4836,6 +5016,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/01HIHrOtmZY" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/outdoor-hydrant-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4846,20 +5034,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#fb923c;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);padding:1px 8px;">STEP 01</span>
-              수원 및 펌프 성능 산정 가이드
+              전체 화면 — 옥외소화전 펌프 용량 계산서
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/옥외소화전.webp', '옥외소화전 소방 계산기', 'https://manminkim-eng.github.io/outdoor-hydrant-calc/')">
               <img src="./images/옥외소화전.webp"
-                   alt="MANMIN Ver5.0 옥외소화전 펌프 용량 및 수원 산정 가이드"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="옥외소화전 펌프 용량 계산서 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#fb923c;border:1px solid rgba(251,146,60,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFPC 109 기반 옥외소화전 수원 저수량 산정(N×7m³)과 펌프 성능 기준(방수량·노즐압력·연속운전) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">데이터 입력 화면 — NFPC · NFTC 109 핵심기준 띠 · 시스템 파라미터 · 배관 구간 입력. 상단 요약 막대에 토출량 · 수원 · 전양정 · 전동기 동력이 실시간 표시됩니다.</p>
           </div>
 
         </div>
@@ -4905,6 +5093,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/Nht-lYU03WI" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/fire-sprinkler-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4915,20 +5111,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#38bdf8;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3);padding:1px 8px;">STEP 01</span>
-              펌프 용량 산정 가이드
+              전체 화면 — 스프링클러설비 펌프 용량 계산서
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/스프링클러.webp', '스프링클러 소방 계산기', 'https://manminkim-eng.github.io/fire-sprinkler-calc/')">
               <img src="./images/스프링클러.webp"
-                   alt="MANMIN Ver5.0 스프링클러 펌프 용량 산정 가이드 — NFTC 103"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="스프링클러설비 펌프 용량 계산서 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#38bdf8;border:1px solid rgba(56,189,248,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 103 기반 헤드 기준개수 설정, 수원 용량 산정(기준개수×1.6m³), 전양정 구성 요소, 전동기 출력 선정 프로세스 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">데이터 입력 화면 — 고층건축물 여부 · 기준개수(NFTC 103 표 2.1.1.1) · 옥상수조 · 실양정 입력. 상단 요약 막대에 기준개수 · 토출량 · 수원 · 전양정 · 동력이 표시됩니다.</p>
           </div>
 
         </div>
@@ -4973,6 +5169,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/uJ-Jj_vyyoQ" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/simple-sprinkler-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -4983,20 +5187,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#34d399;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);padding:1px 8px;">STEP 01</span>
-              펌프 용량 및 압력 산정 가이드
+              전체 화면 — 간이스프링클러설비 펌프 용량 계산서
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/간이스프링.webp', '간이스프링클러 소방 계산기', 'https://manminkim-eng.github.io/simple-sprinkler-calc/')">
               <img src="./images/간이스프링.webp"
-                   alt="MANMIN Ver5.0 간이스프링클러 펌프 용량 및 압력 산정 가이드 — NFSC 103A"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="간이스프링클러설비 펌프 용량 계산서 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#34d399;border:1px solid rgba(52,211,153,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFSC 103A 기반 간이스프링클러 설비별 기본 성능(방수압·방수량), 대상물 유형별 동시 개방 헤드 수, 가압송수장치별 압력 산정 공식(H = h₁ + 10, P = p₁ + p₂ + 0.1) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">데이터 입력 화면 — 적용 기준 유형(NFTC 103A 2.1.1.2) 선택 · 펌프 조건 · 배관 구간 입력. 기준헤드 · 토출량 · 수원 · 전양정이 실시간 요약됩니다.</p>
           </div>
 
         </div>
@@ -5041,6 +5245,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/1B5O5xQnQZI" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/combo-pump-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5051,20 +5263,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#c084fc;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(192,132,252,.15);border:1px solid rgba(192,132,252,.3);padding:1px 8px;">STEP 01</span>
-              겸용 펌프 용량 산정 3대 원칙 · 실계산 사례
+              전체 화면 — 겸용 펌프 용량 계산서(옥내소화전 + 스프링클러)
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/겸용시스템.webp', '겸용 소방펌프 시스템 계산기', 'https://manminkim-eng.github.io/combo-pump-calc/')">
               <img src="./images/겸용시스템.webp"
-                   alt="MANMIN Ver5.0 옥내소화전+스프링클러 겸용 펌프 용량 계산 가이드"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="겸용 펌프 용량 계산서(옥내소화전 + 스프링클러) 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#c084fc;border:1px solid rgba(192,132,252,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">옥내소화전·스프링클러 겸용 펌프 용량 산정 3대 원칙 및 실제 건축공사 현장 계산 사례(토출량 1,190 ℓ/min · 전양정 109m · 수원 23.8m³) 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">옥내소화전 입력 화면 — 옥내 → 스프링클러 → 겸용 결과 → 계산서 4단계 탭. 상단 요약 막대에 설비별 유량 · 전양정과 겸용 합산 유량 · 총 저수량 · 채택 전양정이 표시됩니다.</p>
           </div>
 
         </div>
@@ -5109,6 +5321,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/m9NcMy3CRVg" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/combo-easy-fire-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5119,20 +5339,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#fbbf24;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);padding:1px 8px;">STEP 01</span>
-              겸용 시스템 용량 산정 원칙 · 방화구획 완화 · 배관 공통사항
+              전체 화면 — 겸용 펌프 용량 계산서(간이스프링클러 + 옥내소화전)
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/간이_옥내.webp', '간이스프링클러+옥내소화전 겸용 계산기', 'https://manminkim-eng.github.io/combo-easy-fire-calc/')">
               <img src="./images/간이_옥내.webp"
-                   alt="MANMIN Ver5.0 간이스프링클러+옥내소화전 겸용 시스템 용량 산정 가이드"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="겸용 펌프 용량 계산서(간이스프링클러 + 옥내소화전) 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#fbbf24;border:1px solid rgba(251,191,36,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFSC 103A·NFTC 102 기반 간이스프링클러+옥내소화전 겸용 토출량·저수량 합산 원칙, 전양정 최댓값 채택, 방화구획 시 완화 기준, 개폐표시형 밸브·송수구 공통사항 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">간이스프링클러 입력 화면 — 적용 기준 유형 · 실양정 · 배관 구간(공통 배관 분기 후) 입력. 상단 요약 막대에 설비별 유량 · 겸용 합산 유량 · 총 저수량 · 채택 전양정이 표시됩니다.</p>
           </div>
 
         </div>
@@ -5178,6 +5398,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/z-g9FbYSzso" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/combo-indoor-outdoor-calc/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
         <!-- 이미지 갤러리 -->
@@ -5187,20 +5415,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#f97316;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);padding:1px 8px;">STEP 01</span>
-              펌프 성능·토출량 산정 → 동력 산출·수원 확보
+              전체 화면 — 겸용 펌프 용량 계산서(옥내소화전 + 옥외소화전)
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/옥내_옥외.webp', '옥내+옥외 소화전 겸용 계산기', 'https://manminkim-eng.github.io/combo-indoor-outdoor-calc/')">
               <img src="./images/옥내_옥외.webp"
-                   alt="MANMIN Ver5.0 옥내·외 소화전 겸용 펌프 시스템 설계 가이드"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="겸용 펌프 용량 계산서(옥내소화전 + 옥외소화전) 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#f97316;border:1px solid rgba(249,115,22,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">NFTC 102 기반 옥내·외 소화전 겸용 토출량·전양정·전동기 출력·수원 산정, 과압 방지(0.7MPa 감압장치), 겸용 합산 원칙 인포그래픽.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">옥내소화전 입력 화면 — 건축물 규모(NFTC 604) · 설치개수 · 배관 구간 입력. 상단 요약 막대에 옥내 · 옥외 유량과 겸용 합산 유량 · 채택 전양정 · 총 저수량이 표시됩니다.</p>
           </div>
 
         </div>
@@ -5247,6 +5475,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/0ecm3ueMwIQ" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/portal/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
         <!-- 이미지 갤러리 -->
@@ -5255,20 +5491,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#4ade80;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.3);padding:1px 8px;">PORTAL</span>
-              설비별 NFTC 설계 기준 비교표 · 7종 계산서 통합 대시보드
+              전체 화면 — 소방 펌프 용량 계산서 통합 포털
             </div>
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/통합_포털.webp', '소방설비 통합 포털', 'https://manminkim-eng.github.io/portal/')">
               <img src="./images/통합_포털.webp"
-                   alt="소방 펌프 용량 계산서 통합 포탈 — KIM MANMIN"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="소방 펌프 용량 계산서 통합 포털 전체 화면 — MANMIN Ver5.2.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="898" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
-                          padding:2px 7px;letter-spacing:.06em;">7종 통합</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.2.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">단독 설비 4종 + 겸용 설비 3종 총 7종 계산서 통합 포탈. 설비별 NFTC 설계 기준 비교표, NFTC 화재안전기술기준 시행일 안내(2026.3.1 최신 기준), PWA 오프라인 지원.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">포털 첫 화면 — 도구 9종(펌프 7 · 기타 2)을 단독 · 겸용 · 기타 설비로 분류하고, 설비별 핵심기준 · 시행일 · 📘 매뉴얼 바로가기를 카드로 제공합니다.</p>
           </div>
 
         </div>
@@ -5315,6 +5551,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/TMsEhFoccKM" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Smoke-Control-System/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5323,20 +5567,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#f87171;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);padding:1px 8px;">GUIDE</span>
-              거실제연 배출량 기준 · 가압제연 차압·개방력 · CONTAM 시뮬레이션 · T.A.B. 성능 검증
+              전체 화면 — 제연설비 설계 계산서
             </div>
             <div style="border:1px solid rgba(248,113,113,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/제연설비.webp', '제연설비 설계 및 계산 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/Smoke-Control-System/')">
               <img src="./images/제연설비.webp"
-                   alt="최신 화재안전기술기준(NFTC) 제연설비 설계 및 계산 가이드 MANMIN Ver5.0 — 거실제연 NFTC 501, 가압제연 NFTC 501A, T.A.B 성능 판정, 차압 40Pa, 문 개방력 110N"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="제연설비 설계 계산서 전체 화면 — MANMIN Ver5.1.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#f87171;border:1px solid rgba(248,113,113,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">거실제연(NFTC 501) 배출량 — 400㎡ 미만 5,000㎥/hr · 400㎡↑(직경 40m 내) 40,000㎥/hr · 400㎡↑(직경 40m 초과) 45,000~65,000㎥/hr + 가압제연(NFTC 501A) 차압 40Pa 이상 유지 · 문 개방력 110N 이하 동시 만족 · 총 급기량 = 누설량 + 피난 시 방연풍속 보충량 + T.A.B.(Testing·Adjusting·Balancing) 개별 배출구 60% 이상 · 전체 총합 100% 이상. CONTAM·SMACNA 시뮬레이션 기반.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">배출량 계산 화면 — NFTC 501 핵심기준 띠 · 바닥면적 · 배출량 · 유입구 면적 · 비상전원 요약 카드와 제연구역 조건 입력(6단계 탭).</p>
           </div>
         </div>
 
@@ -5380,6 +5624,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/1ePc7cED1ak" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Emergency-Generator/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5388,20 +5640,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#f87171;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3);padding:1px 8px;">GUIDE</span>
-              GP법 용량 산정 · 소방/비상부하 배분 · 층수별 유지시간 · KDS 2021 기준
+              전체 화면 — 비상발전기 용량 산정 계산서
             </div>
             <div style="border:1px solid rgba(248,113,113,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/발전설비.webp', '최신 비상발전기 용량 산정 및 유지시간 법적 기준 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/Emergency-Generator/')">
               <img src="./images/발전설비.webp"
-                   alt="MANMIN Ver5.0 최신 비상발전기 용량 산정 및 유지시간 법적 기준 가이드 인포그래픽 — GP법 적용, 소방전원보존형 산정 로직, 층수별 3단계 유지시간(20·40·60분)"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="비상발전기 용량 산정 계산서 전체 화면 — MANMIN Ver5.1.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#f87171;border:1px solid rgba(248,113,113,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.1</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">GP법(General Power Method) — 2021년 6월 이후 표준으로 부하의 정상 운전과 충격 특성 통합 고려 + 소방전원보존형 산정 로직 — max(화재 시 부하, 정전 시 부하) 더 큰 용량을 최종 산정값으로 선정 + 소방/비상부하 수용률 100% 의무 적용 + 건축물 층수별 법적 유지시간 3단계 차등(일반 특정소방대상물 지하 제외 29층 이하 20분 이상 · 고층 건축물 30~49층 40분 이상 · 초고층 건축물 50층 이상 60분 이상) + 특수 설비 예외(비상양송·무선통신보조설비 최소 30분). KDS 2021 개정 완벽 반영.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">용량 산정 화면 — 설비별 소방부하(kW) 입력과 필요 용량(kVA) · 부하율 · 여유용량 · 비상전원 유지시간 판정이 실시간 표시됩니다.</p>
           </div>
         </div>
 
@@ -5445,6 +5697,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/tpRqZjXBbFs" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Fire-Protection-Systems/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5453,20 +5713,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.62rem;color:#f87171;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);padding:1px 8px;">GUIDE</span>
-              소방시설 설치 의무 기준 · 2024-2025 최신 개정 사항 · 건축물 유형별 핵심 기준
+              전체 화면 — 소방시설 설치 검토 시스템
             </div>
             <div style="border:1px solid rgba(248,113,113,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/소방시설.webp', '건축물 소방시설 설치 및 화재 안전 핵심 기준 가이드', 'https://manminkim-eng.github.io/Fire-Protection-Systems/')">
               <img src="./images/소방시설.webp"
-                   alt="[가이드] 건축물 소방시설 설치 및 화재 안전 핵심 기준 Ver5.0 — 주요 소방시설 설치 의무 기준, 2024-2025 최신 특화 및 개정 기준, 지하주차장 전기차 화재 대응, 간이스프링클러 의무화"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="소방시설 설치 검토 시스템 전체 화면 — MANMIN Ver5.2.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#f87171;border:1px solid rgba(248,113,113,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.2.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">건축물 연면적·층수·용도에 따른 소화·경보·피난 설비 설치 기준 완전 정리. 스프링클러(6층 이상 전 층) · 옥내소화전(연면적 3,000㎡ 이상) · 노유자 시설 자동화재탐지설비(연면적 무관) · 2024.12 연립·다세대 간이스프링클러 전면 의무화 · 지하주차장 전기차 대응(습식 스프링클러 + 조기반응형 헤드 주차당 2개) 최신 개정 기준 수록.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">설치 검토 화면 — 용도 · 연면적 · 지상/지하 층수 · 수용인원 입력 → 소방시설법 시행령 별표 4 조항별 의무 · 확인 설비 판정 카드.</p>
           </div>
         </div>
 
@@ -5562,6 +5822,14 @@ footer {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
                 YouTube 해설 영상
               </a>
+            <a href="https://youtu.be/pTVzn8KrDtk" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/civil-engineering-piping/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
             </div>
           </div>
 
@@ -5570,20 +5838,20 @@ footer {
             <div style="display:flex;flex-direction:column;gap:8px;">
               <div style="font-family:var(--f-mono);font-size:.65rem;color:#4ade80;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
                 <span style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);padding:1px 8px;">GUIDE</span>
-                합리식(Q=CIA) · 매닝 공식 · 우수 유속 제한 · 오수 계획시간최대오수량 · SWMM 동적 시뮬레이션
+                전체 화면 — 단지내 우수 · 오수 배관 산정 시스템
               </div>
               <div style="border:1px solid rgba(74,222,128,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                    onclick="openWcImg('./images/토목배관.webp', '토목 우수·오수 배관 관경 산정 가이드', 'https://manminkim-eng.github.io/civil-engineering-piping/')">
                 <img src="./images/토목배관.webp"
-                     alt="MANMIN Ver5.0 단지 내 토목 우수·오수 배관 관경 산정 가이드 인포그래픽 — 합리식 우수 유출량, 매닝 공식, KDS 기준, SWMM 동적 시뮬레이션"
-                     style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                     alt="단지내 우수 · 오수 배관 산정 시스템 전체 화면 — MANMIN Ver5.1.0"
+                     style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                      onmouseover="this.style.transform='scale(1.02)'"
-                     onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                     onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
                 <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                             background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
-                            padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                            padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
               </div>
-              <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">합리식(Q=C·I·A) 기반 계획우수유출량 산정 + 유속 0.8~3.0 m/s 유지 · 국지성 호우 대비 10~20% 할증 · 통수능력 120% 이상 확보 + 오수 계획시간최대오수량(1일 최대오수량 × 1.3~1.8배) + 침전 방지 유속 0.6~1.5 m/s · 최소 토피 20cm 이상 + 배수인구별 최소 오수 관경 기준(150명 이하 100mm · 300명 이하 150mm · 600명 이하 200mm). KDS 설계 기준 완벽 대응.</p>
+              <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">우수 배관 산정 화면 — 지역 · 강우 · 유역 조건 입력(KDS 61 40 00) → 추천 우수관 관경(DN) · 유속과 관경별 만류 통수능 비교표.</p>
             </div>
           </div>
 
@@ -5629,6 +5897,14 @@ footer {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
               YouTube 해설 영상
             </a>
+            <a href="https://youtu.be/_oKrTVpmWrE" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/tomog-ongbyeog/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
           </div>
         </div>
 
@@ -5637,20 +5913,20 @@ footer {
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-family:var(--f-mono);font-size:.65rem;color:#4ade80;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
               <span style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);padding:1px 8px;">GUIDE</span>
-              외적 안정성(활동·전도·지지력) · 내적 안정성 · 내진(M-O) · 배수 시스템
+              전체 화면 — 옹벽 구조물 안전성 검토 시스템
             </div>
             <div style="border:1px solid rgba(74,222,128,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/토목옹벽.webp', '옹벽 구조물 안전성 검토 핵심 가이드 MANMIN Ver5.0', 'https://manminkim-eng.github.io/tomog-ongbyeog/')">
               <img src="./images/토목옹벽.webp"
-                   alt="MANMIN Ver5.0 옹벽 구조물 안전성 검토 핵심 가이드 — 외적 안정성(활동·전도·지반지지력), 내진 M-O 공식, 내적 안정성, 배수 시스템 설계 KDS·KR 기준"
-                   style="width:100%;display:block;object-fit:cover;transition:transform .3s;"
+                   alt="옹벽 구조물 안전성 검토 시스템 전체 화면 — MANMIN Ver5.1.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
-                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="893" height="1600"/>
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#4ade80;border:1px solid rgba(74,222,128,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 5.0</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 5.1.0</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">외적 안정성 — 활동(평상시 1.5·지진 시 1.1~1.2) · 전도(평상시 2.0·지진 시 1.5) · 지반지지력(평상시 2.5~3.0·지진 시 2.0) + 내진 설계 모노노베-오카베(M-O) 공식 동적 토압 산정 + 내적 안정성 콘크리트 전면벽 최소 200mm · 보강토 보강재 벽체 높이 0.7배(최소 2.5m) + 배수 2~4㎡당 1개소 · 자갈·토목섬유 필터 막힘 방지. KDS·KR 설계기준 완벽 대응.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">중력식 옹벽 화면 — 단면 제원 · 콘크리트 물성 · 토압 조건 입력 → 활동 · 전도 · 지지력 · 근입깊이 안전율과 KDS 11 80 05 판정표.</p>
           </div>
         </div>
 
