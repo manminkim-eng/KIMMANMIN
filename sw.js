@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.15';   /* 2026-10-29 디자인 REV.03 — POLISH LAYER·공종 번호·개발웹 2단 카드 (종전 v2.14 법규검토 카드 전체화면) */
+const CACHE_VERSION = 'manmin-v2.16';   /* 2026-10-30 기계설비 통합 포털 M-ALL 카드 (종전 v2.15 디자인 REV.03) */
 const OFFLINE_PAGE  = './offline.html';
 
 /* ── 사전 캐시 목록 (앱 셸) ── */
