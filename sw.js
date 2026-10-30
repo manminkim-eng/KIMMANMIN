@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.29';   /* 2026-10-30 건축 10종 카드 Ver 갱신(헤더 브랜드 이미지 삭제 · 높이 복원 · 매뉴얼 머리 금색) (종전 v2.28 건축 11종 대표색) */
+const CACHE_VERSION = 'manmin-v2.30';   /* 2026-10-30 건축 10종 카드 Ver 갱신(헤더 최상단 ARCHITECT KIM MANMIN 줄 삭제) (종전 v2.29 헤더 보완) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
