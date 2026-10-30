@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.33';   /* 2026-10-31 용도변경 카드 Ver 5.0.12(하단 버전 표시 폭 정정) (종전 v2.32 용도변경 A4 환경 통일) */
+const CACHE_VERSION = 'manmin-v2.34';   /* 2026-10-31 소방 10종 카드 Ver 갱신(대표색 · 아이콘 · 설치 이름) (종전 v2.33 용도변경 하단 버전 표시 폭) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
