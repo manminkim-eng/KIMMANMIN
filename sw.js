@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.24';   /* 2026-10-30 건축 · 기계설비 · 구조·토목 통합 포털 카드 YouTube 해설 영상 · 매뉴얼 롱폼 단추 (종전 v2.23 소방 포털 카드 배치) */
+const CACHE_VERSION = 'manmin-v2.25';   /* 2026-10-30 건축 · 구조 · 기계설비 · 토목 시리즈 끝 MANMIN 요약 배너(소방과 같은 형식 · Released · Manual · PWA) (종전 v2.24 포털 카드 영상 단추) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
