@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.48';   /* 2026-10-31 소방 펌프 7종 5.1.4(터치 32px) · 냉온수 5.0.16 · 급탕 5.0.5 · 소방시설 5.2.3(sw 캐시명) · 소방포털 5.2.9(계산식 안내 단추) 카드 Ver (종전 v2.47 포털 카드 판 두 자리) */
+const CACHE_VERSION = 'manmin-v2.49';   /* 2026-10-31 포털 4종 카드 Ver(소방 5.2.10 · 기계 1.0.10 · 건축 1.0.8 · 구조토목 1.0.9 — 매뉴얼 재촬영 · Pretendard) · 기계 카드 바닥 Ver 1.0 (종전 v2.48) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
