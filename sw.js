@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.59';   /* 2026-11-02 아카이브 수치 공식 경력증명 기준 갱신(§25-6-33) (종전 v2.58) */
+const CACHE_VERSION = 'manmin-v2.60';   /* 2026-11-03 카드 Ver: 계산 도구 32종 A4 인쇄 선명화(§25-6-36) (종전 v2.59) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
