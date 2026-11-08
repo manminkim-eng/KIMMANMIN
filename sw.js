@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v2.76';   /* 2026-11-08 카드 Ver: 건물개요 공유 확대 8종 공통 인쇄 원본 · 매뉴얼 이미지 교체(§25-6-51) (종전 v2.75) */
+const CACHE_VERSION = 'manmin-v2.77';   /* 2026-11-09 카드 Ver: 건물개요 공유 남은 12종 건물개요 저장 · 불러오기 MM-PROJECT v1.2(§25-6-52) (종전 v2.76) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
