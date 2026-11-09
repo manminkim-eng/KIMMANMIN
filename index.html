@@ -2805,7 +2805,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">건축 설계·감리·법규</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-sub);white-space:nowrap;">13 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-sub);white-space:nowrap;">14 tools</span>
       </div>
 
       <!-- 도구 카드 그리드 -->
@@ -2895,10 +2895,17 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
           <div class="hub-tag">SAFETY FEE</div>
         </a>
 
+        <a href="#card-bff" class="hub-card rv hub-arch">
+          <div class="hub-icon"><span class="hub-dot" aria-hidden="true"></span><span class="hub-no">A-13</span></div>
+          <div class="hub-name">편의시설</div>
+          <div class="hub-desc">장애인 편의시설 설치 대상<br>BF 인증 의무 판정</div>
+          <div class="hub-tag">BARRIER-FREE</div>
+        </a>
+
         <a href="#card-arch-portal" class="hub-card rv hub-arch" style="border-color:rgba(212,168,67,.35);background:rgba(212,168,67,.04);">
           <div class="hub-icon"><span class="hub-dot" aria-hidden="true"></span><span class="hub-no">A-ALL</span></div>
           <div class="hub-name">통합 포털</div>
-          <div class="hub-desc">10종 건축 계산서<br>원스톱 포털</div>
+          <div class="hub-desc">12종 건축 계산서<br>원스톱 포털</div>
           <div class="hub-tag" style="color:var(--gold);border-color:var(--gold);">PORTAL</div>
         </a>
 
@@ -3658,6 +3665,91 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
     </div>
   </div>
 
+  <!-- ══ 장애인 편의시설 별도 시리즈 (2026-11-09 신규) ════════════════════ -->
+  <div class="inner" style="margin-top:48px;">
+
+    <!-- 섹션 구분 헤더 -->
+    <div class="rv" style="margin-bottom:24px;display:flex;align-items:center;gap:16px;">
+      <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);"></div>
+      <div style="font-family:var(--f-mono);font-size:.68rem;color:#d8ac50;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;">
+        // BARRIER-FREE-FACILITIES Series
+      </div>
+      <div style="flex:1;height:1px;background:linear-gradient(to left,var(--line2),transparent);"></div>
+    </div>
+
+    <div class="sec-hd rv" style="margin-bottom:28px;">
+      <div class="sec-eyebrow">장애인 편의시설 설치기준</div>
+      <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">용도 · 규모 · 공사 구분으로 편의시설 설치 대상을 판정하는 <span class="hl">웹 검토 도구</span></h2>
+      <p class="sec-sub">장애인등편의법 · 시행령 별표 1 · 2 · 2의2 · 2의3 · 시행규칙 별표 1 세부기준 · BF 인증 의무 판정</p>
+    </div>
+
+    <div class="webdev-grid">
+
+      <!-- BFF-001: 장애인 편의시설 설치기준 검토 -->
+      <div id="card-bff" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(216,172,80,.4);color:#d8ac50;">편의시설</span>
+              <span class="wtag b">PWA</span>
+              <span class="wtag">장애인등편의법</span>
+              <span class="wtag" style="border-color:rgba(216,172,80,.3);color:#d8ac50;">BF 인증 판정</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">장애인 편의시설 설치기준 검토 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률」 시행령 별표 1 · 2 · 2의2 · 2의3과 시행규칙 별표 1에 따라 용도(52종)별 바닥면적 · 객실 · 세대 · 관람석, 공사 구분 9종(신축 · 증축 · 개축 · 재축 · 이전 · 대수선 · 용도변경), 시설주(공공 · 민간)로 편의시설 설치 대상 여부를 판정하고, 의무 · 권장 편의시설 19종과 수량(객실 1% · 관람석 1% · 승강기 강화), 세부기준 체크리스트, BF(장애물 없는 생활환경) 인증 의무까지 A4 검토서 한 장으로 정리합니다. 법령 문언이 정확히 맞지 않는 경우는 추정하지 않고 「확인 필요」로 표시합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #d8ac50;font-family:var(--f-mono);font-size:.68rem;color:#d8ac50;">대상 = 별표 1 규모 기준 + 시행령 제5조 단서(공사 구분)</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">BF 의무 = 법 제10조의2 ③ (시설주 × 공사 구분)</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Barrier-Free-Facilities/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [편의시설] 바로가기
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 갤러리 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.62rem;color:#d8ac50;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(216,172,80,.15);border:1px solid rgba(216,172,80,.3);padding:1px 8px;">GUIDE</span>
+              전체 화면 — 장애인 편의시설 설치기준 검토
+            </div>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/편의시설.webp', '장애인 편의시설 설치기준 검토', 'https://manminkim-eng.github.io/Barrier-Free-Facilities/')">
+              <img src="./images/편의시설.webp"
+                   alt="장애인 편의시설 설치기준 검토 전체 화면 — MANMIN Ver1.0.0"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#d8ac50;border:1px solid rgba(216,172,80,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0.0</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">검토 입력 화면 — 사업 정보 · 공사 구분 · 시설주 · 용도별 바닥면적 입력 → 상단 요약 막대와 판정 띠에 대상 여부 · 의무 / 권장 편의시설 수 · BF 인증 의무를 실시간 표시.</p>
+          </div>
+        </div>
+
+        <!-- 푸터: 링크 + 날짜 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Barrier-Free-Facilities/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Barrier-Free-Facilities →
+          </a>
+          
+          <span class="wdate">2026 · Ver 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ══ 건축 상주감리 별도 시리즈 ════════════════════ -->
   <div class="inner" style="margin-top:48px;">
 
@@ -4341,11 +4433,11 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
               <span class="wtag" style="border-color:rgba(216,172,80,.4);color:var(--gold);">통합 포털</span>
               <span class="wtag b">PWA</span>
               <span class="wtag">건축법 · 국토계획법 · 주차장법</span>
-              <span class="wtag" style="border-color:rgba(216,172,80,.3);color:var(--gold);">11종 계산서</span>
+              <span class="wtag" style="border-color:rgba(216,172,80,.3);color:var(--gold);">12종 계산서</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
             <h3 class="wtitle" style="font-size:1.18rem;">건축 계산서 통합 포털 — KIM MANMIN</h3>
-            <p class="wdesc" style="max-width:680px;margin-top:6px;">용도변경·건폐율·용적률·일조·부설주차장·열관류율·에너지성능지표·설계·감리 대가·해체감리·안전점검 대가·상주감리·공사기간까지 건축 계산서 11종을 인허가·법규 · 에너지 · 대가·감리·공기로 분류해 한 화면에서 여는 통합 웹 포털. 계산서마다 적용한 근거 법령·고시와 시행일(LawMCP 대조 2026-10-30)을 함께 안내하고, 2026-11-12 시행 예정인 건축법 제61조제1항 개정을 알리며, PWA 오프라인과 앱 설치를 지원합니다.</p>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">용도변경·건폐율·용적률·일조·부설주차장·열관류율·에너지성능지표·설계·감리 대가·해체감리·안전점검 대가·상주감리·공사기간·장애인 편의시설까지 건축 계산서 12종을 인허가·법규 · 에너지 · 대가·감리·공기로 분류해 한 화면에서 여는 통합 웹 포털. 계산서마다 적용한 근거 법령·고시와 시행일(LawMCP 대조 2026-10-30)을 함께 안내하고, 2026-11-12 시행 예정인 건축법 제61조제1항 개정을 알리며, PWA 오프라인과 앱 설치를 지원합니다.</p>
             <!-- 핵심 스펙 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--gold);font-family:var(--f-mono);font-size:.71rem;color:var(--gold-lt);">인허가·법규 4종 — 용도변경 · 건폐율·용적률 · 일조 · 주차</div>
