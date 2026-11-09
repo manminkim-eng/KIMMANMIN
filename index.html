@@ -24,7 +24,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://manminkim-eng.github.io/KIMMANMIN/">
 <meta property="og:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta property="og:description" content="31년 7개월 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 35종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
+<meta property="og:description" content="31년 7개월 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 36종 제공. CVS 국제공인 VE전문가 · 익산시 건축위원회 자문위원.">
 <meta property="og:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="김만민 건축사 — 건축·구조·기계설비·소방·토목 복합 엔지니어링">
-<meta name="twitter:description" content="31년 7개월 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 35종 제공.">
+<meta name="twitter:description" content="31년 7개월 현장 경력의 건축사 김만민. 건축·구조·기계설비·소방·토목 5개 분야 웹 계산 도구 36종 제공.">
 <meta name="twitter:image" content="https://manminkim-eng.github.io/KIMMANMIN/images/og-thumbnail.jpg">
 <!-- JSON-LD 구조화 데이터 (구글 리치 결과) -->
 <script type="application/ld+json">
@@ -2944,7 +2944,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
         <a href="#card-sc-portal" class="hub-card rv hub-struct" style="border-color:rgba(212,168,67,.35);background:rgba(212,168,67,.04);">
           <div class="hub-icon"><span class="hub-dot" aria-hidden="true"></span><span class="hub-no">S-ALL</span></div>
           <div class="hub-name">통합 포털</div>
-          <div class="hub-desc">구조·토목 4종 계산서<br>원스톱 포털</div>
+          <div class="hub-desc">구조·토목 5종 계산서<br>원스톱 포털</div>
           <div class="hub-tag" style="color:var(--gold);border-color:var(--gold);">PORTAL</div>
         </a>
 
@@ -3138,7 +3138,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
           <div style="font-family:var(--f-kr);font-size:1.1rem;font-weight:700;color:var(--t-high);margin-top:2px;">토목 배관·구조 설계</div>
         </div>
         <div style="flex:1;height:1px;background:linear-gradient(to right,var(--line2),transparent);margin-left:8px;"></div>
-        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-sub);white-space:nowrap;">3 tools</span>
+        <span style="font-family:var(--f-mono);font-size:.6rem;color:var(--t-sub);white-space:nowrap;">4 tools</span>
       </div>
 
       <div class="hub-grid">
@@ -3157,10 +3157,17 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
           <div class="hub-tag" style="color:#4ade80;border-color:#4ade80;">KDS·KR</div>
         </a>
 
+        <a href="#card-civil-sbc" class="hub-card rv hub-civil">
+          <div class="hub-icon"><span class="hub-dot" aria-hidden="true"></span><span class="hub-no">C-03</span></div>
+          <div class="hub-name">지내력</div>
+          <div class="hub-desc">N값 → 허용지지력<br>표 4.2-1 상한 대조</div>
+          <div class="hub-tag" style="color:#4ade80;border-color:#4ade80;">KDS 41·11</div>
+        </a>
+
         <a href="#card-sc-portal" class="hub-card rv hub-civil" style="border-color:rgba(212,168,67,.35);background:rgba(212,168,67,.04);">
           <div class="hub-icon"><span class="hub-dot" aria-hidden="true"></span><span class="hub-no">C-ALL</span></div>
           <div class="hub-name">통합 포털</div>
-          <div class="hub-desc">구조·토목 4종 계산서<br>원스톱 포털</div>
+          <div class="hub-desc">구조·토목 5종 계산서<br>원스톱 포털</div>
           <div class="hub-tag" style="color:var(--gold);border-color:var(--gold);">PORTAL</div>
         </a>
 
@@ -6528,6 +6535,81 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
       </div>
 
 
+      <!-- CIVIL-003: N값 지내력 환산 (2026-11-09 · C-03) -->
+      <div id="card-civil-sbc" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid rgba(45,212,191,.25);">
+        <!-- 헤더 -->
+        <div style="padding:20px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+              <span class="wtag" style="border-color:rgba(45,212,191,.4);color:#2dd4bf;">토목</span>
+              <span class="wtag b">PWA · Ver1.0</span>
+              <span class="wtag" style="border-color:rgba(45,212,191,.3);color:#2dd4bf;">N값 지내력 환산</span>
+              <span class="wtag live">● GITHUB LIVE</span>
+            </div>
+            <h3 class="wtitle" style="font-size:1.18rem;">N값으로 지내력 산정하기 — 표준관입시험 N값 → 허용지지력 · KDS 41 19 00 표 4.2-1 대조 — MANMIN Ver1.0</h3>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">지반조사 보고서의 N값 표를 붙여 넣으면 N값 보정 → φ · cu 환산 → Meyerhof 극한지지력 · 침하 기준 지지력 → KDS 41 19 00 식 (4.2-1)의 허용지지력까지 정리하고, 입증자료가 없으면 표 4.2-1 추정 지지력(모래 100 · 점토 70 kN/㎡)을 상한으로 채택합니다. 시추공별 최솟값 · 평판재하 우선 · A4 계산서 출력. 현행 KDS 에 N값 → 허용지지력 환산식은 없어 문헌식(Meyerhof · Bowles 등) 참고 추정값으로 표기합니다.</p>
+            <!-- 핵심 공식 -->
+            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #2dd4bf;font-family:var(--f-mono);font-size:.71rem;color:#2dd4bf;">식 (4.2-1) qa = (qu − qo)/SF + qo — SF 3 이상 · qu 3,000 kPa 이하</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #2dd4bf;font-family:var(--f-mono);font-size:.71rem;color:#99f6e4;">입증자료 없음 → 표 4.2-1 상한(4.2.2) — 모래 100 · 점토 70 kN/㎡</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid var(--cyan);font-family:var(--f-mono);font-size:.71rem;color:var(--cyan);">침하 기준 Se 25 mm · 시추공별 최솟값 · 평판재하 min(qy/2, qult/3) 우선</div>
+            </div>
+          </div>
+          <!-- 버튼 그룹 -->
+          <div class="wcard-btn-group">
+            <a href="https://manminkim-eng.github.io/Soil-Bearing-Capacity/" target="_blank" rel="noopener" class="wcard-gh-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB [지내력] 바로가기
+            </a>
+            <a href="https://youtu.be/AX1v8sKunug" target="_blank" rel="noopener" class="wcard-yt-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/></svg>
+              YouTube 해설 영상
+            </a>
+            <a href="https://youtu.be/59fGoN8zY1g" target="_blank" rel="noopener" class="wcard-yt-btn wcard-yt-long">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.8 19 12 19 12 19s4.8 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.6V8.9l5.4 2.9-5.4 2.8z"/></svg>
+              YouTube 매뉴얼 롱폼
+            </a>
+            <a href="https://manminkim-eng.github.io/Soil-Bearing-Capacity/manual/" target="_blank" rel="noopener" class="wcard-manual-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+              사용자 매뉴얼
+            </a>
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div style="padding:20px 24px;display:grid;grid-template-columns:1fr;gap:16px;align-items:start;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--f-mono);font-size:.65rem;color:#2dd4bf;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px;">
+              <span style="background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.3);padding:1px 8px;">GUIDE</span>
+              전체 화면 — N값 지내력 환산 시스템
+            </div>
+            <div style="border:1px solid rgba(45,212,191,.2);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
+                 onclick="openWcImg('./images/지내력.webp', 'N값 지내력 환산 시스템 MANMIN Ver1.0', 'https://manminkim-eng.github.io/Soil-Bearing-Capacity/')">
+              <img src="./images/지내력.webp"
+                   alt="N값 지내력 환산 시스템 전체 화면 — MANMIN Ver 1.0.1"
+                   style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
+                   onmouseover="this.style.transform='scale(1.02)'"
+                   onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
+              <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
+                          background:rgba(9,13,24,.85);color:#2dd4bf;border:1px solid rgba(45,212,191,.3);
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0.1</div>
+            </div>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">첫 화면 — 예제 ① BH-1 사질토 · 독립기초 2.0 × 2.0 m · 근입 1.5 m 입력 → 대표 N₆₀ 11.85 · φ 26.9° · 지지력 기준 238.1 · 침하 기준 235.2 → 채택 허용지지력 235.2 kN/㎡ · 접지압 150 OK.</p>
+          </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="wfoot" style="margin:0 24px 0;border-top:1px solid var(--line);">
+          <a href="https://manminkim-eng.github.io/Soil-Bearing-Capacity/" target="_blank" rel="noopener" class="wlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            manminkim-eng.github.io/Soil-Bearing-Capacity →
+          </a>
+          <span class="wdate">2026 · Ver 1.0</span>
+        </div>
+      </div>
+
+
+
       <!-- WEB-SC-PORTAL: 구조·토목 계산서 통합 포털 (2026-10-30 · S-ALL · C-ALL) -->
       <div id="card-sc-portal" class="wc md rv" style="grid-column:span 12;background:var(--bg-card);border:1px solid var(--line);">
         <!-- 헤더 -->
@@ -6537,15 +6619,15 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
               <span class="wtag" style="border-color:rgba(167,139,250,.4);color:#a78bfa;">통합 포털</span>
               <span class="wtag b">PWA</span>
               <span class="wtag">건축법 제48조 · KDS 41 · 61 · 11</span>
-              <span class="wtag" style="border-color:rgba(45,212,191,.3);color:#2dd4bf;">4종 계산서</span>
+              <span class="wtag" style="border-color:rgba(45,212,191,.3);color:#2dd4bf;">5종 계산서</span>
               <span class="wtag live">● GITHUB LIVE</span>
             </div>
             <h3 class="wtitle" style="font-size:1.18rem;">구조·토목 계산서 통합 포털 — KIM MANMIN</h3>
-            <p class="wdesc" style="max-width:680px;margin-top:6px;">내진설계 의무대상 판정·건축물 설계하중·단지 우수·오수 배관·옹벽 안전성 검토까지 구조·토목 계산서 4종을 한 화면에서 여는 통합 웹 포털. 계산서마다 적용한 근거 법령(건축법 제48조 · 시행령 제32조 · 구조기준 규칙 · 시설물안전법 시행령, LawMCP 대조 2026-10-30)과 설계기준(KDS 41 · 17 · 61 · 11)을 함께 안내하고, PWA 오프라인과 앱 설치를 지원합니다.</p>
+            <p class="wdesc" style="max-width:680px;margin-top:6px;">내진설계 의무대상 판정·건축물 설계하중·단지 우수·오수 배관·옹벽 안전성 검토 · N값 지내력 환산까지 구조·토목 계산서 5종을 한 화면에서 여는 통합 웹 포털. 계산서마다 적용한 근거 법령(건축법 제48조 · 시행령 제32조 · 구조기준 규칙 · 시설물안전법 시행령, LawMCP 대조 2026-10-30)과 설계기준(KDS 41 · 17 · 61 · 11)을 함께 안내하고, PWA 오프라인과 앱 설치를 지원합니다.</p>
             <!-- 핵심 스펙 -->
             <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
               <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #a78bfa;font-family:var(--f-mono);font-size:.71rem;color:#c4b5fd;">구조 2종 — 내진설계 의무대상 · 설계하중</div>
-              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #2dd4bf;font-family:var(--f-mono);font-size:.71rem;color:#2dd4bf;">토목 2종 — 단지 우수·오수 배관 · 옹벽</div>
+              <div style="padding:6px 12px;background:var(--bg-deep);border-left:2px solid #2dd4bf;font-family:var(--f-mono);font-size:.71rem;color:#2dd4bf;">토목 3종 — 단지 우수·오수 배관 · 옹벽 · 지내력</div>
             </div>
           </div>
           <!-- 버튼 그룹 -->
@@ -6579,15 +6661,15 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
             <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg-deep);position:relative;cursor:pointer;"
                  onclick="openWcImg('./images/구조토목_통합포털.webp', '구조·토목 계산서 통합 포털', 'https://manminkim-eng.github.io/struct-civil-portal/')">
               <img src="./images/구조토목_통합포털.webp"
-                   alt="구조·토목 계산서 통합 포털 전체 화면 — MANMIN Ver 1.0.11"
+                   alt="구조·토목 계산서 통합 포털 전체 화면 — MANMIN Ver 1.0.12"
                    style="width:100%;height:auto;display:block;object-fit:cover;transition:transform .3s;"
                    onmouseover="this.style.transform='scale(1.02)'"
                    onmouseout="this.style.transform='scale(1)'" loading="lazy" decoding="async" width="1800" height="1125"/>
               <div style="position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:.58rem;
                           background:rgba(9,13,24,.85);color:#c4b5fd;border:1px solid rgba(167,139,250,.3);
-                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0.11</div>
+                          padding:2px 7px;letter-spacing:.06em;">Ver 1.0.12</div>
             </div>
-            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">포털 첫 화면 — 계산서 4종을 구조 · 토목으로 분류하고, 카드마다 근거 조문 · KDS 칩 · 현재 버전 · 사용자 매뉴얼 바로가기를 제공합니다. 아래 근거표에 법령 시행일과 KDS 코드를 정리했습니다.</p>
+            <p style="font-size:.82rem;color:var(--t-sub);line-height:1.72;">포털 첫 화면 — 계산서 5종을 구조 · 토목으로 분류하고, 카드마다 근거 조문 · KDS 칩 · 현재 버전 · 사용자 매뉴얼 바로가기를 제공합니다. 아래 근거표에 법령 시행일과 KDS 코드를 정리했습니다.</p>
           </div>
 
         </div>
@@ -6599,7 +6681,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
             manminkim-eng.github.io/struct-civil-portal →
           </a>
           
-          <span class="wdate">2026 · 4종 통합 · Ver 1.0.6</span>
+          <span class="wdate">2026 · 5종 통합 · Ver 1.0.12</span>
         </div>
       </div>
 
@@ -6612,15 +6694,15 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
         <div>
           <div style="font-family:var(--f-mono);font-size:.72rem;color:#2dd4bf;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">// MANMIN Web Series</div>
           <div style="font-family:var(--f-kr);font-size:1.05rem;font-weight:700;color:var(--t-high);">토목 엔지니어링 웹 계산 도구 시리즈</div>
-          <div style="font-size:.88rem;color:var(--t-body);margin-top:4px;">KDS 61 · 11 기반 · A4 계산서 출력 · PWA 오프라인 지원 · 현장 실무 최적화</div>
+          <div style="font-size:.88rem;color:var(--t-body);margin-top:4px;">KDS 61 · 11 · 41 기반 · A4 계산서 출력 · PWA 오프라인 지원 · 현장 실무 최적화</div>
         </div>
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:#99f6e4;">3</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:#99f6e4;">4</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Released</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">3</div>
+            <div style="font-family:var(--f-mono);font-size:1.6rem;font-weight:700;color:var(--cyan);">4</div>
             <div style="font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-transform:uppercase;letter-spacing:.08em;">Manual</div>
           </div>
           <div style="text-align:center;">
