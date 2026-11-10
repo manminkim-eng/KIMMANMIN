@@ -2210,6 +2210,46 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
 }
 
 </style>
+<!-- ══ MM-PRINT 홈피판 v1.0 (2026-11-10 · 포트폴리오 PDF A4 결함 보정 D1~D7) — 인쇄 전용, 화면 영향 없음 ══ -->
+<style id="mm-print-hp">
+@media print{
+  @page{ size:A4 portrait; margin:12mm 10mm 14mm 10mm; background:#0c1120;
+    @bottom-left{ content:"김만민 건축사 · ARCHITECT KIM MANMIN — Portfolio"; font:7.5pt "Malgun Gothic",sans-serif; color:#7090b8; }
+    @bottom-right{ content:counter(page) " / " counter(pages); font:8pt "Malgun Gothic",sans-serif; color:#7090b8; }
+  }
+  /* D1 화면 전용 단추·안내 숨김 */
+  .hero-btns, .contact-action-row, .contact-action-row + div,
+  .btn-naver-blog, .btn-naver-blog + div, a.btn[href="#contact"],
+  .mm-more, #mm-ios-tip{ display:none !important; }
+  /* D2 그리드·묶음 통째유지 해제(제목만 남는 빈 쪽 방지) — 카드 단위 유지는 그대로 */
+  .exp-grid, .lic-grid, .scope-grid, .cm-proj-grid, .adv-grid, .arc-grid,
+  .brand-story, .about-wrap, .wcm-wrap{ break-inside:auto !important; page-break-inside:auto !important; }
+  .sec-hd{ break-after:avoid !important; }
+  /* D2-1 핵심역량 그리드가 쪽에서 나뉠 때 남는 칸이 선 색으로 칠해지는 현상 방지(선 1px 은 유지) */
+  .exp-grid{ background:transparent !important; border:0 !important; }
+  .exp-card{ box-shadow:0 0 0 1px var(--line) !important; }
+  /* D3 개발웹 시리즈 요약 배너: 앞 카드 쪽에 붙임(외톨이 쪽 방지) */
+  .wc img{ max-height:118mm !important; }
+  .webdev-grid > .wc:last-child img{ max-height:90mm !important; }
+  .webdev-grid ~ .rv{ break-inside:avoid !important; margin-top:8px !important; padding:10px 18px !important; }
+  .webdev-grid ~ .rv > div[style*="flex"]{ flex-wrap:nowrap !important; gap:10px !important; }
+  .webdev-grid ~ .rv div[style*="gap:20px"]{ flex-wrap:nowrap !important; gap:12px !important; }
+  .webdev-grid ~ .rv div[style*="1.6rem"]{ font-size:1.15rem !important; }
+  /* D4 유튜브: 쪽당 2장 → 4장 (본문 4줄 요약 = 화면 모바일 접기와 동일, 카드 디자인 유지) */
+  #youtube .ytbody{ padding:14px 16px !important; }
+  #youtube .yt-meta{ padding-top:8px !important; }
+  .yt-grid{ gap:12px !important; }
+  #youtube .yt-desc, #youtube .yt-desc.mm-clamp{ display:-webkit-box !important; -webkit-line-clamp:4 !important; -webkit-box-orient:vertical !important; overflow:hidden !important; }
+  /* D5 최소 글자 7pt */
+  .wc .wtag{ font-size:.6rem !important; }
+}
+</style>
+<script id="mm-print-hp-name">
+/* MM-PRINT 홈피판 — PDF 저장 기본 이름: 김만민건축사_포트폴리오_YYYY-MM-DD (인쇄 동안만 제목 교체, 끝나면 원래대로) */
+(function(){var t0=null;function p(n){return (n<10?'0':'')+n;}
+window.addEventListener('beforeprint',function(){if(t0===null){t0=document.title;}var d=new Date();document.title='김만민건축사_포트폴리오_'+d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());});
+window.addEventListener('afterprint',function(){if(t0!==null){document.title=t0;t0=null;}});})();
+</script>
 </head>
 <body>
 
@@ -7994,7 +8034,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
         <div style="margin-top:8px;font-family:var(--f-mono);font-size:.62rem;color:var(--t-sub);text-align:center;line-height:1.6;">
           카카오톡 공유 — 주소 복사 후 카톡 채팅창에 붙여넣기<br>
           1:1 문의 — 카카오 오픈채팅으로 기술 자문·설계 협업 문의<br>
-          PDF 출력 — 포트폴리오 전체를 A4 PDF로 저장 (데스크탑)</div>
+          PDF 출력 — 포트폴리오 전체를 A4 PDF로 저장 (데스크탑 · 인쇄 창에서 「머리글과 바닥글」 해제)</div>
         <!-- 네이버 블로그 버튼 -->
         <a href="https://blog.naver.com/manmin72" target="_blank" rel="noopener"
            class="btn-naver-blog" title="MANMIN 네이버 블로그 — 건축·토목·기계설비 실무 정보">
