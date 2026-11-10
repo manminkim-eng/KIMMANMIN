@@ -2210,7 +2210,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
 }
 
 </style>
-<!-- ══ MM-PRINT 홈피판 v1.1 (2026-11-11 · 포트폴리오 PDF A4 고밀도 배치 — 데스크톱 열 수 · 개발웹 카드 좌우 배치 · 유튜브 3열 전문) — 인쇄 전용, 화면 영향 없음 ══ -->
+<!-- ══ MM-PRINT 홈피판 v1.2 (2026-11-11 · 포트폴리오 PDF A4 고밀도 배치 · 소개 섹션 새 쪽 — 데스크톱 열 수 · 개발웹 카드 좌우 배치 · 유튜브 3열 전문) — 인쇄 전용, 화면 영향 없음 ══ -->
 <style id="mm-print-hp">
 @media print{
   @page{ size:A4 portrait; margin:10mm 9mm 13mm 9mm; background:#0c1120;
@@ -2234,7 +2234,7 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
 
   /* D2 그리드·묶음 통째유지 해제(카드 단위 유지는 그대로) */
   .exp-grid, .lic-grid, .scope-grid, .cm-proj-grid, .adv-grid, .arc-grid,
-  .brand-story, .about-wrap, .wcm-wrap, .hub-grid{ break-inside:auto !important; page-break-inside:auto !important; }
+  .brand-story, .wcm-wrap, .hub-grid{ break-inside:auto !important; page-break-inside:auto !important; }
   .exp-grid{ background:transparent !important; border:0 !important; }
   .exp-card{ box-shadow:0 0 0 1px var(--line) !important; padding:16px 14px !important; }
 
@@ -2253,6 +2253,9 @@ a:hover>.btn-arw,button:hover>.btn-arw{transform:translateX(4px)}
   .arc-grid{ grid-template-columns:repeat(3,1fr) !important; gap:10px !important; margin-top:10px !important; }
   .adv-grid{ grid-template-columns:repeat(2,1fr) !important; gap:12px !important; }
   .about-wrap{ grid-template-columns:230px 1fr !important; gap:24px !important; }
+  /* P4 소개(건축과 설비를 아우르는 …) — 새 쪽에서 시작해 한 쪽에 통째로 */
+  #about{ break-before:page !important; page-break-before:always !important; }
+  #about .about-wrap{ break-inside:avoid !important; page-break-inside:avoid !important; }
 
   /* P2 개발웹 카드: 카드당 1쪽 → 글 왼쪽 · 화면 오른쪽 좌우 배치(쪽당 3 ~ 4장) */
   #webdev .wc{ break-before:auto !important; break-inside:avoid !important;
