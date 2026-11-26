@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v3.37';   /* 2026-11-26 32 해체감리 6.1.7 건물개요 단추 — 카드 판 표기(§25-6-118) (종전 v3.36) */
+const CACHE_VERSION = 'manmin-v3.38';   /* 2026-11-26 45 내진판정 6.1.6 휴대폰 하단 단추 위치 정정 — 카드 판 표기(§25-6-119) (종전 v3.37) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
