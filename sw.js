@@ -3,7 +3,7 @@
    김만민 건축사 — 대성건축사사무소
    ══════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'manmin-v3.41';   /* 2026-11-27 하단 유튜브 — AI 오디오 해설 법규 ⑬ 교체 · 허가조서 · 설계검토 · AI 셋 · 지내력 신규, 머리 수 정정 (종전 v3.40) */
+const CACHE_VERSION = 'manmin-v3.42';   /* 2026-11-27 44 허가조서 카드 6.1.28 — 별지 제24호서식 · 준공 설계개요 대조 문구 · 매뉴얼 57쪽(§25-6-122) (종전 v3.41) */
 /* §17-1 — 같은 origin(manminkim-eng.github.io)에 40여 개 도구 캐시가 있다. 홈페이지 캐시명은 manmin-v<숫자> 계열만이다
    (manmin-hub- · manmin-mech-portal- · manmin-arch-portal- 등 다른 도구 접두어는 제외) */
 const mmOwn = (k) => /^manmin-v\d/.test(k);
